@@ -1,0 +1,21 @@
+/* ===== CONTAINER - MOBILE FIRST ===== */
+.container {
+    width: 92%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 35px 0;
+}
+
+/* TABLET */
+@media (min-width: 768px) {
+    .container {
+        padding: 60px 0;
+    }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+    .container {
+        padding: 80px 0;
+    }
+}

@@ -1,0 +1,33 @@
+/* ===== HEADER - MOBILE FIRST ===== */
+.header {
+    background: #000;
+    padding: 12px 0;
+    border-bottom: 1px solid #222;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header .container {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 0.9rem;
+}
+
+.logo span {
+    color: #FF3D00;
+}
+
+/* TABLET */
+@media (min-width: 768px) {
+    .logo {
+        font-size: 1.2rem;
+    }
+}

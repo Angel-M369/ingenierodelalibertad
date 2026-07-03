@@ -1,0 +1,65 @@
+/* ===== BOTONES - MOBILE FIRST ===== */
+.btn {
+    display: inline-block;
+    padding: 12px 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-align: center;
+    width: 100%;
+    font-size: 0.85rem;
+}
+
+.btn-primario {
+    background: #FF3D00;
+    color: #000;
+    border: 2px solid #FF3D00;
+}
+
+.btn-secundario {
+    background: transparent;
+    color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+}
+
+.btn-header {
+    background: #FF3D00;
+    color: #000;
+    padding: 8px 14px;
+    font-weight: 700;
+    border-radius: 5px;
+    font-size: 0.75rem;
+}
+
+/* TABLET */
+@media (min-width: 768px) {
+    .btn {
+        width: auto;
+        font-size: 0.9rem;
+        padding: 14px 25px;
+    }
+    
+    .btn-header {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+/* DESKTOP HOVER */
+@media (min-width: 1024px) {
+    .btn:hover {
+        transform: translateY(-2px);
+    }
+    
+    .btn-primario:hover {
+        background: #FFFFFF;
+        color: #000;
+        border-color: #FFFFFF;
+    }
+    
+    .btn-secundario:hover {
+        background: #FFFFFF;
+        color: #000;
+    }
+}
