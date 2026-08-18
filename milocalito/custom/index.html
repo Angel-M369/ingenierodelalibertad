@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dulce Antojo | Sistema 24/7 Que Factura</title>
+    <link rel="canonical" href="https://www.ingenierodelalibertad.com/milocalito/custom/">
+    <meta name="theme-color" content="#FF4D8D">
+
+    <!-- Google tag (gtag.js) - MEDICIÓN MAESTRA -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0S14JTTS9D"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0S14JTTS9D');
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="custom-dulce">
+    <div class="page">
+        <div class="yare-ticker">
+            <div class="yare-ticker-track">
+                <span>🚚 ENVÍO GRATIS LEÓN +$800</span>
+                <span>🎂 10% OFF EN TU PRIMER PASTEL</span>
+                <span>💳 PAGA CON TARJETA / OXXO / TRANSFERENCIA</span>
+                <span>🚚 ENVÍO GRATIS LEÓN +$800</span>
+                <span>🎂 10% OFF EN TU PRIMER PASTEL</span>
+                <span>💳 PAGA CON TARJETA / OXXO / TRANSFERENCIA</span>
+            </div>
+        </div>
+        <header class="header-pro">
+            <div class="header-bar contenedor">
+                <a href="#" class="logo-pro">DULCE <span>ANTOJO</span></a>              
+                <input type="checkbox" id="menu-check" class="menu-check">
+                <label for="menu-check" class="menu-toggle-pro">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <nav class="nav-pro">
+                    <div class="mega-item">
+                        <a href="#productos">Pasteles <i class="fa fa-chevron-down" style="font-size:10px"></i></a>
+                        <div class="mega-dropdown">
+                            <div>
+                                <h4>Por Ocasión</h4>
+                                <a href="#">Bodas</a>
+                                <a href="#">XV Años</a>
+                                <a href="#">Cumpleaños</a>
+                            </div>
+                            <div>
+                                <h4>Por Sabor</h4>
+                                <a href="#">Chocolate</a>
+                                <a href="#">Red Velvet</a>
+                                <a href="#">Zanahoria</a>
+                            </div>
+                            <div>
+                                <h4>Destacados</h4>
+                                <a href="#">Más Pedidos</a>
+                                <a href="#">Nuevos</a>
+                                <a href="#">Ofertas</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#galeria">Galería</a>
+                    <a href="#testimonios">Reseñas</a>
+                    <a href="#ubicacion">Ubicación</a>
+                    <div class="buscador-predictivo">
+                        <input type="text" id="buscador" placeholder="Buscar: chocolate, vainilla, boda...">
+                        <i class="fa fa-search"></i>
+                        <div class="resultados-predictivos" id="resultadosBuscador"></div>
+                    </div>
+                    <div class="header-acciones">
+                        <a href="#" class="icon-accion">
+                            <i class="far fa-heart"></i>
+                            <span class="contador">0</span>
+                        </a>
+                        <a href="#" class="icon-accion" onclick="toggleCart(); return false;">
+                            <i class="fa fa-shopping-bag"></i>
+                            <span class="contador" id="countCart">0</span>
+                        </a>
+                    </div>
+                </nav>
+                <label for="menu-check" class="overlay-pro"></label>
+            </div>
+        </header>
+        <div class="fomo-bar">
+            🔥 <span id="fomoPersonas">12</span> personas viendo pasteles ahora · Quedan <span id="fomoStock">3</span> espacios para esta semana
+        </div>
+        <section class="hero-custom">
+            <div class="hero-video-wrapper">
+                <video autoplay muted loop playsinline poster="../../images/hero-poster.jpeg" class="video-hero">
+                    <source src="../../images/videopastel.mp4" type="video/mp4">
+                </video>
+                <div class="hero-contenido-custom contenedor">
+                    <h1>PASTELES QUE <span>FACTURAN TU EVENTO</span></h1>
+                    <p>No vendemos pasteles bonitos. Creamos la pieza central que todos fotografían.</p>
+                    <a href="#productos" class="btn-hero">VER CATÁLOGO 24/7 ↓</a>
+                </div>
+            </div>
+            <div class="yare-slider">
+                <div class="yare-track">
+                    <img src="../../images/pastel1.jpg">
+                    <img src="../../images/pastel2.jpg">
+                    <img src="../../images/pastel3.jpg">
+                    <img src="../../images/pastel4.jpg">
+                    <img src="../../images/pastel5.jpg">
+                    <img src="../../images/pastel6.jpg">
+                    <img src="../../images/pastel1.jpg">
+                    <img src="../../images/pastel2.jpg">
+                    <img src="../../images/pastel3.jpg">
+                    <img src="../../images/pastel4.jpg">
+                    <img src="../../images/pastel5.jpg">
+                    <img src="../../images/pastel6.jpg">
+                </div>
+            </div>
+        </section>
+        <section class="filtros-inteligentes">
+            <div class="contenedor filtros-flex">
+                <button class="filtro-btn active" data-filtro="todos">Todos</button>
+                <button class="filtro-btn" data-filtro="boda">Boda</button>
+                <button class="filtro-btn" data-filtro="xv">XV Años</button>
+                <button class="filtro-btn" data-filtro="infantil">Infantil</button>
+                <select class="filtro-select" id="filtroPrecio">
+                    <option value="">Precio</option>
+                    <option value="menor">Menor a mayor</option>
+                    <option value="mayor">Mayor a menor</option>
+                </select>
+            </div>
+        </section>
+        <section id="productos" class="productos-custom-elite">
+            <div class="contenedor">
+                <div class="titulo-seccion">
+                    <span class="subtitulo">TIENDA 24/7</span>
+                    <h2>Elige y <span>Paga Ahora</span></h2>
+                </div>
+                <div class="grid-productos-custom">
+                    <div class="producto-card-custom" data-categoria="boda" data-tags="boda elegante chocolate 3 pisos premium vainilla">
+                        <div class="prod-img">
+                            <img src="../../images/pastel1.jpg">
+                            <span class="etiqueta-stock">¡Quedan 3!</span>
+                            <button class="btn-wishlist-card"><i class="far fa-heart"></i></button>
+                        </div>
+                        <div class="prod-info">
+                            <h3>Boda Elegante 3 Pisos</h3>
+                            <small>Chocolate / Vainilla</small>
+                            <div class="prod-precios">
+                                <span class="precio-ahora">$3,500</span>
+                                <span class="precio-antes">$4,200</span>
+                            </div>
+                            <div class="combo-box">🎁 Llévalo con mesa de postres por +$900</div>
+                            <button class="btn-add-cart" data-nombre="Boda Elegante 3 Pisos" data-precio="3500">Agregar al Carrito</button>
+                            <a href="https://wa.me/5214771234567?text=Quiero%20Boda%20Elegante" class="btn-whatsapp-card">Pedir por WhatsApp</a>
+                        </div>
+                    </div>
+                    <div class="producto-card-custom" data-categoria="xv" data-tags="xv quinceañera vainilla fresa princesa">
+                        <div class="prod-img">
+                            <img src="../../images/pastel2.jpg">
+                            <span class="etiqueta-stock black">MÁS VENDIDO</span>
+                            <button class="btn-wishlist-card"><i class="far fa-heart"></i></button>
+                        </div>
+                        <div class="prod-info">
+                            <h3>XV Años Princesa</h3>
+                            <small>Vainilla / Fresa</small>
+                            <div class="prod-precios">
+                                <span class="precio-ahora">$2,800</span>
+                                <span class="precio-antes">$3,400</span>
+                            </div>
+                            <div class="combo-box">🎁 Incluye velas y base gratis</div>
+                            <button class="btn-add-cart" data-nombre="XV Años Princesa" data-precio="2800">Agregar al Carrito</button>
+                            <a href="https://wa.me/5214771234567?text=Quiero%20XV%20Princesa" class="btn-whatsapp-card">Pedir por WhatsApp</a>
+                        </div>
+                    </div>
+                    <div class="producto-card-custom" data-categoria="infantil" data-tags="infantil niño unicornio vainilla chocolate">
+                        <div class="prod-img">
+                            <img src="../../images/pastel3.jpg">
+                            <span class="etiqueta-stock">¡Quedan 2!</span>
+                            <button class="btn-wishlist-card"><i class="far fa-heart"></i></button>
+                        </div>
+                        <div class="prod-info">
+                            <h3>Infantil Unicornio</h3>
+                            <small>Chocolate / Vainilla</small>
+                            <div class="prod-precios">
+                                <span class="precio-ahora">$1,200</span>
+                                <span class="precio-antes">$1,500</span>
+                            </div>
+                            <div class="combo-box">🎁 2x1 en Cupcakes por hoy</div>
+                            <button class="btn-add-cart" data-nombre="Infantil Unicornio" data-precio="1200">Agregar al Carrito</button>
+                            <a href="https://wa.me/5214771234567?text=Quiero%20Unicornio" class="btn-whatsapp-card">Pedir por WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="testimonios" class="testimonios-pro">
+            <div class="contenedor">
+                <div class="titulo-seccion">
+                    <span class="subtitulo">CLIENTES REALES</span>
+                    <h2>Nos pagan por <span>hacerlos llorar</span></h2>
+                    <p>De felicidad, cuando ven su pastel</p>
+                </div>
+                <div class="grid-testimonios">
+                    <div class="testi-card">
+                        <div class="testi-stars">★★★★★</div>
+                        <p>"Me cotizaron en 5 min y pagué con tarjeta a las 11pm. Llegó perfecto a la boda."</p>
+                        <div class="testi-autor">
+                            <img src="../../images/pastel1.jpg">
+                            <div>
+                                <strong>Ana G. - Boda 180 personas</strong>
+                                <small>León Moderno</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testi-card">
+                        <div class="testi-stars">★★★★★</div>
+                        <p>"El de XV de mi hija fue el más chingón. Todos preguntaron dónde lo compré."</p>
+                        <div class="testi-autor">
+                            <img src="../../images/pastel2.jpg">
+                            <div>
+                                <strong>Karla M. - XV Años</strong>
+                                <small>Jardines del Moral</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testi-card">
+                        <div class="testi-stars">★★★★★</div>
+                        <p>"Pensé que era estafa por pagar en línea, pero me mandaron video antes de enviarlo."</p>
+                        <div class="testi-autor">
+                            <img src="../../images/pastel3.jpg">
+                            <div>
+                                <strong>Jorge L. - Infantil</strong>
+                                <small>Col. Delta</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-trust">
+                    <span><i class="fa-solid fa-shield-halved"></i> Pago seguro</span>
+                    <span><i class="fa-solid fa-star"></i> 4.9/5 en Google</span>
+                    <span><i class="fa-solid fa-truck"></i> Entrega puntual</span>
+                </div>
+            </div>
+        </section>
+        <section class="calculadora-envio">
+            <div class="contenedor">
+                <div class="coti-box-custom">
+                    <h3>Calcula tu <span>envío y descuento</span></h3>
+                    <div class="coti-inputs">
+                        <input type="text" id="cotiCP" placeholder="Tu CP (ej 37000)">
+                        <select id="cotiPersonas">
+                            <option value="20">¿Para cuántas personas?</option>
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                    </div>
+                    <div class="coti-resultado">
+                        Envío: <strong id="cotiEnvio">$0</strong> · Si compras hoy: <strong id="cotiDescuento">-$0</strong>
+                    </div>
+                    <button class="btn-hero" id="btnCalcularEnvio">Calcular Ahora</button>
+                </div>
+            </div>
+        </section>
+        <section id="ubicacion" class="mapa-pro">
+             <div class="contenedor">
+                 <div class="mapa-grid">
+                     <div class="mapa-info">
+                         <h2>¿Dónde <span>recoger?</span></h2>
+                         <p>Estamos en León, entregamos en toda la ciudad. Envíos a Silao, Irapuato y Gto capital con costo extra.</p>
+                         <div class="mapa-datos">
+                            <a><i class="fa-solid fa-location-dot"></i> Blvd. López Mateos 1234, León, Gto</a>
+                            <a><i class="fa-solid fa-clock"></i> Lun-Dom 8am-10pm</a>
+                            <a href="https://wa.me/5214771234567"><i class="fab fa-whatsapp"></i> 477 123 4567</a>
+                         </div>
+                         <a href="https://wa.me/5214771234567?text=Quiero%20la%20ubicacion" class="btn-hero">MÁNDAME LA UBICACIÓN 📍</a>
+                     </div>
+                     <div class="mapa-frame">
+                         <iframe 
+                             src="https://maps.google.com/maps?q=Blvd%20Adolfo%20Lopez%20Mateos%20Le%C3%B3n%20Guanajuato&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+                             width="100%" 
+                             height="100%" 
+                             style="border:0; border-radius:20px;" 
+                             allowfullscreen="" 
+                             loading="lazy" 
+                             referrerpolicy="no-referrer-when-downgrade">
+                         </iframe>
+                     </div>
+                 </div>
+             </div>
+        </section>
+        <section id="galeria" class="productos-custom-elite white">
+            <div class="contenedor">
+                <div class="titulo-seccion">
+                    <span class="subtitulo">NUESTRO TRABAJO</span>
+                    <h2>Galería <span>Que Vende</span></h2>
+                </div>
+                <div class="yare-slider no-border">
+                    <div class="yare-track">
+                        <img src="../../images/pastel1.jpg">
+                        <img src="../../images/pastel2.jpg">
+                        <img src="../../images/pastel3.jpg">
+                        <img src="../../images/pastel4.jpg">
+                        <img src="../../images/pastel5.jpg">
+                        <img src="../../images/pastel6.jpg">
+                        <img src="../../images/pastel1.jpg">
+                        <img src="../../images/pastel2.jpg">
+                        <img src="../../images/pastel3.jpg">
+                        <img src="../../images/pastel4.jpg">
+                        <img src="../../images/pastel5.jpg">
+                        <img src="../../images/pastel6.jpg">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contacto" class="calculadora-envio">
+            <div class="contenedor">
+                <div class="coti-box-custom">
+                    <h3>¿Quieres tu pastel <span>personalizado?</span></h3>
+                    <p class="coti-p">Cotiza por WhatsApp y te respondemos en 5 min</p>
+                    <div class="coti-inputs">
+                        <input type="text" placeholder="Tu nombre">
+                        <input type="text" placeholder="Tu WhatsApp">
+                    </div>
+                    <a href="https://wa.me/5214771234567?text=Hola%20quiero%20cotizar%20un%20pastel" class="btn-hero verde"><i class="fab fa-whatsapp"></i> COTIZAR AHORA</a>
+                </div>
+            </div>
+        </section>
+        <div class="cart-drawer" id="cartDrawer">
+            <div class="cart-header">
+                <h3>Tu Carrito <span id="cartCountHeader">0</span></h3>
+                <button id="closeCart" onclick="toggleCart()">✕</button>
+            </div>
+            <div class="cart-body" id="cartItems">
+                <p class="cart-vacio">Tu carrito está vacío. Agrega un pastel y factura.</p>
+            </div>
+            <div class="cart-footer">
+                <div class="cupon-box">
+                    <input type="text" id="inputCupon" placeholder="Cupón: DULCE10">
+                    <button id="btnCupon">Aplicar</button>
+                </div>
+                <div class="cart-total">Total: <strong id="cartTotal">$0</strong></div>
+                <a href="#" class="btn-hero full" id="btnPagar" onclick="alert('🔒 MODO DEMO CUSTOM\n\nEn la tienda real aquí cobraría con Mercado Pago directo a tu cuenta.'); return false;">PAGAR AHORA (DEMO)</a>
+            </div>
+        </div>
+        <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+        <footer class="footer-pro">
+            <div class="footer-hero-brand contenedor">
+                <h2>DULCE <span>ANTOJO</span></h2>
+                <p>15 años endulzando<br>los mejores eventos.</p>
+            </div>
+            <div class="footer-grid-pro contenedor">
+                <div class="footer-col-pro">
+                    <h4>SÍGUENOS</h4>
+                    <a href="#"><i class="fab fa-tiktok"></i> En vivos de pasteles</a>
+                    <a href="#"><i class="fab fa-instagram"></i> Fotos nuevas</a>
+                    <a href="#"><i class="fab fa-facebook"></i> Reseñas de clientes</a>
+                    <a href="https://wa.me/5214771234567"><i class="fab fa-whatsapp"></i> Cotiza por WhatsApp</a>
+                </div>
+                <div class="footer-col-pro">
+                    <h4>CATÁLOGO</h4>
+                    <a href="#productos" onclick="filtrarPor('boda')">Ver pasteles de boda</a>
+                    <a href="#productos" onclick="filtrarPor('xv')">Pasteles XV años</a>
+                    <a href="#productos" onclick="filtrarPor('infantil')">Pasteles infantiles</a>
+                    <a href="#galeria">Galería que vende</a>
+                </div>
+                <div class="footer-col-pro">
+                    <h4>COMPRA SEGURA</h4>
+                    <a>Pago con Tarjeta 100% seguro</a>
+                    <a>Transferencia BBVA</a>
+                    <a>Pago en OXXO</a>
+                    <a>Mercado Pago / PayPal</a>
+                    <div class="footer-pagos">
+                        <span>VISA</span>
+                        <span>MC</span>
+                        <span>AMEX</span>
+                        <span>OXXO</span>
+                    </div>
+                </div>
+                <div class="footer-col-pro">
+                    <h4>CONTACTO</h4>
+                    <a href="https://wa.me/5214771234567"><i class="fab fa-whatsapp"></i> 477 123 4567</a>
+                    <a><i class="fa-solid fa-location-dot"></i> López Mateos, León, Gto</a>
+                    <a><i class="fa-solid fa-clock"></i> Lun-Dom 8am-10pm</a>
+                </div>
+            </div>
+            <div class="footer-bottom-pro contenedor">
+                <p>© 2026 Dulce Antojo® | Sistema 24/7 que factura - Todos los derechos reservados.</p>
+                <p class="footer-copy-dolor">
+                    Sistema de cobros con tarjeta y envíos automatizados diseñado para que dejes de perder ventas por WhatsApp, 
+                    creado con <strong>MI LOCALITO</strong> by 
+                    <a href="https://www.ingenierodelalibertad.com" target="_blank">www.ingenierodelalibertad.com</a>
+                </p>
+            </div>
+        </footer>
+        <a href="https://wa.me/5214771234567?text=Hola%20quiero%20cotizar%20mi%20pastel" class="whats-flotante" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

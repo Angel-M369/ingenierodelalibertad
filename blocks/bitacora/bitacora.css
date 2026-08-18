@@ -1,0 +1,118 @@
+/* BLOQUE: BITACORA - HAZTE CARGO - FIX HEADER Y FOOTER */
+
+/* --- HEADER FIX --- */
+.header {
+    background: #059669 !important;
+    border-bottom: 1px solid hsl(0, 0%, 93%);
+    padding: 18px 0;
+}
+.header .container { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+.logo { 
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: 900; 
+    font-size: 1.1rem; 
+    text-decoration: none; 
+    color: #111 !important; /* NEGRO PARA QUE SE VEA EN FONDO BLANCO */
+    letter-spacing: 1px; 
+}
+.logo span { color: #ff2e63 !important; }
+.logo:visited { color: #111 !important; }
+
+.btn-header { 
+    background: #111 !important; 
+    color: #fff !important; 
+    padding: 10px 22px; 
+    border-radius: 30px; 
+    text-decoration: none; 
+    font-family: 'Montserrat'; 
+    font-weight: 700; 
+    font-size: .8rem; 
+    transition: .3s; 
+}
+.btn-header:visited { color: #fff !important; }
+.btn-header:hover { background: #ff2e63 !important; color: #fff !important; }
+
+/* --- AVISO --- */
+.aviso-bitacora {
+    background: #111;
+    color: #888;
+    text-align: center;
+    padding: 12px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    border-bottom: 1px solid #222;
+}
+
+/* --- HERO --- */
+.bitacora-hero {
+    padding: 100px 0 60px;
+    text-align: center;
+    background: #0a0a0a;
+}
+.bitacora-hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.8rem;
+    font-weight: 900;
+    color: #fff;
+    margin: 0;
+    letter-spacing: -2px;
+}
+.bitacora-hero h1 span { color: #ff2e63; }
+.frase-guerra {
+    font-size: 1.15rem;
+    color: #aaa;
+    font-weight: 400;
+    line-height: 1.6;
+    max-width: 650px;
+    margin: 25px auto 0;
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+}
+.seccion-bitacora { background: #0a0a0a; padding: 50px 0; }
+.grid-bitacora {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+.bita-card {
+    background: #161616;
+    border: 1px solid #222;
+    border-radius: 16px;
+    padding: 25px;
+    transition: all 0.3s ease;
+}
+.bita-card:hover { border-color: #333; transform: translateY(-3px); }
+.bita-card .pill {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    letter-spacing: .5px;
+}
+.pill.codigo { background: #007acc; color: #fff; }
+.pill.ventas { background: #222; border: 1px solid #333; color: #fff; }
+.pill.cuerpo { background: #ff8c00; color: #fff; }
+.pill.espiritu { background: #8a2be2; color: #fff; }
+.bita-card h3 { color: #fff; font-family: 'Montserrat'; margin-bottom: 10px; font-size: 1.15rem; }
+.bita-card p { color: #888; font-size: 0.9rem; line-height: 1.5; }
+.bita-card .fecha { color: #555; font-size: 0.75rem; margin-top: 15px; display: block; font-weight: 700; text-transform: uppercase; }
+
+/* --- FOOTER FIX --- */
+.footer-ingeniero {
+    background: #050505;
+    padding: 30px 0;
+    border-top: 1px solid #1a1a1a;
+}
+.footer-ingeniero .contenedor { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.footer-bottom { text-align: center; }
+.footer-bottom p { color: #666; font-family: 'Montserrat'; font-size: .85rem; margin: 0; }
+.footer-bottom a { color: #ff2e63 !important; text-decoration: none; font-weight: 700; }
+.footer-bottom a:visited { color: #ff2e63 !important; }

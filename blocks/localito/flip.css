@@ -1,0 +1,16 @@
+/* BLOQUE: FLIP CARDS CARRUSEL */
+.flip-section { background:#050505; padding:80px 0; border-top:1px solid #1a1a1a; }
+.flip-contenedor { max-width:1200px; margin:0 auto; padding:0 20px; }
+.flip-contenedor h2 { font-family:'Montserrat'; font-weight:900; color:#fff; text-align:center; font-size:2.5rem; margin-bottom:40px; }
+.flip-grid { display:flex; gap:20px; overflow-x:auto; padding:20px 10px; scroll-snap-type:x mandatory; }
+.flip-grid::-webkit-scrollbar { display:none; }
+.flip-card { min-width:280px; height:320px; perspective:1000px; scroll-snap-align:start; }
+.flip-inner { position:relative; width:100%; height:100%; transition:transform .6s; transform-style:preserve-3d; cursor:pointer; }
+.flip-card:hover .flip-inner { transform:rotateY(180deg); }
+.flip-front, .flip-back { position:absolute; width:100%; height:100%; backface-visibility:hidden; border-radius:16px; padding:25px; display:flex; flex-direction:column; justify-content:center; border:1px solid #222; }
+.flip-front { background:#161616; align-items:center; text-align:center; }
+.flip-front h3 { color:#fff; font-family:'Montserrat'; font-size:1.3rem; }
+.flip-front .precio { color:#25D366; font-weight:900; font-size:1.5rem; margin-top:10px; }
+.flip-back { background:#111; transform:rotateY(180deg); }
+.flip-back h4 { color:#25D366; font-size:.8rem; margin-bottom:8px; }
+.flip-back p { color:#aaa; font-size:.85rem; line-height:1.4; margin-bottom:12px; }

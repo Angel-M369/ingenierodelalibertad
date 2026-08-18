@@ -1,6 +1,6 @@
 /* ===== HERO - MOBILE FIRST ===== */
 .hero {
-    background: #0A0A0A;
+    background: var(--bg-main); /* ANTES: #0A0A0A */
     text-align: center;
     padding: 40px 0 30px 0;
 }
@@ -9,13 +9,18 @@
     font-size: 1.35rem;
     margin-bottom: 15px;
     padding: 0 10px;
+    color: var(--text); /* ANTES: heredaba - Ahora explícito blanco */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    line-height: 1.2;
 }
 
 .hero .subtitulo {
     font-size: 0.9rem;
-    color: #CCCCCC;
+    color: var(--text-sec); /* ANTES: #CCCCCC - Ahora gris neutro */
     margin-bottom: 25px;
     padding: 0 15px;
+    line-height: 1.5;
 }
 
 .botones-hero {
@@ -47,11 +52,16 @@
         flex-direction: row;
         justify-content: center;
         padding: 0;
+        gap: 16px;
     }
 }
 
 /* DESKTOP */
 @media (min-width: 1024px) {
+    .hero {
+        padding: 80px 0; /* Un poco más de aire */
+    }
+    
     .hero h1 {
         font-size: 3rem;
     }

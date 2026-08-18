@@ -1,0 +1,51 @@
+/* =========================================
+   8. MAPA
+========================================= */
+.imp-mapa {
+  padding: 60px 0;
+  background: #0b0f1e;
+}
+
+.imp-mapa-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.imp-mapa-sub {
+  color: #94a3b8;
+  font-size: 14px;
+  margin: 8px 0 16px;
+}
+
+.imp-mapa-title {
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.imp-btn-mapa-dark {
+  background: #1E3A8A;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 800;
+  display: inline-block;
+  border: 1px solid #2a4cb3;
+}
+
+.imp-btn-mapa-dark:hover { background: #2563EB; }
+
+.imp-mapa-frame {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #1e293b;
+}
+
+/* Responsive Mapa */
+@media (max-width: 900px) {
+  .imp-mapa-grid { grid-template-columns: 1fr; }
+}

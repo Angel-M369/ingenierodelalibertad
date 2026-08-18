@@ -1,0 +1,111 @@
+/* =========================================
+   5. CAJA COTIZACION
+========================================= */
+.imp-coti-box {
+  background: #fff;
+  color: #000;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
+}
+
+.imp-coti-header {
+  padding: 18px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  background: #f8fafc;
+}
+
+.imp-coti-live {
+  font-size: 11px;
+  background: #dcfce7;
+  color: #166534;
+  padding: 4px 10px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+}
+
+.imp-coti-live span {
+  width: 7px;
+  height: 7px;
+  background: #16a34a;
+  border-radius: 50%;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .3; }
+}
+
+.imp-coti-header h3 {
+  font-size: 22px;
+  font-weight: 900;
+  margin-top: 8px;
+  color: #111;
+}
+
+.imp-coti-header h3 span { color: #1E3A8A; }
+.imp-coti-header p { font-size: 13px; color: #6b7280; }
+.imp-coti-body { padding: 18px; }
+
+.imp-fomo {
+  background: #eff6ff;
+  border: 1px dashed #1E3A8A;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 12px;
+  color: #1e3a8a;
+}
+
+.imp-coti-inputs { display: grid; gap: 10px; }
+
+.imp-coti-inputs input {
+  padding: 13px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+}
+
+.imp-coti-inputs input:focus {
+  border-color: #1E3A8A;
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, .1);
+}
+
+.imp-btn-cotizar {
+  background: #111827;
+  color: #fff;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 800;
+  margin-top: 12px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.imp-btn-cotizar:hover { background: #000; }
+
+.imp-legal {
+  font-size: 10px;
+  color: #888;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.imp-trust {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 10px;
+  color: #555;
+}

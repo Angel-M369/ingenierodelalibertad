@@ -1,0 +1,65 @@
+/* =========================================
+   6. SERVICIOS
+========================================= */
+.imp-servicios {
+  padding: 70px 0;
+  background: #0b0f1e;
+}
+
+.imp-titulo {
+  font-size: 34px;
+  font-weight: 900;
+  text-align: center;
+  line-height: 1.1;
+}
+
+.imp-titulo span { color: #3B82F6; }
+
+.imp-subtitulo {
+  text-align: center;
+  color: #6b7280;
+  margin: 10px 0 30px;
+  font-size: 15px;
+}
+
+.imp-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.imp-card-box {
+  background: #11172d;
+  border: 1px solid #1e293b;
+  padding: 22px;
+  border-radius: 14px;
+  transition: .2s;
+}
+
+.imp-card-box:hover {
+  border-color: #1E3A8A;
+  transform: translateY(-2px);
+}
+
+.imp-card-box i {
+  font-size: 26px;
+  color: #3B82F6;
+  margin-bottom: 10px;
+}
+
+.imp-card-box h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+  color: #fff;
+}
+
+.imp-card-box p {
+  font-size: 13px;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+/* Responsive Servicios */
+@media (max-width: 900px) {
+  .imp-cards-grid { grid-template-columns: 1fr; }
+}

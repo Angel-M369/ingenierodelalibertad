@@ -1,0 +1,46 @@
+/* =========================================
+   BLOQUE 1: TICKER Y FOMO - RESPONSIVE
+   ========================================= */
+.yare-ticker {
+    background: var(--negro);
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 8px 0;
+    font-weight: 700;
+    font-size: 10px;
+}
+
+.yare-ticker-track {
+    display: flex;
+    animation: marquee 25s linear infinite;
+    gap: 30px;
+}
+
+.fomo-bar {
+    background: linear-gradient(90deg, #ff2e7e, #ff9a3e);
+    color: #fff;
+    text-align: center;
+    padding: 6px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@media (min-width: 768px) {
+    .yare-ticker {
+        font-size: 12px;
+        padding: 10px 0;
+    }
+    .yare-ticker-track {
+        gap: 50px;
+    }
+    .fomo-bar {
+        font-size: 13px;
+        padding: 8px;
+    }
+}

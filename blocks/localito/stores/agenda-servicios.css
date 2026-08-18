@@ -1,0 +1,116 @@
+/* ===== BLOQUE 5: SERVICIOS FLIP CARDS - SISTEMA $4,999 ===== */
+.yare-servicios {
+  padding: 50px 0;
+}
+
+.yare-titulo {
+  font-size: 1.9rem;
+  text-align: center;
+  margin-bottom: 8px;
+  letter-spacing: -1px;
+}
+
+.yare-titulo span {
+  color: var(--rosa);
+}
+
+.yare-sub {
+  font-size: 0.9rem;
+  text-align: center;
+  color: #888;
+  margin-bottom: 30px;
+}
+
+.yare-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+.yare-flip-input {
+  display: none;
+}
+
+.yare-card-box {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 400px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border-radius: 26px;
+  box-shadow: var(--sombra);
+}
+
+.yare-card-box:hover {
+  transform: translateY(-6px);
+}
+
+.yare-flip-input:checked + .yare-card-box {
+  transform: rotateY(180deg) translateY(-6px);
+}
+
+.yare-card-front,
+.yare-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 26px;
+  overflow: hidden;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.yare-card-front img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+
+.yare-card-info {
+  padding: 18px;
+}
+
+.yare-precio {
+  color: var(--rosa);
+  font-weight: 800;
+  font-size: 1.5rem;
+  margin-top: 6px;
+}
+
+.yare-tap {
+  font-size: 0.7rem;
+  color: #bbb;
+  display: block;
+  margin-top: 8px;
+}
+
+.yare-card-back {
+  transform: rotateY(180deg);
+  background: var(--negro);
+  color: white;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.yare-back-info p {
+  line-height: 1.6;
+  font-size: 0.9rem;
+  color: #ddd;
+  margin: 10px 0;
+}
+
+@media (min-width: 768px) {
+  .yare-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .yare-cards-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

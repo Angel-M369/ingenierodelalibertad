@@ -1,37 +1,215 @@
-/* ===== FOOTER - MOBILE FIRST ===== */
-.footer {
-    background: #000;
+/* ===== FOOTER INGENIERO - FINAL BLINDADO - 1 COL MOVIL / 3 COLS TABLET Y DESKTOP ===== */
+.footer-ingeniero {
+    background: var(--bg-main);
+    color: var(--text);
+    font-family: 'Poppins', sans-serif;
     text-align: center;
-    font-size: 0.8rem;
-    color: #888;
-    border-top: 1px solid #222;
+    overflow-x: hidden;
 }
-
-.footer .container {
-    padding: 25px 0;
+.footer-branding {
+    background: #10b948;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 12px;
+    margin: 40px 20px 0;
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.15);
+    box-sizing: border-box;
 }
-
-.logo-footer {
+.marca-titulo {
     font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
     font-weight: 900;
-    color: #FFFFFF;
-    font-size: 0.95rem;
     margin-bottom: 8px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    line-height: 1.1;
 }
-
-.disclaimer {
-    font-size: 0.7rem;
+.marca-subtitulo {
+    font-size: 14px;
+    color: #D1FAE5;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.footer-ingeniero .contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px 25px;
+    box-sizing: border-box;
+}
+.footer-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+.footer-col {
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 0;
+}
+.footer-col h4 {
+    color: var(--accent);
+    margin-bottom: 18px;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.titulo-trabajos { margin-top: 0; }
+.redes-ingeniero {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.redes-ingeniero a {
+    width: 45px;
+    height: 45px;
+    background: var(--bg-card);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #262626;
+    color: var(--text);
+    text-decoration: none;
+    flex-shrink: 0;
+}
+.redes-profesionales {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.redes-profesionales a, .footer-col a {
+    color: var(--text-sec);
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+}
+.footer-link {
+    word-break: break-all;
+    white-space: normal;
+}
+.btn-footer-wa {
+    background: #25D366;
+    color: #000 !important;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     margin-top: 15px;
-    color: #555;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+.footer-bottom {
+    border-top: 1px solid #262626;
+    padding-top: 25px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--text-sec);
 }
 
-/* TABLET */
+/* ===== HOVERS PREMIUM FOOTER ===== */
+/* Links de texto */
+.footer-col a:not(.btn-footer-wa):not(.redes-ingeniero a) {
+    transition: all 0.3s ease;
+    position: relative;
+}
+.footer-col a:not(.btn-footer-wa):not(.redes-ingeniero a):hover {
+    color: var(--accent) !important;
+    transform: translateX(4px);
+}
+.footer-col a:not(.btn-footer-wa):not(.redes-ingeniero a):hover i {
+    color: var(--accent);
+    transform: scale(1.2);
+}
+
+/* Redes sociales redondas */
+.redes-ingeniero a {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.redes-ingeniero a:hover {
+    background: var(--accent) !important;
+    color: #000 !important;
+    border-color: var(--accent) !important;
+    transform: translateY(-4px) scale(1.1);
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+}
+
+/* Mis trabajos */
+.redes-profesionales a:hover {
+    color: #fff !important;
+}
+
+/* Botón WhatsApp */
+.btn-footer-wa {
+    transition: all 0.3s ease;
+}
+.btn-footer-wa:hover {
+    background: #1ebe57 !important;
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+}
+
+/* Legal */
+.footer-legal a:hover {
+    color: var(--accent) !important;
+    text-decoration: underline;
+}
+
+/* TABLET - 3 COLUMNAS CENTRADAS CON POCO ESPACIO */
 @media (min-width: 768px) {
-    .footer {
-        font-size: 0.85rem;
+    .footer-branding {
+        max-width: 900px;
+        margin: 60px auto 0;
+        padding: 35px 20px;
     }
-    
-    .logo-footer {
-        font-size: 1rem;
+    .marca-titulo { font-size: 32px; }
+    .footer-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 25px !important;
+        max-width: 100% !important;
+        margin: 0 auto 40px auto !important;
+        justify-items: center;
+        align-items: start;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+    .footer-col {
+        max-width: 100% !important;
+    }
+    .footer-link {
+        font-size: 12px !important;
+    }
+}
+
+/* DESKTOP - 3 COLUMNAS CON MAS ESPACIO */
+@media (min-width: 1024px) {
+    .footer-branding {
+        max-width: 1000px;
+        padding: 45px 40px;
+    }
+    .marca-titulo { font-size: 40px; }
+    .footer-grid {
+        gap: 60px !important;
+        max-width: 1100px !important;
+        padding: 0 20px;
+    }
+    .footer-link {
+        font-size: 14px !important;
     }
 }

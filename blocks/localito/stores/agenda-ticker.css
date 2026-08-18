@@ -1,0 +1,4 @@
+/* ===== BLOQUE 2: TICKER SUPERIOR ===== */
+.yare-ticker{background:var(--negro);color:white;padding:9px 0;overflow:hidden;white-space:nowrap}
+.yare-ticker-track{display:flex;gap:50px;animation:marquee 25s linear infinite}
+.yare-ticker-track span{font-size:0.8rem;font-weight:800}

@@ -1,0 +1,124 @@
+/* =========================================
+   4. HERO
+========================================= */
+.imp-hero {
+  padding: 50px 0;
+  background: radial-gradient(700px at 15% 10%, #122152, transparent), #080b14;
+}
+
+.imp-hero .imp-container {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.imp-badge {
+  background: #0f1a36;
+  border: 1px solid #1E3A8A;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  display: inline-block;
+  margin-bottom: 16px;
+  color: #60A5FA;
+  font-weight: 700;
+}
+
+.imp-hero-text h1 {
+  font-size: 50px;
+  line-height: .95;
+  font-weight: 900;
+  letter-spacing: -2px;
+  margin-bottom: 16px;
+}
+
+.imp-hero-text h1 span { color: #3B82F6; }
+
+.imp-hero-text p {
+  color: #9ca3af;
+  margin-bottom: 14px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.imp-hero-text ul {
+  list-style: none;
+  margin: 18px 0;
+  display: grid;
+  gap: 8px;
+}
+
+.imp-hero-text ul li {
+  font-size: 14px;
+  color: #d1d5db;
+}
+
+.imp-social-proof {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+  background: #0f172a;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid #1e293b;
+  width: fit-content;
+}
+
+.imp-avatars { display: flex; }
+
+.imp-avatars img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  margin-left: -8px;
+}
+
+.imp-avatars img:first-child { margin: 0; }
+
+.imp-social-proof p {
+  font-size: 12px;
+  line-height: 1.2;
+  margin: 0;
+  color: #cbd5e1;
+}
+
+.imp-social-proof span {
+  color: #60A5FA;
+  font-weight: 700;
+}
+
+.imp-btn-cta-hero {
+  background: #1E3A8A;
+  color: #fff;
+  display: inline-block;
+  padding: 16px 26px;
+  border-radius: 10px;
+  font-weight: 900;
+  text-decoration: none;
+  margin-top: 10px;
+  text-align: center;
+  width: 100%;
+  max-width: 360px;
+  border: 1px solid #2a4cb3;
+  box-shadow: 0 10px 25px rgba(30, 58, 138, .4);
+}
+
+.imp-btn-cta-hero:hover { background: #2563EB; }
+
+.imp-micro {
+  font-size: 11px !important;
+  text-align: center;
+  max-width: 360px;
+  margin-top: 8px;
+  color: #6b7280 !important;
+}
+
+/* Responsive Hero */
+@media (max-width: 900px) {
+  .imp-hero { padding: 30px 0; }
+  .imp-hero .imp-container { grid-template-columns: 1fr; }
+  .imp-hero-text h1 { font-size: 34px; }
+}

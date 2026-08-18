@@ -1,0 +1,141 @@
+/* =========================================
+   BLOQUE 6: CALCULADORA + MAPA - RESPONSIVE
+   ========================================= */
+.calculadora-envio {
+    padding: 40px 0;
+}
+
+.coti-box-custom {
+    background: var(--negro);
+    color: #fff;
+    border-radius: 20px;
+    padding: 24px;
+    text-align: center;
+}
+
+.coti-box-custom h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+}
+
+.coti-box-custom h3 span {
+    color: var(--rosa2);
+}
+
+.coti-p {
+    margin: 12px 0;
+    opacity: .8;
+}
+
+.coti-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.coti-inputs input,
+.coti-inputs select {
+    padding: 14px 18px;
+    border-radius: 100px;
+    border: none;
+    width: 100%;
+}
+
+.coti-resultado {
+    margin-bottom: 14px;
+}
+
+.mapa-pro {
+    background: var(--gris);
+    padding: 40px 0;
+}
+
+.mapa-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.mapa-info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    line-height: .9;
+}
+
+.mapa-info h2 span {
+    color: var(--rosa);
+}
+
+.mapa-info p {
+    margin: 12px 0 16px;
+    font-size: 14px;
+    opacity: .7;
+    line-height: 1.5;
+}
+
+.mapa-datos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.mapa-datos a {
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--negro);
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.mapa-datos a i {
+    color: var(--rosa);
+    width: 18px;
+}
+
+.mapa-frame {
+    height: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--sombra);
+    background: #fff;
+}
+
+@media (min-width: 768px) {
+    .calculadora-envio {
+        padding: 60px 0;
+    }
+    .coti-box-custom {
+        padding: 40px;
+        border-radius: 32px;
+    }
+    .coti-box-custom h3 {
+        font-size: 36px;
+    }
+    .coti-inputs {
+        flex-direction: row;
+        justify-content: center;
+    }
+    .coti-inputs input,
+    .coti-inputs select {
+        width: 240px;
+    }
+    .mapa-pro {
+        padding: 60px 0;
+    }
+    .mapa-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        align-items: center;
+    }
+    .mapa-info h2 {
+        font-size: 42px;
+    }
+    .mapa-frame {
+        height: 380px;
+    }
+}

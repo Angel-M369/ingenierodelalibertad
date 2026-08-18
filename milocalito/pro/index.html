@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Las Pacas del Chino | Ropa Americana Premium 50KG - Demo PRO Mi Localito</title>
+    <meta name="description" content="Demo Sistema PRO de Mi Localito. Tienda con carrito real + botón de pago con tarjeta/OXXO (demo) + envío nacional. Pacas 50kg USA desde $7,200.">
+    <link rel="canonical" href="https://www.ingenierodelalibertad.com/milocalito/pro/">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#00E676">
+    <meta property="og:title" content="Las Pacas del Chino | Ropa Americana Premium">
+    <meta property="og:description" content="Demo PRO: Carrito que cobra con tarjeta antes de enviar. Así es tu tienda real con Mi Localito.">
+    <meta property="og:image" content="https://www.ingenierodelalibertad.com/milocalito/images/Paca.jpg">
+    <meta property="og:url" content="https://www.ingenierodelalibertad.com/milocalito/pro/">
+    <meta property="og:type" content="website">
+
+    <!-- Google tag (gtag.js) - MEDICIÓN MAESTRA -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0S14JTTS9D"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0S14JTTS9D');
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="pro-urbanfit">
+    <div class="page">
+    <header class="header-pro">
+        <input type="checkbox" id="menu-check" class="menu-check">
+        <div class="header-bar">
+            <a href="#" class="logo-pro">LAS PACAS <span>DEL CHINO</span></a>
+            <div class="carrito-icon-pro" onclick="toggleCarrito()"><i class="fas fa-shopping-cart"></i><span class="carrito-contador" id="contador-carrito">0</span></div>
+            <label for="menu-check" class="menu-toggle-pro"><span></span><span></span><span></span></label>
+            <nav class="nav-pro">
+                <a href="#nuevos" onclick="document.getElementById('menu-check').checked=false">Nuevos</a>
+                <a href="#catalogo" onclick="document.getElementById('menu-check').checked=false">Catálogo</a>
+                <a href="#mayoreo" onclick="document.getElementById('menu-check').checked=false">Mayoreo</a>
+                <a href="#ubicacion" onclick="document.getElementById('menu-check').checked=false">Ubicación</a>
+                <a href="#contacto" onclick="document.getElementById('menu-check').checked=false">Contacto</a>
+                <a href="#catalogo" class="btn-pro" onclick="document.getElementById('menu-check').checked=false">PEDIR PACAS</a>
+            </nav>
+            <label for="menu-check" class="overlay-pro"></label>
+        </div>
+    </header> 
+    <div class="carrito-drawer" id="carrito-drawer">
+        <div class="carrito-overlay-drawer" onclick="toggleCarrito()"></div>
+        <div class="carrito-panel">
+            <div class="carrito-header-drawer">
+                <h3><i class="fas fa-shopping-cart"></i> TU CARRITO</h3>
+                <button class="cerrar-carrito-drawer" onclick="toggleCarrito()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="carrito-items-drawer" id="items-carrito"></div>
+            <div class="carrito-footer-drawer" id="carrito-footer" style="display:none;">
+                <div class="carrito-total-drawer"><span>TOTAL:</span><span id="total">$0</span></div>
+                <button class="btn-pagar-drawer" onclick="alert('🔒 MODO DEMO\n\nEn tu tienda real aquí tu cliente pagaría con TARJETA / OXXO / TRANSFERENCIA antes de que envíes.\n\nEl dinero cae directo a tu cuenta de Mercado Pago.\n\nEn esta demo no se cobra nada.')" style="background:#00B1EA; margin-bottom:10px;"><i class="fas fa-credit-card"></i> PAGAR CON TARJETA / OXXO (DEMO)</button>
+                <button class="btn-pagar-drawer" onclick="finalizarCompra()"><i class="fab fa-whatsapp"></i> FINALIZAR POR WHATSAPP</button>
+                <button class="btn-vaciar-drawer" onclick="vaciarCarrito()"><i class="fas fa-trash"></i> VACIAR CARRITO</button>
+                <p style="font-size:11px; text-align:center; margin-top:10px; opacity:0.6;">Demo Mi Localito - Sin cobros reales</p>
+            </div>
+        </div>
+    </div>
+    <main class="main-pro">
+        <section class="hero-pro">
+            <div class="hero-texto">
+                <h1>ROPA AMERICANA <span>PREMIUM</span></h1>
+                <p>Pacas de 50kg directo de USA. Nike, Adidas, Tommy, Polo y más desde $180/kg - Envío a todo México</p>
+                <a href="#catalogo" class="btn-hero-pro">VER CATÁLOGO</a>
+            </div>
+            <div class="hero-img" style="background-image: url('../../images/Paca.jpg')">
+                <div class="tag-flotante">ENVÍO NACIONAL</div>
+            </div>
+        </section>    
+        <section id="nuevos" class="slider-auto-pro">
+            <h2 class="titulo-pro">🔥 <span>RECIÉN LLEGADOS</span> A TIENDA 🔥</h2>
+            <div class="marquee-pro">
+                <div class="marquee-track">
+                    <div class="mini-card" onclick="agregarAlCarrito('PACA NIKE MIX 50KG', 11500, '../../images/Nike.jpg')"><img src="../../images/Nike.jpg" alt="Paca Nike" loading="lazy"><span>Nike Mix</span></div>
+                    <div class="mini-card" onclick="agregarAlCarrito('PACA TOMMY 50KG', 12800, '../../images/tomy.jpg')"><img src="../../images/tomy.jpg" alt="Paca Tommy" loading="lazy"><span>Tommy</span></div>
+                    <div class="mini-card" onclick="agregarAlCarrito('PACA POLO RALPH 50KG', 13200, '../../images/polocamisa.jpg')"><img src="../../images/polocamisa.jpg" alt="Paca Polo" loading="lazy"><span>Polo Ralph</span></div>
+                    <div class="mini-card" onclick="agregarAlCarrito('PACA ADIDAS 50KG', 11200, '../../images/adidas.jpg')"><img src="../../images/adidas.jpg" alt="Paca Adidas" loading="lazy"><span>Adidas</span></div>
+                    <div class="mini-card" onclick="agregarAlCarrito('PACA CALVIN KLEIN 50KG', 12500, '../../images/calvin.jpg')"><img src="../../images/calvin.jpg" alt="Paca Calvin" loading="lazy"><span>Calvin Klein</span></div>
+                    <div class="mini-card" onclick="agregarAlCarrito('PACA LEVIS 50KG', 10800, '../../images/jeanslevis.jpg')"><img src="../../images/jeanslevis.jpg" alt="Paca Levis" loading="lazy"><span>Levi's</span></div>
+                </div>
+            </div>
+        </section>     
+        <section id="catalogo" class="catalogo-pro">
+            <h2 class="titulo-pro">CATÁLOGO <span>COMPLETO</span></h2>
+            <div class="scroll-pro">
+                <div class="card-pro"><div class="card-img" onclick="agregarAlCarrito('PACA PREMIUM 50KG', 9500, '../../images/Paca.jpg')"><img src="../../images/Paca.jpg" alt="Paca Premium" loading="lazy"></div><div class="card-info"><h3>PACA PREMIUM 50KG</h3><p>Mixta: Dama, Caballero, Niño</p><div class="precio-pro">$9,500</div><div class="tag-pro">ENVÍO NACIONAL</div><button class="btn-add-carrito" onclick="agregarAlCarrito('PACA PREMIUM 50KG', 9500, '../../images/Paca.jpg')"><i class="fas fa-cart-plus"></i> AGREGAR AL CARRITO</button></div></div>
+                <div class="card-pro"><div class="card-img" onclick="agregarAlCarrito('PACA DEPORTIVA 50KG', 11200, '../../images/conadidas.jpg')"><img src="../../images/conadidas.jpg" alt="Paca Deportiva" loading="lazy"></div><div class="card-info"><h3>PACA DEPORTIVA 50KG</h3><p>Nike, Adidas, Puma, Under Armour</p><div class="precio-pro">$11,200</div><div class="tag-pro">+10% NIKE</div><button class="btn-add-carrito" onclick="agregarAlCarrito('PACA DEPORTIVA 50KG', 11200, '../../images/conadidas.jpg')"><i class="fas fa-cart-plus"></i> AGREGAR AL CARRITO</button></div></div>
+                <div class="card-pro"><div class="card-img" onclick="agregarAlCarrito('PACA DAMA 50KG', 8900, '../../images/paca2.jpg')"><img src="../../images/paca2.jpg" alt="Paca Dama" loading="lazy"></div><div class="card-info"><h3>PACA DAMA 50KG</h3><p>Blusas, vestidos, pantalones</p><div class="precio-pro">$8,900</div><div class="tag-pro">TALLAS CH-M-G</div><button class="btn-add-carrito" onclick="agregarAlCarrito('PACA DAMA 50KG', 8900, '../../images/paca2.jpg')"><i class="fas fa-cart-plus"></i> AGREGAR AL CARRITO</button></div></div>
+            </div>
+        </section>     
+        <section id="mayoreo" class="mayoreo-pro">
+            <div class="mayoreo-box">
+                <h2>¿COMPRAS +3 PACAS?</h2>
+                <p>Precio especial mayoreo desde $165/kg. Envío a todo México. Cobro con tarjeta antes de enviar.</p>
+                <a href="https://wa.me/5213312345678?text=Quiero%20precio%20mayoreo" class="btn-mayoreo">COTIZAR MAYOREO</a>
+            </div>
+        </section>
+        <section id="ubicacion" class="ubicacion-pro">
+            <h2 class="titulo-pro">DÓNDE <span>NOS ENCONTRAMOS</span></h2>
+            <p class="subtitulo-ubicacion">Tienda física en GDL + Envíos nacionales - Trabajo 100% remoto.</p>          
+            <div class="ubicacion-grid">
+                <div class="ubicacion-info">
+                    <div class="dato-ubicacion"><i class="fas fa-map-marker-alt"></i><div><strong>Ubicación:</strong><span>Av. Belisario Domínguez #2640<br>Col. Oblatos, Guadalajara, Jal.</span></div></div>
+                    <div class="dato-ubicacion"><i class="fas fa-clock"></i><div><strong>Horario:</strong><span>Lun a Sáb: 9am - 7pm<br>Domingo: 10am - 3pm</span></div></div>
+                    <div class="dato-ubicacion"><i class="fab fa-whatsapp"></i><div><strong>WhatsApp:</strong><a href="https://wa.me/5213312345678?text=Quiero%20más%20información" class="link-wa-pro">33 4338 5348</a></div></div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Av+Belisario+Dominguez+2640+Col+Oblatos+Guadalajara+Jalisco" target="_blank" class="btn-mapa-pro"><i class="fas fa-directions"></i> CÓMO LLEGAR</a>
+                </div>
+                <div class="ubicacion-mapa"><iframe src="https://maps.google.com/maps?q=Av%20Belisario%20Dominguez%202640%20Oblatos%20Guadalajara&t=&z=16&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+            </div>
+        </section>     
+    </main>
+    <footer class="footer-pro" id="contacto">
+         <div class="footer-top-pro"><h2 class="footer-logo-pro">LAS PACAS <span>DEL CHINO</span></h2><p class="footer-desc-pro">15 años importando<br>la mejor ropa americana<br>Envío nacional.</p></div>
+         <div class="footer-grid-pro">
+             <div class="footer-col-pro"><h4>SÍGUENOS</h4><a href="#" target="_blank"><i class="fab fa-tiktok"></i> En vivos diarios</a><a href="#" target="_blank"><i class="fab fa-instagram"></i> Fotos de pacas nuevas</a><a href="#" target="_blank"><i class="fab fa-facebook"></i> Reseñas</a></div>
+             <div class="footer-col-pro"><h4>CATÁLOGO</h4><a href="#catalogo">Ver todas las pacas</a><a href="#mayoreo">Precios mayoreo</a><a href="#nuevos">Recién llegados</a><a href="#" onclick="toggleCarrito()">Ver mi carrito</a></div>
+             <div class="footer-col-pro"><h4>CONTACTO</h4><a href="https://wa.me/5213312345678?text=Quiero%20cotizar%20precio"><i class="fab fa-whatsapp"></i> 33 4338 5348</a><a href="#ubicacion"><i class="fas fa-map-marker-alt"></i> Oblatos, Gdl - Envío Nacional</a><a href="#"><i class="fas fa-clock"></i> Lun-Sáb 9am-7pm</a></div>
+         </div>
+         <div class="footer-bottom-pro"><p>© 2026 Las Pacas Del Chino® - Demo PRO Mi Localito · Todos los derechos reservados.</p><p class="creditos-pro">Tienda con carrito real y cobros con tarjeta/OXXO (demo), creada con MI LOCALITO by <a href="https://www.ingenierodelalibertad.com" target="_blank">Ingeniero de la libertad</a></p></div>
+    </footer>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>

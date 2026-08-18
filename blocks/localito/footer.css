@@ -1,0 +1,260 @@
+/* ===== FOOTER MI LOCALITO - VERDE LIBERTAD ===== */
+.footer-localito {
+    background: var(--bg-main);
+    color: var(--text);
+    font-family: 'Poppins', sans-serif;
+    border-top: 1px solid var(--border);
+}
+
+/* BRANDING - CAMBIADO A TU VERDE LIBERTAD */
+.footer-branding {
+    background: linear-gradient(135deg, #10B981 0%, #059669 100%); /* ANTES: azules */
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 12px;
+    margin: 40px 20px 0;
+    box-shadow: 0 8px 30px rgba(16, 185, 129, 0.3); /* Sombra verde */
+}
+
+.marca-titulo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 8px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    line-height: 1.1;
+}
+
+.marca-subtitulo {
+    font-size: 14px;
+    color: #D1FAE5; /* Verde clarito pa subtítulo */
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* CONTENEDOR */
+.footer-localito .contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px 25px;
+}
+
+/* GRID - CENTRADO EN MOBILE */
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 35px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.footer-col h4 {
+    color: var(--accent); /* Tu verde libertad */
+    margin-bottom: 18px;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-col p {
+    color: var(--text-sec);
+    line-height: 1.6;
+    margin-bottom: 12px;
+    font-size: 15px;
+}
+
+.footer-ubicacion {
+    color: var(--text) !important;
+    font-weight: 600;
+}
+
+.footer-ubicacion i {
+    color: var(--accent);
+    margin-right: 8px;
+}
+
+/* LINKS - CENTRADOS */
+.footer-col a {
+    display: block;
+    color: var(--text-sec);
+    text-decoration: none;
+    margin-bottom: 12px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.footer-col a:hover {
+    color: var(--accent);
+}
+
+.footer-col a i {
+    margin-right: 8px;
+    width: 18px;
+    color: var(--accent);
+}
+
+/* REDES - CENTRADAS */
+.redes-ingeniero {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.redes-ingeniero a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: var(--bg-card);
+    border-radius: 50%;
+    color: var(--text);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border);
+}
+
+.redes-ingeniero a:hover {
+    background: var(--accent);
+    color: #000; /* Negro pa contraste con verde */
+    transform: translateY(-3px);
+    border-color: var(--accent);
+}
+
+.redes-ingeniero a i {
+    margin: 0;
+    color: inherit;
+    font-size: 20px;
+}
+
+/* BOTÓN WA - SE QUEDA VERDE WHATSAPP */
+.btn-footer-wa {
+    display: inline-flex !important;
+    align-items: center;
+    background: var(--wa);
+    color: #fff !important;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin: 15px auto 10px;
+    font-weight: 600;
+    gap: 8px;
+}
+
+.btn-footer-wa:hover {
+    background: var(--wa-hover);
+    transform: scale(1.05);
+}
+
+.footer-garantia {
+    font-size: 13px;
+    color: var(--text-sec);
+    font-style: italic;
+    margin-top: 8px;
+}
+
+/* FOOTER BOTTOM */
+.footer-bottom {
+    border-top: 1px solid var(--border);
+    padding-top: 25px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--text-sec);
+}
+
+.footer-bottom p {
+    margin-bottom: 8px;
+}
+
+.footer-legal a {
+    color: var(--text-sec);
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.footer-legal a:hover {
+    color: var(--accent);
+}
+
+/* TABLET 768px+ */
+@media (min-width: 768px) {
+    .footer-branding {
+        padding: 40px;
+        margin: 60px auto 0;
+        max-width: 1000px;
+    }
+    
+    .marca-titulo {
+        font-size: 36px;
+    }
+    
+    .footer-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 50px;
+        text-align: left; /* En tablet vuelve a la izquierda */
+    }
+    
+    .redes-ingeniero {
+        justify-content: flex-start;
+    }
+    
+    .btn-footer-wa {
+        margin: 15px 0 10px;
+    }
+}
+
+/* DESKTOP 1024px+ - CENTRADO TOTAL */
+@media (min-width: 1024px) {
+    .footer-branding {
+        padding: 45px 40px;
+    }
+    
+    .marca-titulo {
+        font-size: 40px;
+    }
+    
+    /* CENTRADO EN DESKTOP PA QUE SE VEA SIMÉTRICO */
+    .footer-grid {
+        gap: 60px;
+        text-align: center; /* CENTRADO EN DESKTOP */
+        max-width: 1000px;
+        margin: 0 auto 40px;
+    }
+    
+    .footer-col {
+        text-align: center;
+    }
+    
+    .redes-ingeniero {
+        justify-content: center; /* CENTRADO */
+    }
+    
+    .btn-footer-wa {
+        margin: 15px auto 10px; /* CENTRADO */
+    }
+}
+
+/* ICONOS DESACTIVADOS - SOLO VISUAL POR AHORA */
+.redes-ingeniero a[href="#"] {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.redes-ingeniero a[href="#"]:hover {
+    transform: translateY(-1px) !important;
+    opacity: 0.8;
+}
+
+/* ===== LINK INGENIERO COLOR AZUL HERO ===== */
+.footer-bottom a[href*="ingenierodelalibertad"] {
+    color: #3B82F6 !important; /* El azul de INSTALAMOS SISTEMAS QUE FACTURAN 24/7 */
+    font-weight: 800;
+}
+.footer-bottom a[href*="ingenierodelalibertad"]:hover {
+    color: #60A5FA !important;
+    text-decoration: none;
+}

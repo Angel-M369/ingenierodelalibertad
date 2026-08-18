@@ -1,0 +1,24 @@
+/* =========================================
+   2. TICKER SUPERIOR
+========================================= */
+.imp-ticker {
+  background: #1E3A8A;
+  color: #fff;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 8px 0;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: .3px;
+}
+
+.imp-ticker-track {
+  display: flex;
+  animation: scroll 20s linear infinite;
+  gap: 40px;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}

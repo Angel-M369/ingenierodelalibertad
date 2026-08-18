@@ -1,0 +1,170 @@
+/* MAIN PRO - HERO + MAYOREO */
+.pro-urbanfit{
+    background:#0a0e27;
+    color:#fff;
+    font-family:'Arial Black',sans-serif;
+}
+
+.pro-urbanfit .hero-pro{
+    margin-top:70px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    min-height:500px;
+    background:linear-gradient(135deg,#0a0e27,#1a1f3a);
+}
+
+.pro-urbanfit .hero-texto{
+    padding:60px 40px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.pro-urbanfit .badge-pro{
+    display:inline-block;
+    background:linear-gradient(90deg,#00d9ff,#0099ff);
+    padding:8px 20px;
+    border-radius:20px;
+    font-size:.85rem;
+    font-weight:900;
+    margin-bottom:20px;
+    width:fit-content;
+    box-shadow:0 0 20px rgba(0,217,255,.5);
+}
+
+.pro-urbanfit .hero-texto h1{
+    font-size:3rem;
+    line-height:1.1;
+    margin-bottom:20px;
+    text-shadow:0 0 20px rgba(0,217,255,.3);
+}
+
+.pro-urbanfit .hero-texto h1 span{
+    color:#ff6b00;
+    text-shadow:0 0 20px #ff6b00;
+}
+
+.pro-urbanfit .hero-texto p{
+    color:#a0b4d0;
+    font-size:1.1rem;
+    margin-bottom:30px;
+}
+
+.pro-urbanfit .btn-hero-pro{
+    background:linear-gradient(90deg,#ff6b00,#ff8c00);
+    color:#fff;
+    padding:15px 40px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:900;
+    font-size:1.1rem;
+    width:fit-content;
+    box-shadow:0 0 25px rgba(255,107,0,.6);
+    transition:.3s;
+}
+
+.pro-urbanfit .btn-hero-pro:hover{
+    transform:scale(1.05) translateY(-2px);
+    box-shadow:0 5px 35px rgba(255,107,0,.8);
+}
+
+.pro-urbanfit .hero-img{
+    background:url('img/hero-pacas.jpg') center/cover;
+    position:relative;
+}
+
+.pro-urbanfit .tag-flotante{
+    position:absolute;
+    top:30px;
+    right:30px;
+    background:linear-gradient(135deg,#ff6b00,#ff0000);
+    padding:15px 25px;
+    border-radius:15px;
+    font-weight:900;
+    font-size:1.2rem;
+    box-shadow:0 0 30px rgba(255,107,0,.8);
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%,100%{transform:scale(1)}
+    50%{transform:scale(1.05)}
+}
+
+.pro-urbanfit .mayoreo-pro{
+    padding:60px 20px;
+    background:linear-gradient(135deg,#1a1f3a,#0a0e27);
+}
+
+.pro-urbanfit .mayoreo-box{
+    max-width:800px;
+    margin:0 auto;
+    background:linear-gradient(135deg,#ff6b00,#ff8c00);
+    padding:50px 40px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 0 40px rgba(255,107,0,.6);
+}
+
+.pro-urbanfit .mayoreo-box h2{
+    font-size:2.5rem;
+    margin-bottom:15px;
+}
+
+.pro-urbanfit .mayoreo-box p{
+    font-size:1.2rem;
+    margin-bottom:25px;
+}
+
+.pro-urbanfit .btn-mayoreo{
+    display:inline-block;
+    background:#0a0e27;
+    color:#fff;
+    padding:15px 40px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:900;
+    font-size:1.1rem;
+    transition:.3s;
+    box-shadow:0 5px 20px rgba(0,0,0,.5);
+}
+
+.pro-urbanfit .btn-mayoreo:hover{
+    transform:scale(1.05);
+    background:#1a1f3a;
+}
+
+.pro-urbanfit .whats-flotante-pro{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    width:65px;
+    height:65px;
+    background:linear-gradient(135deg,#25d366,#128c7e);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:2rem;
+    color:#fff;
+    box-shadow:0 0 30px rgba(37,211,102,.6);
+    z-index:999;
+    animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-10px)}
+}
+
+@media (max-width:768px){
+    .pro-urbanfit .hero-pro{
+        grid-template-columns:1fr;
+    }
+    .pro-urbanfit .hero-img{
+        min-height:300px;
+    }
+    .pro-urbanfit .hero-texto h1{
+        font-size:2rem;
+    }
+}

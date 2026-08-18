@@ -1,0 +1,7 @@
+/* BLOQUE: ARMA 6 - DUEÑO TOTAL */
+.tag-dueno { background: linear-gradient(135deg, #FFD700, #FFA500); color: #111; padding: 5px 12px; border-radius: 20px; font-size:.7rem; font-weight: 800; }
+.dueno-visual { background: linear-gradient(135deg, #111, #332b00); border: 1px solid #FFD700; }
+.dueno-visual i { color: #FFD700; }
+.btn-dueno { background: linear-gradient(135deg, #FFD700, #FFA500); color: #111; font-weight: 900; }
+.btn-dueno:hover { transform: scale(1.03); box-shadow: 0 0 20px rgba(255,215,0,.4); }
+.arma-card.dueno.destacada { border: 2px solid #FFD700; }

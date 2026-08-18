@@ -1,0 +1,132 @@
+/* ===== HERO MI LOCALITO - FIX TOP PEGADO ===== */
+
+/* MOBILE */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px 20px 40px !important; /* ANTES 70px - ahora 15px */
+    background: var(--bg-main);
+    gap: 20px;
+    min-height: auto;
+    margin-top: 0 !important;
+}
+
+.hero-img { 
+    order: -1; 
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.hero-content { 
+    flex: 1; 
+    width: 100%;
+}
+
+.hero h1 {
+    font-size: 2.2rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    margin-top: 0 !important;
+    color: var(--text);
+}
+
+/* ... TODO LO DEMAS IGUAL ... */
+.sub {
+    font-size: 1.1rem;
+    color: var(--text-sec);
+    margin-bottom: 30px;
+}
+
+.botones-hero {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.botones-hero .btn {
+    width: 100%;
+    max-width: 320px;
+    font-size: 0.95rem;
+    padding: 15px 26px;
+    border-radius: 30px;
+    font-family: 'Montserrat';
+    font-weight: 800;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .22s ease;
+    letter-spacing: .5px;
+}
+
+.btn-primario {
+    background: #25D366;
+    color: #111 !important;
+    border: 1px solid #25D366;
+}
+
+.btn-primario:hover {
+    background: #1eb854;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37,211,102,.35);
+}
+
+.btn-secundario {
+    background: transparent;
+    color: #fff !important;
+    border: 1px solid #333;
+}
+
+.btn-secundario:hover {
+    background: #fff;
+    color: #111 !important;
+    border-color: #fff;
+    transform: translateY(-2px);
+}
+
+.hero-img img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 12px;
+    border: 3px solid var(--accent);
+    box-shadow: var(--shadow-lg);
+}
+
+@media (min-width: 768px) {
+    .hero {
+        padding: 30px 40px 50px !important;
+    }
+    .hero h1 { font-size: 2.8rem; }
+    .sub { font-size: 1.2rem; }
+    .botones-hero {
+        flex-direction: row;
+        justify-content: center;
+    }
+    .botones-hero .btn {
+        width: auto;
+        max-width: none;
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero {
+        flex-direction: row;
+        text-align: left;
+        padding: 40px 5% 70px !important;
+        gap: 50px;
+        min-height: 70vh;
+    }
+    .hero-img { order: 0; }
+    .hero h1 { font-size: 3.6rem; }
+    .hero-img img { max-width: 480px; }
+    .botones-hero {
+        justify-content: flex-start;
+    }
+}

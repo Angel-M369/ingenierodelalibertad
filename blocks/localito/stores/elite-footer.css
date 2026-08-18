@@ -1,0 +1,71 @@
+/* =========================================
+   FOOTER - BARBY MORADA - FINAL TU HTML
+   ========================================= */
+.rusa-footer {
+  background: #0d0a14;
+  padding: 50px 20px 22px;
+  border-top: 1px solid #1e1632;
+  position: relative;
+  width: 100%;
+}
+.rusa-container{ max-width:1200px; margin:0 auto; }
+.rusa-footer-brand{ text-align:center; margin-bottom:32px; }
+.rusa-footer-logo{ font-family:'Bebas Neue'; font-size:42px; color:#fff; line-height:1; text-transform:uppercase; text-decoration:none; }
+.rusa-footer-logo span{ color:#a855f7; }
+.rusa-logo-foot { font-family:'Bebas Neue'; font-size:28px; letter-spacing:1.5px; color:#fff; text-decoration:none; text-transform:uppercase; }
+.rusa-logo-foot span { color:#a855f7; }
+.rusa-footer-row, .rusa-footer-top { display:flex; flex-direction:column; gap:28px; text-align:center; align-items:center; }
+.rusa-footer-title, .rusa-foot-right h4, .rusa-foot-left h4{ font-size:14px; font-weight:800; color:#fff; letter-spacing:1.2px; text-transform:uppercase; margin-bottom:16px; text-align:center; }
+.rusa-footer-sub{ font-size:14px; color:#9d8ab9; letter-spacing:.5px; margin-top:6px; text-transform:uppercase; font-weight:600; } 
+.rusa-foot-left p, .rusa-footer-sub { font-size:13px; color:#7a6a94; line-height:1.6; margin:10px auto 18px; text-align:center; }
+.rusa-footer-micro{ font-size:13px; color:#7a6a94; margin:-8px 0 14px 0; }
+
+.rusa-foot-icons, .rusa-footer-redes { display:flex; gap:10px; justify-content:center; margin-bottom:10px; }
+.rusa-foot-icons a, .rusa-footer-redes a {
+  width:42px; height:42px; background:#151121; border:1px solid #2c2540; border-radius:8px;
+  display:grid; place-items:center; color:#7a7a8e; text-decoration:none; font-size:14px; transition:.25s;
+}
+.of-icon { font-family:'Bebas Neue' !important; font-weight:900 !important; font-size:13px !important; letter-spacing:1px; }
+
+/* ===== HOVER POR RED - MAPEADO A TU HTML ===== */
+/* 1 - Facebook */
+.rusa-footer-redes a:nth-child(1):hover{
+  background:#1877F2 !important; border-color:#1877F2 !important; color:#fff !important; transform:translateY(-3px); box-shadow:0 8px 18px rgba(24,119,242,.35);
+}
+/* 2 - Instagram */
+.rusa-footer-redes a:nth-child(2):hover{
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%) !important;
+  border-color:#d6249f !important; color:#fff !important; transform:translateY(-3px); box-shadow:0 8px 18px rgba(214,36,159,.35);
+}
+/* 3 - TikTok */
+.rusa-footer-redes a:nth-child(3):hover{
+  background:#000 !important; border-color:#fff !important; color:#fff !important;
+  box-shadow: 2px 2px 0 #25F4EE, -2px -2px 0 #FE2C55 !important; transform:translateY(-3px);
+}
+/* 4 - OnlyFans */
+.rusa-footer-redes a:nth-child(4):hover, .rusa-footer-redes a.of-icon:hover{
+  background:#00AFF0 !important; border-color:#00AFF0 !important; color:#fff !important; transform:translateY(-3px); box-shadow:0 8px 18px rgba(0,175,240,.35);
+}
+
+.rusa-footer-col p, .rusa-foot-right a, .rusa-foot-right span { font-size:13px; color:#9d8ab9; display:flex; align-items:center; justify-content:center; gap:8px; margin-bottom:10px; text-decoration:none; }
+.rusa-foot-right i { color:#a855f7; font-size:12px; min-width:14px; }
+.rusa-footer-bottom, .rusa-foot-bottom { margin-top:40px; padding-top:20px; border-top:1px solid #1e1632; text-align:center; }
+.rusa-foot-bottom p, .rusa-footer-bottom p { font-size:11px; color:#5a4a74; line-height:1.5; }
+.rusa-firma{ color:#fff; font-size:13px; }
+.rusa-embudo, .rusa-creditos { margin-top:6px; color:#7a6a94 !important; font-size:13px; line-height:1.6; }
+.rusa-embudo a, .rusa-embudo a span, .rusa-creditos a { color:#c084fc !important; text-decoration:none !important; font-weight:800; }
+
+.rusa-wa-float, .rusa-float { position:fixed; right:18px; bottom:18px; z-index:999; display:flex; align-items:center; gap:10px; text-decoration:none; }
+.rusa-wa-float span, .rusa-float-bubble { background:#fff; color:#000; font-size:12px; font-weight:700; padding:8px 12px; border-radius:100px; display:flex; align-items:center; gap:6px; box-shadow:0 4px 12px rgba(0,0,0,.3); order:-1; }
+.rusa-wa-dot { width:7px; height:7px; background:#22c55e; border-radius:50%; display:inline-block; animation:blink 1s infinite; }
+.rusa-wa-float .wa-icon, .rusa-float-btn { width:54px; height:54px; background:#25D366; border-radius:50%; display:grid; place-items:center; color:#fff; font-size:26px; box-shadow:0 8px 22px rgba(37,211,102,.4); text-decoration:none; }
+
+@media (min-width:768px) and (max-width:1023px){
+  .rusa-footer-top, .rusa-footer-row { flex-direction:row; justify-content:center; gap:80px; }
+  .rusa-foot-left p { margin:10px 0 18px; text-align:center; }
+  .rusa-foot-icons, .rusa-footer-redes { justify-content:center; }
+}
+@media (min-width:1024px){
+  .rusa-footer { padding:55px 0 22px; }
+  .rusa-footer-top, .rusa-footer-row { flex-direction:row; justify-content:center; gap:500px; }
+}

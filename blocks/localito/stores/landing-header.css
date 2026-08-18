@@ -1,0 +1,110 @@
+/* =========================================
+   3. HEADER Y MENU
+========================================= */
+.imp-header {
+  background: #000;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 14px 0;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.imp-header .imp-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.imp-logo {
+  font-weight: 900;
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.imp-logo span { color: #3B82F6; }
+.imp-checkbox { display: none; }
+
+.imp-burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 101;
+}
+
+.imp-burger span {
+  width: 24px;
+  height: 3px;
+  background: #fff;
+  display: block;
+  border-radius: 2px;
+  transition: .2s;
+}
+
+.imp-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.imp-nav a {
+  color: #ccc;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: .2s;
+}
+
+.imp-nav a:hover { color: #fff; }
+
+.imp-btn-agendar {
+  background: #1E3A8A;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 800 !important;
+  border: 1px solid #2a4cb3;
+}
+
+.imp-btn-agendar:hover { background: #2563EB !important; }
+
+.imp-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .55);
+  display: none;
+  z-index: 90;
+  backdrop-filter: blur(2px);
+}
+
+/* Responsive Header */
+@media (max-width: 900px) {
+  .imp-burger { display: flex; }
+
+  .imp-nav {
+    position: fixed;
+    top: 58px;
+    right: -220px;
+    width: 200px !important;
+    height: 50vh !important;
+    background: #0a0f21;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px 18px;
+    gap: 20px;
+    border-left: 1px solid #1e293b;
+    border-bottom: 1px solid #1e293b;
+    border-radius: 0 0 0 16px;
+    box-shadow: -12px 12px 35px rgba(0, 0, 0, .7);
+    transition: right .32s cubic-bezier(.4, 0, .2, 1);
+    z-index: 100;
+    overflow-y: auto;
+  }
+
+  #imp-menu-toggle:checked ~ .imp-nav { right: 0 !important; }
+  #imp-menu-toggle:checked ~ .imp-overlay { display: block; }
+}

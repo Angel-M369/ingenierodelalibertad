@@ -1,0 +1,129 @@
+/* HEADER PRO - LAS PACAS DEL CHINO */
+.pro-urbanfit .header-pro{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:linear-gradient(90deg,#0a0e27,#1a1f3a);
+    border-bottom:3px solid #ff6b00;
+    box-shadow:0 4px 20px rgba(255,107,0,.4);
+    z-index:1000;
+}
+
+.pro-urbanfit .menu-check{display:none}
+.pro-urbanfit .header-bar{
+    max-width:1200px;
+    margin:0 auto;
+    padding:15px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.pro-urbanfit .logo-pro{
+    font-size:1.4rem;
+    font-weight:900;
+    text-decoration:none;
+    color:#fff;
+    text-shadow:0 0 15px #00d9ff;
+    z-index:1003;
+}
+
+.pro-urbanfit .logo-pro span{
+    color:#ff6b00;
+    text-shadow:0 0 15px #ff6b00;
+}
+
+.pro-urbanfit .menu-toggle-pro{
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+    cursor:pointer;
+    z-index:1003;
+    padding:8px;
+}
+
+.pro-urbanfit .menu-toggle-pro span{
+    width:30px;
+    height:4px;
+    background:linear-gradient(90deg,#00d9ff,#ff6b00);
+    border-radius:2px;
+    transition:.3s;
+}
+
+.pro-urbanfit .nav-pro{
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:200px;
+    height:50vh;
+    background:linear-gradient(180deg,#0a0e27,#1a1f3a);
+    border-left:3px solid #ff6b00;
+    padding-top:90px;
+    transition:right .4s ease;
+    z-index:1002;
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+    align-items:center;
+}
+
+.pro-urbanfit .menu-check:checked ~ .header-bar .nav-pro{right:0}
+.pro-urbanfit .menu-check:checked ~ .header-bar .menu-toggle-pro span:nth-child(1){transform:rotate(45deg) translate(8px,8px)}
+.pro-urbanfit .menu-check:checked ~ .header-bar .menu-toggle-pro span:nth-child(2){opacity:0}
+.pro-urbanfit .menu-check:checked ~ .header-bar .menu-toggle-pro span:nth-child(3){transform:rotate(-45deg) translate(8px,-8px)}
+
+.pro-urbanfit .nav-pro a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:700;
+    font-size:1.1rem;
+    width:80%;
+    text-align:center;
+    padding:12px 0;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.pro-urbanfit .nav-pro a:hover{
+    background:rgba(0,217,255,.2);
+    color:#00d9ff;
+}
+
+.pro-urbanfit .btn-pro{
+    background:linear-gradient(90deg,#ff6b00,#ff8c00) !important;
+    box-shadow:0 0 20px rgba(255,107,0,.6) !important;
+}
+
+.pro-urbanfit .overlay-pro{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.9);
+    opacity:0;
+    visibility:hidden;
+    transition:.3s;
+    z-index:1001;
+    cursor:pointer;
+}
+
+.pro-urbanfit .menu-check:checked ~ .header-bar .overlay-pro{
+    opacity:1;
+    visibility:visible;
+}
+
+@media (min-width:769px){
+    .pro-urbanfit .menu-toggle-pro{display:none}
+    .pro-urbanfit .nav-pro{
+        position:static;
+        width:auto;
+        height:auto;
+        background:transparent;
+        border:none;
+        padding:0;
+        flex-direction:row;
+        gap:35px;
+        right:0;
+    }
+    .pro-urbanfit .nav-pro a{width:auto;padding:8px 0}
+    .pro-urbanfit .overlay-pro{display:none}
+}

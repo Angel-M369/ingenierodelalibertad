@@ -1,0 +1,61 @@
+:root {
+    /* AZUL PETRÓLEO - BASE OSCURA */
+    --bg-main: #0F172A;
+    --bg-card: #1E293B;
+    --bg-section: #111827;
+    
+    /* AZULES CORPORATIVOS */
+    --accent: #3B82F6;
+    --accent-hover: #2563EB;
+    --accent-light: #60A5FA;
+    
+    /* TEXTOS */
+    --text: #F1F5F9;
+    --text-sec: #94A3B8;
+    --text-muted: #64748B;
+
+     /* NUEVOS COLORES PA LOS BLOQUES NUEVOS */
+    --accent-agenda: #10B981;  /* Verde pa AGENDA PRO */
+    --accent-landing: #3B82F6; /* Azul pa LANDING PRO */
+    --accent-mentoria: #F59E0B; /* Naranja pa MENTORÍA */
+
+    
+    /* BORDES */
+    --border: #1F2937;
+    
+    /* SOMBRAS AZULES */
+    --shadow-sm: 0 2px 8px rgba(59, 130, 246, 0.1);
+    --shadow-md: 0 4px 16px rgba(59, 130, 246, 0.15);
+    --shadow-lg: 0 10px 30px rgba(59, 130, 246, 0.2);
+    
+    /* WHATSAPP */
+    --wa: #25D366;
+    --wa-hover: #1da851;
+}
+
+/* RESET Y BASE */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body { 
+    background: var(--bg-main);
+    color: var(--text);
+    font-family: 'Montserrat', system-ui, sans-serif; 
+    line-height: 1.6;
+}
+
+.page {
+    min-height: 100vh;
+    width: 100%;
+}
+
+section {
+    background: var(--bg-main);
+}

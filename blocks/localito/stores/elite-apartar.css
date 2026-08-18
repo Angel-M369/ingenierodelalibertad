@@ -1,0 +1,106 @@
+/* =========================================
+   APARTAR - BLOQUE BARBY MORADA
+   ========================================= */
+.rusa-apartar { padding: 50px 0; background: #0d0a14; }
+.rusa-apartar-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+.rusa-apartar-info .rusa-titulo { text-align: center; font-size: clamp(36px, 8vw, 56px); color:#fff; }
+.rusa-apartar-info p { color: #7a6a94; font-size: 13px; line-height: 1.6; margin: 12px 0 14px; text-align: center; }
+.rusa-proofs { display: grid; gap: 8px; }
+.rusa-proofs div {
+  font-size: 12px;
+  color: #9d8ab9;
+  background: #151121;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #2c2540;
+  display: flex;
+  gap: 8px;
+}
+.rusa-proofs i { color: #a855f7; }
+.rusa-coti-box { background: #151121; border: 1px solid #2c2540; border-radius: 18px; overflow: hidden; }
+.rusa-coti-head { padding: 18px; text-align: center; border-bottom: 1px solid #2c2540; background: #1a152a; }
+.rusa-live-dot {
+  font-size: 9px;
+  background: #1e1632;
+  color: #a855f7;
+  padding: 5px 12px;
+  border-radius: 100px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 800;
+  border: 1px solid #3b2d62;
+}
+.rusa-live-dot span {
+  width: 6px;
+  height: 6px;
+  background: #a855f7;
+  border-radius: 50%;
+  animation: blink 1s infinite;
+}
+.rusa-coti-head h3 { font-size: 18px; margin-top: 10px; color:#fff; }
+.rusa-coti-head h3 span { color: #a855f7; }
+.rusa-coti-head p { font-size: 11px; color: #7a6a94; margin-top: 4px; }
+.rusa-coti-body { padding: 18px; }
+.rusa-inputs { display: grid; gap: 10px; }
+.rusa-inputs input,
+.rusa-inputs select {
+  padding: 12px;
+  background: #0d0a14;
+  border: 1px solid #2c2540;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 13px;
+  outline: none;
+  width: 100%;
+}
+.rusa-inputs input:focus,
+.rusa-inputs select:focus{ border-color:#a855f7; }
+.rusa-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+  padding: 14px;
+  background: #fff;
+  color: #000;
+  border-radius: 12px;
+}
+.rusa-total strong { color: #a855f7; font-size: 18px; }
+.rusa-btn-pagar {
+  width: 100%;
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 14px;
+  border-radius: 100px;
+  font-weight: 900;
+  margin-top: 12px;
+  cursor: pointer;
+  font-size: 13px;
+  transition:.2s;
+}
+.rusa-btn-pagar:hover{ background:#e9e9; }
+.rusa-btn-tarjeta {
+  display: block;
+  text-align: center;
+  margin-top: 8px;
+  background: #a855f7;
+  color: #fff;
+  padding: 12px;
+  border-radius: 100px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 12px;
+  box-shadow:0 8px 20px rgba(168,85,247,.35);
+  transition:.2s;
+}
+.rusa-btn-tarjeta:hover{ background:#9333ea; }
+.rusa-legal { font-size: 9px; color: #5a4a74; text-align: center; margin-top: 10px; line-height: 1.4; }
+/* APARTAR - DESKTOP */
+@media (min-width: 901px) {
+  .rusa-apartar { padding: 60px 0; }
+  .rusa-apartar-grid { grid-template-columns: 1fr 1fr; gap: 30px; align-items: start; }
+  .rusa-apartar-info .rusa-titulo,
+  .rusa-apartar-info p { text-align: left; }
+}

@@ -1,0 +1,86 @@
+/* =========================================
+   BLOQUE 5: TESTIMONIOS - RESPONSIVE
+   ========================================= */
+.testimonios-pro {
+    background: #fff;
+    padding: 40px 0;
+}
+
+.grid-testimonios {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.testi-card {
+    background: var(--gris);
+    border-radius: 20px;
+    padding: 20px;
+    border: 1px solid #eee;
+}
+
+.testi-stars {
+    color: #ffb400;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.testi-card p {
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.testi-autor {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.testi-autor img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.testi-autor strong {
+    display: block;
+    font-size: 13px;
+}
+
+.testi-autor small {
+    opacity: .6;
+    font-size: 11px;
+}
+
+.testi-trust {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 24px;
+    font-size: 12px;
+    font-weight: 700;
+    opacity: .7;
+}
+
+.testi-trust i {
+    color: var(--rosa);
+    margin-right: 4px;
+}
+
+@media (min-width: 768px) {
+    .testimonios-pro {
+        padding: 60px 0;
+    }
+    .grid-testimonios {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+    .testi-card {
+        padding: 24px;
+    }
+}

@@ -1,0 +1,78 @@
+/* ===== SECCIÓN DOLOR - BLOQUE ===== */
+.dolor {
+    background: var(--bg-card); /* ANTES: #111 */
+    padding: 60px 5%;
+    text-align: center;
+}
+
+.dolor h2 { 
+    font-size: 1.8rem; 
+    color: var(--accent); /* ANTES: #FF6B00 */
+    margin-bottom: 30px; 
+    font-weight: 900;
+}
+
+.grid-dolor {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    max-width: 900px;
+    margin: 0 auto 30px;
+}
+
+.card-dolor {
+    background: var(--bg-section); /* ANTES: #1a1a1a */
+    padding: 20px 15px;
+    border-radius: 8px;
+    border-left: 3px solid var(--accent); /* ANTES: #FF6B00 */
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text-sec);
+    transition: all 0.3s ease;
+}
+
+.card-dolor:hover {
+    transform: translateX(5px);
+    border-left-width: 5px;
+}
+
+.solucion {
+    font-size: 1.1rem;
+    color: var(--text);
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.solucion strong {
+    color: var(--accent);
+}
+
+/* TABLET */
+@media (min-width: 768px) {
+    .dolor { 
+        padding: 80px 5%; 
+    }
+    .dolor h2 { 
+        font-size: 2.2rem; 
+        margin-bottom: 40px; 
+    }
+    .grid-dolor { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 20px; 
+    }
+    .card-dolor { 
+        padding: 25px 20px; 
+        font-size: 1.1rem; 
+    }
+    .solucion { 
+        font-size: 1.3rem; 
+    }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+    .grid-dolor { 
+        grid-template-columns: repeat(4, 1fr); 
+    }
+}

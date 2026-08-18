@@ -1,0 +1,20 @@
+/* BLOQUE: QUIZ - CUAL ARMA NECESITO */
+.quiz { background: #0a0a0a; padding: 80px 0; border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; }
+.quiz-contenedor { max-width: 800px; margin: 0 auto; padding: 0 20px; text-align: center; }
+.quiz h2 { font-family: 'Montserrat'; font-weight: 900; font-size: 2.5rem; color: #fff; margin-bottom: 10px; }
+.quiz-sub { color: #888; font-family: 'Poppins'; margin-bottom: 40px; font-size: 1.1rem; }
+.quiz-card { background: #161616; border: 1px solid #222; border-radius: 20px; padding: 40px 30px; min-height: 350px; }
+.quiz-step { display: none; animation: fadeIn.3s; }
+.quiz-step.active { display: block; }
+.quiz-step h3 { font-family: 'Montserrat'; color: #fff; margin-bottom: 30px; font-size: 1.3rem; }
+.quiz-opciones { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+@media(max-width:700px){.quiz-opciones { grid-template-columns: 1fr; } }
+.quiz-btn { background: #1e1e1e; border: 1px solid #333; border-radius: 12px; padding: 20px; cursor: pointer; text-align: left; transition:.2s; color: #fff; }
+.quiz-btn:hover { border-color: #25D366; transform: translateY(-3px); background: #222; }
+.quiz-btn i { font-size: 1.5rem; color: #25D366; margin-bottom: 10px; display: block; }
+.quiz-btn strong { display: block; font-family: 'Montserrat'; font-size:.95rem; margin-bottom: 5px; }
+.quiz-btn span { font-size:.85rem; color: #888; line-height: 1.3; display: block; }
+#resultado-titulo { color: #25D366; font-size: 2rem; }
+#resultado-texto { color: #bbb; margin: 20px 0 30px; font-size: 1.1rem; }
+.quiz-reiniciar { background: none; border: none; color: #666; margin-top: 20px; cursor: pointer; font-family: 'Montserrat'; font-size:.8rem; text-decoration: underline; }
+@keyframes fadeIn { from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:translateY(0)} }

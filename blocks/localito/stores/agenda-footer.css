@@ -1,0 +1,155 @@
+/* ===== YARE FOOTER - MOBILE FIRST FINAL ===== */
+.yare-footer{
+  background:#080808;
+  color:#a1a1aa;
+  padding:50px 20px 120px 20px;
+}
+.yare-container{
+  max-width:1200px;
+  margin:0 auto;
+}
+.yare-footer-brand{
+  text-align:center;
+  margin-bottom:32px;
+}
+.yare-footer-logo{
+  font-family:'Bebas Neue', sans-serif;
+  font-size:42px;
+  color:#fff;
+  line-height:1;
+  margin:0 0 8px 0;
+  text-transform:uppercase;
+}
+.yare-footer-logo span{ color:#ec4899; }
+.yare-footer-sub{ font-size:15px; opacity:.8; }
+
+.yare-footer-row{
+  display:flex;
+  flex-direction:column;
+  gap:28px;
+  text-align:center;
+  align-items:center;
+}
+.yare-footer-title{
+  color:#ec4899;
+  font-weight:800;
+  font-size:15px;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+  margin-bottom:14px;
+}
+.yare-footer-redes{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  margin-bottom:10px;
+}
+.yare-footer-redes a{
+  width:42px; height:42px;
+  background:#1a1a1a;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:#fff;
+  text-decoration:none;
+  transition: all 0.25s ease;
+}
+.yare-footer-redes a:hover{
+  background:#ec4899;
+  color:#fff;
+  transform:translateY(-3px);
+}
+.yare-footer-col p{ font-size:14px; margin:4px 0; }
+.yare-footer-micro{ font-size:13px; opacity:.7; margin-top:8px; }
+
+.yare-footer-bottom{
+  border-top:1px solid rgba(255,255,255,0.08);
+  margin-top:36px;
+  padding-top:18px;
+  text-align:center;
+  font-size:13px;
+  line-height:1.6;
+}
+.yare-firma{ color:#fff; }
+.yare-embudo{ color:#a1a1aa; }
+.yare-embudo a, .yare-embudo a span{
+  text-decoration:none !important;
+  color:#ec4899 !important;
+  font-weight:800;
+}
+
+/* ===== BOTON FLOTANTE YARE - EL QUE BORRASTE ===== */
+.yare-float{
+  position:fixed;
+  bottom:24px;
+  right:24px;
+  z-index:9999;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  gap:12px;
+}
+.yare-float-btn{
+  width:60px;
+  height:60px;
+  background:#ec4899;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:#fff;
+  font-size:30px;
+  text-decoration:none;
+  box-shadow:0 8px 24px rgba(236,72,153,0.4);
+  animation: yare-pulse 2s infinite;
+}
+.yare-float-bubble{
+  background:#fff;
+  color:#111;
+  padding:10px 14px;
+  border-radius:20px;
+  font-size:13px;
+  font-weight:600;
+  box-shadow:0 4px 16px rgba(0,0,0,0.1);
+  display:flex;
+  align-items:center;
+  gap:8px;
+  order:-1;
+}
+.yare-float-bubble span{
+  width:8px;
+  height:8px;
+  background:#25d366;
+  border-radius:50%;
+  display:inline-block;
+}
+@keyframes yare-pulse{
+  0%{ transform:scale(1); box-shadow:0 0 0 0 rgba(236,72,153,0.7); }
+  70%{ transform:scale(1.05); box-shadow:0 0 0 12px rgba(236,72,153,0); }
+  100%{ transform:scale(1); box-shadow:0 0 0 0 rgba(236,72,153,0); }
+}
+
+/* TABLET */
+@media(min-width:768px) and (max-width:1023px){
+  .yare-footer-row{
+    flex-direction:row;
+    justify-content:center;
+    gap:80px;
+  }
+}
+/* DESKTOP - ya no 600px que te rompe todo, ahora 180px */
+@media(min-width:1024px){
+  .yare-footer{
+    padding: 50px 20px 30px 20px;
+  }
+
+  .yare-footer-row{
+    flex-direction:row;
+    justify-content:center;
+    gap:400px;
+  }
+}
+@media(max-width:600px){
+  .yare-float{ bottom:16px; right:16px; }
+  .yare-float-btn{ width:56px; height:56px; font-size:28px; }
+  .yare-float-bubble{ font-size:12px; padding:8px 12px; }
+}

@@ -1,0 +1,110 @@
+/* =========================================
+   BLOQUE 3: HERO - RESPONSIVE
+   ========================================= */
+.hero-video-wrapper {
+    position: relative;
+    height: 60vh;
+    overflow: hidden;
+    background: #000;
+}
+
+.video-hero {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: .6;
+}
+
+.hero-contenido-custom {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    padding: 0 16px;
+}
+
+.hero-contenido-custom h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    line-height: .9;
+    max-width: 600px;
+}
+
+.hero-contenido-custom h1 span {
+    color: var(--rosa2);
+}
+
+.hero-contenido-custom p {
+    margin: 16px 0;
+    max-width: 400px;
+    opacity: .9;
+    font-size: 14px;
+}
+
+.btn-hero {
+    background: var(--rosa);
+    color: #fff;
+    padding: 16px 28px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-block;
+    width: fit-content;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-hero.verde {
+    background: var(--verde);
+}
+
+.btn-hero.full {
+    width: 100%;
+    text-align: center;
+}
+
+.yare-slider {
+    background: #fff;
+    padding: 16px 0;
+    overflow: hidden;
+    border-bottom: 1px solid #eee;
+}
+
+.yare-slider.no-border {
+    border: none;
+    -webkit-mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+    mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+}
+
+.yare-track {
+    display: flex;
+    gap: 16px;
+    animation: marquee 30s linear infinite;
+    width: max-content;
+}
+
+.yare-slider img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.yare-slider.no-border .yare-track {
+    animation: marquee 40s linear infinite;
+}
+
+@media (min-width: 768px) {
+    .hero-video-wrapper {
+        height: 72vh;
+    }
+    .hero-contenido-custom h1 {
+        font-size: 62px;
+    }
+    .yare-slider img {
+        width: 140px;
+        height: 140px;
+    }
+}

@@ -1,0 +1,41 @@
+/* =========================================
+   7. TESTIMONIOS
+========================================= */
+.imp-testis {
+  padding: 60px 0;
+  background: #070a14;
+}
+
+.imp-testis-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.imp-testi {
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  padding: 18px;
+  border-radius: 12px;
+}
+
+.imp-testi p {
+  font-size: 13px;
+  color: #cbd5e1;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.imp-testi span { font-size: 11px; color: #64748b; }
+
+.imp-stars {
+  color: #FBBF24;
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+/* Responsive Testis */
+@media (max-width: 900px) {
+  .imp-testis-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,53 @@
+/* =========================================
+   BLOQUE 0: VARIABLES Y RESET
+   ========================================= */
+:root {
+    --rosa: #ff2e7e;
+    --rosa2: #ff7eb3;
+    --negro: #0f0f0f;
+    --blanco: #fff;
+    --gris: #f7f7f7;
+    --verde: #25D366;
+    --sombra: 0 20px 60px rgba(0,0,0,.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body.custom-dulce {
+    font-family: 'Poppins', sans-serif;
+    background: var(--blanco);
+    color: var(--negro);
+    overflow-x: hidden;
+}
+
+.contenedor {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.page {
+    overflow: hidden;
+}
+
+#productos,
+#galeria,
+#contacto,
+#testimonios,
+#ubicacion {
+    scroll-margin-top: 90px;
+}
+
+@media (min-width: 768px) {
+    .contenedor {
+        padding: 0 20px;
+    }
+}

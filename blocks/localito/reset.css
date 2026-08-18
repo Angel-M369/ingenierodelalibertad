@@ -1,0 +1,54 @@
+/* ===== RESET + BASE MOBILE FIRST - MI LOCALITO ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { 
+    scroll-behavior: smooth; 
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--bg-main); /* ANTES: #0A0A0A */
+    color: var(--text);         /* ANTES: #fff */
+    line-height: 1.6;
+}
+
+.page {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding-top: 20px; /* Empuja todo debajo del header fijo */
+}
+
+h1, h2, h3 { 
+    font-weight: 900; 
+    color: var(--text);
+}
+
+/* CAMBIO: .naranja → .verde pero es AZUL */
+.verde { 
+    color: var(--accent); /* ANTES: #FF6B00 */
+}
+
+/* QUITA VIÑETAS DE LAS LISTAS Y NAV */
+ul, nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* CONTENEDOR GLOBAL */
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* LINKS GLOBALES */
+a {
+    text-decoration: none;
+    transition: 0.3s ease;
+}

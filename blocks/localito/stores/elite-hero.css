@@ -1,0 +1,142 @@
+/* =========================================
+   HERO - BLOQUE BARBY MORADA
+   ========================================= */
+.rusa-hero {
+  padding: 40px 0 30px;
+  background: radial-gradient(800px at 20% 10%, #2a1a4a, transparent), #0d0a14;
+  width: 100%;
+  overflow: hidden;
+}
+.rusa-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+.rusa-label {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #c084fc;
+  font-weight: 800;
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+.rusa-hero-text h1 {
+  font-family: 'Bebas Neue';
+  font-size: clamp(48px, 12vw, 96px);
+  line-height: .85;
+  letter-spacing: 2px;
+  color:#fff;
+}
+.rusa-hero-text h1 span { color: #a855f7; }
+.rusa-hero-text h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 12px 0 14px;
+  color: #e0d5f5;
+  line-height: 1.2;
+}
+.rusa-hero-text p {
+  color: #7a6a94;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.rusa-badges {
+  display: flex;
+  gap: 8px;
+  margin: 16px 0;
+  flex-wrap: wrap;
+}
+.rusa-badges span {
+  font-size: 10px;
+  background: #151121;
+  border: 1px solid #2c2540;
+  padding: 6px 10px;
+  border-radius: 100px;
+  color: #9d8ab9;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.rusa-badges i { color: #a855f7; }
+.rusa-cta {
+  background: #a855f7;
+  color: #fff;
+  display: inline-block;
+  padding: 16px 28px;
+  border-radius: 100px;
+  font-weight: 900;
+  text-decoration: none;
+  margin-top: 14px;
+  box-shadow: 0 12px 32px rgba(168,85,247,.35);
+  font-size: 14px;
+  transition:.2s;
+}
+.rusa-cta:hover{ background:#9333ea; transform:translateY(-1px); box-shadow:0 16px 36px rgba(168,85,247,.45); }
+.rusa-micro {
+  font-size: 10px;
+  color: #5a4a74;
+  margin-top: 10px;
+}
+.rusa-img-wrap {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #2c2540;
+  height: 380px;
+  background: #151121;
+  width: 100%;
+}
+.rusa-img-wrap video,
+.rusa-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.rusa-float-card {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  background: rgba(13, 10, 20, .85);
+  backdrop-filter: blur(12px);
+  border: 1px solid #3b2d62;
+  border-radius: 14px;
+  padding: 12px;
+}
+.rusa-live {
+  font-size: 9px;
+  color: #22c55e;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.rusa-live span {
+  width: 6px;
+  height: 6px;
+  background: #22c55e;
+  border-radius: 50%;
+  animation: blink 1s infinite;
+}
+.rusa-float-card p {
+  font-size: 11px;
+  color: #8a7ca8;
+  margin: 4px 0 2px;
+}
+/* HERO - TABLET */
+@media (min-width: 641px) and (max-width: 900px) {
+  .rusa-hero-grid { gap: 28px; }
+  .rusa-img-wrap { height: 440px; }
+}
+/* HERO - DESKTOP */
+@media (min-width: 901px) {
+  .rusa-hero { padding: 50px 0 40px; }
+  .rusa-hero-grid {
+    grid-template-columns: 1.1fr .9fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .rusa-img-wrap { height: 520px; }
+}

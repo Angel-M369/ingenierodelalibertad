@@ -1,0 +1,47 @@
+:root {
+  --amarillo: #FFD600;
+  --negro: #0F0F0F;
+  --gris: #1A1A1A;
+  --borde: #262626;
+  --txt: #9CA3AF;
+  --max: 1100px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--negro);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.page {
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  line-height: 0.9;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

@@ -1,0 +1,127 @@
+/* ===== MENU ===== */
+.menu {
+  padding: 44px 0;
+  background: #111;
+  border-block: 1px solid var(--borde);
+}
+
+.menu-c {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.menu-head {
+  text-align: center;
+  margin-bottom: 30px;
+  display: grid;
+  gap: 8px;
+  justify-items: center;
+}
+
+.menu-head h2 {
+  font-size: 26px;
+}
+
+.menu-head p {
+  color: var(--txt);
+  font-size: 13px;
+}
+
+.grid {
+  display: grid;
+  gap: 18px;
+}
+
+.card {
+  background: var(--gris);
+  border: 1px solid var(--borde);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-img {
+  height: 210px;
+  position: relative;
+}
+
+.tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #fff;
+  color: #000;
+  font-weight: 900;
+  font-size: 10px;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+.tag-hot {
+  background: var(--amarillo);
+}
+
+.featured {
+  border-color: var(--amarillo) !important;
+}
+
+.card-body {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.precio {
+  color: var(--amarillo);
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.card-body p {
+  color: var(--txt);
+  font-size: 13px;
+  flex: 1;
+}
+
+.btn-pedir {
+  width: 100%;
+  background: var(--amarillo);
+  color: #000;
+  padding: 14px;
+  border-radius: 12px;
+  font-weight: 900;
+  font-size: 12px;
+  border: 0;
+  cursor: pointer;
+}
+
+@media (min-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+
+  .menu {
+    padding: 60px 0;
+  }
+
+  .menu-head h2 {
+    font-size: 32px;
+  }
+}

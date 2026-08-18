@@ -1,18 +1,23 @@
 /* ===== HISTORIA - MOBILE FIRST ===== */
 .historia {
-    border-top: 1px solid #222;
+    border-top: 1px solid #262626; /* ANTES: #222 */
     text-align: center;
+    padding: 50px 0; /* Agregué padding pa que respire */
 }
 
 .historia h2 {
     font-size: 1.4rem;
     margin-bottom: 25px;
+    color: var(--text); /* ANTES: heredaba */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
 }
 
 .historia p {
     font-size: 0.95rem;
     margin-bottom: 18px;
-    color: #CCCCCC;
+    color: var(--text-sec); /* ANTES: #CCCCCC */
+    line-height: 1.7; /* ANTES: heredaba - Mejor lectura */
 }
 
 .historia .btn {
@@ -21,8 +26,13 @@
 
 /* TABLET */
 @media (min-width: 768px) {
+    .historia {
+        padding: 70px 0;
+    }
+    
     .historia h2 {
         font-size: 2rem;
+        margin-bottom: 30px;
     }
     
     .historia p {
@@ -34,7 +44,17 @@
 
 /* DESKTOP */
 @media (min-width: 1024px) {
+    .historia {
+        padding: 90px 0;
+    }
+    
     .historia h2 {
         font-size: 2.5rem;
+        margin-bottom: 35px;
+    }
+    
+    .historia p {
+        font-size: 1.1rem;
+        max-width: 800px;
     }
 }

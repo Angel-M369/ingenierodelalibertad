@@ -1,0 +1,22 @@
+/* ===== BLOQUE 6: COTIZADOR - SISTEMA $6,999 ANTI-CANCELACIÓN - FIX COMPATIBLE ===== */
+.yare-cotizador{padding:40px 0 30px}
+.yare-coti-box{background:white;border-radius:28px;box-shadow:0 25px 60px rgba(0,0,0,0.1);border:1px solid var(--rosa-soft);overflow:hidden;max-width:650px;margin:0 auto}
+.yare-coti-header{background:var(--negro);color:white;padding:22px;text-align:center}
+.yare-coti-header h3 span{color:var(--rosa)}
+.yare-fomo{background:#fff0f5;border:1px dashed var(--rosa);color:var(--rosa);padding:10px;border-radius:10px;text-align:center;font-size:0.8rem;font-weight:700;margin-bottom:15px}
+.yare-coti-body{padding:25px}
+.yare-coti-opt{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border:1px solid #f0f0f0;border-radius:14px;margin-bottom:12px;cursor:pointer;transition:0.2s}
+.yare-coti-opt.active{border-color:var(--rosa);background:var(--rosa-soft);transform:scale(1.02)}
+.yare-coti-opt input{display:none}
+.yare-coti-left{display:flex;align-items:center;gap:12px}
+.yare-coti-check{width:22px;height:22px;border:2px solid #ddd;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:10px;opacity:0;transition:0.2s}
+.yare-coti-check i{opacity:0}
+.yare-coti-opt.active .yare-coti-check{background:var(--rosa);border-color:var(--rosa);color:white;opacity:1}
+.yare-coti-opt.active .yare-coti-check i{opacity:1}
+.yare-coti-price{font-weight:800;color:var(--rosa)}
+.yare-coti-total{background:#f9f9f9;border-radius:16px;padding:18px;margin-top:20px;display:flex;justify-content:space-between;align-items:center}
+.yare-coti-total strong{font-size:1.8rem}
+.yare-coti-inputs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+.yare-coti-inputs input{padding:13px;border:1px solid #e5e5e5;border-radius:10px;font-family:'Poppins';font-size:0.9rem}
+.yare-btn-cotizar{width:100%;margin-top:18px;background:var(--rosa);color:white;border:none;padding:16px;border-radius:14px;font-weight:800;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 10px 20px rgba(255,46,147,0.3)}
+.yare-btn-cotizar:disabled{background:#ddd;box-shadow:none;cursor:not-allowed}

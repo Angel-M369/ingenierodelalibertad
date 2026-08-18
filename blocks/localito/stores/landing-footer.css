@@ -1,0 +1,110 @@
+/* MURILLO FOOTER - TODO CENTRADO - CORREGIDO */
+.imp-footer{
+  background:#0a0a0a;
+  color:#a1a1aa;
+  padding:50px 20px 30px;
+}
+.imp-footer .imp-container{
+  max-width:1200px;
+  margin:0 auto;
+}
+.imp-footer-brand{
+  text-align:center;
+  margin-bottom:36px;
+}
+.imp-footer-logo{
+  font-family:'Bebas Neue', sans-serif;
+  font-size:44px;
+  color:#fff;
+  line-height:1;
+  margin:0 0 10px 0;
+  text-transform:uppercase;
+}
+.imp-footer-logo span{ color:#d4af37; }
+.imp-footer-sub{
+  font-size:15px;
+  opacity:.8;
+}
+.imp-footer-row{
+  display:flex;
+  flex-direction:column;
+  gap:32px;
+  align-items:center;
+  text-align:center;
+}
+.imp-footer-title{
+  color:#d4af37;
+  font-weight:800;
+  font-size:15px;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+  margin-bottom:16px;
+}
+
+.imp-footer-micro{
+  font-size:13px;
+  opacity:.7;
+  margin:-8px 0 14px 0;
+  line-height:1.4;
+}
+
+.imp-footer-redes{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+}
+.imp-footer-redes a{
+  width:42px; height:42px;
+  background:#1a1a1a;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:#fff;
+  text-decoration:none;
+  transition:all .25s ease;
+}
+.imp-footer-redes a:hover{
+  background:#d4af37;
+  color:#000;
+  transform:translateY(-4px);
+}
+.imp-footer-col p{
+  font-size:14px;
+  margin:6px 0;
+}
+.imp-footer-bottom{
+  border-top:1px solid rgba(255,255,255,0.08);
+  margin-top:40px;
+  padding-top:18px;
+  text-align:center;
+  font-size:13px;
+  line-height:1.6;
+}
+.imp-firma{ color:#fff; }
+.imp-embudo span, .imp-embudo a{ color:#d4af37; font-weight:800; text-decoration:none; }
+
+/* FIX HEADER PUNTO DORADO */
+.imp-logo{
+  text-transform:uppercase;
+}
+.imp-logo span{
+  color:#d4af37;
+}
+
+/* TABLET - 2 columnas centradas gap 60px */
+@media(min-width:768px) and (max-width:1023px){
+  .imp-footer-row{
+    flex-direction:row;
+    justify-content:center;
+    gap:60px;
+  }
+}
+
+/* DESKTOP - 2 columnas centradas con más separación */
+@media(min-width:1024px){
+  .imp-footer-row{
+    flex-direction:row;
+    justify-content:center;
+    gap:500px; /* si lo quieres en 60px exacto cámbialo a 60px */
+  }
+}

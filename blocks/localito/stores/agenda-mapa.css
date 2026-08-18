@@ -1,0 +1,17 @@
+/* ===== BLOQUE 8: MAPA ===== */
+.yare-mapa{padding:20px 0 60px}
+.yare-titulo-left{text-align:left !important}
+.yare-mapa-grid{display:grid;grid-template-columns:1fr;gap:0;background:white;border-radius:28px;overflow:hidden;box-shadow:0 25px 60px rgba(0,0,0,0.1);border:1px solid var(--rosa-soft)}
+.yare-mapa-info{padding:25px}
+.yare-mapa-title{font-weight:800;font-size:1.1rem}
+.yare-mapa-title i{color:var(--rosa)}
+.yare-mapa-sub{color:#888;font-size:0.9rem;margin:8px 0 18px}
+.yare-btn-mapa{display:block;text-align:center;padding:14px;border-radius:14px;text-decoration:none;font-weight:700;margin-bottom:10px}
+.yare-btn-mapa-dark{background:var(--negro);color:white}
+.yare-btn-mapa-light{background:white;border:2px solid var(--negro);color:var(--negro)}
+.yare-mapa-frame{height:320px}
+.yare-mapa-frame iframe{width:100%;height:100%;border:0}
+
+@media(min-width:800px){
+  .yare-mapa-grid{grid-template-columns:1fr 1.2fr}
+}

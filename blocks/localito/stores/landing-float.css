@@ -1,0 +1,47 @@
+/* =========================================
+   10. FLOAT WHATSAPP
+========================================= */
+.imp-float {
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  display: flex;
+  align-items: center;
+  flex-direction: column-reverse;
+  gap: 10px;
+  z-index: 99;
+}
+
+.imp-float-btn {
+  background: #25D366;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 28px;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .4);
+}
+
+.imp-float-bubble {
+  background: #fff;
+  color: #000;
+  font-size: 11px;
+  padding: 6px 10px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .2);
+  font-weight: 600;
+}
+
+.imp-float-bubble span {
+  width: 8px;
+  height: 8px;
+  background: #16a34a;
+  border-radius: 50%;
+  display: block;
+}

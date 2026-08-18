@@ -1,0 +1,76 @@
+/* ===== MODAL ===== */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  place-items: center;
+  z-index: 9999;
+  padding: 20px;
+}
+
+.modal.active {
+  display: grid;
+}
+
+.modal-box {
+  background: #1A1A1A;
+  border: 1px solid var(--borde);
+  border-radius: 20px;
+  padding: 24px;
+  width: 100%;
+  max-width: 400px;
+  display: grid;
+  gap: 16px;
+}
+
+.modal-sub {
+  color: var(--txt);
+  font-size: 13px;
+}
+
+.opciones {
+  display: grid;
+  gap: 10px;
+}
+
+.op {
+  background: #262626;
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.op.active {
+  border-color: var(--amarillo);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-cancel,
+.btn-send {
+  flex: 1;
+  padding: 14px;
+  border-radius: 12px;
+  font-weight: 900;
+  font-size: 12px;
+  border: 0;
+  cursor: pointer;
+}
+
+.btn-cancel {
+  background: #262626;
+  color: #fff;
+}
+
+.btn-send {
+  background: var(--amarillo);
+  color: #000;
+}

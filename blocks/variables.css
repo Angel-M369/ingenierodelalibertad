@@ -1,0 +1,10 @@
+/* variables.css */
+:root {
+  --bg-main: #0D0D0D;      /* Negro mate real */
+  --bg-card: #171717;      /* Gris carbón */
+  --accent: #10b948;       /* Verde esmeralda */
+  --accent-hover: #036811; /* Verde oscuro hover */
+  --text: #FAFAFA;         /* Blanco */
+  --text-sec: #A3A3A3;     /* Gris neutro */
+  --logo-accent: #10b948;  /* El "DELA" de tu logo */
+}

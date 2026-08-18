@@ -1,0 +1,22 @@
+/* =========================================
+   TOPBAR - BLOQUE BARBY MORADA
+   ========================================= */
+.rusa-topbar {
+  background: #07050a;
+  color: #6b5a8a;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  padding: 10px 0;
+  text-align: center;
+  border-bottom: 1px solid #1e1632;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.rusa-topbar .dot {
+  color: #a855f7;
+  margin: 0 8px;
+}
+@media (max-width: 640px) {
+  .rusa-topbar { font-size: 8px; }
+}

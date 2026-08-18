@@ -1,0 +1,25 @@
+/* =========================================
+   1. RESET Y BASE
+========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #080b14;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.imp-container {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.page {
+  position: relative;
+}

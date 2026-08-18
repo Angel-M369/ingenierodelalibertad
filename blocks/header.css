@@ -1,8 +1,8 @@
 /* ===== HEADER - MOBILE FIRST ===== */
 .header {
-    background: #000;
+    background: var(--bg-main); 
     padding: 12px 0;
-    border-bottom: 1px solid #222;
+    border-bottom: 1px solid #262626;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -19,15 +19,20 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
     font-size: 0.9rem;
+    color: var(--text); 
 }
 
 .logo span {
-    color: #FF3D00;
+    color: var(--logo-accent); 
 }
 
 /* TABLET */
 @media (min-width: 768px) {
     .logo {
         font-size: 1.2rem;
+    }
+    
+    .header {
+        padding: 16px 0; /* Un poquito más de aire en desktop */
     }
 }

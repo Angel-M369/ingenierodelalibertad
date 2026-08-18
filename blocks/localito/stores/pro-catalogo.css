@@ -1,0 +1,232 @@
+/* ===== BLOQUE: CATÁLOGO MANUAL - ARMA 2 PRO - MOBILE FIRST ===== */
+/* BASE: MÓVIL 320px+ */
+.catalogo-pro {
+    padding: 30px 15px;
+    background: #0f1419;
+}
+
+.catalogo-pro .titulo-pro {
+    text-align: center;
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 25px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.catalogo-pro .titulo-pro span {
+    color: #FF3B30;
+}
+
+.scroll-pro {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 15px 5px 25px 5px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.scroll-pro::-webkit-scrollbar {
+    display: none;
+}
+
+.card-pro {
+    flex: 0 0 240px;
+    scroll-snap-align: start;
+    background: #1a1f26;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid #FF3B30;
+    transition: all 0.3s ease;
+    cursor: grab;
+}
+
+.card-pro:active {
+    cursor: grabbing;
+}
+
+.card-img {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    background: #000;
+    pointer-events: none;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.card-info {
+    padding: 16px;
+}
+
+.card-info h3 {
+    color: #FFD60A;
+    font-size: 16px;
+    margin: 0 0 6px 0;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.card-info p {
+    color: #8b949e;
+    font-size: 13px;
+    margin: 0 0 12px 0;
+    line-height: 1.4;
+}
+
+.precio-pro {
+    color: #FF3B30;
+    font-size: 22px;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.tag-pro {
+    display: inline-block;
+    background: #FF3B30;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-card-pro {
+    display: block;
+    width: 100%;
+    background: #FFD60A;
+    color: #000;
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 900;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+/* TABLET: 768px+ */
+@media (min-width: 768px) {
+    .catalogo-pro {
+        padding: 40px 20px;
+    }
+    
+    .catalogo-pro .titulo-pro {
+        font-size: 28px;
+        margin-bottom: 35px;
+    }
+    
+    .scroll-pro {
+        gap: 20px;
+        padding: 20px 10px 30px 10px;
+    }
+    
+    .card-pro {
+        flex: 0 0 280px;
+        border-radius: 14px;
+    }
+    
+    .card-pro:hover {
+        transform: translateY(-8px);
+        border-color: #FFD60A;
+        box-shadow: 0 12px 24px rgba(255, 59, 48, 0.3);
+    }
+    
+    .card-img {
+        height: 220px;
+    }
+    
+    .card-img img {
+        transition: transform 0.4s ease;
+    }
+    
+    .card-pro:hover .card-img img {
+        transform: scale(1.1);
+    }
+    
+    .card-info {
+        padding: 18px;
+    }
+    
+    .card-info h3 {
+        font-size: 18px;
+    }
+    
+    .card-info p {
+        font-size: 14px;
+    }
+    
+    .precio-pro {
+        font-size: 26px;
+    }
+    
+    .tag-pro {
+        font-size: 11px;
+        padding: 6px 14px;
+    }
+    
+    .btn-card-pro {
+        padding: 14px;
+        font-size: 15px;
+    }
+    
+    .btn-card-pro:hover {
+        background: #fff;
+        transform: scale(1.02);
+    }
+}
+
+/* DESKTOP: 1024px+ */
+@media (min-width: 1024px) {
+    .catalogo-pro {
+        padding: 50px 20px;
+    }
+    
+    .catalogo-pro .titulo-pro {
+        font-size: 32px;
+        margin-bottom: 40px;
+        letter-spacing: 1px;
+    }
+    
+    .scroll-pro {
+        gap: 24px;
+    }
+    
+    .card-pro {
+        flex: 0 0 300px;
+        border-radius: 16px;
+    }
+    
+    .card-img {
+        height: 240px;
+    }
+    
+    .card-info {
+        padding: 20px;
+    }
+    
+    .card-info h3 {
+        font-size: 20px;
+        margin: 0 0 8px 0;
+    }
+    
+    .precio-pro {
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+}
+/* ===== FIN BLOQUE CATÁLOGO ===== */

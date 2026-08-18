@@ -1,0 +1,216 @@
+/* ==============================
+   FOOTER OFICIAL - SISTEMA PRODUCTOS
+   Mobile: todo en columna centrada
+   Tablet: marca arriba + 3 columnas abajo
+   Desktop: igual con más aire
+   ============================== */
+
+.footer-pro {
+    background: #080808;
+    padding: 40px 20px 20px;
+    text-align: center;
+}
+
+.footer-top-pro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 35px;
+}
+
+.footer-logo-pro {
+    font-size: 22px;
+    font-weight: 800;
+    color: #fff;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.footer-logo-pro span {
+    color: #ff6b00;
+}
+
+.footer-desc-pro {
+    font-size: 13px;
+    color: #9a9a9a;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.footer-grid-pro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+    max-width: 1100px;
+    margin: 0 auto 35px;
+}
+
+.footer-col-pro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+}
+
+.footer-col-pro h4 {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: #ff6b00;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+}
+
+.footer-col-pro a {
+    font-size: 13px;
+    color: #9a9a9a;
+    text-decoration: none;
+    line-height: 1.6;
+}
+
+.footer-col-pro a:hover {
+    color: #fff;
+}
+
+.redes-pro {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 4px;
+}
+
+.redes-pro a {
+    width: 32px;
+    height: 32px;
+    background: #1a1a1a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.footer-bottom-pro {
+    border-top: 1px solid #1a1a1a;
+    padding-top: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+
+.footer-bottom-pro p {
+    font-size: 11px;
+    color: #666;
+    margin: 0;
+}
+
+.footer-bottom-pro a,
+.footer-bottom-pro span {
+    color: #ff6b00;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.footer-sub {
+    font-size: 12px;
+    color: #666;
+    margin: -5px 0 12px 0;
+}
+
+.redes-lista-pro {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.redes-lista-pro a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #151515;
+    border: 1px solid #222;
+    border-radius: 8px;
+    padding: 8px 12px;
+    text-decoration: none;
+    text-align: left;
+    transition: 0.2s;
+}
+
+.redes-lista-pro a:hover {
+    border-color: #ff6b00;
+    background: #1c1c1c;
+}
+
+.redes-lista-pro a i {
+    width: 32px;
+    height: 32px;
+    background: #1a1a1a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 13px;
+}
+
+.redes-lista-pro a div {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.redes-lista-pro a strong {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.redes-lista-pro a span {
+    color: #777;
+    font-size: 11px;
+}
+
+.pro-urbanfit .dato-ubicacion a,
+.pro-urbanfit .link-wa-pro {
+    text-decoration: none !important;
+    color: #9a9a9a;
+}
+.pro-urbanfit .dato-ubicacion a:hover {
+    color: #ff6b00;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .footer-grid-pro {
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 60px;
+    }
+
+    .footer-col-pro {
+        flex: 1;
+        max-width: 200px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .footer-pro {
+        padding: 60px 40px 30px;
+    }
+
+    .footer-grid-pro {
+        gap: 100px;
+    }
+
+    .footer-top-pro {
+        margin-bottom: 45px;
+    }
+}

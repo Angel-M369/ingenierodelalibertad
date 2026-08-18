@@ -1,0 +1,22 @@
+/* =========================================
+   ANEXOS - BLOQUE BARBY MORADA
+   ========================================= */
+.rusa-anexos { padding: 50px 0; background: #0d0a14; text-align: center; }
+.rusa-sub-center { color: #8a7ca8; font-size: 12px; margin-bottom: 18px; letter-spacing:.8px; text-transform:uppercase; }
+.rusa-anexos-grid { display: grid; grid-template-columns: 1fr; gap: 14px; text-align: left; }
+.rusa-anexo { background: #151121; border: 1px solid #2c2540; padding: 18px; border-radius: 14px; transition:.25s; }
+.rusa-anexo:hover{ border-color:#a855f7; transform:translateY(-2px); box-shadow:0 8px 20px rgba(168,85,247,.15); }
+.rusa-anexo i { color: #a855f7; font-size: 18px; margin-bottom: 8px; display: block; }
+.rusa-anexo h4 { font-size: 13px; margin-bottom: 4px; color:#fff; }
+.rusa-anexo p { font-size: 11px; color: #7a6a94; line-height:1.5; }
+
+/* ANEXOS - TABLET */
+@media (min-width: 641px) and (max-width: 900px) {
+  .rusa-anexos-grid { grid-template-columns: repeat(2, 1fr); }
+}
+/* ANEXOS - DESKTOP */
+@media (min-width: 901px) {
+  .rusa-anexos { padding: 60px 0; }
+  .rusa-anexos-grid { grid-template-columns: repeat(3, 1fr); }
+  .rusa-anexo.full { grid-column: span 3; text-align: center; }
+}

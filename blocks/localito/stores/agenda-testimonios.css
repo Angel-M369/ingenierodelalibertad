@@ -1,0 +1,49 @@
+/* ===== BLOQUE 7: TESTIMONIOS ===== */
+.yare-testis {
+  padding: 20px 0;
+}
+
+.yare-testis-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+.yare-testi {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: var(--sombra);
+  display: flex;
+  flex-direction: column;
+  min-height: 130px;
+}
+
+.yare-testi p {
+  font-style: italic;
+  margin-bottom: 8px;
+  color: #333;
+  line-height: 1.4;
+}
+
+.yare-testi span {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #777;
+}
+
+.yare-stars {
+  color: #ffb400;
+  font-size: 0.95rem;
+  letter-spacing: 2px;
+  margin-top: auto;
+  padding-top: 12px;
+  text-align: right;
+  align-self: flex-end;
+}
+
+@media (min-width: 768px) {
+  .yare-testis-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
