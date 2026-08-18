@@ -1,5 +1,5 @@
 /* =========================================
-   3. HEADER Y MENU
+   3. HEADER Y MENU - FIX COMPACTO PRO
 ========================================= */
 .imp-header {
   background: #000;
@@ -80,7 +80,7 @@
   backdrop-filter: blur(2px);
 }
 
-/* Responsive Header */
+/* Responsive Header - FIX RECORTE ABAJO */
 @media (max-width: 900px) {
   .imp-burger { display: flex; }
 
@@ -88,21 +88,23 @@
     position: fixed;
     top: 58px;
     right: -220px;
-    width: 200px !important;
-    height: 50vh !important;
+    width: 210px !important;
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
     background: #0a0f21;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 20px 18px;
-    gap: 20px;
+    padding: 22px 18px 20px 18px !important; /* 20px abajo nada más */
+    gap: 18px;
     border-left: 1px solid #1e293b;
     border-bottom: 1px solid #1e293b;
     border-radius: 0 0 0 16px;
     box-shadow: -12px 12px 35px rgba(0, 0, 0, .7);
     transition: right .32s cubic-bezier(.4, 0, .2, 1);
     z-index: 100;
-    overflow-y: auto;
+    overflow-y: visible;
   }
 
   #imp-menu-toggle:checked ~ .imp-nav { right: 0 !important; }

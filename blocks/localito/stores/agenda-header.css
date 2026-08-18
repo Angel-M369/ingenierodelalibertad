@@ -1,19 +1,111 @@
-/* ===== BLOQUE 3: HEADER + NAV ===== */
-.yare-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.75);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,0.06);padding:14px 0}
-.yare-header .yare-container{display:flex;justify-content:space-between;align-items:center}
-.yare-logo{font-size:1.6rem;font-weight:800;text-decoration:none;color:var(--negro)}
-.yare-logo span{color:var(--rosa)}
-.yare-checkbox,.yare-overlay{display:none}
-.yare-nav{position:fixed;top:70px;right:-230px;width:210px;height:50vh;background:var(--negro);display:flex;flex-direction:column;padding-top:30px;gap:25px;align-items:center;transition:0.4s cubic-bezier(0.68,-0.55,0.27,1.55);border-radius:22px 0 0 22px;z-index:100}
-.yare-nav a{text-decoration:none;color:white;font-weight:600}
-.yare-btn-agendar{background:var(--rosa);color:white !important;padding:10px 22px;border-radius:30px}
-.yare-burger{display:flex;flex-direction:column;gap:5px;cursor:pointer}
-.yare-burger span{width:26px;height:3px;background:var(--negro);border-radius:5px}
-.yare-checkbox:checked ~ .yare-nav{right:0}
-.yare-checkbox:checked ~ .yare-overlay{display:block;position:fixed;inset:0;background:rgba(0,0,0,0.35);z-index:99}
+/* ===== BLOQUE 3: HEADER + NAV - FIX COMPACTO ===== */
+.yare-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 14px 0;
+}
 
-@media(min-width:900px){
-  .yare-nav{position:static;width:auto;height:auto;background:transparent;flex-direction:row;padding:0;right:0;border-radius:0}
-  .yare-nav a{color:var(--negro)}
-  .yare-burger,.yare-overlay{display:none !important}
+.yare-header .yare-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.yare-logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--negro);
+}
+
+.yare-logo span {
+  color: var(--rosa);
+}
+
+.yare-checkbox,
+.yare-overlay {
+  display: none;
+}
+
+.yare-nav {
+  position: fixed;
+  top: 70px;
+  right: -230px;
+  width: 210px;
+  height: auto !important;
+  min-height: auto !important;
+  background: var(--negro);
+  display: flex;
+  flex-direction: column;
+  padding: 30px 0 22px 0 !important;
+  gap: 22px;
+  align-items: center;
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  border-radius: 22px 0 0 22px;
+  z-index: 100;
+}
+
+.yare-nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+}
+
+.yare-btn-agendar {
+  background: var(--rosa);
+  color: white !important;
+  padding: 10px 22px;
+  border-radius: 30px;
+}
+
+.yare-burger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.yare-burger span {
+  width: 26px;
+  height: 3px;
+  background: var(--negro);
+  border-radius: 5px;
+}
+
+.yare-checkbox:checked ~ .yare-nav {
+  right: 0;
+}
+
+.yare-checkbox:checked ~ .yare-overlay {
+  display: block;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 99;
+}
+
+@media (min-width: 900px) {
+  .yare-nav {
+    position: static;
+    width: auto;
+    height: auto;
+    background: transparent;
+    flex-direction: row;
+    padding: 0;
+    right: 0;
+    border-radius: 0;
+  }
+
+  .yare-nav a {
+    color: var(--negro);
+  }
+
+  .yare-burger,
+  .yare-overlay {
+    display: none !important;
+  }
 }

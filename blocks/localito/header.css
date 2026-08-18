@@ -69,7 +69,7 @@
 .nav a:hover { color: #25D366 !important; }
 .btn-volver { background: #25D366; color: #111 !important; padding: 8px 16px; border-radius: 20px; }
 
-/* MOBILE - FIX DEFINITIVO */
+/* MOBILE - FIX DEFINITIVO CORREGIDO 100% */
 @media (max-width: 900px) {
     .menu-toggle { display: flex; }
     .nav {
@@ -78,19 +78,20 @@
         right: -100%;
         width: 85%;
         max-width: 340px;
-        height: 60vh;
-        height: 60dvh;
+        height: 100vh;
+        height: 100dvh;
+        min-height: 100vh;
         background: #111;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        padding: 90px 20px 20px 20px;
+        padding: 90px 20px 40px 20px;
         gap: 14px;
         transition: right 0.32s cubic-bezier(0.4,0,0.2,1);
         z-index: 1000;
         border-left: 1px solid #222;
-        border-bottom: 1px solid #222;
-        border-radius: 0 0 0 20px;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
     .nav a { 
       font-size: 1rem;
@@ -102,6 +103,7 @@
       text-align: center;
       justify-content: center;
       display: flex;
+      flex-shrink: 0;
     }
     
     .menu-check:checked ~ .header-container .nav { right: 0; }
@@ -124,6 +126,7 @@
         top: 0;
         left: 0;
         width: 100%;
+        height: 100vh;
         height: 100dvh;
         background: rgba(0,0,0,0.6);
         z-index: 999;

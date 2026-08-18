@@ -1,4 +1,4 @@
-/* HEADER PRO - LAS PACAS DEL CHINO */
+/* HEADER PRO - LAS PACAS DEL CHINO - FIX 100% */
 .pro-urbanfit .header-pro{
     position:fixed;
     top:0;
@@ -55,17 +55,22 @@
     position:fixed;
     top:0;
     right:-100%;
-    width:200px;
-    height:50vh;
+    width:78%;
+    max-width:320px;
+    height:100vh;
+    height:100dvh;
+    min-height:100vh;
     background:linear-gradient(180deg,#0a0e27,#1a1f3a);
     border-left:3px solid #ff6b00;
-    padding-top:90px;
-    transition:right .4s ease;
+    padding:90px 20px 40px 20px;
+    transition:right .4s cubic-bezier(0.4,0,0.2,1);
     z-index:1002;
     display:flex;
     flex-direction:column;
-    gap:30px;
+    gap:20px;
     align-items:center;
+    overflow-y:auto;
+    -webkit-overflow-scrolling:touch;
 }
 
 .pro-urbanfit .menu-check:checked ~ .header-bar .nav-pro{right:0}
@@ -78,11 +83,12 @@
     text-decoration:none;
     font-weight:700;
     font-size:1.1rem;
-    width:80%;
+    width:90%;
     text-align:center;
-    padding:12px 0;
+    padding:14px 0;
     border-radius:10px;
     transition:.3s;
+    flex-shrink:0;
 }
 
 .pro-urbanfit .nav-pro a:hover{
@@ -93,12 +99,14 @@
 .pro-urbanfit .btn-pro{
     background:linear-gradient(90deg,#ff6b00,#ff8c00) !important;
     box-shadow:0 0 20px rgba(255,107,0,.6) !important;
+    width:90% !important;
+    margin-top:10px !important;
 }
 
 .pro-urbanfit .overlay-pro{
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.9);
+    background:rgba(0,0,0,.7);
     opacity:0;
     visibility:hidden;
     transition:.3s;
@@ -117,12 +125,14 @@
         position:static;
         width:auto;
         height:auto;
+        min-height:auto;
         background:transparent;
         border:none;
         padding:0;
         flex-direction:row;
         gap:35px;
         right:0;
+        overflow:visible;
     }
     .pro-urbanfit .nav-pro a{width:auto;padding:8px 0}
     .pro-urbanfit .overlay-pro{display:none}
