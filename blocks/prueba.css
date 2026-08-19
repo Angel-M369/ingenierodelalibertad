@@ -1,0 +1,22 @@
+.prueba-social {
+    background: #0a0a0a;
+    padding: 60px 20px;
+    text-align: center;
+    border-top: 1px solid #222;
+}
+.prueba-sub { color: #aaa; margin: 20px 0; }
+.grid-prueba {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+.prueba-card {
+    background: #111;
+    border: 1px solid #333;
+    padding: 20px;
+    border-radius: 12px;
+    color: #fff;
+}
+.prueba-card small { color: #25D366; }
+.btn-prueba { margin-top: 30px; display: inline-block; }

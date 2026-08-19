@@ -1,14 +1,14 @@
 /* ===== ARMAS - MOBILE FIRST ===== */
 .armas {
-    border-top: 1px solid #262626; /* ANTES: #222 */
-    padding: 50px 0; /* Agregué padding pa que respire */
+    border-top: 1px solid #262626;
+    padding: 50px 0;
 }
 
 .armas h2 {
     font-size: 1.4rem;
     text-align: center;
     margin-bottom: 30px;
-    color: var(--text); /* ANTES: heredaba */
+    color: var(--text);
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
 }
@@ -20,12 +20,12 @@
 }
 
 .arma-card {
-    background: var(--bg-card); /* ANTES: #111111 */
+    background: var(--bg-card);
     padding: 25px 18px;
-    border: 1px solid #262626; /* ANTES: #222 */
+    border: 1px solid #262626;
     border-radius: 10px;
     text-align: center;
-    transition: all 0.3s ease; /* Agregué pa hover */
+    transition: all 0.3s ease;
 }
 
 .arma-card.destacada {
@@ -37,25 +37,39 @@
 .arma-card:hover {
     border-color: var(--accent);
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.1); /* Sombra verde */
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.1);
 }
 
 .arma-card .icono {
     font-size: 2.2rem;
     margin-bottom: 12px;
-    color: var(--accent); /* ANTES: heredaba - Ahora verde */
+    color: var(--accent);
 }
 
 .arma-card h3 {
     font-size: 1.1rem;
     margin-bottom: 12px;
-    color: var(--accent); /* ANTES: #FF3D00 - Ahora verde */
+    color: var(--accent);
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
 }
 
+.chip-vendida {
+    display: inline-block;
+    font-size: 0.65rem;
+    background: #25D366;
+    color: #000;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+}
+
 .arma-card p {
-    color: var(--text-sec); /* ANTES: #CCCCCC */
+    color: var(--text-sec);
     margin-bottom: 20px;
     font-size: 0.9rem;
     line-height: 1.6;
@@ -79,6 +93,11 @@
     
     .arma-card {
         padding: 30px 25px;
+    }
+
+    .chip-vendida {
+        font-size: 0.7rem;
+        padding: 5px 12px;
     }
 }
 
