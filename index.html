@@ -20,7 +20,6 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Ingeniero de la Libertad - Sistemas que Facturan 24/7">
-
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Sistemas que Facturan 24/7 | Desde $3,999 MXN">
     <meta name="twitter:description" content="Tiendas online listas pa cobrar en 72hrs. Desde $3,999 MXN.">
@@ -33,73 +32,92 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
     <link rel="stylesheet" href="style.css">
 
+    <!-- FIX HEADER COMPACTO MOVIL - ANTI HUECOTE -->
+    <style>
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 20px;
+        }
+        @media(max-width: 768px) {
+            .hero {
+                padding-top: 20px !important;
+            }
+            .header .container {
+                padding: 10px 16px;
+            }
+            .btn-header {
+                padding: 8px 14px !important;
+                font-size: 0.8em !important;
+            }
+            .botones-hero {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+            .botones-hero .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+
     <!-- FAVICONS 100% -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 
-    <!-- SCHEMA GOOGLE - BLINDAJE FINAL -->
+    <!-- SCHEMA GOOGLE -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Ingeniero de la Libertad",
-      "alternateName": "Mi Localito",
-      "url": "https://www.ingenierodelalibertad.com",
-      "logo": "https://www.ingenierodelalibertad.com/images/og-ingeniero.jpg",
-      "image": "https://www.ingenierodelalibertad.com/images/og-ingeniero.jpg",
-      "description": "Instalamos sistemas que facturan 24/7. Tiendas online listas para cobrar en 72hrs desde $3,999 MXN.",
-      "priceRange": "$3,999 MXN - $15,000 MXN",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Guadalajara",
-        "addressRegion": "Jalisco",
-        "addressCountry": "MX"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "20.6597",
-        "longitude": "-103.3496"
-      },
-      "founder": {
-        "@type": "Person",
-        "name": "Ingeniero de la Libertad"
-      },
-      "sameAs": [
-        "https://facebook.com/ingenierodelalibertad",
-        "https://www.instagram.com/inge.nierodelalibertad",
-        "https://www.tiktok.com/@ingenierodelalibertad",
-        "https://github.com/Angel-M369"
-      ],
-      "offers": {
-        "@type": "Offer",
-        "name": "Sistema Mi Localito",
-        "price": "3999",
-        "priceCurrency": "MXN",
-        "availability": "https://schema.org/InStock",
-        "url": "https://www.ingenierodelalibertad.com/milocalito/"
-      }
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Ingeniero de la Libertad",
+        "url": "https://www.ingenierodelalibertad.com",
+        "logo": "https://www.ingenierodelalibertad.com/images/og-ingeniero.jpg",
+        "description": "Instalamos sistemas que facturan 24/7. Tiendas online listas para cobrar en 72hrs desde $3,999 MXN.",
+        "priceRange": "$3,999 MXN - $15,000 MXN",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Guadalajara",
+            "addressRegion": "Jalisco",
+            "addressCountry": "MX"
+        },
+        "sameAs": [
+            "https://facebook.com/ingenierodelalibertad",
+            "https://www.instagram.com/inge.nierodelalibertad",
+            "https://www.tiktok.com/@ingenierodelalibertad",
+            "https://github.com/Angel-M369"
+        ],
+        "offers": {
+            "@type": "Offer",
+            "name": "Sistema Mi Localito",
+            "price": "3999",
+            "priceCurrency": "MXN",
+            "availability": "https://schema.org/InStock",
+            "url": "https://www.ingenierodelalibertad.com/milocalito/"
+        }
     }
     </script>
 
-    <!-- Google tag (gtag.js) - MEDICIÓN MAESTRA -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0S14JTTS9D"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-0S14JTTS9D');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0S14JTTS9D');
     </script>
-
 </head>
 <body>
     <div class="page">
         <header class="header">
             <div class="container">
                 <div class="logo">INGENIERO<span>DELA</span>LIBERTAD</div>
-                <a href="https://wa.me/5219191467339?text=INGE,%20ya%20me%20harté.%20Agendemos%20llamada." class="btn-header">WHATSAPP</a>
+                <a href="https://wa.me/529191467339?text=INGE,%20ya%20me%20harté.%20Agendemos%20llamada." class="btn-header">WHATSAPP</a>
             </div>
         </header>
+
         <main>
             <section class="hero">
                 <div class="container">
@@ -110,85 +128,133 @@
                     <p class="subtitulo">Armo tiendas online para personas que ya se hartaron de regalar su tiempo. Sin jefes. Sin pedir permiso.</p>
                     <p class="subtitulo">Dijera mi compa: "Mientras haya señal hay paro jajajajaja" <br> Desde donde caiga el wifi, porque la libertad no conoce código postal</p>
                     <div class="botones-hero">
-                        <a href="./milocalito/index.html" class="btn btn-primario">VER LOS 6 SISTEMAS DESDE $3,999 →</a>
+                        <a href="/milocalito/" class="btn btn-primario">VER LOS 6 SISTEMAS DESDE $3,999 →</a>
                         <a href="#historia" class="btn btn-secundario">VER CÓMO SALÍ DEL HOYO ↓</a>
                     </div>
                 </div>
             </section>
-           <section id="historia" class="historia">
-              <div class="container">
-                 <h2>DE EMPLEADO A DUEÑO: ASÍ NOS EXPRIME EL SISTEMA</h2>
-                 <p>Yo sigo mesereando. 12 horas parado, propinas miserables y mi jefe diciendo <strong>"hay 20 atrás de ti"</strong>.</p>
-                 <p>Cada día entiendo más claro: el sistema está diseñado para que NUNCA seamos libres. <br> Nos quita tiempo, energía y dinero como si ellos se lo hubieran ganado trabajando.</p>
-                 <p><strong>Estar jodidos no es nuestra culpa. Quedarnos ahí, sí. Por eso estoy armando la salida y te enseño cómo. Necesitamos 3 cosas:</strong></p>
-                 <a href="#armas" class="btn btn-primario">DIME LAS 3 ARMAS ↓</a>
-               </div>
-           </section>
-        <section id="armas" class="armas">
-             <div class="container">
-                 <h2>LAS 3 ARMAS PARA SALIR DEL SISTEMA</h2>
-                 <div class="grid-armas">
-                     <div class="arma-card destacada">
-                         <div class="icono">⚙️</div>
-                         <h3>ARMA 1: TU NEGOCIO PROPIO <br><span style="font-size:0.6em; background:#25D366; color:#000; padding:5px 10px; border-radius:20px; display:inline-block; margin-top:8px;">MÁS VENDIDA • $3,999 MXN</span></h3>
-                         <p>Deja de vender tu tiempo por horas. Te instalo tu <strong>SISTEMA que factura 24/7</strong>, no una página bonita. Tienda lista para cobrar con tarjeta, transferencia y MSI en 72hrs. Desde $3,999 MXN.</p>
-                         <a href="./milocalito/index.html" class="btn btn-primario">VER LOS 6 SISTEMAS →</a>
-                     </div>
-                     <div class="arma-card">
-                         <div class="icono">💊</div>
-                         <h3>ARMA 2: NO TE DUERMAS EN EL INTENTO</h3>
-                         <p>Mientras tu negocio despega necesitas flujo. Mi tienda PowerGolden de salud y energía.</p>
-                         <a href="https://powergolden.club/link/page/53371" class="btn btn-secundario">VER MI TIENDA</a>
-                     </div>
-                     <div class="arma-card">
-                         <div class="icono">🔥</div>
-                         <h3>ARMA 3: TU CABEZA DE DUEÑO</h3>
-                         <p>No soy mentor, ni coach, ni guía. Solo comparto mi camino: ventas, código, cuerpo y espíritu. Esto es lo que yo hago con mi tiempo libre, tú que harás con el tuyo.</p>
-                         <a href="./bitacora/index.html" class="btn btn-secundario">LEER BITÁCORA →</a>
-                     </div>
-                 </div>
-             </div>
-        </section>
+
+            <section id="historia" class="historia">
+                <div class="container">
+                    <h2>DE EMPLEADO A DUEÑO: ASÍ NOS EXPRIME EL SISTEMA</h2>
+                    <p>Yo sigo mesereando. 12 horas parado, propinas miserables y mi jefe diciendo <strong>"hay 20 atrás de ti"</strong>.</p>
+                    <p>Cada día entiendo más claro: el sistema está diseñado para que NUNCA seamos libres. <br> Nos quita tiempo, energía y dinero como si ellos se lo hubieran ganado trabajando.</p>
+                    <p><strong>Estar jodidos no es nuestra culpa. Quedarnos ahí, sí. Por eso estoy armando la salida y te enseño cómo. Necesitamos 3 cosas:</strong></p>
+                    <a href="#armas" class="btn btn-primario">DIME LAS 3 ARMAS ↓</a>
+                </div>
+            </section>
+
+            <section id="armas" class="armas">
+                <div class="container">
+                    <h2>LAS 3 ARMAS PARA SALIR DEL SISTEMA</h2>
+                    <div class="grid-armas">
+                        <div class="arma-card destacada">
+                            <div class="icono">⚙️</div>
+                            <h3>ARMA 1: TU NEGOCIO PROPIO <br><span style="font-size:0.6em; background:#25D366; color:#000; padding:5px 10px; border-radius:20px; display:inline-block; margin-top:8px;">MÁS VENDIDA • $3,999 MXN</span></h3>
+                            <p>Deja de vender tu tiempo por horas. Te instalo tu <strong>SISTEMA que factura 24/7</strong>, no una página bonita. Tienda lista para cobrar con tarjeta, transferencia y MSI en 72hrs. Desde $3,999 MXN.</p>
+                            <a href="/milocalito/" class="btn btn-primario">VER LOS 6 SISTEMAS →</a>
+                        </div>
+                        <div class="arma-card">
+                            <div class="icono">💊</div>
+                            <h3>ARMA 2: NO TE DUERMAS EN EL INTENTO</h3>
+                            <p>Mientras tu negocio despega necesitas flujo. Mi tienda PowerGolden de salud y energía.</p>
+                            <a href="https://powergolden.club/link/page/53371" class="btn btn-secundario">VER MI TIENDA</a>
+                        </div>
+                        <div class="arma-card">
+                            <div class="icono">🔥</div>
+                            <h3>ARMA 3: TU CABEZA DE DUEÑO</h3>
+                            <p>No soy mentor, ni coach, ni guía. Solo comparto mi camino: ventas, código, cuerpo y espíritu. Esto es lo que yo hago con mi tiempo libre, tú que harás con el tuyo.</p>
+                            <a href="/bitacora/" class="btn btn-secundario">LEER BITÁCORA →</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PRUEBA SOCIAL - CONVERSION -->
+            <section style="background:#0a0a0a; padding:60px 20px; text-align:center; border-top:1px solid #222;">
+                <div class="container">
+                    <h2 style="color:#fff;">YA NO ES TEORÍA. YA ESTÁN FACTURANDO</h2>
+                    <p style="color:#aaa; margin:20px 0;">27 sistemas instalados en GDL, CDMX, Chiapas, Oaxaca y EdoMex</p>
+                    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; margin-top:30px;">
+                        <div style="background:#111; border:1px solid #333; padding:20px; border-radius:12px;">
+                            "En 3 días ya estaba cobrando con tarjeta" <br>
+                            <small style="color:#25D366;">— Taller mecánico GDL</small>
+                        </div>
+                        <div style="background:#111; border:1px solid #333; padding:20px; border-radius:12px;">
+                            "De solo transferencias a tienda completa" <br>
+                            <small style="color:#25D366;">— Boutique Tuxtla</small>
+                        </div>
+                        <div style="background:#111; border:1px solid #333; padding:20px; border-radius:12px;">
+                            "Ahora vendo mientras duermo" <br>
+                            <small style="color:#25D366;">— Floreria Veracruz</small>
+                        </div>
+                    </div>
+                    <a href="/milocalito/" class="btn btn-primario" style="margin-top:30px; display:inline-block;">QUIERO MI SISTEMA →</a>
+                </div>
+            </section>
+
+            <!-- EMBUDO - CALENDLY / NEWSLETTER -->
+            <section style="background:#111; padding:70px 20px; text-align:center; border-top:1px solid #222; border-bottom:1px solid #222;">
+                <div class="container">
+                    <h2 style="color:#fff; font-size:2em;">¿AGENDAMOS 15 MIN? TE DIGO CUÁL TE CONVIENE</h2>
+                    <p style="color:#aaa; margin:15px 0 30px 0;">Regálame una breve llamada o videollamada y te digo en 15 min cuál de los 6 sistemas es para tu negocio.</p>
+                    
+                    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:15px;">
+                        <!-- LINK REAL ACTUALIZADO -->
+                        <a href="https://calendly.com/ingenierodelalibertad/30min" target="_blank" class="btn btn-primario" style="background:#25D366; color:#000; padding:16px 32px; border-radius:100px; font-weight:900; text-decoration:none;">
+                            📅 AGENDAR LLAMADA GRATIS →
+                        </a>
+                        <a href="https://wa.me/529191467339?text=INGE,%20quiero%20agendar%20mi%20llamada%20de%2015%20min" target="_blank" style="border:1px solid #333; color:#fff; padding:16px 32px; border-radius:100px; font-weight:700; text-decoration:none;">
+                            HABLAR POR WHATSAPP
+                        </a>
+                    </div>
+
+                    <p style="color:#666; font-size:0.85em; margin-top:20px;">✓ 15 min ✓ Sin compromiso ✓ Te digo el precio exacto de tu sistema</p>
+                </div>
+            </section>
         </main>
+
         <footer class="footer-ingeniero" id="contacto">
-             <div class="footer-branding">
-                 <div class="contenedor">
-                     <h2 class="marca-titulo">INGENIERO DE LA LIBERTAD </h2>
-                     <p class="marca-subtitulo">factura tu libertad o muere empleado</p>
-                 </div>
-             </div>
-             <div class="contenedor">
-                 <div class="footer-grid">          
-    <div class="footer-col">
-        <h4>SÍGUEME</h4>
-        <div class="redes-ingeniero">
-            <a href="https://facebook.com/ingenierodelalibertad" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/inge.nierodelalibertad" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@ingenierodelalibertad" target="_blank"><i class="fab fa-tiktok"></i></a>
-        </div>
-    </div>
-
-    <div class="footer-col">
-        <h4 class="titulo-trabajos">MIS TRABAJOS</h4>
-        <div class="redes-profesionales">
-            <a href="https://github.com/Angel-M369" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-            <a href="https://linkedin.com/in/ingenierodelalibertad" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            <a href="https://ingenierodelalibertad.com" target="_blank"><i class="fas fa-globe"></i> IngenieroDeLaLibertad.com</a>
-        </div>
-    </div>
-
-    <div class="footer-col">
-        <h4>¿HABLAMOS?</h4>
-        <a href="mailto:ingenierodelalibertad@gmail.com" class="footer-link"><i class="fas fa-envelope"></i> ingenierodelalibertad@gmail.com</a>
-        <a href="https://wa.me/529191467339?text=Ingeniero%20quiero%20mi%20página%20web" target="_blank" class="btn-footer-wa"><i class="fab fa-whatsapp"></i> Contactar por WhatsApp</a>
-        <p class="footer-garantia">Empieza a transformar tu vida HOY MISMO.</p>
-    </div>
-                 </div>
-                 <div class="footer-bottom">
-                     <p>© 2026 Ingeniero de LA Libertad. Todos los derechos reservados.</p>
-                     <p class="footer-legal"><a href="/privacidad">Privacidad</a> | <a href="/terminos">Términos</a></p>
-                 </div>
-             </div>
+            <div class="footer-branding">
+                <div class="contenedor">
+                    <h2 class="marca-titulo">INGENIERO DE LA LIBERTAD</h2>
+                    <p class="marca-subtitulo">factura tu libertad o muere empleado</p>
+                </div>
+            </div>
+            <div class="contenedor">
+                <div class="footer-grid">          
+                    <div class="footer-col">
+                        <h4>SÍGUEME</h4>
+                        <div class="redes-ingeniero">
+                            <a href="https://facebook.com/ingenierodelalibertad" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/inge.nierodelalibertad" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.tiktok.com/@ingenierodelalibertad" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h4 class="titulo-trabajos">MIS TRABAJOS</h4>
+                        <div class="redes-profesionales">
+                            <a href="https://github.com/Angel-M369" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://linkedin.com/in/ingenierodelalibertad" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                            <a href="https://ingenierodelalibertad.com" target="_blank"><i class="fas fa-globe"></i> IngenieroDeLaLibertad.com</a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h4>¿HABLAMOS?</h4>
+                        <a href="mailto:ingenierodelalibertad@gmail.com" class="footer-link"><i class="fas fa-envelope"></i> ingenierodelalibertad@gmail.com</a>
+                        <a href="https://wa.me/529191467339?text=Ingeniero%20quiero%20mi%20página%20web" target="_blank" class="btn-footer-wa"><i class="fab fa-whatsapp"></i> Contactar por WhatsApp</a>
+                        <p class="footer-garantia">Empieza a transformar tu vida HOY MISMO.</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>© 2026 Ingeniero de LA Libertad. Todos los derechos reservados.</p>
+                    <p class="footer-legal">
+                        <a href="/privacidad.html">Privacidad</a> | 
+                        <a href="/terminos.html">Términos</a> | 
+                        <a href="/sitemap.xml">Sitemap</a>
+                    </p>
+                </div>
+            </div>
         </footer>
     </div>
 </body>
