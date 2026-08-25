@@ -2,7 +2,7 @@
 .imp-footer{
   background:#0a0a0a;
   color:#a1a1aa;
-  padding:50px 20px 30px;
+  padding:50px 20px 90px;
 }
 .imp-footer .imp-container{
   max-width:1200px;
@@ -40,14 +40,12 @@
   text-transform:uppercase;
   margin-bottom:16px;
 }
-
 .imp-footer-micro{
   font-size:13px;
   opacity:.7;
   margin:-8px 0 14px 0;
   line-height:1.4;
 }
-
 .imp-footer-redes{
   display:flex;
   gap:12px;
@@ -82,16 +80,12 @@
 }
 .imp-firma{ color:#fff; }
 .imp-embudo span, .imp-embudo a{ color:#d4af37; font-weight:800; text-decoration:none; }
-
-/* FIX HEADER PUNTO DORADO */
 .imp-logo{
   text-transform:uppercase;
 }
 .imp-logo span{
   color:#d4af37;
 }
-
-/* TABLET - 2 columnas centradas gap 60px */
 @media(min-width:768px) and (max-width:1023px){
   .imp-footer-row{
     flex-direction:row;
@@ -99,12 +93,10 @@
     gap:60px;
   }
 }
-
-/* DESKTOP - 2 columnas centradas con más separación */
 @media(min-width:1024px){
   .imp-footer-row{
     flex-direction:row;
     justify-content:center;
-    gap:500px; /* si lo quieres en 60px exacto cámbialo a 60px */
+    gap:500px;
   }
 }

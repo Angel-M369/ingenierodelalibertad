@@ -1,0 +1,70 @@
+/* ABUNDANCIA */
+.b-abundancia {
+  background: #0a0a0a;
+  border-top: 1px solid #1a1a1a;
+  padding: 60px 5% 100px 5%;
+}
+
+.b-abundancia .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.b-abundancia h2 {
+  font-family: Montserrat;
+  font-size: 26px;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.b-abundancia h2 .hl-green {
+  color: #00E676;
+}
+
+.b-abundancia h2 .hl-lime {
+  color: #a3ff12;
+}
+
+.b-abundancia .sep {
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #00E676, #a3ff12);
+  border-radius: 10px;
+  margin: 22px 0;
+}
+
+.b-abundancia p {
+  color: #999;
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 22px;
+}
+
+.b-abundancia p b {
+  color: #fff;
+}
+
+.b-abundancia p .tag-green {
+  background: rgba(0, 230, 118, 0.1);
+  border: 1px solid #00E676;
+  color: #00E676;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.b-abundancia p .tag-lime {
+  color: #a3ff12;
+  font-weight: 900;
+}
+
+@media (min-width: 768px) {
+  .b-abundancia {
+    padding: 80px 5% 120px 5%;
+  }
+
+  .b-abundancia h2 {
+    font-size: 36px;
+  }
+}

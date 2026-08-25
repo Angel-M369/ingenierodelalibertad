@@ -1,0 +1,113 @@
+/* HERO */
+.b2-hero {
+  padding: 30px 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.b2-hero .left .badge {
+  display: inline-block;
+  background: #112e17;
+  border: 1px solid #00E676;
+  color: #00E676;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.badge{
+  margin-bottom: 60px;
+}
+
+.b2-hero .left h1 {
+  font-family: Montserrat;
+  font-size: 32px;
+  line-height: 0.9;
+  font-weight: 900;
+  margin-top: 12px;
+}
+
+.b2-hero .left h1 em {
+  font-style: normal;
+  background: linear-gradient(90deg, #00E676, #a3ff12);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.b2-hero .left .main-p {
+  color: #ccc;
+  font-size: 14px;
+  line-height: 1.7;
+  margin-top: 12px;
+}
+
+.b2-hero .left .main-p b {
+  color: #fff;
+}
+
+.b2-hero .left .main-p em {
+  font-style: normal;
+  color: #00E676;
+  font-weight: 900;
+}
+
+.b2-hero .left .temas-label {
+  font-size: 11px;
+  color: #a3ff12;
+  font-weight: 900;
+  margin-top: 22px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.b2-hero .left .pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 10px;
+}
+
+.b2-hero .left .pills span {
+  background: #151515;
+  border: 1px solid #222;
+  padding: 7px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  color: #888;
+  transition: 0.2s;
+}
+
+.b2-hero .left .pills span:hover {
+  border-color: #00E676;
+  color: #00E676;
+  background: #112e17;
+}
+
+.b2-hero .right img {
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid #222;
+}
+
+@media (min-width: 768px) {
+  .b2-hero {
+    flex-direction: row;
+    align-items: center;
+    padding: 60px 5%;
+  }
+
+  .b2-hero .left {
+    flex: 1.2;
+  }
+
+  .b2-hero .right {
+    flex: 0.8;
+  }
+
+  .b2-hero .left h1 {
+    font-size: 48px;
+    line-height: 0.95;
+  }
+}

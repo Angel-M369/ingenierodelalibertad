@@ -1,0 +1,91 @@
+/* HEADER - FIXED */
+.b1-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  border-bottom: 1px solid #1e1e1e;
+}
+
+.b1-header .logo {
+  font-family: Montserrat;
+  font-weight: 900;
+  font-size: 13px;
+  line-height: 1;
+}
+
+.b1-header .logo b {
+  color: #00E676;
+}
+
+.b1-header .logo span {
+  display: block;
+  font-size: 10px;
+  color: #a3ff12;
+  margin-top: 2px;
+  font-weight: 700;
+}
+
+.yerberitos-header-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #000;
+  border: 1px solid #00E676;
+  padding: 6px 14px 6px 6px;
+  border-radius: 30px;
+  font-weight: 900;
+  font-size: 11px;
+  color: #00E676;
+  transition: 0.2s;
+  box-shadow: 0 0 15px rgba(0, 230, 118, 0.15);
+  white-space: nowrap;
+}
+
+.yerberitos-header-btn img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid #00E676;
+}
+
+.yerberitos-header-btn span {
+  color: #00E676;
+}
+
+.yerberitos-header-btn:hover {
+  background: #00E676;
+  color: #000;
+  box-shadow: 0 0 25px rgba(0, 230, 118, 0.4);
+}
+
+.yerberitos-header-btn:hover span {
+  color: #000;
+}
+
+/* Si tienes 2 botones en el header */
+.b1-header .acciones {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .b1-header {
+    padding: 14px 5%;
+  }
+}
+
+/* IMPORTANTE: para que no se tape el contenido por el fixed */
+body {
+  padding-top: 60px;
+}

@@ -1,0 +1,208 @@
+/* PLANES - FIX TEXTO MORADO */
+.b4-planes {
+  background: #111;
+  padding: 40px 5% 60px 5%;
+}
+
+.b4-planes .titulo {
+  text-align: center;
+}
+
+.b4-planes .titulo h2 {
+  font-family: Montserrat;
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.b4-planes .titulo p {
+  color: #777;
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.b4-planes .grid {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.card {
+  border-radius: 24px;
+  padding: 24px;
+  border: 2px solid #222;
+  transition: 0.3s;
+  background: #0f0f0f;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card .tag {
+  font-size: 10px;
+  font-weight: 900;
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.card .precio {
+  font-size: 34px;
+  font-weight: 900;
+  margin: 14px 0 6px 0;
+  font-family: Montserrat;
+  color: #fff;
+}
+
+.card .iva {
+  font-size: 11px;
+  color: #666;
+}
+
+.card .sistemas {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.card .sist {
+  border-radius: 14px;
+  padding: 14px;
+  background: #151515;
+  border: 1px solid #222;
+  display: block;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.card .sist h4 {
+  font-size: 13px;
+  font-weight: 900;
+  color: #fff !important;
+}
+
+.card .sist h4 i {
+  margin-right: 4px;
+}
+
+.card .sist p {
+  font-size: 11px;
+  margin-top: 4px;
+  color: #aaa !important;
+  line-height: 1.5;
+}
+
+.card .sist p b {
+  color: #fff !important;
+}
+
+.card .sist .ver-demo {
+  font-size: 10px;
+  font-weight: 900;
+  margin-top: 8px;
+  display: inline-block;
+  color: inherit;
+}
+
+.card .sist:hover {
+  transform: scale(1.02);
+}
+
+.card .btn {
+  display: block;
+  text-align: center;
+  padding: 14px;
+  border-radius: 12px;
+  font-weight: 900;
+  font-size: 13px;
+  margin-top: 18px;
+  transition: 0.2s;
+}
+
+/* COLORES POR CARD */
+.card-basico {
+  border-color: #00E676;
+}
+
+.card-basico .tag {
+  background: #00E676;
+  color: #000;
+}
+
+.card-basico .sist i,
+.card-basico .ver-demo {
+  color: #00E676 !important;
+}
+
+.card-basico .btn {
+  background: #00E676;
+  color: #000;
+}
+
+.card-basico .sist:hover {
+  border-color: #00E676;
+  box-shadow: 0 0 20px rgba(0, 230, 118, 0.3);
+  background: #102116;
+}
+
+.card-pro {
+  border-color: #00D4FF;
+}
+
+.card-pro .tag {
+  background: #00D4FF;
+  color: #000;
+}
+
+.card-pro .sist i,
+.card-pro .ver-demo {
+  color: #00D4FF !important;
+}
+
+.card-pro .btn {
+  background: #00D4FF;
+  color: #000;
+}
+
+.card-pro .sist:hover {
+  border-color: #00D4FF;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+  background: #0f1e24;
+}
+
+.card-total {
+  border-color: #FFD600;
+}
+
+.card-total .tag {
+  background: #FFD600;
+  color: #000;
+}
+
+.card-total .sist i,
+.card-total .ver-demo {
+  color: #FFD600 !important;
+}
+
+.card-total .btn {
+  background: #FFD600;
+  color: #000;
+}
+
+.card-total .sist:hover {
+  border-color: #FFD600;
+  box-shadow: 0 0 20px rgba(255, 214, 0, 0.3);
+  background: #211e0f;
+}
+
+@media (min-width: 900px) {
+  .b4-planes .grid {
+    flex-direction: row;
+  }
+
+  .card {
+    flex: 1;
+  }
+}

@@ -1,0 +1,88 @@
+/* FOOTER - PRO GENERAL SOCIOS */
+.b5-footer {
+  text-align: center;
+  padding: 50px 5% 40px;
+  background: #050505;
+  border-top: 1px solid #1e1e1e;
+}
+
+.b5-footer .frase {
+  color: #00E676;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 22px;
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 auto 16px;
+}
+
+.footer-socials a {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #00E676;
+  border-radius: 50%;
+  color: #00E676;
+  font-size: 18px;
+  transition: 0.2s;
+}
+
+.footer-socials a:hover {
+  background: #00E676;
+  color: #000;
+  box-shadow: 0 0 18px rgba(0, 230, 118, 0.4);
+}
+
+.footer-cta {
+  font-size: 10px;
+  color: #aaa;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.b5-footer .copy {
+  font-size: 10px;
+  color: #555;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+}
+
+.b5-footer .copy a {
+  font-size: 10px;
+  color: #777;
+  text-decoration: none;
+}
+
+.footer-disclaimer {
+  max-width: 600px;
+  margin: 18px auto 0;
+  font-size: 10px;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* LEGALES HASTA ABAJO, SIN RAYITAS */
+.footer-legal {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.footer-legal a {
+  font-size: 11px;
+  color: #666;
+  text-decoration: none;
+}
+
+.footer-legal a:hover {
+  color: #00E676;
+}

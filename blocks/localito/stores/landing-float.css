@@ -3,7 +3,7 @@
 ========================================= */
 .imp-float {
   position: fixed;
-  bottom: 18px;
+  bottom: -5px;
   right: 18px;
   display: flex;
   align-items: center;
