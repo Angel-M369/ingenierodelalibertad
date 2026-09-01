@@ -1,0 +1,47 @@
+/* sobre.css - ABUNDANCIA */
+.b-abundancia{
+  background:#0f0f0f;
+  padding:32px 16px;
+  border-top:1px solid #1a1a1a;
+  border-bottom:1px solid #1a1a1a;
+}
+
+.b-abundancia .container{
+  max-width:720px;
+  margin:0 auto;
+}
+
+.b-abundancia h2{
+  font-family:'Montserrat', sans-serif;
+  font-size:22px;
+  font-weight:900;
+  line-height:1.2;
+  margin-bottom:16px;
+}
+
+.b-abundancia .sep{
+  width:40px;
+  height:3px;
+  background:var(--green);
+  margin-bottom:16px;
+  border-radius:10px;
+}
+
+.b-abundancia p{
+  font-size:14px;
+  line-height:1.6;
+  color:#d1d5db;
+  margin-bottom:12px;
+}
+
+@media(min-width:768px){
+  .b-abundancia{
+    padding:56px 24px;
+  }
+  .b-abundancia h2{
+    font-size:32px;
+  }
+  .b-abundancia p{
+    font-size:15px;
+  }
+}

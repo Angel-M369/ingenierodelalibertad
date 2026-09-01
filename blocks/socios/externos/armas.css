@@ -1,0 +1,169 @@
+/* armas.css - PUENTE + PLANES - PALETA CLAUDIA */
+.b3-puente{
+  padding:32px 16px;
+  text-align:center;
+  background:var(--bg);
+  border-top:1px solid #1a1a1a;
+  border-bottom:1px solid #1a1a1a;
+}
+
+.b3-puente h2{
+  font-family:'Montserrat', sans-serif;
+  font-size:20px;
+  font-weight:900;
+  line-height:1.2;
+  margin-bottom:12px;
+}
+
+.b3-puente h2 span{
+  color:var(--green);
+}
+
+.b3-puente p{
+  font-size:13px;
+  color:var(--gray);
+  max-width:600px;
+  margin:0 auto;
+  line-height:1.6;
+}
+
+/* PLANES */
+.b4-planes{
+  padding:24px 16px 32px 16px;
+  background:#0a0a0a;
+}
+
+.b4-planes .titulo{
+  text-align:center;
+  margin-bottom:24px;
+}
+
+.b4-planes .titulo h2{
+  font-family:'Montserrat', sans-serif;
+  font-size:20px;
+  font-weight:900;
+  line-height:1.2;
+  margin-bottom:8px;
+}
+
+.b4-planes .titulo p{
+  font-size:12px;
+  color:var(--gray);
+}
+
+.b4-planes .grid{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.card{
+  background:#111;
+  border:1.5px solid #222;
+  border-radius:16px;
+  padding:16px;
+  transition:all 0.3s ease;
+}
+
+/* COLORES DE BORDE POR NIVEL */
+.card-basico{ border-color:#00ff88; }
+.card-pro{ border-color:#00d4ff; }
+.card-total{ border-color:#eaff00; }
+
+.card-basico:hover{ box-shadow:0 0 25px rgba(0,255,136,0.15); }
+.card-pro:hover{ box-shadow:0 0 25px rgba(0,212,255,0.15); }
+.card-total:hover{ box-shadow:0 0 25px rgba(234,255,0,0.15); }
+
+.card .tag{
+  font-size:10px;
+  font-weight:800;
+  padding:6px 10px;
+  border-radius:10px;
+  background:#1a1a1a;
+  display:inline-block;
+  margin-bottom:12px;
+}
+
+.card-basico .tag{ background:#1a1a1a; color:#fff; border:1px solid #00ff88; }
+.card-pro .tag{ background:#00d4ff; color:#000; }
+.card-total .tag{ background:#eaff00; color:#000; }
+
+.card .precio{
+  font-size:24px;
+  font-weight:900;
+}
+
+.card .iva{
+  font-size:10px;
+  color:var(--gray);
+  margin-bottom:12px;
+}
+
+.sistemas{ display:flex; flex-direction:column; gap:10px; margin-bottom:16px; }
+
+.sist{
+  background:#0a0a0a;
+  border:1px solid #1e1e1e;
+  border-left:3px solid #333;
+  border-radius:10px;
+  padding:10px 12px;
+  transition:all 0.25s ease;
+  cursor:pointer;
+}
+
+.sist h4{ font-size:12px; margin-bottom:4px; }
+.sist p{ font-size:11px; color:var(--gray); line-height:1.4; }
+.ver-demo{ font-size:10px; font-weight:800; margin-top:6px; display:block; }
+
+/* HOVER POR COLOR - 6 SISTEMAS */
+.card-basico .sist:hover{
+  border-color:#00ff88;
+  background:rgba(0,255,136,0.08);
+  transform:translateY(-2px);
+}
+.card-basico .ver-demo{ color:#00ff88; }
+
+.card-pro .sist:hover{
+  border-color:#00d4ff;
+  background:rgba(0,212,255,0.08);
+  transform:translateY(-2px);
+}
+.card-pro .ver-demo{ color:#00d4ff; }
+
+.card-total .sist:hover{
+  border-color:#eaff00;
+  background:rgba(234,255,0,0.08);
+  transform:translateY(-2px);
+}
+.card-total .ver-demo{ color:#eaff00; }
+
+.btn{
+  display:block;
+  text-align:center;
+  font-weight:900;
+  font-size:12px;
+  padding:12px 20px;
+  border-radius:10px;
+  transition:all 0.2s ease;
+}
+
+.card-basico .btn{ background:#00ff88; color:#000; }
+.card-pro .btn{ background:#00d4ff; color:#000; }
+.card-total .btn{ background:#eaff00; color:#000; }
+
+.btn:hover{
+  transform:translateY(-2px);
+  filter:brightness(1.1);
+}
+
+@media(min-width:768px){
+  .b3-puente{ padding:48px 24px; }
+  .b3-puente h2{ font-size:28px; }
+  .b4-planes{ padding:32px 24px 48px 24px; }
+  .b4-planes .grid{ flex-direction:row; flex-wrap:wrap; }
+  .card{ flex:1; min-width:280px; }
+}
+
+@media(min-width:1024px){
+  .b4-planes{ padding:48px; }
+}
