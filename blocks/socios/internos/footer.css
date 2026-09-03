@@ -38,48 +38,55 @@
 }
 
 .footer-socials a:hover{
-  transform:translateY(-3px) scale(1.1);
+  transform: translateY(-3px) scale(1.1);
 }
 
 /* HOVER POR RED - EFECTO QUE QUERIAS */
 .footer-socials a:nth-child(1):hover{
-  background:#25D366;
-  border-color:#25D366;
-  color:#fff;
-  box-shadow:0 0 18px rgba(37,211,102,0.45);
+  background: #25D366;
+  border-color: #25D366;
+  color: #fff;
+  box-shadow: 0 0 18px rgba(37,211,102,0.45);
 }
+
 .footer-socials a:nth-child(2):hover{
-  background:radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-  border-color:#d6249f;
-  color:#fff;
-  box-shadow:0 0 18px rgba(214,36,159,0.45);
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  border-color: #d6249f;
+  color: #fff;
+  box-shadow: 0 0 18px rgba(214,36,159,0.45);
 }
+
 .footer-socials a:nth-child(3):hover{
-  background:#000;
-  border-color:#fff;
-  color:#fff;
+  background: #000;
+  border-color: #fff;
+  color: #fff;
   box-shadow: -2px 0 0 #00f2ea, 2px 0 0 #ff0050, 0 0 18px rgba(255,255,255,0.3);
   text-shadow: -1px 0 #00f2ea, 1px 0 #ff0050;
 }
+
 .footer-socials a:nth-child(4):hover{
-  background:#1877F2;
-  border-color:#1877F2;
-  color:#fff;
-  box-shadow:0 0 18px rgba(24,119,242,0.45);
+  background: #1877F2;
+  border-color: #1877F2;
+  color: #fff;
+  box-shadow: 0 0 18px rgba(24,119,242,0.45);
 }
+
 .footer-socials a:nth-child(5):hover{
-  background:#FF0000;
-  border-color:#FF0000;
-  color:#fff;
-  box-shadow:0 0 18px rgba(255,0,0,0.55);
+  background: #FF0000;
+  border-color: #FF0000;
+  color: #fff;
+  box-shadow: 0 0 18px rgba(255,0,0,0.55);
 }
 
 /* MISMA MEDIDA QUE TADEO - TEXTO 10px COMPACTO */
-.footer-cta, .copy, .footer-disclaimer, .footer-legal{
-  font-size:10px !important;
-  color:#666;
-  line-height:1.4;
-  margin-bottom:8px;
+.footer-cta,
+.copy,
+.footer-disclaimer,
+.footer-legal{
+  font-size: 10px !important;
+  color: #666;
+  line-height: 1.4;
+  margin-bottom: 8px;
 }
 
 .b5-footer .copy a {
@@ -106,16 +113,19 @@
 .footer-legal a {
   font-size: 10px !important;
   color: #666;
-  text-decoration: underline;
-  opacity:0.8;
-  transition:all 0.2s ease;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: all 0.2s ease;
 }
 
-.footer-legal a:hover, .b5-footer .copy a:hover {
+.footer-legal a:hover,
+.b5-footer .copy a:hover {
   color: #00E676;
-  text-shadow:0 0 10px rgba(0,230,118,0.5);
+  text-shadow: 0 0 10px rgba(0,230,118,0.5);
 }
 
-@media(min-width:768px){
-  .b5-footer{ padding:32px 24px; }
+@media(min-width: 768px){
+  .b5-footer{
+    padding: 32px 24px;
+  }
 }

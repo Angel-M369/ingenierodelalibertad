@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muro de Socios Activos | Ingeniero de la Libertad</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../blocks/socios/muro.css">
+</head>
+<body>
+
+    <nav class="nav">
+        <a href="/" class="nav-brand">INGENIERO<span>DELA</span>LIBERTAD</a>
+
+        <button class="hamburger" id="hamburger" aria-label="Menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="links" id="navLinks">
+            <a href="../index.html">MILOCALITO</a>
+            <a href="plataforma.html">PLATAFORMA</a>
+            <a href="https://wa.me/529191467339" class="highlight">QUIERO SER SOCIO</a>
+        </div>
+    </nav>
+
+    <main class="muro">
+        <div class="top">
+            <h1 class="h1">MURO DE SOCIOS<br><span>ACTIVOS</span></h1>
+            <div class="sub">Socios que ya operan con la plataforma</div>
+            <p class="desc">En este muro puede ir tu página. Cada lugar aquí es un socio con su plataforma instalada, su dominio y su link activo.</p>
+            <div class="contador">02</div>
+            <div class="contador-label">SOCIOS ACTIVOS</div>
+        </div>
+
+        <div class="filtros">
+            <button class="active" data-filter="todos">TODOS (2)</button>
+            <button data-filter="interno">TRIBU INTERNA</button>
+            <button data-filter="externo">ALIADOS EXTERNOS</button>
+        </div>
+
+        <div class="grid" id="grid">
+            <a href="internos/claudia.html" class="card interno">
+                <div class="foto" style="background-image:url('../../images/Claudia\ .jpg')"></div>
+                <div class="info">
+                    <h4>CLAUDIA</h4>
+                    <span class="rol">TRIBU INTERNA • PUEBLA •</span>
+                    <div class="estado">📍 Nueva socia <br>Página ya instalada</div>
+                    <div class="cta">VER SU PÁGINA →</div>
+                </div>
+            </a>
+
+            <a href="externos/tadeo.html" class="card externo">
+                <div class="foto" style="background-image:url('../../images/Tadeo.jpg')"></div>
+                <div class="info">
+                    <h4>TADEO</h4>
+                    <span class="rol">ALIADO EXTERNO • SONORA •</span>
+                    <div class="estado">📍 Nuevo aliado<br>Página ya instalada</div>
+                    <div class="cta">VER SU PÁGINA →</div>
+                </div>
+            </a>
+
+            <a href="https://wa.me/529191467339?text=Inge,%20quiero%20mi%20foto%20en%20el%20muro" class="card vacio">
+                <div class="vacio-inner">
+                    <h4>+ TU FOTO AQUÍ</h4>
+                    <span class="vacio-sub">Lugar #3 disponible</span>
+                    <div class="vacio-cta">QUIERO MI LUGAR →</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="cta-box">
+            <div class="cta-box-label">¿CÓMO FUNCIONA ESTO?</div>
+            <h2>VENDEMOS SISTEMAS Y<br><span>CREAMOS COMUNIDADES QUE GENERAN ABUNDANCIA.</span></h2>
+            <p>La plataforma ya está hecha. Yo instalo tu sistema en menos de 72hrs. Tú activas tu comunidad, compartes tu link y empiezas a generar abundancia ayudando a crecer a otros.</p>
+            <div class="cta-box-actions">
+                <a href="plataforma.html" class="btn-yellow">VER PLATAFORMA COMPLETA →</a>
+                <a href="https://wa.me/529191467339?text=Inge,%20vi%20el%20muro%20y%20quiero%20mi%20lugar" class="btn-white">QUIERO MI LUGAR EN EL MURO →</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="muro-footer">
+        <div class="muro-footer-inner">
+            <div class="footer-title">Muro de Socios Activos by Ingeniero de la Libertad © 2026</div>
+            <div class="footer-sub">Mi Localito - Sistemas que facturan 24/7<br>Muro de Socios Activos y Prueba Social</div>
+            <div class="footer-link-wrap">
+                <a href="https://www.ingenierodelalibertad.com" target="_blank" class="footer-link">www.ingenierodelalibertad.com</a>
+            </div>
+            <div class="footer-disclaimer">
+                Mi Localito es una plataforma con producto real. Ofrecemos sistemas digitales para negocios locales. Nuestros Socios ganan 10%/20%/30% por venta directa y 5%/10%/15% por ventas de su equipo (Aliados) según el plan. No prometemos ingresos garantizados. Las ganancias dependen del esfuerzo individual.
+            </div>
+            <div class="footer-legals">
+                <a href="../../privacidad.html">Aviso de Privacidad</a>
+                <a href="../../terminos.html">Términos y condiciones</a>
+                <a href="../../soporte.html">Soporte</a>
+                <a href="../index.html">Mi Localito</a>
+                <a href="./plataforma.html">Plataforma</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="muro.js"></script>
+</body>
+</html>

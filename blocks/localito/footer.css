@@ -6,14 +6,13 @@
     border-top: 1px solid var(--border);
 }
 
-/* BRANDING - CAMBIADO A TU VERDE LIBERTAD */
 .footer-branding {
-    background: linear-gradient(135deg, #10B981 0%, #059669 100%); /* ANTES: azules */
+    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
     padding: 30px 20px;
     text-align: center;
     border-radius: 12px;
     margin: 40px 20px 0;
-    box-shadow: 0 8px 30px rgba(16, 185, 129, 0.3); /* Sombra verde */
+    box-shadow: 0 8px 30px rgba(16, 185, 129, 0.3);
 }
 
 .marca-titulo {
@@ -29,20 +28,18 @@
 
 .marca-subtitulo {
     font-size: 14px;
-    color: #D1FAE5; /* Verde clarito pa subtítulo */
+    color: #D1FAE5;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
-/* CONTENEDOR */
 .footer-localito .contenedor {
     max-width: 1200px;
     margin: 0 auto;
     padding: 50px 20px 25px;
 }
 
-/* GRID - CENTRADO EN MOBILE */
 .footer-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -51,39 +48,40 @@
     text-align: center;
 }
 
+/* TITULOS - MISMO TAMAÑO TODOS 16PX */
 .footer-col h4 {
-    color: var(--accent); /* Tu verde libertad */
+    color: var(--accent);
     margin-bottom: 18px;
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 16px !important;
+    font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
+/* COPY - TODO MISMO TAMAÑO 12PX */
+.footer-col p,
+.footer-col a,
+.footer-small,
+.footer-cta,
+.footer-bottom,
+.footer-bottom p,
+.legal-link,
+.legal-disclaimer,
+.btn-footer-wa {
+    font-size: 12px !important;
+    line-height: 1.6;
+}
+
 .footer-col p {
     color: var(--text-sec);
-    line-height: 1.6;
     margin-bottom: 12px;
-    font-size: 15px;
 }
 
-.footer-ubicacion {
-    color: var(--text) !important;
-    font-weight: 600;
-}
-
-.footer-ubicacion i {
-    color: var(--accent);
-    margin-right: 8px;
-}
-
-/* LINKS - CENTRADOS */
 .footer-col a {
     display: block;
     color: var(--text-sec);
     text-decoration: none;
     margin-bottom: 12px;
-    font-size: 15px;
     transition: all 0.3s ease;
 }
 
@@ -97,7 +95,7 @@
     color: var(--accent);
 }
 
-/* REDES - CENTRADAS */
+/* REDES - BASE */
 .redes-ingeniero {
     display: flex;
     gap: 15px;
@@ -118,20 +116,38 @@
     border: 1px solid var(--border);
 }
 
-.redes-ingeniero a:hover {
-    background: var(--accent);
-    color: #000; /* Negro pa contraste con verde */
-    transform: translateY(-3px);
-    border-color: var(--accent);
-}
-
 .redes-ingeniero a i {
     margin: 0;
     color: inherit;
     font-size: 20px;
 }
 
-/* BOTÓN WA - SE QUEDA VERDE WHATSAPP */
+/* HOVER POR RED SOCIAL */
+.redes-ingeniero a[href*="facebook"]:hover,
+.social-facebook:hover {
+    background: #1877F2 !important;
+    border-color: #1877F2 !important;
+    color: #fff !important;
+    transform: translateY(-3px);
+}
+
+.redes-ingeniero a[href*="instagram"]:hover,
+.social-instagram:hover {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%) !important;
+    border-color: #d6249f !important;
+    color: #fff !important;
+    transform: translateY(-3px);
+}
+
+.redes-ingeniero a[href*="tiktok"]:hover,
+.social-tiktok:hover {
+    background: #000 !important;
+    border-color: #fff !important;
+    color: #fff !important;
+    transform: translateY(-3px);
+    box-shadow: 2px 2px 0 #25F4EE, -2px -2px 0 #FE2C55 !important;
+}
+
 .btn-footer-wa {
     display: inline-flex !important;
     align-items: center;
@@ -150,111 +166,216 @@
     transform: scale(1.05);
 }
 
-.footer-garantia {
-    font-size: 13px;
-    color: var(--text-sec);
-    font-style: italic;
-    margin-top: 8px;
-}
-
-/* FOOTER BOTTOM */
 .footer-bottom {
     border-top: 1px solid var(--border);
     padding-top: 25px;
     text-align: center;
-    font-size: 13px;
     color: var(--text-sec);
 }
 
-.footer-bottom p {
-    margin-bottom: 8px;
+.footer-bottom a[href*="ingenierodelalibertad"] {
+    color: #3B82F6 !important;
+    font-weight: 800;
 }
 
-.footer-legal a {
-    color: var(--text-sec);
+.footer-bottom a[href*="ingenierodelalibertad"]:hover {
+    color: #60A5FA !important;
+}
+
+/* ===== FIX CERO INLINE ===== */
+.subtitle-center {
+    text-align: center;
+    color: #888;
+    margin-bottom: 30px;
+}
+
+.text-white {
+    color: #fff !important;
+}
+
+.list-green {
+    color: #00E676;
+    font-weight: 700;
+}
+
+.list-blue {
+    color: #00D4FF;
+    font-weight: 700;
+}
+
+.list-yellow {
+    color: #FFD600;
+    font-weight: 700;
+}
+
+.list-pink {
+    color: #FF4081;
+    font-weight: 700;
+}
+
+.btn-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-ghost {
+    background: transparent !important;
+    border: 1px solid #333 !important;
+}
+
+.btn-pay-green {
+    background: #00E676 !important;
+    color: #000 !important;
+    font-weight: 900 !important;
+}
+
+.btn-pay-blue {
+    background: #00D4FF !important;
+    color: #000 !important;
+    font-weight: 900 !important;
+}
+
+.btn-pay-yellow {
+    background: #FFD600 !important;
+    color: #000 !important;
+    font-weight: 900 !important;
+}
+
+.btn-pay-pink {
+    background: #FF4081 !important;
+    color: #000 !important;
+    font-weight: 900 !important;
+}
+
+.seo-local {
+    text-align: center;
+    padding: 60px 20px;
+    background: var(--bg-card);
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+}
+
+.seo-inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.seo-title {
+    color: #fff;
+    font-family: Montserrat, sans-serif;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.seo-text {
+    color: #aaa;
+    line-height: 1.7;
+}
+
+.faq-box {
+    margin: 12px 0;
+    background: var(--bg-card);
+    padding: 12px;
+    border-radius: 8px;
+    border-left: 3px solid var(--accent);
+}
+
+.footer-small {
+    margin-top: 15px;
+    color: #666;
+}
+
+.footer-cta {
+    margin-bottom: 20px;
+}
+
+.footer-legals-master {
+    border-top: 1px solid #1a1a1a;
+    margin-top: 40px;
+    padding-top: 25px;
+    text-align: center;
+}
+
+.legal-disclaimer {
+    color: #666;
+    line-height: 1.5;
+    max-width: 700px;
+    margin: 0 auto 15px auto;
+}
+
+.legal-links {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-weight: 700;
+}
+
+.legal-link {
+    color: #555;
     text-decoration: none;
-    margin: 0 5px;
 }
 
-.footer-legal a:hover {
-    color: var(--accent);
+.legal-link:hover {
+    color: #00E676;
 }
 
-/* TABLET 768px+ */
+.legal-highlight {
+    color: #00E676 !important;
+}
+
 @media (min-width: 768px) {
     .footer-branding {
         padding: 40px;
         margin: 60px auto 0;
         max-width: 1000px;
     }
-    
+
     .marca-titulo {
         font-size: 36px;
     }
-    
+
     .footer-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 50px;
-        text-align: left; /* En tablet vuelve a la izquierda */
+        text-align: left;
     }
-    
+
     .redes-ingeniero {
         justify-content: flex-start;
     }
-    
+
     .btn-footer-wa {
         margin: 15px 0 10px;
     }
 }
 
-/* DESKTOP 1024px+ - CENTRADO TOTAL */
 @media (min-width: 1024px) {
     .footer-branding {
         padding: 45px 40px;
     }
-    
+
     .marca-titulo {
         font-size: 40px;
     }
-    
-    /* CENTRADO EN DESKTOP PA QUE SE VEA SIMÉTRICO */
+
     .footer-grid {
         gap: 60px;
-        text-align: center; /* CENTRADO EN DESKTOP */
+        text-align: center;
         max-width: 1000px;
         margin: 0 auto 40px;
     }
-    
+
     .footer-col {
         text-align: center;
     }
-    
+
     .redes-ingeniero {
-        justify-content: center; /* CENTRADO */
+        justify-content: center;
     }
-    
+
     .btn-footer-wa {
-        margin: 15px auto 10px; /* CENTRADO */
+        margin: 15px auto 10px;
     }
-}
-
-/* ICONOS DESACTIVADOS - SOLO VISUAL POR AHORA */
-.redes-ingeniero a[href="#"] {
-    cursor: not-allowed;
-    opacity: 0.6;
-}
-
-.redes-ingeniero a[href="#"]:hover {
-    transform: translateY(-1px) !important;
-    opacity: 0.8;
-}
-
-/* ===== LINK INGENIERO COLOR AZUL HERO ===== */
-.footer-bottom a[href*="ingenierodelalibertad"] {
-    color: #3B82F6 !important; /* El azul de INSTALAMOS SISTEMAS QUE FACTURAN 24/7 */
-    font-weight: 800;
-}
-.footer-bottom a[href*="ingenierodelalibertad"]:hover {
-    color: #60A5FA !important;
-    text-decoration: none;
 }

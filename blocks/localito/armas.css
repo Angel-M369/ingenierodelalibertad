@@ -7,7 +7,6 @@
     align-items: stretch;
 }
 
-/* AJUSTE PA 5 CARDS: En desktop grande, fuerza 3 columnas */
 @media (min-width: 1200px) {
     .grid-armas {
         grid-template-columns: repeat(3, 1fr);
@@ -39,18 +38,11 @@
 
 /* ========== COLORES POR ARMA ========== */
 
-/* ARMA 1: EXPRESS - VERDE WHATSAPP */
-.arma-card.express {
-    border-color: #25D366;
-}
-.arma-card.express:hover {
-    box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
-}
+.arma-card.express { border-color: #25D366; }
+.arma-card.express:hover { box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4); }
 .arma-card.express .precio,
 .arma-card.express .arma-visual i,
-.arma-card.express .tag-express {
-    color: #25D366;
-}
+.arma-card.express .tag-express { color: #25D366; }
 .arma-card.express .tag-express {
     background: rgba(37, 211, 102, 0.15);
     padding: 4px 12px;
@@ -59,21 +51,11 @@
     font-weight: 800;
     letter-spacing: 1px;
 }
-.arma-card.express .btn-express {
-    background: transparent;
-    border: 2px solid #25D366;
-    color: #25D366;
-}
-.arma-card.express .btn-express:hover {
-    background: #25D366;
-    color: #0a0a0a;
-}
 .arma-card.express .arma-ideal {
     background: rgba(37, 211, 102, 0.1);
     border-left: 3px solid #25D366;
 }
 
-/* ARMA 2: PRO - MORADO PREMIUM */
 .arma-card.pro.destacada {
     border-color: #8b5cf6;
     transform: scale(1.05);
@@ -84,9 +66,7 @@
 }
 .arma-card.pro .precio,
 .arma-card.pro .arma-visual i,
-.arma-card.pro .tag-pro {
-    color: #8b5cf6;
-}
+.arma-card.pro .tag-pro { color: #8b5cf6; }
 .arma-card.pro .tag-pro {
     background: rgba(139, 92, 246, 0.15);
     padding: 4px 12px;
@@ -94,15 +74,6 @@
     font-size: 11px;
     font-weight: 800;
     letter-spacing: 1px;
-}
-.arma-card.pro .btn-pro {
-    background: #8b5cf6;
-    color: white;
-    border: 2px solid #8b5cf6;
-}
-.arma-card.pro .btn-pro:hover {
-    background: #7c3aed;
-    box-shadow: 0 5px 20px rgba(139, 92, 246, 0.6);
 }
 .arma-card.pro .arma-ideal {
     background: rgba(139, 92, 246, 0.15);
@@ -121,18 +92,11 @@
     letter-spacing: 1px;
 }
 
-/* ARMA 3: CUSTOM - DORADO VIP */
-.arma-card.custom {
-    border-color: #f59e0b;
-}
-.arma-card.custom:hover {
-    box-shadow: 0 15px 40px rgba(245, 158, 11, 0.4);
-}
+.arma-card.custom { border-color: #f59e0b; }
+.arma-card.custom:hover { box-shadow: 0 15px 40px rgba(245, 158, 11, 0.4); }
 .arma-card.custom .precio,
 .arma-card.custom .arma-visual i,
-.arma-card.custom .tag-custom {
-    color: #f59e0b;
-}
+.arma-card.custom .tag-custom { color: #f59e0b; }
 .arma-card.custom .tag-custom {
     background: rgba(245, 158, 11, 0.15);
     padding: 4px 12px;
@@ -141,40 +105,21 @@
     font-weight: 800;
     letter-spacing: 1px;
 }
-.arma-card.custom .btn-custom {
-    background: linear-gradient(135deg, #d97706, #f59e0b);
-    color: #0a0a0a;
-    border: 2px solid #f59e0b;
-    font-weight: 900;
-}
-.arma-card.custom .btn-custom:hover {
-    background: linear-gradient(135deg, #f59e0b, #fbbf24);
-    box-shadow: 0 5px 20px rgba(245, 158, 11, 0.6);
-}
 .arma-card.custom .arma-ideal {
     background: rgba(245, 158, 11, 0.1);
     border-left: 3px solid #f59e0b;
 }
 
-/* ========== ARMA 4: AGENDA PRO - VERDE ESMERALDA (SERVICIOS) ========== */
-.arma-card.agenda {
-    border-color: #10B981;
-}
-.arma-card.agenda.destacada {
-    transform: scale(1.05);
-}
+.arma-card.agenda { border-color: #10B981; }
+.arma-card.agenda.destacada { transform: scale(1.05); }
 .arma-card.agenda.destacada:hover {
     box-shadow: 0 15px 40px rgba(16, 185, 129, 0.5);
     transform: scale(1.05) translateY(-8px);
 }
-.arma-card.agenda:hover {
-    box-shadow: 0 15px 40px rgba(16, 185, 129, 0.4);
-}
+.arma-card.agenda:hover { box-shadow: 0 15px 40px rgba(16, 185, 129, 0.4); }
 .arma-card.agenda .precio,
 .arma-card.agenda .arma-visual i,
-.arma-card.agenda .tag-agenda {
-    color: #10B981;
-}
+.arma-card.agenda .tag-agenda { color: #10B981; }
 .arma-card.agenda .tag-agenda {
     background: rgba(16, 185, 129, 0.15);
     padding: 4px 12px;
@@ -183,36 +128,17 @@
     font-weight: 800;
     letter-spacing: 1px;
 }
-.arma-card.agenda .btn-agenda {
-    background: #10B981;
-    color: #000;
-    border: 2px solid #10B981;
-    font-weight: 800;
-}
-.arma-card.agenda .btn-agenda:hover {
-    background: #059669;
-    box-shadow: 0 5px 20px rgba(16, 185, 129, 0.6);
-}
 .arma-card.agenda .arma-ideal {
     background: rgba(16, 185, 129, 0.1);
     border-left: 3px solid #10B981;
 }
-.arma-card.agenda .badge {
-    background: #10B981;
-}
+.arma-card.agenda .badge { background: #10B981; }
 
-/* ========== ARMA 5: LANDING PRO - AZUL ELÉCTRICO (SERVICIOS) ========== */
-.arma-card.landing {
-    border-color: #3B82F6;
-}
-.arma-card.landing:hover {
-    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4);
-}
+.arma-card.landing { border-color: #3B82F6; }
+.arma-card.landing:hover { box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4); }
 .arma-card.landing .precio,
 .arma-card.landing .arma-visual i,
-.arma-card.landing .tag-landing {
-    color: #3B82F6;
-}
+.arma-card.landing .tag-landing { color: #3B82F6; }
 .arma-card.landing .tag-landing {
     background: rgba(59, 130, 246, 0.15);
     padding: 4px 12px;
@@ -221,25 +147,12 @@
     font-weight: 800;
     letter-spacing: 1px;
 }
-.arma-card.landing .btn-landing {
-    background: #3B82F6;
-    color: #fff;
-    border: 2px solid #3B82F6;
-    font-weight: 800;
-}
-.arma-card.landing .btn-landing:hover {
-    background: #2563EB;
-    box-shadow: 0 5px 20px rgba(59, 130, 246, 0.6);
-}
 .arma-card.landing .arma-ideal {
     background: rgba(59, 130, 246, 0.1);
     border-left: 3px solid #3B82F6;
 }
 
-/* ========== ARMA 6: ÉLITE - ROSA ANTI-CANCELACIÓN ========== */
-.arma-card.dueno {
-    border-color: #FF4081;
-}
+.arma-card.dueno { border-color: #FF4081; }
 .arma-card.dueno.destacada {
     border-color: #FF4081;
     transform: scale(1.05);
@@ -250,9 +163,7 @@
 }
 .arma-card.dueno .precio,
 .arma-card.dueno .arma-visual i,
-.arma-card.dueno .tag-dueno {
-    color: #FF4081;
-}
+.arma-card.dueno .tag-dueno { color: #FF4081; }
 .arma-card.dueno .tag-dueno {
     background: rgba(255, 64, 129, 0.15);
     padding: 4px 12px;
@@ -261,46 +172,27 @@
     font-weight: 800;
     letter-spacing: 1px;
 }
-.arma-card.dueno .btn-dueno {
-    background: #FF4081;
-    color: #fff;
-    border: 2px solid #FF4081;
-    font-weight: 800;
-}
-.arma-card.dueno .btn-dueno:hover {
-    background: #E91E63;
-    box-shadow: 0 5px 20px rgba(255, 64, 129, 0.6);
-}
 .arma-card.dueno .arma-ideal {
     background: rgba(255, 64, 129, 0.1);
     border-left: 3px solid #FF4081;
 }
-.arma-card.dueno .badge {
-    background: #FF4081;
-}
+.arma-card.dueno .badge { background: #FF4081; }
 
-/* ========== SECCIÓN SERVICIOS - FONDO DIFERENTE ========== */
 .armas-servicios {
     background: var(--bg-main);
     padding: 80px 20px;
 }
+.armas-servicios .armas-title { color: var(--accent); }
 
-.armas-servicios .armas-title {
-    color: var(--accent);
-}
-
-/* ========== ELEMENTOS COMUNES ========== */
 .arma-header {
     text-align: center;
     margin-bottom: 20px;
 }
-
 .arma-header h3 {
     font-size: 1.3rem;
     font-weight: 900;
     margin: 10px 0;
 }
-
 .precio {
     font-size: 2.2rem;
     font-weight: 900;
@@ -309,7 +201,6 @@
     line-height: 1.1;
     letter-spacing: -1px;
 }
-
 .iva { 
     display: block; 
     font-size: 12px; 
@@ -318,25 +209,21 @@
     margin-bottom: 15px;
     white-space: nowrap;
 }
-
 .arma-visual {
     text-align: center;
     padding: 20px 0;
     border-bottom: 1px solid rgba(255,255,255,0.1);
     margin-bottom: 20px;
 }
-
 .arma-visual i {
     font-size: 3rem;
     margin-bottom: 10px;
 }
-
 .arma-visual p {
     font-weight: 800;
     font-size: 14px;
     letter-spacing: 1px;
 }
-
 .arma-desc {
     display: block;
     font-size: 13px;
@@ -345,41 +232,35 @@
     font-weight: 400;
     color: var(--text-sec);
 }
-
 .arma-features {
     list-style: none;
     padding: 0;
     margin: 20px 0;
     flex-grow: 1;
 }
-
 .arma-features li {
     padding: 10px 0;
     border-bottom: 1px solid rgba(255,255,255,0.05);
     font-size: 15px;
 }
-
 .arma-features li:before {
     content: "✓ ";
     color: var(--accent);
     font-weight: 900;
     margin-right: 8px;
 }
-
 .arma-ideal {
     padding: 12px;
     border-radius: 8px;
     margin: 20px 0;
     font-size: 14px;
 }
-
 .arma-ideal small {
     display: block;
     margin-top: 8px;
     opacity: 0.8;
     font-size: 12px;
 }
-
 .btn-arma {
     display: block;
     width: 100%;
@@ -393,11 +274,12 @@
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-
-.btn-arma:hover {
-    transform: scale(1.03);
+.btn-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: auto;
 }
-
 .section-subtitle {
     text-align: center;
     color: var(--text-sec);
@@ -405,87 +287,59 @@
     font-size: 1.1rem;
 }
 
-/* MOBILE: Quitamos el scale de las destacadas pa que no se desborde */
+/* MOBILE */
 @media (max-width: 768px) {
     .arma-card.pro.destacada,
     .arma-card.agenda.destacada,
     .arma-card.dueno.destacada {
         transform: scale(1);
     }
-    
     .arma-card.pro.destacada:hover,
     .arma-card.agenda.destacada:hover,
     .arma-card.dueno.destacada:hover {
         transform: translateY(-8px);
     }
-
-    .precio {
-        font-size: 2rem;
-    }
+    .precio { font-size: 2rem; }
 }
 
-/* ========== FIX HOVER UNIFICADO ESTILO XPRESS PARA LAS 6 CARDS ========== */
+/* ========== FIX HOVER UNIFICADO - VER DEMO + PAGAR ========== */
 
-/* 1. Quitamos el fondo sólido a todos los botones */
+/* VER DEMO - outline */
 .arma-card .btn-arma {
     background: transparent !important;
     font-weight: 900 !important;
 }
+.arma-card.express .btn-express { border: 2px solid #25D366 !important; color: #25D366 !important; }
+.arma-card.pro .btn-pro { border: 2px solid #8b5cf6 !important; color: #8b5cf6 !important; }
+.arma-card.custom .btn-custom { border: 2px solid #f59e0b !important; color: #f59e0b !important; }
+.arma-card.landing .btn-landing { border: 2px solid #3B82F6 !important; color: #3B82F6 !important; }
+.arma-card.agenda .btn-agenda { border: 2px solid #10B981 !important; color: #10B981 !important; }
+.arma-card.dueno .btn-dueno { border: 2px solid #FF4081 !important; color: #FF4081 !important; }
 
-/* 2. Cada uno con su color en outline */
-.arma-card.express .btn-express {
-    border: 2px solid #25D366 !important;
-    color: #25D366 !important;
-}
-.arma-card.pro .btn-pro {
-    border: 2px solid #8b5cf6 !important;
-    color: #8b5cf6 !important;
-}
-.arma-card.custom .btn-custom {
-    border: 2px solid #f59e0b !important;
-    color: #f59e0b !important;
-}
-.arma-card.landing .btn-landing {
-    border: 2px solid #3B82F6 !important;
-    color: #3B82F6 !important;
-}
-.arma-card.agenda .btn-agenda {
-    border: 2px solid #10B981 !important;
-    color: #10B981 !important;
-}
-.arma-card.dueno .btn-dueno {
-    border: 2px solid #FF4081 !important;
-    color: #FF4081 !important;
-}
+/* VER DEMO HOVER - relleno */
+.arma-card.express .btn-express:hover { background: #25D366 !important; color: #0a0a0a !important; transform: translateY(-2px); box-shadow: 0 5px 20px rgba(37, 211, 102, 0.6) !important; }
+.arma-card.pro .btn-pro:hover { background: #8b5cf6 !important; color: white !important; transform: translateY(-2px); box-shadow: 0 5px 20px rgba(139, 92, 246, 0.6) !important; }
+.arma-card.custom .btn-custom:hover { background: #f59e0b !important; color: #0a0a0a !important; transform: translateY(-2px); box-shadow: 0 5px 20px rgba(245, 158, 11, 0.6) !important; }
+.arma-card.landing .btn-landing:hover { background: #3B82F6 !important; color: #fff !important; transform: translateY(-2px); box-shadow: 0 5px 20px rgba(59, 130, 246, 0.6) !important; }
+.arma-card.agenda .btn-agenda:hover { background: #10B981 !important; color: #000 !important; transform: translateY(-2px); box-shadow: 0 5px 20px rgba(16, 185, 129, 0.6) !important; }
+.arma-card.dueno .btn-dueno:hover { background: #FF4081 !important; color: #fff !important; transform: translateY(-2px); box-shadow: 0 5px 20px rgba(255, 64, 129, 0.6) !important; }
 
-/* 3. El hover igual que Xpress - se rellena sólido */
-.arma-card.express .btn-express:hover {
-    background: #25D366 !important;
-    color: #0a0a0a !important;
-    box-shadow: 0 5px 20px rgba(37, 211, 102, 0.6) !important;
+/* PAGAR - sólido + hover brillo */
+.btn-express-pago, .btn-pro-pago, .btn-custom-pago, .btn-landing-pago, .btn-agenda-pago, .btn-dueno-pago {
+    border: 2px solid transparent !important;
+    font-weight: 900 !important;
+    transition: all 0.3s ease !important;
 }
-.arma-card.pro .btn-pro:hover {
-    background: #8b5cf6 !important;
-    color: white !important;
-    box-shadow: 0 5px 20px rgba(139, 92, 246, 0.6) !important;
-}
-.arma-card.custom .btn-custom:hover {
-    background: #f59e0b !important;
-    color: #0a0a0a !important;
-    box-shadow: 0 5px 20px rgba(245, 158, 11, 0.6) !important;
-}
-.arma-card.landing .btn-landing:hover {
-    background: #3B82F6 !important;
-    color: #fff !important;
-    box-shadow: 0 5px 20px rgba(59, 130, 246, 0.6) !important;
-}
-.arma-card.agenda .btn-agenda:hover {
-    background: #10B981 !important;
-    color: #000 !important;
-    box-shadow: 0 5px 20px rgba(16, 185, 129, 0.6) !important;
-}
-.arma-card.dueno .btn-dueno:hover {
-    background: #FF4081 !important;
-    color: #fff !important;
-    box-shadow: 0 5px 20px rgba(255, 64, 129, 0.6) !important;
+.btn-express-pago { background: #25D366 !important; color: #000 !important; }
+.btn-pro-pago { background: #8b5cf6 !important; color: #fff !important; }
+.btn-custom-pago { background: #f59e0b !important; color: #000 !important; }
+.btn-landing-pago { background: #3B82F6 !important; color: #fff !important; }
+.btn-agenda-pago { background: #10B981 !important; color: #000 !important; }
+.btn-dueno-pago { background: #FF4081 !important; color: #fff !important; }
+
+.btn-express-pago:hover, .btn-pro-pago:hover, .btn-custom-pago:hover, 
+.btn-landing-pago:hover, .btn-agenda-pago:hover, .btn-dueno-pago:hover {
+    filter: brightness(1.2);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
 }
