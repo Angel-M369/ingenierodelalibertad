@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Redirigiendo a pago seguro...</title></head>
+<body style="font-family:Inter,sans-serif;text-align:center;padding:50px;background:#f6f6f2">
+<h2>Redirigiendo a pago seguro... 🔒</h2>
+<p id="info" style="color:#666"></p>
+<p style="font-size:12px;color:#999">No cierres esta ventana</p>
+<script>
+const LINKS = {
+  basico: "https://mpago.la/12MJpos",
+  pro: "https://mpago.la/1je1Jwm",
+  total: "https://mpago.la/1SrtN5r"
+};
+const SHEET_WEBHOOK = "https://script.google.com/macros/s/AKfycby4hbjQNCbCpCXtM0mMZ2kEUOb8tt38BOkQcjta95Ez-BKBjcdSMBU8h3ZUUHh8KPAI/exec";
+
+const params = new URLSearchParams(window.location.search);
+const plan = (params.get('plan') || 'basico').toLowerCase();
+const ref = (params.get('ref') || 'directo').toLowerCase();
+
+if(ref!== 'directo'){
+  localStorage.setItem('ml_ref', ref);
+}
+
+document.getElementById('info').innerText = `Plan: ${plan.toUpperCase()} | Vendedor: ${ref}`;
+
+if(LINKS[plan]){
+  // 1. Guarda en tu Sheet
+  fetch(`${SHEET_WEBHOOK}?plan=${plan}&ref=${ref}&accion=venta`, {mode:'no-cors'}).catch(()=>{});
+
+  // 2. Redirige a Mercado Pago con la referencia para rastreo
+  const mpLink = LINKS[plan] + (LINKS[plan].includes('?')? '&' : '?') + 'external_reference=' + encodeURIComponent(ref);
+
+  setTimeout(()=> { window.location.href = mpLink; }, 800);
+} else {
+  document.getElementById('info').innerText = "Plan no encontrado";
+}
+</script>
+</body></html>

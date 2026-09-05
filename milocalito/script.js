@@ -1,5 +1,32 @@
-// SCRIPT MI LOCALITO - 6 SISTEMAS + MEDICIÓN MAESTRA G-0S14JTTS9D
+// SCRIPT MI LOCALITO - 6 SISTEMAS + MEDICIÓN MAESTRA G-0S14JTTS9D + SISTEMA DE SOCIOS V1
 document.addEventListener('DOMContentLoaded', () => {
+    // ===== SISTEMA DE SOCIOS - 24/7 TRACKING =====
+    const params = new URLSearchParams(window.location.search);
+    const refUrl = params.get('ref');
+    if (refUrl) {
+        localStorage.setItem('ml_ref', refUrl.toUpperCase().trim());
+        // Limpia la URL para que se vea bonita
+        window.history.replaceState({}, '', window.location.pathname);
+    }
+    const socioActivo = localStorage.getItem('ml_ref') || 'DIRECTO';
+
+    // Si hay socio, lo pegamos a todos los links de MP con external_reference
+    document.querySelectorAll('a[href*="mpago.la"]').forEach(a => {
+        try {
+            const url = new URL(a.href);
+            if (socioActivo!== 'DIRECTO') {
+                url.searchParams.set('external_reference', socioActivo);
+                url.searchParams.set('ref', socioActivo);
+                a.href = url.toString();
+            }
+        } catch(e){}
+    });
+
+    if (socioActivo!== 'DIRECTO' && typeof gtag!== 'undefined') {
+        gtag('event', 'socio_detectado', { 'ref_socio': socioActivo });
+        console.log('🔥 Socio activo:', socioActivo);
+    }
+
     // Cerrar menú
     document.querySelectorAll('.nav a').forEach(link => {
         link.addEventListener('click', () => {
@@ -8,8 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ===== MEDICIÓN MAESTRA MADRE =====
-    // Links de pago con diferenciación por sistema
+    // ===== MEDICIÓN MAESTRA MADRE + REF =====
     document.querySelectorAll('a[href*="mpago.la"]').forEach(btn=>{
         btn.addEventListener('click',()=>{
             let plan = 'desconocido';
@@ -27,49 +53,65 @@ document.addEventListener('DOMContentLoaded', () => {
                 value = 9999;
             }
 
-            if(typeof gtag !== 'undefined'){
+            if(typeof gtag!== 'undefined'){
                 gtag('event', 'click_pago', {
                     'plan': plan,
                     'sistema_origen': sistema,
+                    'ref_socio': socioActivo,
                     'value': value,
                     'currency': 'MXN'
                 });
                 gtag('event', 'begin_checkout', {
                     'value': value,
                     'currency': 'MXN',
-                    'items': [{ 'item_name': plan + ' - ' + sistema }]
+                    'ref_socio': socioActivo,
+                    'items': [{ 'item_name': plan + ' - ' + sistema, 'affiliation': socioActivo }]
                 });
             }
         });
     });
 
-    // Clicks a demos
+    // Clicks a demos + REF
     document.querySelectorAll('a[href*="/express/"], a[href*="/pro/"], a[href*="/custom/"], a[href*="/landing/"], a[href*="/agenda/"], a[href*="/elite/"]').forEach(btn=>{
         btn.addEventListener('click',()=>{
-            if(typeof gtag !== 'undefined'){
+            if(typeof gtag!== 'undefined'){
                 gtag('event', 'view_demo', {
                     'demo': btn.getAttribute('href'),
-                    'origen': 'madre'
+                    'origen': 'madre',
+                    'ref_socio': socioActivo
                 });
             }
         });
     });
 
-    // WA general madre
+    // WA general madre + REF
     document.querySelectorAll('a[href*="wa.me"]').forEach(btn=>{
         btn.addEventListener('click',()=>{
-            if(typeof gtag !== 'undefined'){
+            // También le pasamos el ref al WA para que tú sepas de quién viene
+            try {
+                if (socioActivo!== 'DIRECTO') {
+                    const url = new URL(btn.href);
+                    const textoActual = url.searchParams.get('text') || '';
+                    if (!textoActual.toLowerCase().includes('ref:')) {
+                        url.searchParams.set('text', textoActual + ` (Ref: ${socioActivo})`);
+                        btn.href = url.toString();
+                    }
+                }
+            } catch(e){}
+
+            if(typeof gtag!== 'undefined'){
                 gtag('event', 'click_whatsapp', {
                     'sistema': 'madre_milocalito',
-                    'ubicacion': btn.closest('section')?.id || 'footer'
+                    'ubicacion': btn.closest('section')?.id || 'footer',
+                    'ref_socio': socioActivo
                 });
             }
         });
     });
 
-    // QUIZ LOGICA + MEDICIÓN
+    // QUIZ LOGICA + MEDICIÓN + REF
     let tipoVenta = '';
-    const btnsPaso1 = document.querySelectorAll('.quiz-step[data-step="1"] .quiz-btn');
+    const btnsPaso1 = document.querySelectorAll('.quiz-step[data-step="1"].quiz-btn');
     const btnsFinal = document.querySelectorAll('.quiz-btn.final');
 
     btnsPaso1.forEach(btn => {
@@ -81,8 +123,8 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 document.querySelector('[data-step="2b"]').classList.add('active');
             }
-            if(typeof gtag !== 'undefined'){
-                gtag('event', 'quiz_step1', { 'tipo': tipoVenta });
+            if(typeof gtag!== 'undefined'){
+                gtag('event', 'quiz_step1', { 'tipo': tipoVenta, 'ref_socio': socioActivo });
             }
         });
     });
@@ -105,10 +147,11 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('resultado-texto').innerText = textos[armaId]?.d || '';
             document.getElementById('resultado-btn').href = '#'+armaId;
 
-            if(typeof gtag !== 'undefined'){
+            if(typeof gtag!== 'undefined'){
                 gtag('event', 'quiz_result', {
                     'sistema_recomendado': armaId,
-                    'tipo_venta': tipoVenta
+                    'tipo_venta': tipoVenta,
+                    'ref_socio': socioActivo
                 });
             }
         });
@@ -118,7 +161,8 @@ document.addEventListener('DOMContentLoaded', () => {
 function reiniciarQuiz(){
     document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
     document.querySelector('[data-step="1"]').classList.add('active');
-    if(typeof gtag !== 'undefined'){
-        gtag('event', 'quiz_restart');
+    const socioActivo = localStorage.getItem('ml_ref') || 'DIRECTO';
+    if(typeof gtag!== 'undefined'){
+        gtag('event', 'quiz_restart', { 'ref_socio': socioActivo });
     }
 }
