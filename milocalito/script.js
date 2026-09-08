@@ -1,16 +1,14 @@
-// SCRIPT MI LOCALITO - 6 SISTEMAS + MEDICIÓN MAESTRA G-0S14JTTS9D + SISTEMA DE SOCIOS V1
+// SCRIPT MI LOCALITO - 6 SISTEMAS + MEDICIÓN MAESTRA G-0S14JTTS9D + SISTEMA DE SOCIOS V1 - FINAL - CORREGIDO
 document.addEventListener('DOMContentLoaded', () => {
     // ===== SISTEMA DE SOCIOS - 24/7 TRACKING =====
     const params = new URLSearchParams(window.location.search);
     const refUrl = params.get('ref');
     if (refUrl) {
         localStorage.setItem('ml_ref', refUrl.toUpperCase().trim());
-        // Limpia la URL para que se vea bonita
         window.history.replaceState({}, '', window.location.pathname);
     }
     const socioActivo = localStorage.getItem('ml_ref') || 'DIRECTO';
 
-    // Si hay socio, lo pegamos a todos los links de MP con external_reference
     document.querySelectorAll('a[href*="mpago.la"]').forEach(a => {
         try {
             const url = new URL(a.href);
@@ -24,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (socioActivo!== 'DIRECTO' && typeof gtag!== 'undefined') {
         gtag('event', 'socio_detectado', { 'ref_socio': socioActivo });
-        console.log('🔥 Socio activo:', socioActivo);
     }
 
     // Cerrar menú
@@ -41,53 +38,26 @@ document.addEventListener('DOMContentLoaded', () => {
             let plan = 'desconocido';
             let value = 0;
             let sistema = btn.closest('.arma-card')?.id || 'madre';
-
-            if(btn.href.includes('12MJpos')){
-                plan = 'ESENCIAL $3,999';
-                value = 3999;
-            } else if(btn.href.includes('1je1Jwm')){
-                plan = 'PROFESIONAL $6,999';
-                value = 6999;
-            } else if(btn.href.includes('1SrtN5r')){
-                plan = 'NEGOCIO TOTAL $9,999';
-                value = 9999;
-            }
-
+            if(btn.href.includes('12MJpos')){ plan = 'ESENCIAL $3,999'; value = 3999; }
+            else if(btn.href.includes('1je1Jwm')){ plan = 'PROFESIONAL $6,999'; value = 6999; }
+            else if(btn.href.includes('1SrtN5r')){ plan = 'NEGOCIO TOTAL $9,999'; value = 9999; }
             if(typeof gtag!== 'undefined'){
-                gtag('event', 'click_pago', {
-                    'plan': plan,
-                    'sistema_origen': sistema,
-                    'ref_socio': socioActivo,
-                    'value': value,
-                    'currency': 'MXN'
-                });
-                gtag('event', 'begin_checkout', {
-                    'value': value,
-                    'currency': 'MXN',
-                    'ref_socio': socioActivo,
-                    'items': [{ 'item_name': plan + ' - ' + sistema, 'affiliation': socioActivo }]
-                });
+                gtag('event', 'click_pago', { 'plan': plan, 'sistema_origen': sistema, 'ref_socio': socioActivo, 'value': value, 'currency': 'MXN' });
+                gtag('event', 'begin_checkout', { 'value': value, 'currency': 'MXN', 'ref_socio': socioActivo, 'items': [{ 'item_name': plan + ' - ' + sistema, 'affiliation': socioActivo }] });
             }
         });
     });
 
-    // Clicks a demos + REF
     document.querySelectorAll('a[href*="/express/"], a[href*="/pro/"], a[href*="/custom/"], a[href*="/landing/"], a[href*="/agenda/"], a[href*="/elite/"]').forEach(btn=>{
         btn.addEventListener('click',()=>{
             if(typeof gtag!== 'undefined'){
-                gtag('event', 'view_demo', {
-                    'demo': btn.getAttribute('href'),
-                    'origen': 'madre',
-                    'ref_socio': socioActivo
-                });
+                gtag('event', 'view_demo', { 'demo': btn.getAttribute('href'), 'origen': 'madre', 'ref_socio': socioActivo });
             }
         });
     });
 
-    // WA general madre + REF
     document.querySelectorAll('a[href*="wa.me"]').forEach(btn=>{
         btn.addEventListener('click',()=>{
-            // También le pasamos el ref al WA para que tú sepas de quién viene
             try {
                 if (socioActivo!== 'DIRECTO') {
                     const url = new URL(btn.href);
@@ -98,30 +68,26 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
             } catch(e){}
-
             if(typeof gtag!== 'undefined'){
-                gtag('event', 'click_whatsapp', {
-                    'sistema': 'madre_milocalito',
-                    'ubicacion': btn.closest('section')?.id || 'footer',
-                    'ref_socio': socioActivo
-                });
+                gtag('event', 'click_whatsapp', { 'sistema': 'madre_milocalito', 'ubicacion': btn.closest('section')?.id || 'footer', 'ref_socio': socioActivo });
             }
         });
     });
 
-    // QUIZ LOGICA + MEDICIÓN + REF
+    // ===== QUIZ LOGICA - CORREGIDO DEFINITIVO =====
     let tipoVenta = '';
-    const btnsPaso1 = document.querySelectorAll('.quiz-step[data-step="1"].quiz-btn');
+    // CORREGIDO: ahora sí con espacio entre el contenedor y el botón
+    const btnsPaso1 = document.querySelectorAll('.quiz-step[data-step="1"] .quiz-btn');
     const btnsFinal = document.querySelectorAll('.quiz-btn.final');
 
     btnsPaso1.forEach(btn => {
         btn.addEventListener('click', () => {
             tipoVenta = btn.dataset.value;
-            document.querySelector('.quiz-step.active').classList.remove('active');
+            document.querySelector('.quiz-step.active')?.classList.remove('active');
             if(tipoVenta === 'producto'){
-                document.querySelector('[data-step="2a"]').classList.add('active');
+                document.querySelector('[data-step="2a"]')?.classList.add('active');
             } else {
-                document.querySelector('[data-step="2b"]').classList.add('active');
+                document.querySelector('[data-step="2b"]')?.classList.add('active');
             }
             if(typeof gtag!== 'undefined'){
                 gtag('event', 'quiz_step1', { 'tipo': tipoVenta, 'ref_socio': socioActivo });
@@ -142,17 +108,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 'plan-dueno':{t:'TU SISTEMA ES: ÉLITE - NEGOCIO TOTAL $9,999',d:'Sistema completo: captar + agendar + cobrar anticipo.'}
             };
             document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
-            document.querySelector('[data-step="resultado"]').classList.add('active');
+            document.querySelector('[data-step="resultado"]')?.classList.add('active');
             document.getElementById('resultado-titulo').innerText = textos[armaId]?.t || 'TU SISTEMA';
             document.getElementById('resultado-texto').innerText = textos[armaId]?.d || '';
-            document.getElementById('resultado-btn').href = '#'+armaId;
-
+            const btnResultado = document.getElementById('resultado-btn');
+            if(btnResultado){
+                btnResultado.href = '#'+armaId;
+                btnResultado.onclick = (e) => {
+                    e.preventDefault();
+                    document.getElementById(armaId)?.scrollIntoView({behavior:'smooth', block:'center'});
+                };
+            }
             if(typeof gtag!== 'undefined'){
-                gtag('event', 'quiz_result', {
-                    'sistema_recomendado': armaId,
-                    'tipo_venta': tipoVenta,
-                    'ref_socio': socioActivo
-                });
+                gtag('event', 'quiz_result', { 'sistema_recomendado': armaId, 'tipo_venta': tipoVenta, 'ref_socio': socioActivo });
             }
         });
     });
@@ -160,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function reiniciarQuiz(){
     document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
-    document.querySelector('[data-step="1"]').classList.add('active');
+    document.querySelector('[data-step="1"]')?.classList.add('active');
     const socioActivo = localStorage.getItem('ml_ref') || 'DIRECTO';
     if(typeof gtag!== 'undefined'){
         gtag('event', 'quiz_restart', { 'ref_socio': socioActivo });
