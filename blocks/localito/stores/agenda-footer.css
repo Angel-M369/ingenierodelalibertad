@@ -81,7 +81,7 @@
 /* ===== BOTON FLOTANTE YARE - EL QUE BORRASTE ===== */
 .yare-float{
   position:fixed;
-  bottom:24px;
+  bottom:5px;
   right:24px;
   z-index:9999;
   display:flex;
