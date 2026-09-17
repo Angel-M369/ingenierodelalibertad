@@ -1,10 +1,49 @@
-@import url("../../blocks/localito/stores/landing-reset.css");
-@import url("../../blocks/localito/stores/landing-ticker.css");
-@import url("../../blocks/localito/stores/landing-header.css");
-@import url("../../blocks/localito/stores/landing-hero.css");
-@import url("../../blocks/localito/stores/landing-caja.css");
-@import url("../../blocks/localito/stores/landing-mapa.css");
-@import url("../../blocks/localito/stores/landing-testimonios.css");
-@import url("../../blocks/localito/stores/landing-servicios.css");
-@import url("../../blocks/localito/stores/landing-footer.css");
-@import url("../../blocks/localito/stores/landing-float.css");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800;900&display=swap');
+* { margin:0; padding:0; box-sizing:border-box; }
+body{ background:#020617; font-family:'Inter',sans-serif; color:#fff; padding:14px; }
+.wrap{ max-width:720px; margin:0 auto; }
+.top{ display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; }
+.logo{ font-weight:900; font-size:20px; color:#fff; text-decoration:none; letter-spacing:-1px; }
+.logo span{ color:#0EA5E9; }
+.back{ background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.1); padding:8px 14px; border-radius:99px; color:#94a3b8; text-decoration:none; font-size:13px; font-weight:600; }
+.hero-card{ background:radial-gradient(120% 120% at 0% 0%, #0C4A6E 0%, #020617 55%); border:1px solid #0EA5E9; border-radius:22px; padding:20px; box-shadow:0 0 30px rgba(14,165,233,.25), inset 0 0 20px rgba(14,165,233,.1); }
+.pill{ background:#0EA5E9; color:#fff; padding:6px 14px; border-radius:99px; font-size:11px; font-weight:800; letter-spacing:1px; display:inline-block; margin-bottom:12px; }
+.hero-card h1{ font-size:34px; font-weight:900; line-height:.9; letter-spacing:-1px; margin-bottom:6px; text-align:center; }
+.hero-card h1 span{ color:#0EA5E9; display:block; font-size:48px; text-shadow:0 0 20px rgba(14,165,233,.6); }
+.meta{ color:#38bdf8; font-size:12px; font-weight:700; letter-spacing:1px; margin-bottom:16px; text-align:center; }
+.hero-row{ display:flex; gap:12px; align-items:center; background:rgba(14,165,233,.1); border:1px solid rgba(14,165,233,.2); padding:12px; border-radius:14px; margin-top:10px; }
+.hero-row i{ font-size:28px; color:#0EA5E9; }
+.hero-row b{ font-size:14px; color:#e0f2fe; line-height:1.1; display:block; }
+.hero-row p{ font-size:12px; color:#7dd3fc; margin-top:2px; }
+.divider{ height:1px; background:rgba(14,165,233,.15); margin:16px 0; }
+.list{ list-style:none; display:grid; gap:10px; }
+.list li{ display:flex; gap:10px; align-items:flex-start; font-size:13px; color:#cbd5e1; line-height:1.3; }
+.list li i{ color:#0EA5E9; margin-top:2px; font-size:14px; }
+.list li strong{ color:#fff; }
+.box-green{ background:rgba(14,165,233,.12); border:1px solid rgba(14,165,233,.25); border-radius:14px; padding:12px; margin-top:16px; }
+.box-green b{ font-size:12px; color:#7dd3fc; display:block; margin-bottom:6px; }
+.box-green p{ font-size:11px; color:#94a3b8; line-height:1.4; }
+.demos-title{ text-align:center; margin:24px 0 14px; }
+.demos-title h2{ font-size:20px; font-weight:800; }
+.demos-title p{ font-size:12px; color:#64748b; margin-top:4px; }
+
+/* GRID Y CARDS - IGUALITO A AGENDA */
+.grid{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+@media(max-width:600px){ .grid{ grid-template-columns:1fr; } }
+.card-demo{ border-radius:18px; text-decoration:none; position:relative; overflow:hidden; display:flex; flex-direction:column; transition:.2s; border:1px solid #2E2E32; background:#232326; }
+.card-demo:hover{ transform:translateY(-3px); }
+.card-demo.preview-card{ padding:0; }
+.preview{ position:relative; height:185px; overflow:hidden; background:#111; }
+.preview img{ width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
+.tag{ display:none; }
+.card-content{ padding:12px 14px 14px; display:flex; flex-direction:column; flex:1; gap:6px; }
+.card-content h3{ font-size:13px; font-weight:800; letter-spacing:.6px; margin:0; line-height:1.1; color:#fff; }
+.card-content p{ font-size:11px; line-height:1.35; flex:1; margin:0; color:#A1A1AA; }
+.btn{ margin-top:6px; padding:9px; border-radius:99px; text-align:center; font-size:11.5px; font-weight:700; display:flex; justify-content:center; gap:6px; align-items:center; }
+
+/* COLORES POR GIRO - SOLO CAMBIA EL BOTÓN */
+.card-demo.despacho .btn{ background:#FBBF24; color:#000; }
+.card-demo.dental .btn{ background:#0EA5E9; color:#fff; }
+
+.footer{ text-align:center; font-size:10px; color:#475569; margin-top:24px; padding-bottom:20px; }
+.footer a{ color:#0EA5E9; text-decoration:none; font-weight:700; }

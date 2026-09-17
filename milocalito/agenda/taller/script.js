@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const tel = document.getElementById('coti-tel');
   const fecha = document.getElementById('coti-fecha');
   const horaEl = document.getElementById('coti-hora');
+  const menuCheck = document.getElementById('brillo-menu-toggle');
 
-  // No permitir fechas pasadas
   if (fecha) {
     fecha.min = new Date().toISOString().split('T')[0];
   }
@@ -29,11 +29,16 @@ document.addEventListener('DOMContentLoaded', () => {
       totalEl.textContent = "$" + total.toLocaleString('es-MX');
     }
 
+    // Muestra / oculta botón demo azul
+    if (btnDemo) {
+      btnDemo.style.display = servicios.length > 0? 'block' : 'none';
+    }
+
     const datosCompletos = servicios.length > 0 &&
-                           nombre?.value.trim().length > 2 &&
-                           tel?.value.trim().length >= 10 &&
-                           fecha?.value &&
-                           horaEl?.value;
+      nombre?.value.trim().length > 2 &&
+      tel?.value.trim().length >= 10 &&
+      fecha?.value &&
+      horaEl?.value;
 
     if (btn) {
       btn.disabled =!datosCompletos;
@@ -43,52 +48,34 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.dataset.serv = servicios.join(", ");
       btn.dataset.total = total;
     }
-
-    if (btnDemo) {
-      btnDemo.style.display = servicios.length > 0? 'block' : 'none';
-    }
   }
 
-  // Listeners
   checks.forEach(c => c.addEventListener('change', actualizar));
   [nombre, auto, tel, fecha, horaEl].forEach(input => {
     if (input) input.addEventListener('input', actualizar);
   });
 
-  // BOTÓN PRINCIPAL - WhatsApp a Luis (Demo)
   if (btn) {
     btn.addEventListener('click', () => {
-      const datos = {
-        nombre: nombre.value.trim(),
-        auto: auto.value.trim(),
-        telefono: tel.value.trim(),
-        fecha: fecha.value,
-        hora: horaEl.value,
-        servicios: btn.dataset.serv,
-        total: btn.dataset.total
-      };
+      btn.textContent = "Abriendo WhatsApp...";
 
-      const msg = `Hola Luis! Soy ${datos.nombre}%0A%0A🚗 Auto: ${datos.auto}%0A📱 Mi cel: ${datos.telefono}%0A🛠️ Servicios: ${datos.servicios}%0A📅 Fecha: ${datos.fecha} a las ${datos.hora}%0A💰 Total: $${datos.total}%0A%0AQuiero pagar mi anticipo de $200 y agendar.`;
+      const msg = `Hola Luis! Soy ${nombre.value.trim()}%0A%0A🚗 Auto: ${auto.value.trim()}%0A📱 Mi cel: ${tel.value.trim()}%0A🛠️ Servicios: ${btn.dataset.serv}%0A📅 Fecha: ${fecha.value} a las ${horaEl.value}%0A💰 Total: $${btn.dataset.total}%0A%0AQuiero pagar mi anticipo de $200 y agendar.`;
 
       window.open(`https://wa.me/522292685379?text=${msg}`, '_blank');
 
-      // CUANDO TENGAS EL PHP REAL, COMENTA LA LINEA DE ARRIBA Y USA ESTO:
-      // fetch("api/guardar_cita.php", { method: 'POST', body: JSON.stringify(datos) })
-      //.then(r => r.json()).then(res => alert("¡Agendado! Revisa tu WhatsApp"));
+      // Cierra el menú si quedó abierto
+      if (menuCheck) menuCheck.checked = false;
+
+      setTimeout(() => { actualizar(); }, 1000);
     });
   }
 
-  // BOTÓN DEMO - Explicación del anticipo
-  if (btnDemo) {
-    btnDemo.addEventListener('click', () => {
-      alert(
-        '🔒 MODO DEMO - SISTEMA AGENDA $6,999\n\n' +
-        'En la versión real de Luis aquí se cobra ANTICIPO de $200 con tarjeta/OXXO para asegurar lugar.\n\n' +
-        'Si no paga, NO se agenda. Así evitas plantones.\n\n' +
-        'Demo sin cobros reales.'
-      );
+  // Cierra menú al dar click en cualquier enlace del nav
+  document.querySelectorAll('.brillo-nav a').forEach(a => {
+    a.addEventListener('click', () => {
+      if (menuCheck) menuCheck.checked = false;
     });
-  }
+  });
 
   actualizar();
 });

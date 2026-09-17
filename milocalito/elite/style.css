@@ -1,10 +1,64 @@
-@import url("../../blocks/localito/stores/elite-reset.css");
-@import url("../../blocks/localito/stores/elite-header.css");
-@import url("../../blocks/localito/stores/elite-hero.css");
-@import url("../../blocks/localito/stores/elite-incluye.css");
-@import url("../../blocks/localito/stores/elite-anexo.css");
-@import url("../../blocks/localito/stores/elite-apartar.css");
-@import url("../../blocks/localito/stores/elite-restri.css");
-@import url("../../blocks/localito/stores/elite-show.css");
-@import url("../../blocks/localito/stores/elite-topbar.css");
-@import url("../../blocks/localito/stores/elite-footer.css");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800;900&display=swap');
+:root{
+  --rosa:#FF1A75;
+  --rosa-light:#FF4D8E;
+  --rosa-bg:rgba(255,26,117,0.15);
+  --rosa-border:rgba(255,26,117,0.28);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#080a14;font-family:'Inter',sans-serif;color:#fff;padding:14px}
+.wrap{max-width:720px;margin:0 auto}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.logo{font-weight:900;font-size:20px;color:#fff;text-decoration:none;letter-spacing:-1px}
+.logo span{color:var(--rosa)}
+.back{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);padding:8px 14px;border-radius:99px;color:#94a3b8;text-decoration:none;font-size:13px;font-weight:600}
+.hero-card{background:radial-gradient(120% 120% at 0% 0%, #4a1025 0%, #080a14 55%);border:1px solid var(--rosa);border-radius:22px;padding:20px;box-shadow:0 0 30px rgba(255,26,117,.25), inset 0 0 20px rgba(255,26,117,.1)}
+.pill{background:var(--rosa);color:#fff;padding:6px 14px;border-radius:99px;font-size:11px;font-weight:800;letter-spacing:1px;display:inline-block;margin-bottom:12px}
+.hero-card h1{font-size:34px;font-weight:900;line-height:.9;letter-spacing:-1px;margin-bottom:6px;text-align:center}
+.hero-card h1 span{color:var(--rosa);display:block;font-size:48px;text-shadow:0 0 20px rgba(255,26,117,.6)}
+.meta{color:var(--rosa-light);font-size:12px;font-weight:700;letter-spacing:1px;margin-bottom:16px;text-align:center}
+.hero-row{display:flex;gap:12px;align-items:center;background:rgba(255,26,117,.1);border:1px solid rgba(255,26,117,.2);padding:12px;border-radius:14px;margin-top:10px}
+.hero-row i{font-size:28px;color:var(--rosa)}
+.hero-row b{font-size:14px;color:#ffd1e0;line-height:1.1;display:block}
+.hero-row p{font-size:12px;color:var(--rosa-light);margin-top:2px}
+.divider{height:1px;background:rgba(255,26,117,.15);margin:16px 0}
+.list{list-style:none;display:grid;gap:10px}
+.list li{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#cbd5e1;line-height:1.3}
+.list li i{color:var(--rosa);margin-top:2px;font-size:14px}
+.list li strong{color:#fff}
+.box-green{background:rgba(255,26,117,.12);border:1px solid rgba(255,26,117,.25);border-radius:14px;padding:12px;margin-top:16px}
+.box-green b{font-size:12px;color:#ff8ab3;display:block;margin-bottom:6px}
+.box-green p{font-size:11px;color:#94a3b8;line-height:1.4}
+.demos-title{text-align:center;margin:24px 0 14px}
+.demos-title h2{font-size:20px;font-weight:800}
+.demos-title p{font-size:12px;color:#64748b;margin-top:4px}
+
+/* GRID Y CARDS - CLON EXACTO DE AGENDA */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.grid{grid-template-columns:1fr}}
+.card-demo{border-radius:18px;text-decoration:none;position:relative;overflow:hidden;display:flex;flex-direction:column;transition:.2s;border:1px solid}
+.card-demo:hover{transform:translateY(-3px)}
+.card-demo.preview-card{padding:0}
+.preview{position:relative;height:185px;overflow:hidden;background:#111}
+.preview img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.tag{display:none}
+
+.card-content{padding:12px 14px 14px;display:flex;flex-direction:column;flex:1;gap:6px}
+.card-content h3{font-size:13px;font-weight:800;letter-spacing:.6px;margin:0;line-height:1.1}
+.card-content p{font-size:11px;line-height:1.35;flex:1;margin:0}
+.btn{margin-top:6px;padding:9px;border-radius:99px;text-align:center;font-size:11.5px;font-weight:700;display:flex;justify-content:center;gap:6px;align-items:center}
+
+/* RAYAS - FONDO GRIS + ACENTO ROSA (igual que YARE) */
+.card-demo.despacho{background:#232326;border-color:#2E2E32}
+.card-demo.despacho .card-content h3{color:#fff}
+.card-demo.despacho .card-content p{color:#A1A1AA}
+.card-demo.despacho .btn{background:#EC4899;color:#fff}
+
+/* BARBY - FONDO GRIS + ACENTO AZUL (igual que BRILLO) */
+.card-demo.dental{background:#232326;border-color:#2E2E32}
+.card-demo.dental .card-content h3{color:#fff}
+.card-demo.dental .card-content p{color:#A1A1AA}
+.card-demo.dental .btn{background:#0EA5E9;color:#fff}
+
+.footer{text-align:center;font-size:10px;color:#475569;margin-top:24px;padding-bottom:20px}
+.footer a{color:var(--rosa);text-decoration:none;font-weight:700}

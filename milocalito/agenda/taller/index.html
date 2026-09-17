@@ -3,10 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brillo Total Tabasco | Detallado, Pulido y Lavado Premium</title>
+  <title>Brillo Total Tabasco | Detallado, Pulido y Lavado Premium - Demo AGENDA Mi Localito</title>
   <meta name="description" content="Demo AGENDA Mi Localito en Tabasco. Pulido $1,200, encerado $800, interior $950. Agenda 24/7 con anticipo $200.">
-  <link rel="canonical" href="https://www.ingenierodelalibertad.com/milocalito/agenda/brillo/">
-  <meta name="theme-color" content="#00B1EA">
+  <link rel="canonical" href="https://www.ingenierodelalibertad.com/milocalito/agenda/taller/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#0f0f0f">
+  
+  <!-- OG TAGS PARA WHATSAPP -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Brillo Total | Tu carro no está sucio, está opaco - Tabasco">
+  <meta property="og:description" content="Demo AGENDA: Agenda 24/7, paga anticipo $200 y asegura tu lugar. Pulido $1,200, Encerado $800. 0 lugares empalmados.">
+  <meta property="og:image" content="https://www.ingenierodelalibertad.com/images/Pulido.jpg">
+  <meta property="og:url" content="https://www.ingenierodelalibertad.com/milocalito/agenda/taller/">
+  <meta property="og:site_name" content="Mi Localito">
+
+  <!-- Google tag (gtag.js) - MEDICIÓN MAESTRA -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0S14JTTS9D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0S14JTTS9D');
+  </script>
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
@@ -19,27 +38,25 @@
         <span>🚗 LAVADO PREMIUM $350</span><span>✨ PULIDO 1 PASO $1,200</span><span>🛡️ ENCERADO 6 MESES $800</span><span>🧼 INTERIOR PROFUNDO $950</span>
       </div>
     </div>
-
     <header class="brillo-header">
-      <div class="brillo-container">
-        <a href="#" class="brillo-logo">Brillo <span>Total</span></a>
-        <input type="checkbox" id="brillo-menu-toggle" class="brillo-checkbox">
-        <label for="brillo-menu-toggle" class="brillo-burger"><span></span><span></span><span></span></label>
-        <label for="brillo-menu-toggle" class="brillo-overlay"></label>
-        <nav class="brillo-nav">
-          <a href="#servicios">Servicios</a>
-          <a href="#cotizador">Cotizar</a>
-          <a href="#testimonios">Reseñas</a>
-          <a href="#mapa">Ubicación</a>
-          <a href="https://wa.me/522292685379?text=Hola%20Luis%20quiero%20cotizar%20pulido" class="brillo-btn-agendar">Agenda</a>
-        </nav>
-      </div>
+       <div class="brillo-container">
+    <a href="#" class="brillo-logo">Brillo <span>Total</span></a>
+    <input type="checkbox" id="brillo-menu-toggle" class="brillo-checkbox">
+    <label for="brillo-menu-toggle" class="brillo-burger"><span></span><span></span><span></span></label>
+    <nav class="brillo-nav">
+      <a href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#cotizar">Cotizar</a>
+      <a href="#mapa">Ubicación</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <label for="brillo-menu-toggle" class="brillo-overlay"></label>
+       </div>
     </header>
-
     <main>
-      <section class="brillo-hero">
+      <section class="brillo-hero" id ="inicio">
         <div class="brillo-container">
-          <div class="brillo-badge">📍 Tabasco · Agenda Abierta Hoy</div>
+          <div class="brillo-badge">📍 Tabasco · Agenda Abierta Hoy - Demo AGENDA</div>
           <h1>Tu carro no está sucio,<br><span>está opaco</span></h1>
           <p>Detallado que sí se nota en Tabasco. Agenda sola, paga anticipo y asegura tu lugar.</p>
           <div class="brillo-slider">
@@ -55,7 +72,6 @@
           <a href="#cotizador" class="brillo-btn-cta-hero">Cotiza tu servicio ↓</a>
         </div>
       </section>
-
       <section class="brillo-servicios" id="servicios">
         <div class="brillo-container">
           <h2 class="brillo-titulo">Elige tu <span>brillo</span></h2>
@@ -104,8 +120,7 @@
           </div>
         </div>
       </section>
-
-      <section class="brillo-cotizador" id="cotizador">
+      <section class="brillo-cotizador" id="cotizar">
         <div class="brillo-container">
           <h2 class="brillo-titulo">Arma tu <span>paquete</span></h2>
           <p class="brillo-sub">Tu secretaria automática - Cobra anticipo $200</p>
@@ -117,22 +132,20 @@
               <label class="brillo-coti-opt"><div class="brillo-coti-left"><div class="brillo-coti-check"><i class="fas fa-check"></i></div><span>Pulido 1 Paso</span></div><span class="brillo-coti-price">$1,200</span><input type="checkbox" class="coti-check" value="Pulido 1 Paso" data-price="1200"></label>
               <label class="brillo-coti-opt"><div class="brillo-coti-left"><div class="brillo-coti-check"><i class="fas fa-check"></i></div><span>Encerado 6 meses</span></div><span class="brillo-coti-price">$800</span><input type="checkbox" class="coti-check" value="Encerado 6 meses" data-price="800"></label>
               <label class="brillo-coti-opt"><div class="brillo-coti-left"><div class="brillo-coti-check"><i class="fas fa-check"></i></div><span>Interior Profundo</span></div><span class="brillo-coti-price">$950</span><input type="checkbox" class="coti-check" value="Interior Profundo" data-price="950"></label>
-              
               <div class="brillo-coti-inputs">
                 <input type="text" id="coti-nombre" placeholder="Tu nombre">
                 <input type="text" id="coti-auto" placeholder="Modelo auto (ej: Jetta 2020)">
                 <input type="tel" id="coti-tel" placeholder="WhatsApp 10 dígitos">
                 <input type="date" id="coti-fecha"><input type="time" id="coti-hora">
               </div>
-
               <div class="brillo-coti-total"><span>Total:</span><strong id="coti-total">$0</strong></div>
               <button class="brillo-btn-cotizar" id="coti-btn" disabled>Selecciona 1 servicio</button>
-              <button class="brillo-btn-cotizar" id="btn-anticipo-demo" style="background:#00B1EA; margin-top:10px; display:none;">PAGAR ANTICIPO $200 PARA ASEGURAR LUGAR (DEMO)</button>
+              <button class="brillo-btn-cotizar" id="btn-anticipo-demo" style="background:#00B1EA; margin-top:10px; display:none;" onclick="alert('🔒 MODO DEMO\n\nEn la versión real aquí se cobraría ANTICIPO de $200 con tarjeta/OXXO para asegurar lugar.\n\nSi no paga, no se agenda. Demo sin cobros reales.')">PAGAR ANTICIPO $200 PARA ASEGURAR LUGAR (DEMO)</button>
+              <p style="font-size:11px; text-align:center; margin-top:8px; opacity:0.6;">Demo Mi Localito - Sin cobros reales</p>
             </div>
           </div>
         </div>
       </section>
-
       <section class="brillo-testis" id="testimonios">
         <div class="brillo-container">
           <h2 class="brillo-titulo">Carros <span>felices</span></h2>
@@ -144,7 +157,6 @@
           </div>
         </div>
       </section>
-
       <section class="brillo-mapa" id="mapa">
         <div class="brillo-container">
           <h2 class="brillo-titulo">¿Dónde <span>estamos?</span></h2>
@@ -154,15 +166,14 @@
               <p class="brillo-mapa-title"><i class="fas fa-map-pin"></i> Tabasco · Servicio a domicilio disponible</p>
               <p class="brillo-mapa-sub">Atendemos solo con cita agendada aquí. Anticipo $200.</p>
               <a href="https://maps.google.com/?q=Villahermosa+Tabasco" target="_blank" class="brillo-btn-mapa brillo-btn-mapa-dark">Cómo llegar en Google Maps</a>
-              <a href="https://wa.me/522292685379?text=Hola%20Luis%20donde%20te%20ubicas?" class="brillo-btn-mapa brillo-btn-mapa-light">Mándame tu ubicación Luis</a>
+              <a href="https://wa.me/522292685379?text=Hola%20Brillo%20Total%20donde%20se%20ubican?" class="brillo-btn-mapa brillo-btn-mapa-light">Mándame tu ubicación</a>
             </div>
             <div class="brillo-mapa-frame"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121103.1!2d-92.98!3d17.99!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85edd7d2b3b1d3b7%3A0x9e1d9b5a5a5a5a5a!2sVillahermosa%2C%20Tab.!5e0!3m2!1ses!2smx!4v1!5m2!1ses!2smx" loading="lazy" allowfullscreen></iframe></div>
           </div>
         </div>
       </section>
     </main>
-
-    <footer class="brillo-footer">
+    <footer class="brillo-footer" id="contacto">
        <div class="brillo-container">   
          <div class="brillo-footer-brand"><h3 class="brillo-footer-logo">Brillo <span>Total</span></h3><p class="brillo-footer-sub">Detallado que sí se nota</p></div>
          <div class="brillo-footer-row">
@@ -172,10 +183,9 @@
          <div class="brillo-footer-bottom"><p class="brillo-firma">© 2026 Brillo Total Tabasco · Todos los derechos reservados</p><p class="brillo-embudo">Agenda automática que cobra anticipo, creada con MI LOCALITO by <a href="https://www.ingenierodelalibertad.com" target="_blank">Ingeniero de la Libertad</a></p></div>
        </div>
     </footer>
-
     <div class="brillo-float">
       <div class="brillo-float-bubble">Luis está conectado <span></span></div>
-      <a href="https://wa.me/522292685379?text=Hola%20Luis%20quiero%20agendar" class="brillo-float-btn"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://wa.me/522292685379?text=Hola%20Brillo%20Total%20quiero%20agendar%20mi%20auto" class="brillo-float-btn"><i class="fab fa-whatsapp"></i></a>
     </div>
   </div>
   <script src="script.js"></script>

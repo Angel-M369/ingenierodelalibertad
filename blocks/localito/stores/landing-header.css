@@ -1,5 +1,5 @@
 /* =========================================
-   3. HEADER Y MENU - FIX COMPACTO PRO
+   3. HEADER Y MENU - FIX COMPACTO PRO - SIN BLUR + X
 ========================================= */
 .imp-header {
   background: #000;
@@ -74,13 +74,14 @@
 .imp-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, .55);
+  background: transparent;
   display: none;
   z-index: 90;
-  backdrop-filter: blur(2px);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
-/* Responsive Header - FIX RECORTE ABAJO */
+/* Responsive Header - FIX RECORTE ABAJO + X */
 @media (max-width: 900px) {
   .imp-burger { display: flex; }
 
@@ -96,7 +97,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 22px 18px 20px 18px !important; /* 20px abajo nada más */
+    padding: 22px 18px 20px 18px !important;
     gap: 18px;
     border-left: 1px solid #1e293b;
     border-bottom: 1px solid #1e293b;
@@ -109,4 +110,15 @@
 
   #imp-menu-toggle:checked ~ .imp-nav { right: 0 !important; }
   #imp-menu-toggle:checked ~ .imp-overlay { display: block; }
+
+  /* AQUÍ ESTÁ LA X QUE TE FALTABA */
+  #imp-menu-toggle:checked + .imp-burger span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+  }
+  #imp-menu-toggle:checked + .imp-burger span:nth-child(2) {
+    opacity: 0;
+  }
+  #imp-menu-toggle:checked + .imp-burger span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+  }
 }
