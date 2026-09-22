@@ -54,5 +54,11 @@ body{background:#020617;font-family:'Inter',sans-serif;color:#fff;padding:14px}
 .card-demo.brillo .card-content p{color:#A1A1AA}
 .card-demo.brillo .btn{background:#0EA5E9;color:#fff}
 
+/* CARMEN - FONDO GRIS + ACENTO AZUL */
+.card-demo.holistico{background:#232326;border-color:#2E2E32}
+.card-demo.holistico .card-content h3{color:#fff}
+.card-demo.holistico .card-content p{color:#A1A1AA}
+.card-demo.holistico .btn{background:#5e4905;color:#fff}
+
 .footer{text-align:center;font-size:10px;color:#475569;margin-top:24px;padding-bottom:20px}
 .footer a{color:#10B981;text-decoration:none;font-weight:700}
