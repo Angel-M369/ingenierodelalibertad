@@ -80,7 +80,7 @@ a, a:hover, a:focus, a:visited{
   top:0;
   right:0;
   width:200px;
-  height:40vh;
+  height:50vh;
   background:var(--white);
   display:flex;
   flex-direction:column;
