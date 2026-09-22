@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function upd() {
     if (!sel) return;
     var val = sel.value;
-    var p = val === '800' ? 30 : 20;
+    var p = 30; // TODO FIJO EN 30% PARA JESS
     if (txt) txt.textContent = '$' + val + ' MXN (' + p + '%)';
     if (porc) porc.textContent = p + '%';
   }
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
     btn.addEventListener('click', function() {
       var nombreInput = document.getElementById('rayas-nombre');
       var nombre = nombreInput && nombreInput.value ? nombreInput.value : 'bro';
-      var total = txt ? txt.textContent : '$600';
+      var total = txt ? txt.textContent : '$600 MXN (30%)';
       alert('DEMO ELITE $9,999\nEn la version real aqui cobra ' + total + ' con MercadoPago.\n\n' + nombre + ', te llega WhatsApp automatico.');
     });
   }

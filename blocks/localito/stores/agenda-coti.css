@@ -20,3 +20,27 @@
 .yare-coti-inputs input{padding:13px;border:1px solid #e5e5e5;border-radius:10px;font-family:'Poppins';font-size:0.9rem}
 .yare-btn-cotizar{width:100%;margin-top:18px;background:var(--rosa);color:white;border:none;padding:16px;border-radius:14px;font-weight:800;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 10px 20px rgba(255,46,147,0.3)}
 .yare-btn-cotizar:disabled{background:#ddd;box-shadow:none;cursor:not-allowed}
+/* BOTÓN ROSADO DEVIS */
+.yare-btn-cta-hero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #FF2D78;
+  color: #fff !important;
+  padding: 14px 32px;
+  border-radius: 100px;
+  font-weight: 800;
+  font-size: 15px;
+  text-decoration: none !important;
+  margin: 18px auto 0;
+  box-shadow: 0 8px 20px rgba(255,45,120,0.35);
+  transition: 0.25s;
+  border: none;
+}
+
+.yare-btn-cta-hero:hover {
+  background: #ff0a63;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(255,45,120,0.45);
+  color: #fff;
+}
