@@ -1,164 +1,204 @@
 <!DOCTYPE html>
 <html lang="es-MX">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Las Pacas del Chino | Ropa Americana Premium 50KG - Demo PRO Mi Localito</title>
-    <meta name="description" content="Demo Sistema PRO de Mi Localito. Tienda con carrito real + botón de pago con tarjeta/OXXO (demo) + envío nacional. Pacas 50kg USA desde $7,200.">
-    <link rel="canonical" href="https://www.ingenierodelalibertad.com/milocalito/pro/">
-    <meta name="robots" content="index, follow, max-image-preview:large">
-    <meta name="theme-color" content="#00E676">
-    <meta property="og:title" content="Las Pacas del Chino | Ropa Americana Premium">
-    <meta property="og:description" content="Demo PRO: Carrito que cobra con tarjeta antes de enviar. Así es tu tienda real con Mi Localito.">
-    <meta property="og:image" content="https://www.ingenierodelalibertad.com/milocalito/images/Paca.jpg">
-    <meta property="og:url" content="https://www.ingenierodelalibertad.com/milocalito/pro/">
-    <meta property="og:type" content="website">
-
-    <!-- Google tag (gtag.js) - MEDICIÓN MAESTRA -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pacas del Chino | Ropa Americana Premium 50KG GDL</title>
+    <meta name="description" content="Pacas 50KG originales desde Oblatos GDL. 5 años de experiencia nos respaldan." />
+    <link rel="canonical" href="https://www.ingenierodelalibertad.com/milocalito/pro/ropa/" />
+    <meta name="theme-color" content="#0F172A" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0S14JTTS9D"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-0S14JTTS9D');
+      function gtag() { dataLayer.push(arguments); }
+      gtag("js", new Date()); gtag("config", "G-0S14JTTS9D");
     </script>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body class="pro-urbanfit">
-<div class="page">
-
-    <header class="header-pro" id="inicio">
-        <input type="checkbox" id="menu-check" class="menu-check">
-        <div class="header-bar">
-            <a href="#" class="logo-pro">LAS PACAS <span>DEL CHINO</span></a>
-            <div class="carrito-icon-pro" onclick="toggleCarrito()">
-                <i class="fas fa-shopping-cart"></i>
-                <span class="carrito-contador" id="contador-carrito">0</span>
-            </div>
-            <label for="menu-check" class="menu-toggle-pro"><span></span><span></span><span></span></label>
-            <nav class="nav-pro">
-                <a href="#inicio" onclick="document.getElementById('menu-check').checked=false">Inicio</a>
-                <a href="#nuevos" onclick="document.getElementById('menu-check').checked=false">Nuevos</a>
-                <a href="#catalogo" onclick="document.getElementById('menu-check').checked=false">Catálogo</a>
-                <a href="#mayoreo" onclick="document.getElementById('menu-check').checked=false">Mayoreo</a>
-                <a href="#ubicacion" onclick="document.getElementById('menu-check').checked=false">Ubicación</a>
-                <a href="#contacto" onclick="document.getElementById('menu-check').checked=false">Contacto</a>
-                <a href="#catalogo" class="btn-pro" onclick="document.getElementById('menu-check').checked=false">PEDIR PACAS</a>
-            </nav>
-            <label for="menu-check" class="overlay-pro"></label>
-        </div>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="chino-head">
+      <a class="chino-brand">PACAS <span>EL CHINO</span></a>
+      <nav class="chino-menu" id="chinoMenu">
+        <a href="#top">Inicio</a>
+        <a href="#carrusel">Promociones</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#ubicacion">Bodega</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <div class="chino-actions">
+        <button class="chino-cart" id="openCart"><i class="fa-solid fa-bag-shopping"></i><b id="chinoCount">0</b></button>
+        <button class="chino-burger" id="openMenu"><i class="fa-solid fa-bars-staggered"></i></button>
+      </div>
     </header>
 
-    <div class="carrito-drawer" id="carrito-drawer">
-        <div class="carrito-overlay-drawer" onclick="toggleCarrito()"></div>
-        <div class="carrito-panel">
-            <div class="carrito-header-drawer">
-                <h3><i class="fas fa-shopping-cart"></i> TU CARRITO</h3>
-                <button class="cerrar-carrito-drawer" onclick="toggleCarrito()"><i class="fas fa-times"></i></button>
-            </div>
-            <div class="carrito-items-drawer" id="items-carrito"></div>
-            <div class="carrito-footer-drawer" id="carrito-footer">
-                <div class="carrito-total-drawer"><span>TOTAL:</span><span id="total">$0</span></div>
-                <button class="btn-pagar-drawer btn-tarjeta" id="btn-pagar-tarjeta"><i class="fas fa-credit-card"></i> PAGAR CON TARJETA / OXXO (DEMO)</button>
-                <button class="btn-pagar-drawer" id="btn-finalizar-wa"><i class="fab fa-whatsapp"></i> FINALIZAR POR WHATSAPP</button>
-                <button class="btn-vaciar-drawer" id="btn-vaciar"><i class="fas fa-trash"></i> VACIAR CARRITO</button>
-                <p class="carrito-nota">Demo Mi Localito - Sin cobros reales</p>
-            </div>
-        </div>
+    <aside class="chino-drawer" id="chinoDrawer">
+  <div class="chino-drawer-panel">
+    <div class="chino-drawer-top">
+      <div>
+        <h3>TU PACA</h3>
+        <span id="chinoCountText">0 productos</span>
+      </div>
+      <button id="closeCart" class="chino-close"><i class="fa-solid fa-xmark"></i></button>
     </div>
 
-    <main class="main-pro">
-        <section class="hero-pro">
-            <div class="hero-texto">
-                <h1>ROPA AMERICANA <span>PREMIUM</span></h1>
-                <p>Pacas de 50kg directo de USA. Nike, Adidas, Tommy, Polo y más desde $180/kg - Envío a todo México</p>
-                <a href="#catalogo" class="btn-hero-pro">VER CATÁLOGO</a>
-            </div>
-            <div class="hero-img">
-                <img src="../../../images/Paca.jpg" alt="Paca Americana">
-                <div class="tag-flotante">ENVÍO NACIONAL</div>
-            </div>
-        </section>
+    <div id="chinoCartList" class="chino-cart-list">Vacío - agrega pacas pa' que veas la magia</div>
 
-        <section id="nuevos" class="slider-auto-pro">
-            <h2 class="titulo-pro">🔥 <span>RECIÉN LLEGADOS</span> A TIENDA 🔥</h2>
-            <div class="marquee-pro">
-                <div class="marquee-track">
-                    <div class="mini-card" data-nombre="PACA NIKE MIX 50KG" data-precio="11500" data-img="../../../images/Nike.jpg"><img src="../../../images/Nike.jpg" alt="Paca Nike" loading="lazy"><span>Nike Mix</span></div>
-                    <div class="mini-card" data-nombre="PACA TOMMY 50KG" data-precio="12800" data-img="../../../images/tomy.jpg"><img src="../../../images/tomy.jpg" alt="Paca Tommy" loading="lazy"><span>Tommy</span></div>
-                    <div class="mini-card" data-nombre="PACA POLO RALPH 50KG" data-precio="13200" data-img="../../../images/polocamisa.jpg"><img src="../../../images/polocamisa.jpg" alt="Paca Polo" loading="lazy"><span>Polo Ralph</span></div>
-                    <div class="mini-card" data-nombre="PACA ADIDAS 50KG" data-precio="11200" data-img="../../../images/adidas.jpg"><img src="../../../images/adidas.jpg" alt="Paca Adidas" loading="lazy"><span>Adidas</span></div>
-                    <div class="mini-card" data-nombre="PACA CALVIN KLEIN 50KG" data-precio="12500" data-img="../../../images/calvin.jpg"><img src="../../../images/calvin.jpg" alt="Paca Calvin" loading="lazy"><span>Calvin Klein</span></div>
-                    <div class="mini-card" data-nombre="PACA LEVIS 50KG" data-precio="10800" data-img="../../../images/jeanslevis.jpg"><img src="../../../images/jeanslevis.jpg" alt="Paca Levis" loading="lazy"><span>Levi's</span></div>
-                </div>
-            </div>
-        </section>
+    <div class="chino-paybox">
+      <p>Método de pago</p>
+      <label class="pay-opt"><input type="radio" name="pay" value="Transferencia" checked /><i class="fa-solid fa-building-columns"></i> Transferencia <b>-5%</b></label>
+      <label class="pay-opt"><input type="radio" name="pay" value="Tarjeta" /><i class="fa-solid fa-credit-card"></i> Tarjeta / OXXO</label>
+    </div>
 
-        <section id="catalogo" class="catalogo-pro">
-            <h2 class="titulo-pro">CATÁLOGO <span>COMPLETO</span></h2>
-            <div class="scroll-pro">
-                <div class="card-pro" data-nombre="PACA PREMIUM 50KG" data-precio="9500" data-img="../../../images/Paca.jpg">
-                    <div class="card-img"><img src="../../../images/Paca.jpg" alt="Paca Premium" loading="lazy"></div>
-                    <div class="card-info"><h3>PACA PREMIUM 50KG</h3><p>Mixta: Dama, Caballero, Niño</p><div class="precio-pro">$9,500</div><div class="tag-pro">ENVÍO NACIONAL</div><button class="btn-add-carrito"><i class="fas fa-cart-plus"></i> AGREGAR AL CARRITO</button></div>
-                </div>
-                <div class="card-pro" data-nombre="PACA DEPORTIVA 50KG" data-precio="11200" data-img="../../../images/conadidas.jpg">
-                    <div class="card-img"><img src="../../../images/conadidas.jpg" alt="Paca Deportiva" loading="lazy"></div>
-                    <div class="card-info"><h3>PACA DEPORTIVA 50KG</h3><p>Nike, Adidas, Puma, Under Armour</p><div class="precio-pro">$11,200</div><div class="tag-pro">+10% NIKE</div><button class="btn-add-carrito"><i class="fas fa-cart-plus"></i> AGREGAR AL CARRITO</button></div>
-                </div>
-                <div class="card-pro" data-nombre="PACA DAMA 50KG" data-precio="8900" data-img="../../../images/paca2.jpg">
-                    <div class="card-img"><img src="../../../images/paca2.jpg" alt="Paca Dama" loading="lazy"></div>
-                    <div class="card-info"><h3>PACA DAMA 50KG</h3><p>Blusas, vestidos, pantalones</p><div class="precio-pro">$8,900</div><div class="tag-pro">TALLAS CH-M-G</div><button class="btn-add-carrito"><i class="fas fa-cart-plus"></i> AGREGAR AL CARRITO</button></div>
-                </div>
-            </div>
-        </section>
+    <div class="chino-total-box">
+      <span>TOTAL</span>
+      <b>$<i id="chinoTotal">0</i></b>
+    </div>
 
-        <section id="mayoreo" class="mayoreo-pro">
-            <div class="mayoreo-box">
-                <h2>¿COMPRAS +3 PACAS?</h2>
-                <p>Precio especial mayoreo desde $165/kg. Envío a todo México. Cobro con tarjeta antes de enviar.</p>
-                <a href="https://wa.me/5213312345678?text=Quiero%20precio%20mayoreo" class="btn-mayoreo">COTIZAR MAYOREO</a>
-            </div>
-        </section>
+    <input id="chinoName" placeholder="Tu nombre pa' apartar" />
 
-        <section id="ubicacion" class="ubicacion-pro">
-            <h2 class="titulo-pro">DÓNDE <span>NOS ENCONTRAMOS</span></h2>
-            <p class="subtitulo-ubicacion">Tienda física en GDL + Envíos nacionales.</p>
-            <div class="ubicacion-grid">
-                <div class="ubicacion-info">
-                    <div class="dato-ubicacion"><i class="fas fa-map-marker-alt"></i><div><strong>Ubicación:</strong><span>Av. Belisario Domínguez #2640<br>Col. Oblatos, Guadalajara, Jal.</span></div></div>
-                    <div class="dato-ubicacion"><i class="fas fa-clock"></i><div><strong>Horario:</strong><span>Lun a Sáb: 9am - 7pm<br>Domingo: 10am - 3pm</span></div></div>
-                    <div class="dato-ubicacion"><i class="fab fa-whatsapp"></i><div><strong>WhatsApp:</strong><a href="https://wa.me/5213312345678?text=Quiero%20más%20información" class="link-wa-pro">33 4338 5348</a></div></div>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Av+Belisario+Dominguez+2640+Col+Oblatos+Guadalajara+Jalisco" target="_blank" class="btn-mapa-pro"><i class="fas fa-directions"></i> CÓMO LLEGAR</a>
-                </div>
-                <div class="ubicacion-mapa"><iframe src="https://maps.google.com/maps?q=Av%20Belisario%20Dominguez%202640%20Oblatos%20Guadalajara&t=&z=16&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
-            </div>
-        </section>
+    <button class="chino-btn-pay" id="btnPagar"><i class="fa-brands fa-whatsapp"></i> COBRAR AHORA</button>
+    <button class="chino-btn-clear" id="btnClear">Vaciar carrito</button>
+  </div>
+  <div class="chino-drawer-bg" id="drawerBg"></div>
+</aside>
+
+    <main>
+      <section class="chino-hero-impact" id="top">
+        <img class="chino-hero-bg" src="../../../images/Paca.jpg" alt="Pacas del Chino" />
+        <div class="chino-hero-overlay"></div>
+
+        <div class="chino-hero-content">
+          <div class="chino-hero-side top">5 años de experiencia nos respaldan</div>
+
+          <div class="chino-hero-center">
+            <h1 class="chino-hero-title">Pacas <span>el Chino</span></h1>
+            <p class="chino-hero-subs">calidad, confianza, seriedad y servicio nos caracterizan</p>
+          </div>
+
+          <div class="chino-hero-side bottom">Ropa 100% Original • Tallas Completas • Pacas 50KG Reales</div>
+
+          <a href="#carrusel" class="chino-hero-btn">Recién llegado a tienda ↓</a>
+        </div>
+      </section>
+
+      <section class="chino-estilos" id="estilos">
+        <div class="chino-estilos-inner">
+          <span class="chino-estilos-kicker">OBLATOS • GDL • MAYOREO REAL</span>
+          <h2>Imponiendo <em>estilos</em></h2>
+          <h3>No vendemos ropa, creamos experiencias al estrenar un outfit</h3>
+          <p>En Pacas del Chino cada paca es una oportunidad de negocio. Ropa 100% original americana, con etiqueta, sin sorpresas. 5 años en Oblatos nos respaldan.</p>
+          <div class="chino-estilos-badges">
+            <div><b>+500</b><span>Pacas vendidas</span></div>
+            <div><b>50KG</b><span>Peso exacto</span></div>
+            <div><b>100%</b><span>Original</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="chino-carrusel-sec" id="carrusel">
+        <h2>AQUÍ VAN TUS PROMOCIONES O TU CATÁLOGO <br> TOCA PARA DETENER</h2>
+        <div class="chino-carousel-wrap" id="carouselWrap">
+          <div class="chino-carousel" id="carousel">
+            <div class="chino-car-item"><img src="../../../images/Nike.jpg" /><b>Nike $11,500</b><button data-add="PACA NIKE MIX 50KG" data-price="11500">Añadir</button></div>
+            <div class="chino-car-item"><img src="../../../images/conadidas.jpg" /><b>Adidas $11,200</b><button data-add="PACA ADIDAS 50KG" data-price="11200">Añadir</button></div>
+            <div class="chino-car-item"><img src="../../../images/paca2.jpg" /><b>Dama $8,900</b><button data-add="PACA DAMA 50KG" data-price="8900">Añadir</button></div>
+            <div class="chino-car-item"><img src="../../../images/polocamisa.jpg" /><b>Polo $13,200</b><button data-add="PACA POLO 50KG" data-price="13200">Añadir</button></div>
+            <div class="chino-car-item"><img src="../../../images/tomy.jpg" /><b>Tommy $12,800</b><button data-add="PACA TOMMY 50KG" data-price="12800">Añadir</button></div>
+            <div class="chino-car-item"><img src="../../../images/adidas.jpg" /><b>Deportiva $11,200</b><button data-add="PACA DEPORTIVA 50KG" data-price="11200">Añadir</button></div>
+            <div class="chino-car-item"><img src="../../../images/Paca.jpg" /><b>Premium $9,500</b><button data-add="PACA PREMIUM 50KG" data-price="9500">Añadir</button></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="chino-catalog" id="catalogo">
+        <h2>CATÁLOGO</h2>
+        <div class="chino-grid">
+          <article class="chino-card"><img src="../../../images/conpuma.jpg" /><h4>PUMA 50KG</h4><b>$9,500</b><button data-add="PACA PREMIUM 50KG" data-price="9500">Añadir</button></article>
+          <article class="chino-card"><img src="../../../images/Nike.jpg" /><h4>NIKE MIX 50KG</h4><b>$11,500</b><button data-add="PACA NIKE MIX 50KG" data-price="11500">Añadir</button></article>
+          <article class="chino-card"><img src="../../../images/tomy.jpg" /><h4>TOMMY 50KG</h4><b>$12,800</b><button data-add="PACA TOMMY 50KG" data-price="12800">Añadir</button></article>
+          <article class="chino-card"><img src="../../../images/polos.jpg" /><h4>POLO 50KG</h4><b>$13,200</b><button data-add="PACA POLO 50KG" data-price="13200">Añadir</button></article>
+        </div>
+      </section>
+
+      <section id="ubicacion" class="chino-ubi">
+  <div class="chino-ubi-header">
+    <span class="chino-ubi-kicker">VISÍTANOS EN BODEGA</span>
+    <h2>Donde nos <em>ubicamos</em></h2>
+    <h3>Bodega Oblatos</h3>
+    <p><i class="fa-solid fa-location-dot"></i> Av. Belisario Domínguez 2640, Oblatos, 44380 Guadalajara, Jal.</p>
+  </div>
+
+  <div class="chino-ubi-grid">
+    <div class="chino-ubi-map">
+      <iframe 
+        src="https://maps.google.com/maps?q=Av.+Belisario+Dominguez+2640+Guadalajara+Jalisco&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+      <div class="chino-ubi-pin"><i class="fa-solid fa-location-dot"></i> Pacas del Chino</div>
+    </div>
+
+    <div class="chino-ubi-info">
+      <div class="chino-ubi-card">
+        <b><i class="fa-solid fa-clock"></i> Horario</b>
+        <span>Lunes a Sábado 10am - 6pm • Domingos con cita</span>
+      </div>
+      <div class="chino-ubi-card">
+        <b><i class="fa-solid fa-truck-fast"></i> Entrega</b>
+        <span>Envíos nacionales y entregas en punto medio GDL</span>
+      </div>
+
+      <a class="chino-ubi-btn maps" href="https://www.google.com/maps/dir/?api=1&destination=Av.+Belisario+Dominguez+2640+Guadalajara+Jalisco" target="_blank">
+        <i class="fa-solid fa-route"></i> Cómo llegar por Google Maps
+      </a>
+
+      <a class="chino-ubi-btn wa" id="btnUbiWa" href="#">
+        <i class="fa-brands fa-whatsapp"></i> Chino, mándame tu ubicación
+      </a>
+
+      <p class="chino-ubi-note">Te mando la ubicación exacta por WhatsApp con 1 click</p>
+    </div>
+  </div>
+</section>
+
     </main>
 
-    <footer class="footer-pro" id="contacto">
-      <div class="footer-inner">
-        <h3>LAS PACAS DEL CHINO</h3>
-        <p class="footer-sub">15 años importando la mejor ropa americana</p>
-        <p class="footer-label">Sígueme:</p>
-        <div class="footer-socials">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-tiktok"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-whatsapp"></i></a>
-        </div>
-        <div class="footer-contact">
-          <strong>Hablemos!</strong>
-          <span>Lun - Sáb 9am - 7pm</span>
-          <span>Oblatos, Gdl - Envío Nacional</span>
-          <span>33 4338 5348</span>
-        </div>
-        <div class="footer-copy">© 2026 Las Pacas Del Chino - Guadalajara, Jalisco - Todos los derechos reservados.<br>Tienda con carrito real y cobro con tarjeta/OXXO (demo), creada con <b>MI LOCALITO</b> by <b>Ingeniero de la libertad</b></div>
-      </div>
-    </footer>
+    <footer class="chino-footer" id="contacto">
+  <div class="chino-footer-top">
+    <h2>PACAS DEL CHINO</h2>
+    <p>más de 5 años vistiendo a GDL con pacas originales</p>
+  </div>
 
-</div>
-<script src="script.js"></script>
-</body>
+  <div class="chino-footer-row">
+    <!-- COL 1 -->
+    <div class="chino-footer-col">
+      <h4>Sígueme:</h4>
+      <div class="chino-socials">
+        <a class="soc-fb" href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a class="soc-tt" href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <a class="soc-ig" href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a class="soc-wa" href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+
+    <!-- COL 2 -->
+    <div class="chino-footer-col">
+      <h4>Hablemos!</h4>
+      <span>Lun - Sáb 10am - 6pm</span>
+      <span>Bodega Oblatos, GDL, Jal.</span>
+      <span>Av. Belisario Domínguez 2640</span>
+    </div>
+  </div>
+
+  <div class="chino-footer-copy">
+    <b>© 2026 Pacas del Chino® - Guadalajara Jalisco · Todos los derechos reservados</b>
+    <span>Tienda con carrito real y cobros con tarjeta/OXXO (demo), creada con MI LOCALITO by</span>
+    <a class="chino-footer-eng" href="https://www.ingenierodelalibertad.com" target="_blank">Ingeniero de la libertad</a>
+  </div>
+</footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>

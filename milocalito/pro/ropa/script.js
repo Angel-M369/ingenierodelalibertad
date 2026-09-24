@@ -1,179 +1,188 @@
-// CARRITO DRAWER PRO - LAS PACAS - MODO YSI - SIN ONCLICK
-let carrito = JSON.parse(localStorage.getItem('carritoPacas')) || [];
-const WA_NUMBER = '5213312345678';
+const WA = "5213312345678";
+let cart = JSON.parse(localStorage.getItem("chinoCart") || "[]");
+let angle = 0;
+let autoRotate = true;
 
-document.addEventListener('DOMContentLoaded', () => {
-    actualizarContador();
-    bindEventosYsi();
+const menu = document.getElementById("chinoMenu");
+const drawer = document.getElementById("chinoDrawer");
+const carousel = document.getElementById("carousel");
+const wrap = document.getElementById("carouselWrap");
+const items = document.querySelectorAll(".chino-car-item");
+const n = items.length;
+
+function layoutCarousel() {
+  const radius = window.innerWidth < 768? 250 : 380;
+  items.forEach((el, i) => {
+    const theta = (360 / n) * i;
+    el.style.transform = `rotateY(${theta}deg) translateZ(${radius}px)`;
+  });
+}
+if (n > 0) {
+  layoutCarousel();
+  window.addEventListener("resize", layoutCarousel);
+}
+
+function rotateCar() {
+  if (!autoRotate ||!carousel) return;
+  angle -= 0.4;
+  carousel.style.transform = `rotateY(${angle}deg)`;
+}
+setInterval(rotateCar, 16);
+
+if (wrap) {
+  wrap.addEventListener("mouseenter", () => (autoRotate = false));
+  wrap.addEventListener("mouseleave", () => (autoRotate = true));
+  wrap.addEventListener("touchstart", () => (autoRotate = false), { passive: true });
+  wrap.addEventListener("touchend", () => setTimeout(() => (autoRotate = true), 1500));
+}
+
+// MENU Y CARRITO - YA CIERRA AL CLICK DENTRO Y FUERA
+document.getElementById("openMenu").onclick = (e) => {
+  e.stopPropagation();
+  menu.classList.toggle("open");
+  drawer.classList.remove("open");
+};
+
+document.getElementById("openCart").onclick = (e) => {
+  e.stopPropagation();
+  drawer.classList.add("open");
+  menu.classList.remove("open");
+  render();
+};
+
+document.getElementById("closeCart")?.addEventListener("click", () => drawer.classList.remove("open"));
+document.getElementById("drawerBg")?.addEventListener("click", () => drawer.classList.remove("open"));
+
+// Cierra menú al dar click en cualquier link del menú
+document.querySelectorAll('.chino-menu a').forEach(a => {
+  a.addEventListener('click', () => menu.classList.remove('open'));
 });
 
-function bindEventosYsi(){
-    // ABRIR/CERRAR DRAWER
-    document.querySelectorAll('[data-open-carrito]').forEach(b=> b.addEventListener('click', toggleCarrito));
-    document.getElementById('carrito-overlay')?.addEventListener('click', toggleCarrito);
-    document.getElementById('carrito-cerrar')?.addEventListener('click', toggleCarrito);
+// Cierra al click fuera
+document.addEventListener("click", (e) => {
+  if (menu &&!menu.contains(e.target) &&!e.target.closest("#openMenu")) {
+    menu.classList.remove("open");
+  }
+  const panel = drawer? drawer.querySelector(".chino-drawer-panel") : null;
+  if (panel &&!panel.contains(e.target) &&!e.target.closest("#openCart")) {
+    drawer.classList.remove("open");
+  }
+});
 
-    // AGREGAR AL CARRITO - BOTONES DE CATALOGO
-    document.addEventListener('click', e=>{
-        const btn = e.target.closest('.btn-add-carrito');
-        if(!btn) return;
-        const nombre = btn.dataset.nombre;
-        const precio = parseInt(btn.dataset.precio);
-        const imagen = btn.dataset.imagen;
-        agregarAlCarrito(nombre, precio, imagen);
-    });
-
-    // CLICK EN IMAGEN DE CARD TAMBIEN AGREGA
-    document.addEventListener('click', e=>{
-        const imgWrap = e.target.closest('.card-img');
-        if(!imgWrap) return;
-        const card = imgWrap.closest('.card-pro');
-        const btn = card?.querySelector('.btn-add-carrito');
-        if(btn) btn.click();
-    });
-
-    // DELEGACION PARA + - TRASH DENTRO DEL CARRITO
-    document.getElementById('items-carrito')?.addEventListener('click', e=>{
-        const btn = e.target.closest('[data-accion]');
-        if(!btn) return;
-        const index = parseInt(btn.dataset.index);
-        const accion = btn.dataset.accion;
-        if(accion === 'mas') cambiarCantidad(index, 1);
-        if(accion === 'menos') cambiarCantidad(index, -1);
-        if(accion === 'eliminar') eliminarItem(index);
-    });
-
-    document.getElementById('btn-vaciar')?.addEventListener('click', vaciarCarrito);
-    document.getElementById('btn-finalizar-wa')?.addEventListener('click', finalizarCompra);
-    document.getElementById('btn-pagar-tarjeta')?.addEventListener('click', pagarTarjeta);
-
-    // MEDICION WA GENERAL
-    document.querySelectorAll('a[href*="wa.me"]').forEach(btn=>{
-        btn.addEventListener('click', ()=>{
-            if(typeof gtag!=='undefined'){
-                gtag('event','click_whatsapp',{sistema:'pro',ubicacion:'link_general'});
-            }
-        });
-    });
+function save() {
+  localStorage.setItem("chinoCart", JSON.stringify(cart));
 }
 
-function actualizarContador(){
-    const total = carrito.reduce((s,i)=> s+i.cantidad,0);
-    const el = document.getElementById('contador-carrito');
-    if(el) el.textContent = total;
+function render() {
+  const list = document.getElementById("chinoCartList");
+  const totalEl = document.getElementById("chinoTotal");
+  const countEl = document.getElementById("chinoCount");
+  const countText = document.getElementById("chinoCountText");
+  let total = 0;
+  const qty = cart.reduce((s, i) => s + i.q, 0);
+
+  if (countEl) countEl.textContent = qty;
+  if (countText) countText.textContent = `${qty} producto${qty!== 1? 's' : ''}`;
+  if (!list ||!totalEl) return;
+
+  if (!cart.length) {
+    list.innerHTML = `<div style="color:#64748B;text-align:center;padding:20px 0">Vacío - agrega pacas pa' que veas la magia</div>`;
+    totalEl.textContent = "0";
+    return;
+  }
+
+  list.innerHTML = cart.map((it, i) => {
+    total += it.p * it.q;
+    return `<div class="chino-cart-item"><span>${it.n} x${it.q} - $${(it.p * it.q).toLocaleString("es-MX")}</span><span><button onclick="chg(${i},-1)">-</button> <button onclick="chg(${i},1)">+</button> <button onclick="del(${i})">x</button></span></div>`;
+  }).join("");
+
+  totalEl.textContent = total.toLocaleString("es-MX");
 }
 
-function agregarAlCarrito(nombre, precio, imagen){
-    const ex = carrito.find(i=> i.nombre===nombre);
-    if(ex) ex.cantidad++;
-    else carrito.push({nombre, precio, imagen, cantidad:1});
-    localStorage.setItem('carritoPacas', JSON.stringify(carrito));
-    actualizarContador();
-    mostrarNotificacion(`${nombre} agregado`);
+window.chg = (i, d) => {
+  cart[i].q += d;
+  if (cart[i].q <= 0) cart.splice(i, 1);
+  save(); render();
+};
+window.del = (i) => {
+  cart.splice(i, 1);
+  save(); render();
+};
 
-    if(typeof gtag!=='undefined'){
-        gtag('event','add_to_cart',{sistema:'pro',item_name:nombre,price:precio,value:precio,currency:'MXN'});
-    }
-    setTimeout(()=>{
-        const d=document.getElementById('carrito-drawer');
-        if(!d.classList.contains('activo')) toggleCarrito();
-        else renderizarCarrito();
-    },200);
+document.addEventListener("click", (e) => {
+  const b = e.target.closest("[data-add]");
+  if (!b) return;
+  const name = b.dataset.add;
+  const price = parseInt(b.dataset.price);
+  const ex = cart.find((x) => x.n === name);
+  if (ex) ex.q++;
+  else cart.push({ n: name, p: price, q: 1 });
+  save(); render();
+  if (drawer) drawer.classList.add("open");
+});
+
+document.getElementById("btnClear")?.addEventListener("click", () => {
+  cart = [];
+  save(); render();
+});
+
+document.getElementById("btnPagar")?.addEventListener("click", () => {
+  if (!cart.length) return alert("Vacío");
+  const nombre = document.getElementById("chinoName").value || "Cliente";
+  const payInput = document.querySelector('input[name="pay"]:checked');
+  const pay = payInput? payInput.value : "Transferencia";
+  let msg = `VENTA PACAS CHINO%0A${nombre}%0A`;
+  let total = 0;
+  cart.forEach((it) => {
+    total += it.p * it.q;
+    msg += `• ${it.n} x${it.q}%0A`;
+  });
+  msg += `Total $${total} con ${pay}`;
+  window.open(`https://wa.me/${WA}?text=${msg}`, "_blank");
+  cart = []; save(); render();
+  drawer.classList.remove("open");
+});
+
+render();
+
+// HERO LOOP INFINITO
+const hero = document.querySelector(".chino-hero-impact");
+const title = document.querySelector(".chino-hero-title");
+const subs = document.querySelector(".chino-hero-subs");
+const topText = document.querySelector(".chino-hero-side.top");
+const bottomText = document.querySelector(".chino-hero-side.bottom");
+const btn = document.querySelector(".chino-hero-btn");
+
+function replayHero() {
+  [title, subs, topText, bottomText, btn].forEach((el) => {
+    if (!el) return;
+    el.classList.remove("animate-title", "animate-sub", "animate-top", "animate-bottom", "animate-btn");
+    void el.offsetWidth;
+  });
+  if (title) title.classList.add("animate-title");
+  if (subs) subs.classList.add("animate-sub");
+  if (topText) topText.classList.add("animate-top");
+  if (bottomText) bottomText.classList.add("animate-bottom");
+  if (btn) btn.classList.add("animate-btn");
 }
 
-function toggleCarrito(){
-    const drawer=document.getElementById('carrito-drawer');
-    if(!drawer) return;
-    drawer.classList.toggle('activo');
-    if(drawer.classList.contains('activo')){
-        renderizarCarrito();
-        if(typeof gtag!=='undefined'){
-            gtag('event','view_cart',{sistema:'pro',items:carrito.length,value:carrito.reduce((s,i)=> s+i.precio*i.cantidad,0),currency:'MXN'});
-        }
-    }
+if (hero) {
+  replayHero();
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) replayHero(); });
+  }, { threshold: 0.5 });
+  observer.observe(hero);
+  document.querySelectorAll('.chino-menu a[href="#top"]').forEach((a) => {
+    a.addEventListener("click", () => setTimeout(replayHero, 200));
+  });
 }
 
-function renderizarCarrito(){
-    const cont=document.getElementById('items-carrito');
-    const footer=document.getElementById('carrito-footer');
-    if(!cont) return;
-
-    if(carrito.length===0){
-        cont.innerHTML=`<div class="carrito-vacio"><i class="fas fa-shopping-cart"></i><p>Tu carrito está vacío</p><p style="font-size:.8rem;margin-top:6px">Agrega pacas para comenzar</p></div>`;
-        if(footer) footer.style.display='none';
-        return;
-    }
-    if(footer) footer.style.display='block';
-
-    let html=''; let subtotal=0;
-    carrito.forEach((item,idx)=>{
-        subtotal+=item.precio*item.cantidad;
-        html+=`
-        <div class="item-carrito">
-            <img src="${item.imagen}" alt="${item.nombre}" class="item-img-carrito" loading="lazy">
-            <div class="item-info"><h4>${item.nombre}</h4><p>$${item.precio.toLocaleString('es-MX')}</p></div>
-            <div class="item-cantidad">
-                <button class="btn-cantidad" data-accion="menos" data-index="${idx}">-</button>
-                <span>${item.cantidad}</span>
-                <button class="btn-cantidad" data-accion="mas" data-index="${idx}">+</button>
-                <button class="btn-cantidad" data-accion="eliminar" data-index="${idx}" style="color:#ff5a5a"><i class="fas fa-trash"></i></button>
-            </div>
-        </div>`;
-    });
-    cont.innerHTML=html;
-    document.getElementById('total').textContent=`$${subtotal.toLocaleString('es-MX')}`;
-}
-
-function cambiarCantidad(index,cambio){
-    if(!carrito[index]) return;
-    carrito[index].cantidad+=cambio;
-    if(carrito[index].cantidad<=0) carrito.splice(index,1);
-    localStorage.setItem('carritoPacas', JSON.stringify(carrito));
-    actualizarContador(); renderizarCarrito();
-}
-
-function eliminarItem(index){
-    const nombre=carrito[index]?.nombre;
-    carrito.splice(index,1);
-    localStorage.setItem('carritoPacas', JSON.stringify(carrito));
-    actualizarContador(); renderizarCarrito();
-    mostrarNotificacion(`${nombre} eliminado`);
-    if(typeof gtag!=='undefined') gtag('event','remove_from_cart',{sistema:'pro',item_name:nombre});
-}
-
-function vaciarCarrito(){
-    carrito=[]; localStorage.removeItem('carritoPacas');
-    actualizarContador(); renderizarCarrito();
-    mostrarNotificacion('Carrito vaciado');
-}
-
-function finalizarCompra(){
-    if(carrito.length===0) return;
-    let mensaje=`Hola Chino! 👋 Quiero este pedido:%0A%0A`; let total=0;
-    carrito.forEach(i=>{ const sub=i.precio*i.cantidad; total+=sub; mensaje+=`• ${i.nombre} x${i.cantidad} = $${sub.toLocaleString('es-MX')}%0A`; });
-    mensaje+=`%0A*TOTAL: $${total.toLocaleString('es-MX')}*%0A%0AMi nombre es:`;
-    if(typeof gtag!=='undefined'){
-        gtag('event','begin_checkout',{sistema:'pro',value:total,currency:'MXN',items:carrito.map(i=>({item_name:i.nombre,quantity:i.cantidad,price:i.precio}))});
-        gtag('event','click_whatsapp',{sistema:'pro',value:total,currency:'MXN',items_count:carrito.length});
-    }
-    window.open(`https://wa.me/${WA_NUMBER}?text=${mensaje}`,'_blank');
-    carrito=[]; localStorage.removeItem('carritoPacas'); actualizarContador(); toggleCarrito();
-}
-
-function pagarTarjeta(){
-    if(carrito.length===0) return;
-    const total=carrito.reduce((s,i)=> s+i.precio*i.cantidad,0);
-    if(typeof gtag!=='undefined') gtag('event','pagar_tarjeta',{sistema:'pro',value:total,currency:'MXN'});
-    // Aquí va tu link de Stripe / Mercado Pago
-    mostrarNotificacion('Redirigiendo a pago con tarjeta...');
-}
-
-function mostrarNotificacion(texto){
-    let c=document.getElementById('notif-container');
-    if(!c){ c=document.createElement('div'); c.id='notif-container'; c.style.cssText='position:fixed;top:16px;right:16px;z-index:10000;display:flex;flex-direction:column;gap:8px'; document.body.appendChild(c); }
-    const n=document.createElement('div');
-    n.style.cssText='background:#25D366;color:#000;padding:10px 18px;border-radius:8px;font-weight:700;font-size:.8rem;box-shadow:0 4px 12px rgba(0,0,0,.3);animation:slideIn.25s ease';
-    n.textContent=texto;
-    c.appendChild(n);
-    setTimeout(()=>{ n.style.opacity='0'; n.style.transform='translateX(40px)'; n.style.transition='.25s'; setTimeout(()=>n.remove(),250); },2000);
+// BOTONES UBICACIÓN
+const btnUbiWa = document.getElementById("btnUbiWa");
+if (btnUbiWa) {
+  btnUbiWa.onclick = (e) => {
+    e.preventDefault();
+    const msg = `Hola Chino! Mándame tu ubicación de la Bodega Oblatos porfa - Av. Belisario Dominguez 2640 GDL`;
+    window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`, "_blank");
+  };
 }
