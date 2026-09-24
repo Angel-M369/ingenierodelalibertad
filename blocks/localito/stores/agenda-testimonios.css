@@ -1,6 +1,7 @@
-/* ===== BLOQUE 7: TESTIMONIOS ===== */
+/* ===== BLOQUE 7: TESTIMONIOS - TlaqueNails Boutique ===== */
 .yare-testis {
-  padding: 20px 0;
+  padding: 35px 0;
+  background: #121212;
 }
 
 .yare-testis-grid {
@@ -10,36 +11,46 @@
 }
 
 .yare-testi {
-  background: white;
+  background: var(--tlaque-gray);
   border-radius: 20px;
   padding: 20px;
-  box-shadow: var(--sombra);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
   display: flex;
   flex-direction: column;
   min-height: 130px;
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: 0.3s;
+}
+
+.yare-testi:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255,45,120,0.2);
 }
 
 .yare-testi p {
   font-style: italic;
   margin-bottom: 8px;
-  color: #333;
+  color: rgba(255,255,255,0.85);
   line-height: 1.4;
+  font-size: 0.92rem;
 }
 
 .yare-testi span {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  color: #777;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.5px;
 }
 
 .yare-stars {
-  color: #ffb400;
-  font-size: 0.95rem;
+  color: var(--tlaque-pink);
+  font-size: 0.85rem;
   letter-spacing: 2px;
   margin-top: auto;
   padding-top: 12px;
   text-align: right;
   align-self: flex-end;
+  opacity: 0.9;
 }
 
 @media (min-width: 768px) {

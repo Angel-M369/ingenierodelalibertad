@@ -1,4 +1,27 @@
-/* ===== BLOQUE 2: TICKER SUPERIOR ===== */
-.yare-ticker{background:var(--negro);color:white;padding:9px 0;overflow:hidden;white-space:nowrap}
-.yare-ticker-track{display:flex;gap:50px;animation:marquee 25s linear infinite}
-.yare-ticker-track span{font-size:0.8rem;font-weight:800}
+/* ===== BLOQUE 2: TICKER SUPERIOR - TlaqueNails ===== */
+.yare-ticker{
+  background: var(--tlaque-black);
+  color: var(--tlaque-white);
+  padding: 9px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  letter-spacing: 1.5px;
+}
+.yare-ticker-track{
+  display: flex;
+  gap: 50px;
+  animation: marquee 25s linear infinite;
+}
+.yare-ticker-track span{
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+.yare-ticker-track span:nth-child(odd){
+  color: var(--tlaque-white);
+}
+.yare-ticker-track span:nth-child(even){
+  color: var(--tlaque-pink);
+}

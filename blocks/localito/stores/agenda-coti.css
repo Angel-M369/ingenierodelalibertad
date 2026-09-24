@@ -1,46 +1,111 @@
-/* ===== BLOQUE 6: COTIZADOR - SISTEMA $6,999 ANTI-CANCELACIÓN - FIX COMPATIBLE ===== */
-.yare-cotizador{padding:40px 0 30px}
-.yare-coti-box{background:white;border-radius:28px;box-shadow:0 25px 60px rgba(0,0,0,0.1);border:1px solid var(--rosa-soft);overflow:hidden;max-width:650px;margin:0 auto}
-.yare-coti-header{background:var(--negro);color:white;padding:22px;text-align:center}
-.yare-coti-header h3 span{color:var(--rosa)}
-.yare-fomo{background:#fff0f5;border:1px dashed var(--rosa);color:var(--rosa);padding:10px;border-radius:10px;text-align:center;font-size:0.8rem;font-weight:700;margin-bottom:15px}
-.yare-coti-body{padding:25px}
-.yare-coti-opt{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border:1px solid #f0f0f0;border-radius:14px;margin-bottom:12px;cursor:pointer;transition:0.2s}
-.yare-coti-opt.active{border-color:var(--rosa);background:var(--rosa-soft);transform:scale(1.02)}
-.yare-coti-opt input{display:none}
-.yare-coti-left{display:flex;align-items:center;gap:12px}
-.yare-coti-check{width:22px;height:22px;border:2px solid #ddd;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:10px;opacity:0;transition:0.2s}
-.yare-coti-check i{opacity:0}
-.yare-coti-opt.active .yare-coti-check{background:var(--rosa);border-color:var(--rosa);color:white;opacity:1}
-.yare-coti-opt.active .yare-coti-check i{opacity:1}
-.yare-coti-price{font-weight:800;color:var(--rosa)}
-.yare-coti-total{background:#f9f9f9;border-radius:16px;padding:18px;margin-top:20px;display:flex;justify-content:space-between;align-items:center}
-.yare-coti-total strong{font-size:1.8rem}
-.yare-coti-inputs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
-.yare-coti-inputs input{padding:13px;border:1px solid #e5e5e5;border-radius:10px;font-family:'Poppins';font-size:0.9rem}
-.yare-btn-cotizar{width:100%;margin-top:18px;background:var(--rosa);color:white;border:none;padding:16px;border-radius:14px;font-weight:800;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 10px 20px rgba(255,46,147,0.3)}
-.yare-btn-cotizar:disabled{background:#ddd;box-shadow:none;cursor:not-allowed}
-/* BOTÓN ROSADO DEVIS */
-.yare-btn-cta-hero {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: #FF2D78;
-  color: #fff !important;
-  padding: 14px 32px;
-  border-radius: 100px;
+/* ===== BLOQUE 6: COTIZADOR - TlaqueNails - C. TONALÁ 158 FIXED ===== */
+.yare-cotizador{
+  padding: 40px 0 30px;
+  background: var(--tlaque-gray, #f7f7f7);
+}
+.yare-coti-box{
+  background: #FFFFFF;
+  border-radius: 28px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+  border: 1px solid rgba(255,255,255,0.8);
+  overflow: hidden;
+  max-width: 650px;
+  margin: 0 auto;
+}
+.yare-coti-header{
+  background: var(--tlaque-black, #1A1A1A);
+  color: white;
+  padding: 22px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.yare-coti-header h3{ color: white; font-size: 1.4rem; margin:0; }
+.yare-coti-header h3 span{ color: var(--tlaque-pink, #FF2D78); }
+.yare-coti-header p{ color: rgba(255,255,255,0.7); margin:6px 0 0; font-size:0.9rem; }
+
+.yare-coti-body{
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.yare-coti-body label{
   font-weight: 800;
-  font-size: 15px;
-  text-decoration: none !important;
-  margin: 18px auto 0;
-  box-shadow: 0 8px 20px rgba(255,45,120,0.35);
-  transition: 0.25s;
-  border: none;
+  font-size: 0.85rem;
+  margin-top: 10px;
+  color: #1A1A1A;
+  display: block;
 }
 
-.yare-btn-cta-hero:hover {
-  background: #ff0a63;
-  transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(255,45,120,0.45);
+/* SELECT Y INPUTS FECHA HORA - ESTE ERA EL ENCHUECADO */
+.yare-coti-body select,
+.yare-coti-body input[type="date"],
+.yare-coti-body input[type="time"],
+.yare-coti-body input[type="text"],
+.yare-coti-body input[type="tel"]{
+  width: 100% !important;
+  padding: 13px 14px !important;
+  border-radius: 12px !important;
+  border: 1px solid #e5e5e5 !important;
+  font-family: Poppins, sans-serif;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.yare-grid-2{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  width: 100%;
+}
+
+.yare-coti-inputs{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  width: 100%;
+}
+
+.yare-coti-total{
+  background: #fafafa;
+  border: 1px dashed #e5e5e5;
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+}
+.yare-coti-total span{ font-size:0.85rem; color:#666; }
+.yare-coti-total strong{ font-size:1rem; color:#1A1A1A; }
+
+.yare-btn-cotizar{
+  width: 100%;
+  background: #FF2D78;
   color: #fff;
+  border: 0;
+  padding: 16px;
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 1rem;
+  margin-top: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.yare-btn-cotizar:hover{ background:#e8276e; transform: scale(1.01); }
+
+.yare-coti-nota{
+  text-align:center; 
+  font-size:0.7rem; 
+  color:#888; 
+  margin-top:10px; 
+  line-height:1.3;
+}
+
+@media(max-width:600px){
+  .yare-grid-2,
+  .yare-coti-inputs{
+    grid-template-columns: 1fr;
+  }
 }

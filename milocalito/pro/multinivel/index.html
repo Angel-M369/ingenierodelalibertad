@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ysi Líder Terramar | 7 Años - GDL San Andrés</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="page">
+
+    <header class="ysi-header">
+      <div class="ysi-logo">YSI <span>TERRAMAR</span> • 7 AÑOS</div>
+      <div class="ysi-header-right">
+        <div class="ysi-icon-btn cart" id="btnCart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span id="cartCount">0</span>
+        </div>
+        <div class="ysi-icon-btn" id="btnMenu">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </div>
+    </header>
+
+    <nav class="ysi-nav" id="ysiNav">
+      <a href="#inicio"><i class="fa-solid fa-house"></i> Inicio</a>
+      <a href="#productos"><i class="fa-solid fa-store"></i> Productos</a>
+      <a href="#ubicacion"><i class="fa-solid fa-location-dot"></i> Ubicación</a>
+      <a href="#testimonios"><i class="fa-solid fa-star"></i> Testimonios</a>
+      <a href="#unete"><i class="fa-solid fa-crown"></i> Únete</a>
+      <a href="#contacto"><i class="fa-solid fa-phone"></i> Contacto</a>
+      <div class="nav-pro-badge">
+        <b>Sistema PRO</b><br>Cobra antes de enviar
+      </div>
+    </nav>
+
+    <div class="ysi-cart-nav" id="ysiCartNav">
+      <div class="cart-header">
+        <h4>CARRITO PRO</h4>
+        <button id="closeCart" class="close-x"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <div id="cartList">Vacío - agrega Terramar</div>
+
+      <div class="cart-pay-methods">
+        <p class="pay-title">¿Cómo quieres pagar?</p>
+        <label><input type="radio" name="pay" value="Transferencia" checked> <i class="fa-solid fa-building-columns"></i> Transferencia</label>
+        <label><input type="radio" name="pay" value="Tarjeta débito / crédito"> <i class="fa-regular fa-credit-card"></i> Tarjeta débito / crédito</label>
+        <label><input type="radio" name="pay" value="Mercado Pago"> <i class="fa-solid fa-qrcode"></i> Mercado Pago</label>
+        <label><input type="radio" name="pay" value="OXXO"> <i class="fa-solid fa-store"></i> OXXO</label>
+      </div>
+
+      <div class="cart-total-box">
+        <b>Total: $<span id="cartTotal">0</span></b><br>
+        <small>Cobro antes de enviar - Stock se descuenta</small>
+      </div>
+
+      <input id="clientName" placeholder="Tu nombre para el ticket" style="width:100%;padding:10px;border-radius:10px;border:1px solid #ddd;margin:8px 0;font-size:.8rem">
+
+      <button class="btn-add green" id="btnCobrar">COMPRAR AHORA - COBRAR</button>
+      <button class="btn-add ghost" id="btnVaciar">Vaciar carrito</button>
+      <p class="cart-note">Al pagar se avisa a Ysi y te llega tu comprobante</p>
+    </div>
+
+    <main>
+
+      <section class="hero-ysi" id="inicio">
+        <div class="hero-text">
+          <h1>NO SOLO VENDO<br><span>TERRAMAR</span><br>FORMO LÍDERES</h1>
+          
+          <!-- INFO PRINCIPAL YSI -->
+          <p class="hero-ysi-main">
+            Más de 7 años formando líderes en Terramar.<br>
+            Envíos nacionales desde San Andrés, Guadalajara.
+          </p>
+
+          <a href="#productos" class="btn-pro">Ver 12 productos PRO</a>
+
+          <hr class="hero-separator">
+
+          <!-- INFO SISTEMA APARTE -->
+          <p class="hero-system-info">
+            Sistema PRO $6,999 — Cobra antes de enviar con tarjeta / OXXO.<br>
+            Stock en AGOTADO automático. 0 paquetes perdidos.
+          </p>
+        </div>
+        <div class="hero-img">
+          <img src="../../../images/TerraH.jpg" alt="Terramar Brands">
+        </div>
+      </section>
+
+      <section class="cats-ysi" id="productos">
+        <a href="#capilar"><div class="cat-ysi"><img src="../../../images/Terracapi.jpg"><h3>CAPILAR</h3><small>3 productos</small></div></a>
+        <a href="#piel"><div class="cat-ysi"><img src="../../../images/Terrapiel.jpg"><h3>PIEL</h3><small>3 productos</small></div></a>
+        <a href="#corporal"><div class="cat-ysi"><img src="../../../images/Terracorpo.jpg"><h3>CORPORAL</h3><small>3 productos</small></div></a>
+        <a href="#maquillaje"><div class="cat-ysi"><img src="../../../images/Terramaqui.jpg"><h3>MAQUILLAJE</h3><small>3 productos</small></div></a>
+      </section>
+
+      <section class="sec-ysi" id="capilar">
+        <h2><span>CAPILAR</span> <br> 3 PRODUCTOS</h2>
+        <div class="grid-ysi">
+          <div class="prod-ysi"><img src="../../../images/Terracapi.jpg"><h4>Oil Serum 3en1 + Mascarilla Reparación</h4><div class="stock-ysi ok">12 PZAS</div><div class="price-ysi">$580</div><button class="btn-add" data-name="Serum 3en1 + Mask" data-price="580">Añadir al carrito</button></div>
+          <div class="prod-ysi"><img src="../../../images/Terracapi2.jpg"><h4>Shampoo Matizador Rubio Blonde Highlights</h4><div class="stock-ysi low">ÚLTIMAS 3</div><div class="price-ysi">$420</div><button class="btn-add" data-name="Matizador Rubio" data-price="420">Añadir al carrito</button></div>
+          <div class="prod-ysi"><img src="../../../images/Terracapi3.jpg"><h4>Aceite 3en1 Argán Macadamia Monoi</h4><div class="stock-ysi ok">EN STOCK</div><div class="price-ysi">$390</div><button class="btn-add" data-name="Aceite 3en1" data-price="390">Añadir al carrito</button></div>
+        </div>
+      </section>
+
+      <section class="sec-ysi" id="piel">
+        <h2><span>PIEL</span> <br> 3 PRODUCTOS</h2>
+        <div class="grid-ysi">
+          <div class="prod-ysi"><img src="../../../images/Terrapiel.jpg"><h4>Oil Antidote Anti Acné 20ml</h4><div class="stock-ysi ok">EN STOCK</div><div class="price-ysi">$350</div><button class="btn-add" data-name="Oil Antidote" data-price="350">Añadir al carrito</button></div>
+          <div class="prod-ysi"><img src="../../../images/Terrapiel2.jpg"><h4>Suero Vit C + Micro-Exfoliante Blue</h4><div class="stock-ysi ok">EN STOCK</div><div class="price-ysi">$680</div><button class="btn-add" data-name="Vit C + Exfoliante" data-price="680">Añadir al carrito</button></div>
+          <div class="prod-ysi"><img src="../../../images/Terrapiel3.jpg"><h4>Kit Micelar + Aceite + Perla</h4><div class="stock-ysi ok">EN STOCK</div><div class="price-ysi">$590</div><button class="btn-add" data-name="Kit Limpieza Premium" data-price="590">Añadir al carrito</button></div>
+        </div>
+      </section>
+
+      <section class="sec-ysi" id="corporal">
+        <h2><span>CORPORAL</span> <br> 3 PRODUCTOS</h2>
+        <div class="grid-ysi">
+          <div class="prod-ysi"><img src="../../../images/Terracorpo.jpg"><h4>VITAÓLEO 5 Aceites 150ml</h4><div class="stock-ysi ok">EN STOCK</div><div class="price-ysi">$520</div><button class="btn-add" data-name="Vitaóleo 150ml" data-price="520">Añadir al carrito</button></div>
+          <div class="prod-ysi"><img src="../../../images/Terracorpo2.jpg"><h4>Colección Coco Limón Algas</h4><div class="stock-ysi ok">EN STOCK</div><div class="price-ysi">$610</div><button class="btn-add" data-name="Colección Coco" data-price="610">Añadir al carrito</button></div>
+          <div class="prod-ysi"><img src="../../../images/Terracorpo3.jpg"><h4>TROPICAL Guanábana Melón Tuna</h4><div class="stock-ysi low">PRECIO MÁS BAJO</div><div class="price-ysi">$640</div><button class="btn-add" data-name="Tropical Scrub" data-price="640">Añadir al carrito</button></div>
+        </div>
+      </section>
+
+      <section class="sec-ysi" id="maquillaje">
+        <h2><span>MAQUILLAJE</span> <br> 3 PRODUCTOS</h2>
+        <div class="grid-ysi">
+          <div class="prod-ysi"><img src="../../../images/Terramaqui1.jpg"><h4>Extreme Cover SPF15 - Cubre manchas</h4><div class="stock-ysi ok">6 TONOS</div><div class="price-ysi">$480</div><button class="btn-add" data-name="Extreme Cover" data-price="480">Añadir al carrito</button></div>
+          <div class="prod-ysi"><img src="../../../images/Terramaqui2.jpg"><h4>Skin Perfecting FPS15 Células Madre</h4><div class="stock-ysi ok">7 TONOS</div><div class="price-ysi">$520</div><button class="btn-add" data-name="Skin Perfecting" data-price="520">Añadir al carrito</button></div>
+          <div class="prod-ysi"><img src="../../../images/Terramaqui3.jpg"><h4>Skin Perfecting Nieve Edelweiss</h4><div class="stock-ysi bad">AGOTADO</div><div class="price-ysi">$520</div><button class="btn-add" disabled>AGOTADO</button></div>
+        </div>
+      </section>
+
+      <section class="mapa-ysi" id="ubicacion">
+        <div class="mapa-frame">
+             <iframe 
+                 src="https://www.google.com/maps?q=San+Andres+Guadalajara+Jalisco&z=15&output=embed" 
+                 width="100%" 
+                 height="300" 
+                 style="border:0;" 
+                 loading="lazy">
+             </iframe>
+        </div>
+        <div class="mapa-info">
+          <h3>¿DÓNDE NOS UBICAMOS?</h3>
+          <p><i class="fa-solid fa-location-dot"></i> San Andrés, Guadalajara, Jalisco</p>
+          <p class="horario">Lun - Sáb 10am - 7pm | WhatsApp 33 3140 2726</p>
+          <div class="mapa-btns">
+            <a href="https://www.google.com/maps/search/?api=1&query=San+Andres+Guadalajara" target="_blank" class="btn-dark">Cómo llegar por Google Maps</a>
+            <a href="#" id="btnWALlegar" class="btn-whats">Ysi, dime cómo llegar</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="testi-wrap" id="testimonios">
+        <div class="testi-box">
+          <h3>CLIENTAS FELICES</h3>
+          <div class="testi"><strong>Ana G. - Zapopan</strong><p>El Vitaóleo me quitó las manchas en 3 semanas, Ysi siempre me contesta.</p></div>
+          <div class="testi"><strong>Lupita R. - CDMX</strong><p>Me llegó mi kit hasta CDMX, cobro seguro con tarjeta.</p></div>
+        </div>
+        <div class="testi-box">
+          <h3>MI EQUIPO LÍDER</h3>
+          <div class="testi"><strong>Karen - 2 años conmigo</strong><p>Entré sin saber vender, hoy tengo mi equipo de 8.</p></div>
+          <div class="testi"><strong>Brenda - Mamá emprendedora</strong><p>Gano $6,000 extra al mes solo con Terramar.</p></div>
+        </div>
+      </section>
+
+      <section class="recluta-ysi" id="unete">
+        <h2>¿TE GUSTARÍA SER <span>UN LÍDER?</span></h2>
+        <p>Únete a mi equipo Terramar. 7 años de experiencia te respaldan.</p>
+        <input id="rn" placeholder="Tu nombre completo">
+        <input id="rc" placeholder="¿De dónde eres?">
+        <select id="ri">
+          <option>Quiero vender producto</option>
+          <option>Quiero formar equipo</option>
+          <option>Quiero ambos</option>
+        </select>
+        <button id="btnRecluta" class="recluta-btn">Hola Ysi quiero ser parte de tu equipo</button>
+      </section>
+
+    </main>
+
+    <footer class="yare-footer" id="contacto">
+      <!-- TITULO CENTRADO -->
+      <div class="footer-brand">
+        <h2>Ysi Terramar</h2>
+        <p>mas de 7 años formando líderes</p>
+      </div>
+
+      <div class="footer-grid">
+        <div>
+          <div class="yare-footer-title">Sígueme:</div>
+          <div class="yare-footer-redes">
+            <a class="facebook" href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a class="tiktok" href="#"><i class="fa-brands fa-tiktok"></i></a>
+            <a class="instagram" href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a class="whatsapp" id="footerWA2" href="#"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div>
+          <div class="yare-footer-title">Hablemos!</div>
+          <div class="footer-contact">
+            Lun - Sáb 10am - 7pm<br>
+            San Andrés, GDL, Jal.<br>
+            33 3140 2726
+          </div>
+        </div>
+      </div>
+
+      <div class="yare-footer-bottom">
+        <div class="yare-embudo">© 2026 Ysi Terramar® - Guadalajara Jalisco ·<br> Todos los derechos reservados</div>
+        <div class="footer-legal">
+          <p>Tienda con carrito real y cobros con tarjeta/OXXO (demo), creada con MI LOCALITO by <br> 
+            <a href="https://www.ingenierodelalibertad.com" target="_blank">Ingeniero de la libertad</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <a class="ysi-float" id="ysiFloat" href="#" target="_blank">
+      <div class="float-avatar"><img src="../../../images/TerraH.jpg"><div class="dot"></div></div>
+      <div>Ysi está conectada<br><small>Responde en minutos</small></div>
+    </a>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

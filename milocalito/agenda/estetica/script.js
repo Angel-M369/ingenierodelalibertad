@@ -1,145 +1,85 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Cerrar menú
   document.querySelectorAll('.yare-nav a').forEach(link => {
-    link.addEventListener('click', () => { 
+    link.addEventListener('click', () => {
       const t = document.getElementById('yare-menu-toggle');
-      if(t) t.checked = false; 
+      if(t) t.checked = false;
     });
   });
 
-  // ===== COTIZADOR DOÑA YARE - LÓGICA REAL =====
-  const checks = document.querySelectorAll('.coti-check');
-  const totalEl = document.getElementById('coti-total');
-  const btnCoti = document.getElementById('coti-btn');
-  const btnAnticipo = document.getElementById('btn-anticipo-demo');
-  const inputNombre = document.getElementById('coti-nombre');
-  const inputFecha = document.getElementById('coti-fecha');
-  const lugaresEl = document.getElementById('lugares');
+  // ===== DEMO TlaqueNails - Sistema $6,999 - SOLO SIMULACIÓN =====
+  const DUEÑO_WA = "523331389980";
+  const MAP_LINK = "https://maps.app.goo.gl/pCwTK3WNF9sEe9tX9?g_st=ac";
 
-  // FOMO lugares aleatorio
-  if(lugaresEl){
-    setInterval(()=> { lugaresEl.innerText = Math.floor(Math.random()*2)+1; }, 4000);
+  const servicioSelect = document.getElementById('servicio-select');
+  const fechaInput = document.getElementById('fecha');
+  const horaInput = document.getElementById('hora');
+  const nombreInput = document.getElementById('nombre');
+  const telefonoInput = document.getElementById('telefono');
+  const resumenEl = document.getElementById('coti-resumen');
+  const btnAgendar = document.getElementById('coti-btn');
+
+  if(fechaInput){
+    fechaInput.min = new Date().toISOString().split("T")[0];
   }
 
-  function actualizarCotizador(){
-    let total = 0;
-    let servicios = [];
-    
-    checks.forEach(ch => {
-      const opt = ch.closest('.yare-coti-opt');
-      if(ch.checked){
-        total += parseInt(ch.dataset.price);
-        servicios.push(ch.value);
-        if(opt){
-          opt.classList.add('active');
-          const checkIcon = opt.querySelector('.yare-coti-check');
-          if(checkIcon) checkIcon.style.opacity = '1';
-        }
-      } else {
-        if(opt){
-          opt.classList.remove('active');
-          const checkIcon = opt.querySelector('.yare-coti-check');
-          if(checkIcon) checkIcon.style.opacity = '0';
-        }
-      }
-    });
-
-    if(totalEl) totalEl.innerText = `$${total}`;
-    
-    if(servicios.length > 0){
-      if(btnCoti){
-        btnCoti.disabled = false;
-        btnCoti.innerText = `Agendar ${servicios.length} servicio(s) - $${total} →`;
-      }
-      if(btnAnticipo) btnAnticipo.style.display = 'block';
-    } else {
-      if(btnCoti){
-        btnCoti.disabled = true;
-        btnCoti.innerText = 'Selecciona 1 servicio';
-      }
-      if(btnAnticipo) btnAnticipo.style.display = 'none';
+  function updateResumen(){
+    if(!resumenEl) return;
+    if(servicioSelect?.value && fechaInput?.value && horaInput?.value){
+      resumenEl.textContent = `${servicioSelect.value.split(" - ")[0]} | ${fechaInput.value} ${horaInput.value}`;
     }
-
-    return { total, servicios };
   }
+  [servicioSelect, fechaInput, horaInput].forEach(el=> el?.addEventListener('change', updateResumen));
 
-  // Inicializar en 0
-  checks.forEach(ch => {
-    ch.checked = false;
-    const opt = ch.closest('.yare-coti-opt');
-    if(opt){
-      opt.classList.remove('active');
-      const checkIcon = opt.querySelector('.yare-coti-check');
-      if(checkIcon) checkIcon.style.opacity = '0';
-    }
-    ch.addEventListener('change', () => {
-      const data = actualizarCotizador();
-      if(typeof gtag!== 'undefined' && ch.checked){
-        gtag('event', 'select_service_agenda', {
-          'sistema': 'agenda',
-          'servicio': ch.value,
-          'price': ch.dataset.price
-        });
+  // Cards llenan select
+  document.querySelectorAll('.yare-card-box').forEach(card=>{
+    card.addEventListener('click', ()=>{
+      const s = card.dataset.servicio;
+      if(servicioSelect){
+        for(let opt of servicioSelect.options){
+          if(opt.value.includes(s)){ servicioSelect.value = opt.value; break; }
+        }
       }
+      updateResumen();
+      document.getElementById('cotizador')?.scrollIntoView({behavior:"smooth"});
     });
   });
 
-  actualizarCotizador();
+  if(btnAgendar){
+    btnAgendar.addEventListener('click', () => {
+      const servicio = servicioSelect?.value || "";
+      const fecha = fechaInput?.value || "";
+      const hora = horaInput?.value || "";
+      const nombre = nombreInput?.value.trim() || "";
+      const telefono = telefonoInput?.value.trim() || "";
 
-  // Click AGENDAR
-  if(btnCoti){
-    btnCoti.addEventListener('click', () => {
-      const { total, servicios } = actualizarCotizador();
-      if(servicios.length === 0) return;
-
-      const nombre = inputNombre?.value || 'Hola';
-      const fecha = inputFecha?.value || 'fecha por definir';
-      
-      let msg = `Hola Yare! 💅 Quiero agendar:%0A%0A`;
-      servicios.forEach(s => msg += `• ${s}%0A`);
-      msg += `%0ATotal: $${total}%0AFecha: ${fecha}%0AMi nombre: ${nombre}%0A%0A¿Me apartas lugar?`;
-
-      // MEDICIÓN MAESTRA
-      if(typeof gtag!== 'undefined'){
-        gtag('event', 'click_whatsapp', {
-          'sistema': 'agenda',
-          'servicio': servicios.join(', '),
-          'value': total,
-          'currency': 'MXN'
-        });
-        gtag('event', 'cita_intent_agenda', {
-          'servicios': servicios.length,
-          'value': total
-        });
-        gtag('event', 'begin_checkout', {
-          'sistema': 'agenda',
-          'value': total,
-          'currency': 'MXN'
-        });
+      if(!servicio ||!fecha ||!hora ||!nombre ||!telefono){
+        alert("Completa todo: servicio, fecha, hora, nombre y WhatsApp");
+        return;
       }
 
-      window.open(`https://wa.me/529613706663?text=${msg}`, '_blank');
+      // SIMULACIÓN ANTI-EMPALME - solo en demo
+      const demoCitas = JSON.parse(localStorage.getItem('tlaque_demo') || '[]');
+      if(demoCitas.find(c=> c.fecha===fecha && c.hora===hora)){
+        alert(`❌ DEMO: Ya hay cita simulada el ${fecha} a las ${hora}. Elige otra. (Sistema anti-empalmes activo)`);
+        return;
+      }
+      demoCitas.push({fecha,hora,servicio,nombre,telefono});
+      localStorage.setItem('tlaque_demo', JSON.stringify(demoCitas));
+
+      // MENSAJE QUE SIMULA ENVÍO AL DUEÑO
+      const msgDueño = `🔔 *NUEVA CITA - TlaqueNails DEMO $6,999*%0A%0A👤 Cliente: ${nombre}%0A📱 Tel cliente: ${telefono}%0A💅 Servicio: ${servicio}%0A📅 Día: ${fecha}%0A⏰ Hora: ${hora}%0A%0A✅ DEMO: Cita simulada agendada sin empalme.%0A⏰ (En versión real se enviarían recordatorios 24h y 3h a ambos)%0A%0A📍 ${MAP_LINK}`;
+
+      window.open(`https://wa.me/${DUEÑO_WA}?text=${msgDueño}`, "_blank");
+
+      // SIMULACIÓN VISUAL DE RECORDATORIOS EN CONSOLA
+      console.log(`%c[DEMO 24h] Dueño: ${nombre} ${telefono} -> ${fecha} ${hora}`, "color:#FF2D78; font-weight:bold");
+      console.log(`%c[DEMO 24h] Cliente ${telefono}: Hola ${nombre} tu cita ${fecha} ${hora} ${servicio}`, "color:#5a5a5a");
+      console.log(`%c[DEMO 3h] Dueño y cliente notificados`, "color:#FF2D78");
+
+      setTimeout(()=>{
+        alert(`✅ DEMO AGENDADA\n\n${fecha} ${hora}\n${servicio}\nCliente: ${nombre} - ${telefono}\n\nEn la versión real ($6,999) se guarda en BD y se programan recordatorios automáticos 24h y 3h antes.\n\nPor ahora solo se simuló y se mandó WhatsApp al dueño.`);
+      }, 600);
     });
-  }
-
-  // MEDICIÓN WA general
-  document.querySelectorAll('a[href*="wa.me"]').forEach(btn => {
-    if(btn.id !== 'coti-btn'){
-      btn.addEventListener('click', () => {
-        if(typeof gtag!== 'undefined'){
-          gtag('event', 'click_whatsapp', {
-            'sistema': 'agenda',
-            'ubicacion': 'float/header'
-          });
-        }
-      });
-    }
-  });
-
-  // Fix hora
-  const horaEl = document.getElementById('hora');
-  if(horaEl){
-    const now = new Date();
-    horaEl.textContent = now.toLocaleTimeString('es-MX',{hour:'2-digit',minute:'2-digit'});
   }
 });

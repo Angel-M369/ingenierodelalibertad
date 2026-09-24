@@ -1,8 +1,8 @@
-/* ===== YARE FOOTER - MOBILE FIRST FINAL ===== */
+/* ===== BLOQUE 9: FOOTER + FLOAT - TlaqueNails FINAL ===== */
 .yare-footer{
   background:#080808;
   color:#a1a1aa;
-  padding:50px 20px 120px 20px;
+  padding:50px 20px 120px 5px;
 }
 .yare-container{
   max-width:1200px;
@@ -19,9 +19,18 @@
   line-height:1;
   margin:0 0 8px 0;
   text-transform:uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.yare-footer-logo span{ color:#ec4899; }
-.yare-footer-sub{ font-size:15px; opacity:.8; }
+.yare-footer-logo img{
+  height: 48px;
+  width: auto;
+  margin-bottom: 8px;
+  border-radius: 14px !important;
+}
+.yare-footer-logo span{ color: var(--tlaque-pink); }
+.yare-footer-sub{ font-size:15px; opacity:.8; color: rgba(255,255,255,0.6); }
 
 .yare-footer-row{
   display:flex;
@@ -31,7 +40,7 @@
   align-items:center;
 }
 .yare-footer-title{
-  color:#ec4899;
+  color: var(--tlaque-pink);
   font-weight:800;
   font-size:15px;
   letter-spacing:1.2px;
@@ -53,12 +62,33 @@
   color:#fff;
   text-decoration:none;
   transition: all 0.25s ease;
+  border: 1px solid rgba(255,255,255,0.06);
 }
-.yare-footer-redes a:hover{
-  background:#ec4899;
+
+/* === HOVER POR RED - COLOR PROPIO === */
+.yare-footer-redes a[href*="facebook"]:hover,
+.yare-footer-redes a.facebook:hover{
+  background: #1877F2 !important;
   color:#fff;
   transform:translateY(-3px);
+  box-shadow: 0 6px 18px rgba(24,119,242,0.4);
 }
+.yare-footer-redes a[href*="instagram"]:hover,
+.yare-footer-redes a.instagram:hover{
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%) !important;
+  color:#fff;
+  transform:translateY(-3px);
+  box-shadow: 0 6px 18px rgba(214,36,159,0.4);
+}
+.yare-footer-redes a[href*="tiktok"]:hover,
+.yare-footer-redes a.tiktok:hover{
+  background: #000 !important;
+  color:#fff;
+  transform:translateY(-3px);
+  box-shadow: 0 6px 18px rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,0,80,0.5);
+}
+
 .yare-footer-col p{ font-size:14px; margin:4px 0; }
 .yare-footer-micro{ font-size:13px; opacity:.7; margin-top:8px; }
 
@@ -74,32 +104,40 @@
 .yare-embudo{ color:#a1a1aa; }
 .yare-embudo a, .yare-embudo a span{
   text-decoration:none !important;
-  color:#ec4899 !important;
+  color: var(--tlaque-pink) !important;
   font-weight:800;
+  transition: 0.2s ease;
+}
+/* === HOVER ENLACE INGENIERO === */
+.yare-embudo a:hover, .yare-embudo a:hover span{
+  color: #fff !important;
+  text-decoration: underline !important;
+  text-underline-offset: 4px;
+  text-shadow: 0 0 12px rgba(255,45,120,0.6);
 }
 
-/* ===== BOTON FLOTANTE YARE - EL QUE BORRASTE ===== */
+/* BOTON FLOTANTE TlaqueNails */
 .yare-float{
   position:fixed;
-  bottom:5px;
+  bottom: 40px;
   right:24px;
   z-index:9999;
   display:flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items:center;
   gap:12px;
 }
 .yare-float-btn{
   width:60px;
   height:60px;
-  background:#ec4899;
+  background: var(--tlaque-pink);
   border-radius:50%;
   display:grid;
   place-items:center;
   color:#fff;
   font-size:30px;
   text-decoration:none;
-  box-shadow:0 8px 24px rgba(236,72,153,0.4);
+  box-shadow:0 8px 24px rgba(255,45,120,0.4);
   animation: yare-pulse 2s infinite;
 }
 .yare-float-bubble{
@@ -109,7 +147,7 @@
   border-radius:20px;
   font-size:13px;
   font-weight:600;
-  box-shadow:0 4px 16px rgba(0,0,0,0.1);
+  box-shadow:0 4px 16px rgba(0,0,0,0.2);
   display:flex;
   align-items:center;
   gap:8px;
@@ -123,12 +161,11 @@
   display:inline-block;
 }
 @keyframes yare-pulse{
-  0%{ transform:scale(1); box-shadow:0 0 0 0 rgba(236,72,153,0.7); }
-  70%{ transform:scale(1.05); box-shadow:0 0 0 12px rgba(236,72,153,0); }
-  100%{ transform:scale(1); box-shadow:0 0 0 0 rgba(236,72,153,0); }
+  0%{ transform:scale(1); box-shadow:0 0 0 0 rgba(255,45,120,0.7); }
+  70%{ transform:scale(1.05); box-shadow:0 0 0 12px rgba(255,45,120,0); }
+  100%{ transform:scale(1); box-shadow:0 0 0 0 rgba(255,45,120,0); }
 }
 
-/* TABLET */
 @media(min-width:768px) and (max-width:1023px){
   .yare-footer-row{
     flex-direction:row;
@@ -136,12 +173,8 @@
     gap:80px;
   }
 }
-/* DESKTOP - ya no 600px que te rompe todo, ahora 180px */
 @media(min-width:1024px){
-  .yare-footer{
-    padding: 50px 20px 30px 20px;
-  }
-
+  .yare-footer{ padding: 50px 20px 30px 20px; }
   .yare-footer-row{
     flex-direction:row;
     justify-content:center;

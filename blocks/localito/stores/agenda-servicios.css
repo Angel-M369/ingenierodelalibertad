@@ -1,24 +1,28 @@
-/* ===== BLOQUE 5: SERVICIOS FLIP CARDS - SISTEMA $4,999 ===== */
+/* ===== BLOQUE 5: SERVICIOS FLIP CARDS - TlaqueNails ===== */
 .yare-servicios {
   padding: 50px 0;
+  background: #121212;
 }
 
 .yare-titulo {
   font-size: 1.9rem;
   text-align: center;
   margin-bottom: 8px;
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
+  color: var(--tlaque-white);
 }
 
 .yare-titulo span {
-  color: var(--rosa);
+  color: var(--tlaque-pink);
 }
 
 .yare-sub {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   text-align: center;
-  color: #888;
+  color: rgba(255,255,255,0.5);
   margin-bottom: 30px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .yare-cards-grid {
@@ -40,7 +44,7 @@
   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   border-radius: 26px;
-  box-shadow: var(--sombra);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
 }
 
 .yare-card-box:hover {
@@ -59,47 +63,58 @@
   backface-visibility: hidden;
   border-radius: 26px;
   overflow: hidden;
-  background: white;
-  border: 1px solid rgba(0, 0, 0, 0.04);
+  background: var(--tlaque-gray);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .yare-card-front img {
   width: 100%;
   height: 230px;
   object-fit: cover;
+  filter: brightness(0.95);
 }
 
 .yare-card-info {
   padding: 18px;
+  background: var(--tlaque-gray);
+}
+
+.yare-card-info h3 {
+  color: var(--tlaque-white);
+  font-size: 1.1rem;
 }
 
 .yare-precio {
-  color: var(--rosa);
+  color: var(--tlaque-pink);
   font-weight: 800;
   font-size: 1.5rem;
   margin-top: 6px;
 }
 
 .yare-tap {
-  font-size: 0.7rem;
-  color: #bbb;
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.4);
   display: block;
   margin-top: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .yare-card-back {
   transform: rotateY(180deg);
-  background: var(--negro);
+  background: var(--tlaque-black);
   color: white;
   padding: 25px;
   display: flex;
   align-items: center;
+  border: 1px solid rgba(255,45,120,0.2);
 }
 
+.yare-back-info h3 { color: var(--tlaque-pink); }
 .yare-back-info p {
   line-height: 1.6;
   font-size: 0.9rem;
-  color: #ddd;
+  color: rgba(255,255,255,0.75);
   margin: 10px 0;
 }
 
@@ -111,6 +126,6 @@
 
 @media (min-width: 1100px) {
   .yare-cards-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }

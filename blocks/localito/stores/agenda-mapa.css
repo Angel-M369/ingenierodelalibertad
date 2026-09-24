@@ -1,17 +1,97 @@
-/* ===== BLOQUE 8: MAPA ===== */
-.yare-mapa{padding:20px 0 60px}
-.yare-titulo-left{text-align:left !important}
-.yare-mapa-grid{display:grid;grid-template-columns:1fr;gap:0;background:white;border-radius:28px;overflow:hidden;box-shadow:0 25px 60px rgba(0,0,0,0.1);border:1px solid var(--rosa-soft)}
-.yare-mapa-info{padding:25px}
-.yare-mapa-title{font-weight:800;font-size:1.1rem}
-.yare-mapa-title i{color:var(--rosa)}
-.yare-mapa-sub{color:#888;font-size:0.9rem;margin:8px 0 18px}
-.yare-btn-mapa{display:block;text-align:center;padding:14px;border-radius:14px;text-decoration:none;font-weight:700;margin-bottom:10px}
-.yare-btn-mapa-dark{background:var(--negro);color:white}
-.yare-btn-mapa-light{background:white;border:2px solid var(--negro);color:var(--negro)}
-.yare-mapa-frame{height:320px}
-.yare-mapa-frame iframe{width:100%;height:100%;border:0}
-
-@media(min-width:800px){
-  .yare-mapa-grid{grid-template-columns:1fr 1.2fr}
+/* ===== BLOQUE 9: FOOTER + FLOAT - TlaqueNails - FINAL SIN RAYITAS ===== */
+.yare-footer{
+  background: var(--tlaque-black);
+  color: white;
+  padding: 35px 0 20px;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.06);
 }
+.yare-footer-logo{ font-size: 1.4rem; font-weight: 800; }
+.yare-footer-logo span{ color: var(--tlaque-pink); }
+.yare-footer-sub{ color: rgba(255,255,255,0.5); font-size: 0.8rem; margin-top: 4px; }
+.yare-footer-title{ color: white; font-size: 0.95rem; margin-bottom: 10px; }
+.yare-footer-redes{ display: flex; gap: 14px; justify-content: center; margin: 10px 0; }
+.yare-footer-redes a{
+  width: 38px; height: 38px;
+  background: rgba(255,255,255,0.08);
+  color: white;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  transition: 0.25s;
+}
+.yare-footer-redes a.facebook:hover{ background: #1877F2 !important; transform: scale(1.1); }
+.yare-footer-redes a.instagram:hover{ background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%) !important; transform: scale(1.1); }
+.yare-footer-redes a.tiktok:hover{ background: #000 !important; border: 1px solid white; transform: scale(1.1); box-shadow: 0 0 0 2px #00f2ea, 0 0 0 4px #ff0050; }
+
+.yare-float{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 101;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.yare-float-btn{
+  width: 56px; height: 56px;
+  background: #25D366;
+  color: white;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px;
+  text-decoration: none !important;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  animation: pulse 2s infinite;
+}
+.yare-float-bubble{
+  background: white;
+  color: var(--tlaque-black);
+  padding: 8px 14px;
+  border-radius: 18px 18px 0 18px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* ===== MAPA - BOTONES DECENTES ===== */
+.yare-mapa-btns{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 18px;
+}
+.yare-btn-mapa-dark, .yare-btn-mapa-light{
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 14px 22px;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 0.85rem;
+  text-decoration: none !important;
+  border: none !important;
+  transition: 0.25s;
+}
+.yare-btn-mapa-dark{ background: #111; color: #fff !important; }
+.yare-btn-mapa-dark:hover{ background: #000; transform: translateY(-2px); color: #fff !important; }
+.yare-btn-mapa-light{ background: #25D366; color: #fff !important; }
+.yare-btn-mapa-light:hover{ background: #128C7E; transform: translateY(-2px); color: #fff !important; }
+
+/* ===== FIX DEFINITIVO INGENIERO.COM - SIN RAYITA CULERA ===== */
+.yare-footer-bottom a,
+.yare-embudo a,
+a[href*="ingenierodelalibertad"]{
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  color: #fff !important;
+}
+.yare-footer-bottom a:visited,
+.yare-embudo a:visited{ color: #fff !important; text-decoration: none !important; }
+.yare-embudo a:hover,
+.yare-footer-bottom a:hover,
+a[href*="ingenierodelalibertad"]:hover{
+  text-decoration: none !important;
+  color: var(--tlaque-pink) !important;
+}
+.yare-embudo a:hover span{ color: var(--tlaque-pink) !important; text-decoration: none !important; }

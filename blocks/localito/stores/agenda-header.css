@@ -1,4 +1,4 @@
-/* ===== BLOQUE 3: HEADER + NAV - FIXED + X SIN BLUR ===== */
+/* ===== BLOQUE 3: HEADER + NAV - TlaqueNails - C. TONALÁ 158 FIXED ===== */
 .yare-ticker {
   position: fixed !important;
   top: 0;
@@ -6,6 +6,8 @@
   right: 0;
   z-index: 103;
   height: 32px;
+  background: #1A1A1A;
+  color: #fff;
 }
 
 .yare-header {
@@ -14,11 +16,11 @@
   left: 0;
   right: 0;
   z-index: 102;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(26,26,26,0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 10px 0;
 }
 
 .yare-header .yare-container {
@@ -28,30 +30,67 @@
 }
 
 .yare-logo {
-  font-size: 1.6rem;
-  font-weight: 800;
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  color: var(--negro);
 }
-.yare-logo span { color: var(--rosa); }
+.yare-logo img {
+  height: 44px !important;
+  width: auto !important;
+  max-width: 140px !important;
+  display: block;
+  border-radius: 14px !important;
+  object-fit: contain;
+  overflow: hidden;
+}
+
+/* === PARCHE HERO Y FOOTER - BORDES REDONDOS IGUAL QUE LOGO === */
+.yare-logo-hero{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #5a5a5a;
+  padding: 18px 28px;
+  border-radius: 20px !important;
+  max-width: 320px;
+  margin: 0 auto 22px auto;
+  overflow: hidden;
+}
+.yare-logo-hero img{
+  width: 100%;
+  max-width: 260px !important;
+  max-height: 140px !important;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 14px !important;
+}
+
+.yare-footer img{
+  height: 42px !important;
+  width: auto !important;
+  max-width: 120px !important;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 10px auto;
+  border-radius: 14px !important;
+}
 
 .yare-checkbox { display: none; }
-
 .yare-overlay {
   display: none;
   position: fixed;
   inset: 0;
   background: transparent;
   z-index: 99;
-  backdrop-filter: none;
 }
 
 .yare-nav {
   position: fixed;
-  top: 90px; /* 32 ticker + 58 header */
+  top: 90px;
   right: -230px;
   width: 210px;
-  background: var(--negro);
+  background: #1A1A1A;
   display: flex;
   flex-direction: column;
   padding: 30px 0 22px 0 !important;
@@ -60,11 +99,17 @@
   transition: 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
   border-radius: 22px 0 0 22px;
   z-index: 100;
+  border-left: 1px solid rgba(255,255,255,0.1);
 }
 
-.yare-nav a { text-decoration: none; color: white; font-weight: 600; }
-.yare-btn-agendar { background: var(--rosa); color: white !important; padding: 10px 22px; border-radius: 30px; }
-
+.yare-nav a { text-decoration: none; color: #fff; font-weight: 600; font-size: 0.9rem; }
+.yare-nav a:hover { color: #FF2D78; }
+.yare-btn-agendar { 
+  background: #FF2D78; 
+  color: white !important; 
+  padding: 10px 22px; 
+  border-radius: 30px;
+}
 .yare-burger {
   display: flex;
   flex-direction: column;
@@ -75,7 +120,7 @@
 .yare-burger span {
   width: 26px;
   height: 3px;
-  background: var(--negro);
+  background: #fff;
   border-radius: 5px;
   display: block;
   transition: .3s;
@@ -83,13 +128,10 @@
 
 .yare-checkbox:checked ~ .yare-nav { right: 0; }
 .yare-checkbox:checked ~ .yare-overlay { display: block; }
-
-/* LA X */
 .yare-checkbox:checked + .yare-burger span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
 .yare-checkbox:checked + .yare-burger span:nth-child(2) { opacity: 0; }
 .yare-checkbox:checked + .yare-burger span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
 
-/* Empuje para que no se esconda el hero debajo del fixed */
 .page { padding-top: 90px; }
 
 @media (min-width: 900px) {
@@ -102,7 +144,7 @@
     right: 0;
     border-radius: 0;
     top: auto !important;
+    border: none;
   }
-  .yare-nav a { color: var(--negro); }
   .yare-burger, .yare-overlay { display: none !important; }
 }

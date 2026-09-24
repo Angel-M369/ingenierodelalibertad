@@ -1,115 +1,89 @@
-/* ==============================
-   UBICACION - SISTEMA OFICIAL
-   ============================== */
-.ubicacion-pro {
-    padding: 50px 20px;
-    background: #0f0f0f;
-    text-align: center;
+/* UBICACION - CHINO FIX */
+.ubicacion-pro{
+    padding:40px 14px;
+    background:#0a0e27;
+    text-align:center;
 }
-
-.subtitulo-ubicacion {
-    font-size: 13px;
-    color: #9a9a9a;
-    margin: -10px 0 25px 0;
+.ubicacion-pro .titulo-pro{margin-bottom:8px}
+.subtitulo-ubicacion{
+    font-size:.75rem;
+    color:#8ea0bf;
+    margin-bottom:20px;
 }
-
-.ubicacion-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    max-width: 1100px;
-    margin: 0 auto;
-    text-align: left;
+.ubicacion-grid{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    max-width:1100px;
+    margin:0 auto;
+    text-align:left;
 }
-
-.ubicacion-info {
-    background: #151515;
-    border: 1px solid #222;
-    border-radius: 12px;
-    padding: 22px;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
+.ubicacion-info{
+    background:#151a3a;
+    border:1px solid rgba(255,107,0,.15);
+    border-radius:14px;
+    padding:18px;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
 }
-
-.dato-ubicacion {
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
+.dato-ubicacion{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
 }
-
-.dato-ubicacion i {
-    color: #ff6b00;
-    font-size: 16px;
-    margin-top: 3px;
-    min-width: 18px;
+.dato-ubicacion i{
+    color:#ff6b00;
+    font-size:.9rem;
+    margin-top:2px;
+    min-width:18px;
 }
-
-.dato-ubicacion div {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+.dato-ubicacion div{display:flex;flex-direction:column;gap:2px}
+.dato-ubicacion strong{
+    color:#fff;
+    font-size:.68rem;
+    letter-spacing:.5px;
+    text-transform:uppercase;
 }
-
-.dato-ubicacion strong {
-    color: #fff;
-    font-size: 12px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+.dato-ubicacion span{
+    color:#8ea0bf;
+    font-size:.8rem;
+    line-height:1.4;
 }
+.dato-ubicacion .link-wa-pro{color:#8ea0bf;text-decoration:none}
+.dato-ubicacion .link-wa-pro:hover{color:#ff6b00}
 
-.dato-ubicacion span {
-    color: #9a9a9a;
-    font-size: 13px;
-    line-height: 1.5;
+.btn-mapa-pro{
+    margin-top:6px;
+    background:linear-gradient(90deg,#ff6b00,#ff8c00);
+    color:#fff;
+    text-align:center;
+    padding:12px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:800;
+    font-size:.75rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    box-shadow:0 4px 12px rgba(255,107,0,.3);
+    transition:.2s;
 }
+.btn-mapa-pro:hover{transform:translateY(-2px)}
 
-.dato-ubicacion small {
-    color: #666;
+.ubicacion-mapa{
+    background:#151a3a;
+    border:1px solid rgba(255,107,0,.15);
+    border-radius:14px;
+    overflow:hidden;
+    height:300px;
 }
+.ubicacion-mapa iframe{filter:grayscale(.2) contrast(1.1)}
 
-.btn-mapa-pro {
-    margin-top: 8px;
-    background: #ff6b00;
-    color: #fff;
-    text-align: center;
-    padding: 12px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 800;
-    font-size: 13px;
-    letter-spacing: 0.5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-}
-
-.ubicacion-mapa {
-    background: #151515;
-    border: 1px solid #222;
-    border-radius: 12px;
-    overflow: hidden;
-    height: 280px;
-}
-
-@media (min-width: 768px) {
-    .ubicacion-pro {
-        padding: 70px 30px;
-    }
-
-    .ubicacion-grid {
-        flex-direction: row;
-        align-items: stretch;
-    }
-
-    .ubicacion-info {
-        flex: 1;
-    }
-
-    .ubicacion-mapa {
-        flex: 1.2;
-        height: auto;
-        min-height: 320px;
-    }
+@media(min-width:768px){
+    .ubicacion-pro{padding:60px 20px}
+    .ubicacion-grid{flex-direction:row;align-items:stretch;gap:18px}
+    .ubicacion-info{flex:1;padding:22px}
+    .ubicacion-mapa{flex:1.2;height:auto;min-height:340px}
 }

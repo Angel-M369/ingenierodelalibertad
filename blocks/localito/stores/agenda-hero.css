@@ -1,8 +1,32 @@
-/* ===== HERO SLIDER - VERSIÓN FINAL QUE SI JALA ===== */
+/* ===== BLOQUE 4: HERO SLIDER - TlaqueNails Boutique ===== */
 .yare-hero {
   text-align: center;
   padding: 45px 0 20px;
   overflow: hidden;
+  background: var(--tlaque-gray);
+  color: var(--tlaque-white);
+}
+
+.yare-hero h1 {
+  color: var(--tlaque-white);
+  font-size: 2rem;
+  line-height: 1.1;
+  font-weight: 800;
+}
+.yare-hero h1 span {
+  color: var(--tlaque-pink);
+  display: block;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 6px;
+  letter-spacing: 0.5px;
+}
+.yare-hero p {
+  color: rgba(255,255,255,0.85);
+  max-width: 500px;
+  margin: 14px auto 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 .yare-slider {
@@ -12,7 +36,6 @@
   margin-top: 30px;
   margin-bottom: 15px;
   padding: 15px 0;
-  /* Efecto difuminado en las orillas */
   -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
   mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
 }
@@ -30,14 +53,34 @@
   height: 240px;
   object-fit: cover;
   border-radius: 18px;
-  border: 4px solid white;
-  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  border: 3px solid rgba(255,255,255,0.15);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.3);
   flex-shrink: 0;
   display: block;
+  background: var(--tlaque-black);
+}
+/* La 4ta imagen es tu tlaque.jpeg - que se vea como logo, no recortado */
+.yare-track img[src*="tlaque"] {
+  object-fit: contain;
+  padding: 18px;
+  background: #5a5a5a;
 }
 
 .yare-track:hover {
   animation-play-state: paused;
+}
+
+.yare-btn-cta-hero {
+  background: var(--tlaque-pink);
+  color: white;
+  padding: 14px 32px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 800;
+  display: inline-block;
+  margin-top: 10px;
+  box-shadow: var(--sombra-pink);
+  animation: pulse 2s infinite;
 }
 
 @keyframes yare-scroll {
@@ -50,4 +93,5 @@
     width: 210px;
     height: 290px;
   }
+  .yare-hero h1 { font-size: 2.6rem; }
 }
