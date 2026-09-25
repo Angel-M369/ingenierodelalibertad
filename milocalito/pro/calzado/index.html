@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zapaterías León | Pasos firmes con calzado elegante</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+
+  <header class="leon-head">
+    <a class="leon-brand" href="#top">ZAPATERÍAS <span>LEÓN</span></a>
+    <div class="leon-actions">
+      <button class="leon-cart" id="openCart"><i class="fa-solid fa-bag-shopping"></i><b id="leonCount">0</b></button>
+      <button class="leon-burger" id="openMenu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </header>
+
+  <nav class="leon-menu" id="leonMenu">
+    <a href="#top"><i class="fa-solid fa-house"></i> Inicio</a>
+    <a href="#nuevo"><i class="fa-solid fa-star"></i> Recién llegado</a>
+    <a href="#catalogo"><i class="fa-solid fa-shoe-prints"></i> Catálogo</a>
+    <a href="#ubi"><i class="fa-solid fa-location-dot"></i> Ubicación</a>
+    <a href="#contacto"><i class="fa-solid fa-envelope"></i> Contacto</a>
+  </nav>
+
+  <aside class="leon-drawer" id="leonDrawer">
+    <div class="leon-drawer-panel">
+      <div class="leon-drawer-top">
+        <div><h3>TU CALZADO</h3><span id="leonCountText">0 productos</span></div>
+        <button id="closeCart" class="leon-close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div id="leonCartList" class="leon-cart-list"></div>
+      <div class="leon-paybox">
+        <p>MÉTODO DE PAGO</p>
+        <label class="pay-opt"><input type="radio" name="pay" value="Transferencia" checked><i class="fa-solid fa-building-columns"></i> Transferencia <b>-5%</b></label>
+        <label class="pay-opt"><input type="radio" name="pay" value="Tarjeta"><i class="fa-solid fa-credit-card"></i> Tarjeta</label>
+        <label class="pay-opt"><input type="radio" name="pay" value="OXXO"><i class="fa-solid fa-store"></i> OXXO</label>
+      </div>
+      <div class="leon-total-box"><span>TOTAL</span><b>$<i id="leonTotal">0</i></b></div>
+      <input id="leonName" placeholder="Tu nombre">
+      <button class="leon-btn-pay" id="btnPagar"><i class="fa-brands fa-whatsapp"></i> PAGAR AHORA</button>
+      <button class="leon-btn-clear" id="btnClear">Vaciar carrito</button>
+    </div>
+    <div class="leon-drawer-bg" id="drawerBg"></div>
+  </aside>
+
+  <section class="leon-hero-impact">
+    <img src="../../../images/calzado.jpeg" class="leon-hero-bg" alt="">
+    <div class="leon-hero-overlay"></div>
+    <div class="leon-hero-content">
+      <span class="leon-hero-side top">ZONA PIEL • LEÓN GTO • DESDE 1987</span>
+      <div class="leon-hero-center">
+        <h1 class="leon-hero-title">PASOS <br>FIRMES <span>ELEGANTES</span></h1>
+        <p class="leon-hero-subs">Zapaterías León - Piel 100% original</p>
+      </div>
+      <span class="leon-hero-side bottom">calzado fino • hecho a mano • envíos nacionales</span>
+      <a href="#catalogo" class="leon-hero-btn">VER CATÁLOGO</a>
+    </div>
+  </section>
+
+  <section class="leon-new" id="nuevo">
+    <h2>RECIÉN LLEGADO A TIENDA</h2>
+    <div class="leon-slider">
+      <div class="leon-track" id="leonTrack">
+        <div class="leon-slide"><img src="../../../images/ZapNeg.jpg"><b>Zapato Negro</b></div>
+        <div class="leon-slide"><img src="../../../images/TenisH1.jpg"><b>Tenis Hombre</b></div>
+        <div class="leon-slide"><img src="../../../images/SandaH1.jpg"><b>Sandalia Hombre</b></div>
+        <div class="leon-slide"><img src="../../../images/BotaH1.jpg"><b>Bota Hombre</b></div>
+        <div class="leon-slide"><img src="../../../images/GuaraH1.jpg"><b>Huarache Hombre</b></div>
+        <div class="leon-slide"><img src="../../../images/ZapaNeg.jpg"><b>Zapatilla Negra</b></div>
+        <div class="leon-slide"><img src="../../../images/TenisM1.jpg"><b>Tenis Mujer</b></div>
+        <div class="leon-slide"><img src="../../../images/SandaM1.jpg"><b>Sandalia Mujer</b></div>
+        <div class="leon-slide"><img src="../../../images/BotaM1.jpg"><b>Bota Mujer</b></div>
+        <div class="leon-slide"><img src="../../../images/GuaraM1.jpg"><b>Huarache Mujer</b></div>
+        <div class="leon-slide"><img src="../../../images/ZapNeg.jpg"><b>Zapato Negro</b></div>
+        <div class="leon-slide"><img src="../../../images/TenisH1.jpg"><b>Tenis Hombre</b></div>
+        <div class="leon-slide"><img src="../../../images/SandaH1.jpg"><b>Sandalia Hombre</b></div>
+        <div class="leon-slide"><img src="../../../images/BotaH1.jpg"><b>Bota Hombre</b></div>
+        <div class="leon-slide"><img src="../../../images/GuaraH1.jpg"><b>Huarache Hombre</b></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="leon-catalog" id="catalogo">
+    <div class="leon-cat-head"><h2>CATÁLOGO <em>LEÓN</em></h2><p>Caballero y Dama • Piel 100% leonesa • Tallas 22-30</p></div>
+    <div class="leon-grid">
+      <!-- CABALLERO -->
+      <div class="leon-card"><img src="../../../images/ZapNeg.jpg"><div class="leon-card-info"><h4>Zapato Formal Negro</h4><span>Tallas 25-29 • Piel negra • Suela cuero</span><b>$1,350</b></div><button data-add="Zapato Formal Negro" data-price="1350">Agregar</button></div>
+      <div class="leon-card"><img src="../../../images/ZapCaf.jpg"><div class="leon-card-info"><h4>Zapato Formal Café</h4><span>Tallas 25-30 • Café miel • Cosido a mano</span><b>$1,350</b></div><button data-add="Zapato Formal Café" data-price="1350">Agregar</button></div>
+      <div class="leon-card"><img src="../../../images/BotaH1.jpg"><div class="leon-card-info"><h4>Bota Vaquera Hombre 1</h4><span>Tallas 26-30 • Piel café • Punta cuadrada</span><b>$1,890</b></div><button data-add="Bota Vaquera H1" data-price="1890">Agregar</button></div>
+      <div class="leon-card"><img src="../../../images/BotaH2.jpg"><div class="leon-card-info"><h4>Bota Vaquera Hombre 2</h4><span>Tallas 26-31 • Negro • Rodeo León</span><b>$1,950</b></div><button data-add="Bota Vaquera H2" data-price="1950">Agregar</button></div>
+      <div class="leon-card"><img src="../../../images/TenisH1.jpg"><div class="leon-card-info"><h4>Tenis Piel Hombre 1</h4><span>Tallas 25-29 • Negro • Casual elegante</span><b>$1,190</b></div><button data-add="Tenis Piel H1" data-price="1190">Agregar</button></div>
+      <div class="leon-card"><img src="../../../images/TenisH2.jpg"><div class="leon-card-info"><h4>Tenis Piel Hombre 2</h4><span>Tallas 25-30 • Café • Suela blanca</span><b>$1,190</b></div><button data-add="Tenis Piel H2" data-price="1190">Agregar</button></div>
+      <div class="leon-card"><img src="../../../images/GuaraH1.jpg"><div class="leon-card-info"><h4>Huarache Piel Hombre 1</h4><span>Tallas 25-29 • Café • Tejido tradicional</span><b>$890</b></div><button data-add="Huarache H1" data-price="890">Agregar</button></div>
+      <div class="leon-card"><img src="../../../images/GuaraH2.jpg"><div class="leon-card-info"><h4>Huarache Piel Hombre 2</h4><span>Tallas 25-30 • Negro • Suela antiderrapante</span><b>$890</b></div><button data-add="Huarache H2" data-price="890">Agregar</button></div>
+      <div class="leon-card"><img src="../../../images/SandaH1.jpg"><div class="leon-card-info"><h4>Sandalia Caballero 1</h4><span>Tallas 26-30 • Café • Piel suave</span><b>$750</b></div><button data-add="Sandalia H1" data-price="750">Agregar</button></div>
+      <div class="leon-card"><img src="../../../images/SandaH2.jpg"><div class="leon-card-info"><h4>Sandalia Caballero 2</h4><span>Tallas 25-29 • Negro • Doble tira</span><b>$750</b></div><button data-add="Sandalia H2" data-price="750">Agregar</button></div>
+      <!-- DAMA -->
+      <div class="leon-card"><img src="../../../images/ZapaNeg.jpg"><div class="leon-card-info"><h4>Zapatilla Dama Negra</h4><span>Tallas 22-26 • Negro charol • Tacón medio</span><b>$1,250</b></div><button data-add="Zapatilla Negra" data-price="1250">Agregar</button></div>
+      <div class="leon-card"><img src="../../../images/ZapaCaf.jpg"><div class="leon-card-info"><h4>Zapatilla Dama Café</h4><span>Tallas 22-26 • Café miel • Elegante</span><b>$1,250</b></div><button data-add="Zapatilla Café" data-price="1250">Agregar</button></div>
+      <div class="leon-card"><img src="../../../images/BotaM1.jpg"><div class="leon-card-info"><h4>Bota Dama 1</h4><span>Tallas 22-26 • Negro • Corta casual</span><b>$1,590</b></div><button data-add="Bota Mujer 1" data-price="1590">Agregar</button></div>
+      <div class="leon-card"><img src="../../../images/BotaM2.jpg"><div class="leon-card-info"><h4>Bota Dama 2</h4><span>Tallas 23-27 • Café • Larga con cierre</span><b>$1,690</b></div><button data-add="Bota Mujer 2" data-price="1690">Agregar</button></div>
+      <div class="leon-card"><img src="../../../images/TenisM1.jpg"><div class="leon-card-info"><h4>Tenis Piel Mujer 1</h4><span>Tallas 22-26 • Blanco • Piel suave</span><b>$990</b></div><button data-add="Tenis Mujer 1" data-price="990">Agregar</button></div>
+      <div class="leon-card"><img src="../../../images/TenisM2.jpg"><div class="leon-card-info"><h4>Tenis Piel Mujer 2</h4><span>Tallas 23-26 • Beige • Casual</span><b>$990</b></div><button data-add="Tenis Mujer 2" data-price="990">Agregar</button></div>
+      <div class="leon-card"><img src="../../../images/GuaraM1.jpg"><div class="leon-card-info"><h4>Huarache Dama 1</h4><span>Tallas 22-26 • Café claro • Artesanal</span><b>$750</b></div><button data-add="Huarache Mujer 1" data-price="750">Agregar</button></div>
+      <div class="leon-card"><img src="../../../images/GuaraM2.jpg"><div class="leon-card-info"><h4>Huarache Dama 2</h4><span>Tallas 22-26 • Tan • Bordado</span><b>$790</b></div><button data-add="Huarache Mujer 2" data-price="790">Agregar</button></div>
+      <div class="leon-card"><img src="../../../images/SandaM1.jpg"><div class="leon-card-info"><h4>Sandalia Dama 1</h4><span>Tallas 22-26 • Negro • Plataforma</span><b>$690</b></div><button data-add="Sandalia Mujer 1" data-price="690">Agregar</button></div>
+      <div class="leon-card"><img src="../../../images/SandaM2.jpg"><div class="leon-card-info"><h4>Sandalia Dama 2</h4><span>Tallas 22-26 • Miel • Tacón corrido</span><b>$720</b></div><button data-add="Sandalia Mujer 2" data-price="720">Agregar</button></div>
+    </div>
+  </section>
+
+  <section class="leon-ubi" id="ubi">
+    <div class="leon-ubi-header"><span>DONDE NOS UBICAMOS</span><h2>ZAPATERÍAS <em>LEÓN</em></h2><h3>Zona Piel, León GTO</h3><p>Blvd. Hilario Medina 123, León Guanajuato</p></div>
+    <div class="leon-ubi-grid">
+      <div class="leon-ubi-map"><div class="leon-ubi-pin"><i class="fa-solid fa-location-dot"></i> ZAPATERÍA LEÓN</div><iframe src="https://maps.google.com/maps?q=Zona%20Piel%20Leon%20GTO&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe></div>
+      <div class="leon-ubi-info">
+        <div class="leon-ubi-card"><b><i class="fa-solid fa-clock"></i> Horario</b><span>Lun - Sáb 10am - 8pm, Dom 11am - 6pm</span></div>
+        <div class="leon-ubi-card"><b><i class="fa-solid fa-truck"></i> Envío nacional</b><span>24-48h a todo México</span></div>
+        <a class="leon-ubi-btn maps" href="https://maps.google.com/?q=Zona+Piel+Leon+GTO" target="_blank"><i class="fa-solid fa-diamond-turn-right"></i> Cómo llegar por Google Maps</a>
+        <a class="leon-ubi-btn wa" id="btnUbiWa" href="#"><i class="fa-brands fa-whatsapp"></i> Mándame la ubicación</a>
+        <span class="leon-ubi-note">Piel 100% leonesa • Facturamos • Cambios 15 días</span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="leon-footer" id="contacto">
+    <div class="leon-footer-top"><h2>ZAPATERÍAS LEÓN</h2><p>pasos firmes con calzado elegante desde 1987</p></div>
+    <div class="leon-footer-row">
+      <div class="leon-footer-col"><h4>Sígueme:</h4><div class="leon-socials">
+        <a class="soc-fb" href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a class="soc-ig" href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a class="soc-tt" href="#"><i class="fa-brands fa-tiktok"></i></a>
+        <a class="soc-wa" href="#"><i class="fa-brands fa-whatsapp"></i></a>
+      </div></div>
+      <div class="leon-footer-col"><h4>Hablemos!</h4><span>Lun - Sáb 10am - 8pm</span><span>Zona Piel, León GTO</span><span>Blvd. Hilario Medina 123</span></div>
+    </div>
+    <div class="leon-footer-copy">
+      <b>© 2026 Zapaterías León® - León GTO · Todos los derechos reservados</b>
+      <span>Tienda con carrito real y cobros con tarjeta/OXXO (demo), creada con MI LOCALITO by</span>
+      <a class="leon-footer-eng" href="https://www.ingenierodelalibertad.com" target="_blank">Ingeniero de la libertad</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
