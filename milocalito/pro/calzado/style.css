@@ -12,7 +12,7 @@ img{display:block;max-width:100%}
 .leon-cart:hover,.leon-burger:hover{background:#D97706;color:#fff}
 .leon-cart b{position:absolute;top:-6px;right:-6px;background:#D97706;color:#fff;width:18px;height:18px;border-radius:50%;display:grid;place-items:center;font-size:.68rem;border:2px solid #111}
 
-.leon-menu{position:fixed;top:62px;right:0;width:200px;height:30vh;background:#111;border-left:3px solid #D97706;border-bottom:3px solid #D97706;border-radius:0 0 0 18px;display:flex;flex-direction:column;padding:14px;gap:4px;transform:translateX(110%);transition:.3s ease;z-index:46;pointer-events:none;opacity:0}
+.leon-menu{position:fixed;top:62px;right:0;width:200px;height:40vh;background:#111;border-left:3px solid #D97706;border-bottom:3px solid #D97706;border-radius:0 0 0 18px;display:flex;flex-direction:column;padding:14px;gap:4px;transform:translateX(110%);transition:.3s ease;z-index:46;pointer-events:none;opacity:0}
 .leon-menu.open{transform:translateX(0);pointer-events:auto;opacity:1}
 .leon-menu a{color:#fff;padding:12px;border-radius:10px;font-weight:600;transition:.2s;display:flex;gap:10px;align-items:center}
 .leon-menu a:hover{background:#D97706;color:#fff;transform:translateX(-4px)}
