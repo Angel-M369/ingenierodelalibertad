@@ -1,169 +1,25 @@
-/* armas.css - PUENTE + PLANES - PALETA CLAUDIA */
-.b3-puente{
-  padding:32px 16px;
-  text-align:center;
-  background:var(--bg);
-  border-top:1px solid #1a1a1a;
-  border-bottom:1px solid #1a1a1a;
-}
-
-.b3-puente h2{
-  font-family:'Montserrat', sans-serif;
-  font-size:20px;
-  font-weight:900;
-  line-height:1.2;
-  margin-bottom:12px;
-}
-
-.b3-puente h2 span{
-  color:var(--green);
-}
-
-.b3-puente p{
-  font-size:13px;
-  color:var(--gray);
-  max-width:600px;
-  margin:0 auto;
-  line-height:1.6;
-}
-
-/* PLANES */
-.b4-planes{
-  padding:24px 16px 32px 16px;
-  background:#0a0a0a;
-}
-
-.b4-planes .titulo{
-  text-align:center;
-  margin-bottom:24px;
-}
-
-.b4-planes .titulo h2{
-  font-family:'Montserrat', sans-serif;
-  font-size:20px;
-  font-weight:900;
-  line-height:1.2;
-  margin-bottom:8px;
-}
-
-.b4-planes .titulo p{
-  font-size:12px;
-  color:var(--gray);
-}
-
-.b4-planes .grid{
-  display:flex;
-  flex-direction:column;
-  gap:16px;
-}
-
-.card{
-  background:#111;
-  border:1.5px solid #222;
-  border-radius:16px;
-  padding:16px;
-  transition:all 0.3s ease;
-}
-
-/* COLORES DE BORDE POR NIVEL */
-.card-basico{ border-color:#00ff88; }
-.card-pro{ border-color:#00d4ff; }
-.card-total{ border-color:#eaff00; }
-
-.card-basico:hover{ box-shadow:0 0 25px rgba(0,255,136,0.15); }
-.card-pro:hover{ box-shadow:0 0 25px rgba(0,212,255,0.15); }
-.card-total:hover{ box-shadow:0 0 25px rgba(234,255,0,0.15); }
-
-.card .tag{
-  font-size:10px;
-  font-weight:800;
-  padding:6px 10px;
-  border-radius:10px;
-  background:#1a1a1a;
-  display:inline-block;
-  margin-bottom:12px;
-}
-
-.card-basico .tag{ background:#1a1a1a; color:#fff; border:1px solid #00ff88; }
-.card-pro .tag{ background:#00d4ff; color:#000; }
-.card-total .tag{ background:#eaff00; color:#000; }
-
-.card .precio{
-  font-size:24px;
-  font-weight:900;
-}
-
-.card .iva{
-  font-size:10px;
-  color:var(--gray);
-  margin-bottom:12px;
-}
-
-.sistemas{ display:flex; flex-direction:column; gap:10px; margin-bottom:16px; }
-
-.sist{
-  background:#0a0a0a;
-  border:1px solid #1e1e1e;
-  border-left:3px solid #333;
-  border-radius:10px;
-  padding:10px 12px;
-  transition:all 0.25s ease;
-  cursor:pointer;
-}
-
-.sist h4{ font-size:12px; margin-bottom:4px; }
-.sist p{ font-size:11px; color:var(--gray); line-height:1.4; }
-.ver-demo{ font-size:10px; font-weight:800; margin-top:6px; display:block; }
-
-/* HOVER POR COLOR - 6 SISTEMAS */
-.card-basico .sist:hover{
-  border-color:#00ff88;
-  background:rgba(0,255,136,0.08);
-  transform:translateY(-2px);
-}
-.card-basico .ver-demo{ color:#00ff88; }
-
-.card-pro .sist:hover{
-  border-color:#00d4ff;
-  background:rgba(0,212,255,0.08);
-  transform:translateY(-2px);
-}
-.card-pro .ver-demo{ color:#00d4ff; }
-
-.card-total .sist:hover{
-  border-color:#eaff00;
-  background:rgba(234,255,0,0.08);
-  transform:translateY(-2px);
-}
-.card-total .ver-demo{ color:#eaff00; }
-
-.btn{
-  display:block;
-  text-align:center;
-  font-weight:900;
-  font-size:12px;
-  padding:12px 20px;
-  border-radius:10px;
-  transition:all 0.2s ease;
-}
-
-.card-basico .btn{ background:#00ff88; color:#000; }
-.card-pro .btn{ background:#00d4ff; color:#000; }
-.card-total .btn{ background:#eaff00; color:#000; }
-
-.btn:hover{
-  transform:translateY(-2px);
-  filter:brightness(1.1);
-}
-
-@media(min-width:768px){
-  .b3-puente{ padding:48px 24px; }
-  .b3-puente h2{ font-size:28px; }
-  .b4-planes{ padding:32px 24px 48px 24px; }
-  .b4-planes .grid{ flex-direction:row; flex-wrap:wrap; }
-  .card{ flex:1; min-width:280px; }
-}
-
-@media(min-width:1024px){
-  .b4-planes{ padding:48px; }
-}
+/* b4-planes - 3 CARDS CON COLOR Y HOVER */
+.b4-planes{padding:32px 16px;background:#0a0a0a}
+.b4-planes .titulo{text-align:center;margin-bottom:20px}
+.b4-planes .titulo h2{font-family:Montserrat,sans-serif;font-size:1.4rem;font-weight:900;color:#fff;line-height:1.1}
+.b4-planes .titulo p{color:#9ca3af;font-size:.78rem;margin-top:6px}
+.b4-planes .grid{display:grid;grid-template-columns:1fr;gap:16px;max-width:420px;margin:0 auto}
+.b4-planes .card{border-radius:16px;padding:16px;background:linear-gradient(180deg,#151515,#0a0a0a);border:1.5px solid var(--c1);box-shadow:0 0 18px var(--cg);display:flex;flex-direction:column;transition:.25s}
+.b4-planes .card:hover{transform:translateY(-4px);box-shadow:0 0 32px var(--cg);border-color:var(--c1)}
+.b4-planes .card .tag{background:var(--c1);color:#000;font-weight:900;font-size:9px;padding:5px 9px;border-radius:20px;display:inline-block;margin-bottom:8px}
+.b4-planes .card .precio{font-family:Montserrat,sans-serif;font-size:22px;font-weight:900;color:#fff}
+.b4-planes .card .iva{font-size:9px;color:#9ca3af;margin:3px 0 10px}
+.b4-planes .sistemas{display:grid;gap:8px;margin:12px 0;flex:1}
+.b4-planes .sist{background:#0f0f0f;border:1px solid #222;border-radius:10px;padding:10px;text-decoration:none;display:block;transition:.2s}
+.b4-planes .sist:hover{border-color:var(--c1);background:#171717}
+.b4-planes .sist h4{color:var(--c2);font-size:11px;font-weight:900;margin-bottom:3px}
+.b4-planes .sist p{color:#d1d5db;font-size:10px;line-height:1.3}
+.b4-planes .sist .ver-demo{color:var(--c2);font-size:9px;font-weight:800;margin-top:5px;display:block}
+.b4-planes .card .btn{display:block;text-align:center;background:var(--c1);color:#000;font-weight:900;font-size:11px;padding:12px;border-radius:9px;text-decoration:none;margin-top:auto;transition:.2s}
+.b4-planes .card .btn:hover{background:var(--c2);transform:translateY(-1px)}
+.card-basico{--c1:var(--green);--c2:var(--green2);--cg:rgba(132,204,22,.35)}
+.card-pro{--c1:var(--blue);--c2:var(--blue2);--cg:rgba(14,165,233,.45);border-width:2px}
+.card-total{--c1:var(--purple);--c2:var(--purple2);--cg:rgba(168,85,247,.4)}
+@media(min-width:600px){.b4-planes .grid{max-width:500px}.b4-planes .titulo h2{font-size:1.6rem}}
+@media(min-width:860px){.b4-planes{padding:60px 28px}.b4-planes .grid{grid-template-columns:repeat(3,1fr);max-width:1100px;gap:22px}.b4-planes .titulo h2{font-size:2rem}.card-pro{transform:scale(1.05)}.card-pro:hover{transform:scale(1.05) translateY(-4px)}.b4-planes .card{padding:20px}.b4-planes .card .precio{font-size:26px}.b4-planes .sist h4{font-size:12px}.b4-planes .sist p{font-size:11px}.b4-planes .card .btn{font-size:12px;padding:13px}}
+@media(min-width:1200px){.b4-planes .grid{max-width:1200px}}

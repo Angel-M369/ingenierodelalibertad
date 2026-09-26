@@ -1,0 +1,7 @@
+/* b3-puente */
+.b3-puente{padding:32px 16px;background:var(--primary);text-align:center}
+.b3-puente h2{font-family:Montserrat,sans-serif;font-weight:900;font-size:1.4rem;line-height:1.1;color:#000;text-transform:uppercase}
+.b3-puente h2 .green{background:#000;color:var(--primary);padding:3px 8px;border-radius:4px;display:inline-block;transform:rotate(-1deg)}
+.b3-puente p{color:#000;font-weight:700;margin-top:12px;font-size:.82rem;line-height:1.4;max-width:650px;margin-left:auto;margin-right:auto}
+.b3-puente .hl-green{background:#000;color:var(--primary);padding:1px 6px;border-radius:4px;font-weight:900}
+@media(min-width:860px){.b3-puente{padding:56px 28px}.b3-puente h2{font-size:2.2rem}.b3-puente p{font-size:.92rem}}
