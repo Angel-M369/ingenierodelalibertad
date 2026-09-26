@@ -8,23 +8,44 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css" />
     <link rel="stylesheet" href="socios.css" />
   </head>
-  <body class="page-joss">
+  <body class="page-joss" style="--primary:#38bdf8; --primary2:#7dd3fc; --glow:rgba(56,189,248,.4)">
     <div class="page">
-      <header class="b1-header">
-        <div class="logo"><b>MILOCALITO</b><span>⚓ Joss AV - Tijuana</span></div>
-        <a href="https://wa.me/529191467339?text=Hola%20Inge%20quiero%20ser%20socia%20como%20Joss" target="_blank" class="yerberitos-header-btn">Quiero ser Afiliada</a>
+      <!-- HEADER FIXED NUEVO -->
+      <header class="b1-header fixed-header">
+        <div class="header-left">
+          <!-- LOGO CON SPAN VERDE EN "MI" Y LINK REAL -->
+          <a href="https://www.milocalito.com" target="_blank" class="logo">
+            <b><span class="mi-green">MI</span>LOCALITO</b><span>⚓ Joss AV - Tijuana</span>
+          </a>
+        </div>
+        <div class="header-right">
+          <nav class="nav-menu" id="navMenu">
+            <a href="#inicio">Inicio</a>
+            <a href="#mision">Misión</a>
+            <a href="#sistemas">Sistemas</a>
+            <a href="#afiliados">Ingrésame</a>
+            <a href="#contacto">Contacto</a>
+            <a href="https://wa.me/526644738497?text=Hola%20Joss%20quiero%20ser%20socia%20como%20tu" target="_blank" class="yerberitos-header-btn inside-menu">Quiero ser Afiliada</a>
+          </nav>
+          <!-- HAMBURGUESA LADO DERECHO -->
+          <button class="hamburger" id="hamburger" aria-label="Menú">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
       </header>
-      <section class="b2-hero">
+
+      <section class="b2-hero" id="inicio">
         <div class="left">
           <div class="badge">SOCIA AUTORIZADA VERIFICADA | TIJUANA #001</div>
           <h1>Un barco necesita recursos.<br /><em>No solo viento para navegar.</em></h1>
           <p class="main-p">Soy <b>Joss AV</b> de <b>Tijuana</b>. Navegante consciente y socia autorizada de <b>Mi Localito</b>. Amo estar en el mar, pero entendí que para navegar libre necesitas algo más que viento: <span class="tag-lime">un sistema que facture mientras estás en altamar.</span> Por eso entré a Mi Localito. Conecto negocios con el Ingeniero y él les instala un sistema que factura 24/7 por WhatsApp. Yo cobro comisión desde el barco.</p>
           <div class="temas-label">📌 ESTO ES LO QUE VIVO Y APLICO NAVEGANDO:</div>
-            <div class="pills"><span>💰 Ventas</span><span>🧠 Desarrollo Personal</span><span>✨ Crecimiento Espiritual</span><span>📈 Marketing</span><span>🤝 Redes de Mercadeo</span><span>❤️ Gestión Emocional</span><span>🧘 Meditación</span><span>🌿 Salud</span><span>🏋️ Ejercicio</span><span>🕉️ Yoga</span><span>🎯 Disciplina</span><span>💬 Persuasión</span><span>📚 Finanzas</span><span>🚀 Abundancia</span></div>
+          <div class="pills"><span>💰 Ventas</span><span>🧠 Desarrollo Personal</span><span>✨ Crecimiento Espiritual</span><span>📈 Marketing</span><span>🤝 Redes de Mercadeo</span><span>❤️ Gestión Emocional</span><span>🧘 Meditación</span><span>🌿 Salud</span><span>🏋️ Ejercicio</span><span>🕉️ Yoga</span><span>🎯 Disciplina</span><span>💬 Persuasión</span><span>📚 Finanzas</span><span>🚀 Abundancia</span></div>
         </div>
-        <div class="right"><img src="../../../images/naty.jpeg" alt="Joss AV Tijuana" /></div>
+        <div class="right"><img src="../../../images/joss.jpeg" alt="Joss AV Tijuana" /></div>
       </section>
-      <section class="b-abundancia">
+
+      <section class="b-abundancia" id="mision">
         <div class="container">
           <h2>Me enseñaron que para viajar necesitas ahorrar.<br /><span class="hl-green">Yo aprendí que necesitas un sistema que genere.</span></h2>
           <div class="sep"></div>
@@ -33,10 +54,12 @@
           <p>Por eso elegí <b>Mi Localito</b>. Es el mejor sistema para navegantes: <span class="hl-green">me pagan por conectar negocios</span> mientras estoy en el mar. El Ingeniero cierra e instala y yo recibo comisión para seguir navegando.</p>
         </div>
       </section>
+
       <section class="b3-puente" id="sistemas">
         <h2>SI HABLAMOS DE <span class="green">LIBERTAD PARA NAVEGAR</span><br />TE PRESENTO MI LOCALITO</h2>
         <p>Todo se resume en 3: aprender a <span class="hl-green">generar recursos</span> sin estar atada, hacer <span class="hl-green">marketing</span> desde el barco y montar <span class="hl-green">sistemas</span> que facturan 24/7 por WhatsApp.<br /><br />No son páginas bonitas, son máquinas de ventas para que tu negocio trabaje en tierra mientras tú estás en altamar.</p>
       </section>
+
       <section class="b4-planes">
         <div class="titulo"><h2>ELIGE TU PROBLEMA.<br />AHÍ ESTÁ TU SISTEMA.</h2><p>6 sistemas probados. 3 niveles de inversión.</p></div>
         <div class="grid">
@@ -45,6 +68,7 @@
           <div class="card card-total"><div class="tag">👑 LEGADO - NEGOCIO TOTAL $9,999</div><div class="precio">$9,999 MXN</div><div class="iva">+ IVA | Pago único | 12 DÍAS</div><div class="sistemas"><a href="../../custom/index.html" class="sist"><h4><i class="fas fa-file-invoice-dollar"></i> SISTEMA CUSTOM</h4><p><b>TE DUELE:</b> +50 productos y cotizas lento.<br /><b>TE INSTALO:</b> Cotizador automático.</p><span class="ver-demo">VER DEMO CUSTOM →</span></a><a href="../../elite/index.html" class="sist"><h4><i class="fas fa-crown"></i> SISTEMA ÉLITE</h4><p><b>TE DUELE:</b> Te cancelan y pierdes día.<br /><b>TE INSTALO:</b> Cobra anticipo obligatorio.</p><span class="ver-demo">VER DEMO ÉLITE →</span></a></div><a class="btn" href="/milocalito/pagar.html?plan=total&ref=joss-tijuana" target="_blank">ACTIVAR TOTAL CON JOSS →</a></div>
         </div>
       </section>
+
       <section class="b-afiliados" id="afiliados">
         <div class="box">
           <h2>No solo navego.<br /><span class="green">Enseño a otras navegantes a tener recursos para zarpar.</span></h2>
@@ -57,9 +81,10 @@
           </form>
         </div>
       </section>
-      <footer class="b5-footer">
+
+      <footer class="b5-footer" id="contacto">
         <div class="frase">“Un navegante consciente necesita recursos, no solo viento. Mi negocio factura mientras navego.” ⚓ - Joss AV</div>
-        <div class="footer-socials"><a href="https://wa.me/526644738497" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a><a href="#" class="instagram"><i class="fab fa-instagram"></i></a><a href="#" class="tiktok"><i class="fab fa-tiktok"></i></a><a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a><a href="#" class="youtube"><i class="fab fa-youtube"></i></a></div>
+        <div class="footer-socials"><a href="https://wa.me/526644738497" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a><a href="https://www.instagram.com/jossav/" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a><a href="https://www.tiktok.com/@piatasjossav?_r=1&_t=ZS-9A3qCtJmQ3Y" target="_blank" class="tiktok"><i class="fab fa-tiktok"></i></a><a href="https://www.facebook.com/share/1DqGpyKY7A/" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a><a href="#" class="youtube"><i class="fab fa-youtube"></i></a></div>
         <p class="footer-cta">¿Dudas? Habla directo con <b>Joss</b> en WhatsApp</p>
         <div class="copy">Joss AV © 2026<br />Mi Localito - Sistemas que facturan 24/7<br />Programa de Socios Afiliados<br /><a href="https://www.ingenierodelalibertad.com" target="_blank">www.ingenierodelalibertad.com</a></div>
         <div class="footer-disclaimer">Las comisiones se generan por referir sistemas. No somos asesores financieros.</div>
