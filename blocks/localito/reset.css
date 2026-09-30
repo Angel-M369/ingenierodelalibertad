@@ -11,8 +11,8 @@ html {
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background: var(--bg-main); /* ANTES: #0A0A0A */
-    color: var(--text);         /* ANTES: #fff */
+    background: var(--bg-main);
+    color: var(--text);
     line-height: 1.6;
 }
 
@@ -20,7 +20,7 @@ body {
     width: 100%;
     min-height: 100vh;
     overflow-x: hidden;
-    padding-top: 20px; /* Empuja todo debajo del header fijo */
+    padding-top: 0; /* NO 20px, eso lo hace el header */
 }
 
 h1, h2, h3 { 
@@ -28,26 +28,22 @@ h1, h2, h3 {
     color: var(--text);
 }
 
-/* CAMBIO: .naranja → .verde pero es AZUL */
 .verde { 
-    color: var(--accent); /* ANTES: #FF6B00 */
+    color: var(--accent);
 }
 
-/* QUITA VIÑETAS DE LAS LISTAS Y NAV */
 ul, nav {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-/* CONTENEDOR GLOBAL */
 .contenedor {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* LINKS GLOBALES */
 a {
     text-decoration: none;
     transition: 0.3s ease;

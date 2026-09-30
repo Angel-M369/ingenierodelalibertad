@@ -405,3 +405,27 @@
     font-weight: 800;
     letter-spacing: 1px;
 }
+
+/* ========== FIX COLORES REALES - SOBRESCRIBE LIST-GREEN/BLUE/PINK ========== */
+
+/* XPRESS - $3,999 - ROJO - lo verde debe ser rojo */
+.arma-card.express .list-green {
+  color: #FF1A1A !important;
+}
+
+/* PRO - $6,999 - NARANJA - lo azul debe ser naranja */
+.arma-card.pro .list-blue {
+  color: #FF6A00 !important;
+}
+
+/* ELITE - $9,999 - VIOLETA - lo rosa debe ser violeta */
+.arma-card.dueno .list-pink {
+  color: #9D00FF !important;
+}
+
+/* Por si tienen <br> adentro, forzamos todo lo de adentro también */
+.arma-card.express .list-green *,
+.arma-card.pro .list-blue *,
+.arma-card.dueno .list-pink * {
+  color: inherit !important;
+}

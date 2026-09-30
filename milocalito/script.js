@@ -24,13 +24,21 @@ document.addEventListener('DOMContentLoaded', () => {
         gtag('event', 'socio_detectado', { 'ref_socio': socioActivo });
     }
 
-    // Cerrar menú
+    // ===== CERRAR MENÚ HAMBURGUESA - CORREGIDO PARA CERRAR AL DAR CLICK AFUERA =====
+    const menuCheck = document.getElementById('menu-check');
+    const overlay = document.querySelector('.overlay');
+
     document.querySelectorAll('.nav a').forEach(link => {
         link.addEventListener('click', () => {
-            const chk = document.getElementById('menu-check');
-            if(chk) chk.checked = false;
+            if(menuCheck) menuCheck.checked = false;
         });
     });
+
+    if(overlay && menuCheck){
+        overlay.addEventListener('click', () => {
+            menuCheck.checked = false;
+        });
+    }
 
     // ===== MEDICIÓN MAESTRA MADRE + REF =====
     document.querySelectorAll('a[href*="mpago.la"]').forEach(btn=>{
@@ -76,8 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ===== QUIZ LOGICA - CORREGIDO DEFINITIVO =====
     let tipoVenta = '';
-    // CORREGIDO: ahora sí con espacio entre el contenedor y el botón
-    const btnsPaso1 = document.querySelectorAll('.quiz-step[data-step="1"] .quiz-btn');
+    const btnsPaso1 = document.querySelectorAll('.quiz-step[data-step="1"].quiz-btn');
     const btnsFinal = document.querySelectorAll('.quiz-btn.final');
 
     btnsPaso1.forEach(btn => {
