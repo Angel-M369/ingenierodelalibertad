@@ -22,6 +22,7 @@
     border: 2px solid transparent;
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 .arma-card:hover {
@@ -36,15 +37,30 @@
     margin-bottom: 10px;
 }
 
-/* ========== COLORES POR ARMA ========== */
+/* TODAS MISMO TAMAÑO - QUITAMOS EL SCALE DE DESTACADAS */
+.arma-card.destacada,
+.arma-card.pro.destacada,
+.arma-card.agenda.destacada,
+.arma-card.dueno.destacada {
+    transform: scale(1) !important;
+}
+.arma-card.destacada:hover,
+.arma-card.pro.destacada:hover,
+.arma-card.agenda.destacada:hover,
+.arma-card.dueno.destacada:hover {
+    transform: translateY(-8px) !important;
+}
 
-.arma-card.express { border-color: #25D366; }
-.arma-card.express:hover { box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4); }
+/* ========== COLORES FINALES - PALETA DE TUS 6 IMAGENES ========== */
+
+/* NIVEL 1 VENTA LOCAL - ROJO NEON #FF1A1A - XPRESS */
+.arma-card.express { border-color: #FF1A1A; }
+.arma-card.express:hover { box-shadow: 0 15px 40px rgba(255, 26, 26, 0.4); }
 .arma-card.express .precio,
 .arma-card.express .arma-visual i,
-.arma-card.express .tag-express { color: #25D366; }
+.arma-card.express .tag-express { color: #FF1A1A; }
 .arma-card.express .tag-express {
-    background: rgba(37, 211, 102, 0.15);
+    background: rgba(255, 26, 26, 0.15);
     padding: 4px 12px;
     border-radius: 20px;
     font-size: 11px;
@@ -52,23 +68,18 @@
     letter-spacing: 1px;
 }
 .arma-card.express .arma-ideal {
-    background: rgba(37, 211, 102, 0.1);
-    border-left: 3px solid #25D366;
+    background: rgba(255, 26, 26, 0.1);
+    border-left: 3px solid #FF1A1A;
 }
 
-.arma-card.pro.destacada {
-    border-color: #8b5cf6;
-    transform: scale(1.05);
-}
-.arma-card.pro.destacada:hover {
-    box-shadow: 0 15px 40px rgba(139, 92, 246, 0.5);
-    transform: scale(1.05) translateY(-8px);
-}
+/* NIVEL 2 VENTA NACIONAL - NARANJA NEON #FF6A00 - PRO */
+.arma-card.pro { border-color: #FF6A00; }
+.arma-card.pro:hover { box-shadow: 0 15px 40px rgba(255, 106, 0, 0.4); }
 .arma-card.pro .precio,
 .arma-card.pro .arma-visual i,
-.arma-card.pro .tag-pro { color: #8b5cf6; }
+.arma-card.pro .tag-pro { color: #FF6A00; }
 .arma-card.pro .tag-pro {
-    background: rgba(139, 92, 246, 0.15);
+    background: rgba(255, 106, 0, 0.15);
     padding: 4px 12px;
     border-radius: 20px;
     font-size: 11px;
@@ -76,29 +87,19 @@
     letter-spacing: 1px;
 }
 .arma-card.pro .arma-ideal {
-    background: rgba(139, 92, 246, 0.15);
-    border-left: 3px solid #8b5cf6;
+    background: rgba(255, 106, 0, 0.1);
+    border-left: 3px solid #FF6A00;
 }
-.badge {
-    position: absolute;
-    top: -12px;
-    right: 20px;
-    background: #8b5cf6;
-    color: white;
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
+.arma-card.pro .badge { background: #FF6A00; }
 
-.arma-card.custom { border-color: #f59e0b; }
-.arma-card.custom:hover { box-shadow: 0 15px 40px rgba(245, 158, 11, 0.4); }
+/* NIVEL 3 VENTA TOTAL - AMARILLO NEON #FFD500 - CUSTOM */
+.arma-card.custom { border-color: #FFD500; }
+.arma-card.custom:hover { box-shadow: 0 15px 40px rgba(255, 213, 0, 0.4); }
 .arma-card.custom .precio,
 .arma-card.custom .arma-visual i,
-.arma-card.custom .tag-custom { color: #f59e0b; }
+.arma-card.custom .tag-custom { color: #FFD500; }
 .arma-card.custom .tag-custom {
-    background: rgba(245, 158, 11, 0.15);
+    background: rgba(255, 213, 0, 0.15);
     padding: 4px 12px;
     border-radius: 20px;
     font-size: 11px;
@@ -106,41 +107,18 @@
     letter-spacing: 1px;
 }
 .arma-card.custom .arma-ideal {
-    background: rgba(245, 158, 11, 0.1);
-    border-left: 3px solid #f59e0b;
+    background: rgba(255, 213, 0, 0.1);
+    border-left: 3px solid #FFD500;
 }
 
-.arma-card.agenda { border-color: #10B981; }
-.arma-card.agenda.destacada { transform: scale(1.05); }
-.arma-card.agenda.destacada:hover {
-    box-shadow: 0 15px 40px rgba(16, 185, 129, 0.5);
-    transform: scale(1.05) translateY(-8px);
-}
-.arma-card.agenda:hover { box-shadow: 0 15px 40px rgba(16, 185, 129, 0.4); }
-.arma-card.agenda .precio,
-.arma-card.agenda .arma-visual i,
-.arma-card.agenda .tag-agenda { color: #10B981; }
-.arma-card.agenda .tag-agenda {
-    background: rgba(16, 185, 129, 0.15);
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-.arma-card.agenda .arma-ideal {
-    background: rgba(16, 185, 129, 0.1);
-    border-left: 3px solid #10B981;
-}
-.arma-card.agenda .badge { background: #10B981; }
-
-.arma-card.landing { border-color: #3B82F6; }
-.arma-card.landing:hover { box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4); }
+/* SERVICIOS - LANDING VERDE NEON #00FF66 */
+.arma-card.landing { border-color: #00FF66; }
+.arma-card.landing:hover { box-shadow: 0 15px 40px rgba(0, 255, 102, 0.4); }
 .arma-card.landing .precio,
 .arma-card.landing .arma-visual i,
-.arma-card.landing .tag-landing { color: #3B82F6; }
+.arma-card.landing .tag-landing { color: #00FF66; }
 .arma-card.landing .tag-landing {
-    background: rgba(59, 130, 246, 0.15);
+    background: rgba(0, 255, 102, 0.15);
     padding: 4px 12px;
     border-radius: 20px;
     font-size: 11px;
@@ -148,24 +126,38 @@
     letter-spacing: 1px;
 }
 .arma-card.landing .arma-ideal {
-    background: rgba(59, 130, 246, 0.1);
-    border-left: 3px solid #3B82F6;
+    background: rgba(0, 255, 102, 0.1);
+    border-left: 3px solid #00FF66;
 }
 
-.arma-card.dueno { border-color: #FF4081; }
-.arma-card.dueno.destacada {
-    border-color: #FF4081;
-    transform: scale(1.05);
+/* SERVICIOS - AGENDA AZUL NEON #0096FF */
+.arma-card.agenda { border-color: #0096FF; }
+.arma-card.agenda:hover { box-shadow: 0 15px 40px rgba(0, 150, 255, 0.4); }
+.arma-card.agenda .precio,
+.arma-card.agenda .arma-visual i,
+.arma-card.agenda .tag-agenda { color: #0096FF; }
+.arma-card.agenda .tag-agenda {
+    background: rgba(0, 150, 255, 0.15);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
 }
-.arma-card.dueno.destacada:hover {
-    box-shadow: 0 15px 40px rgba(255, 64, 129, 0.5);
-    transform: scale(1.05) translateY(-8px);
+.arma-card.agenda .arma-ideal {
+    background: rgba(0, 150, 255, 0.1);
+    border-left: 3px solid #0096FF;
 }
+.arma-card.agenda .badge { background: #0096FF; }
+
+/* SERVICIOS - ELITE VIOLETA NEON #9D00FF */
+.arma-card.dueno { border-color: #9D00FF; }
+.arma-card.dueno:hover { box-shadow: 0 15px 40px rgba(157, 0, 255, 0.4); }
 .arma-card.dueno .precio,
 .arma-card.dueno .arma-visual i,
-.arma-card.dueno .tag-dueno { color: #FF4081; }
+.arma-card.dueno .tag-dueno { color: #9D00FF; }
 .arma-card.dueno .tag-dueno {
-    background: rgba(255, 64, 129, 0.15);
+    background: rgba(157, 0, 255, 0.15);
     padding: 4px 12px;
     border-radius: 20px;
     font-size: 11px;
@@ -173,10 +165,79 @@
     letter-spacing: 1px;
 }
 .arma-card.dueno .arma-ideal {
-    background: rgba(255, 64, 129, 0.1);
-    border-left: 3px solid #FF4081;
+    background: rgba(157, 0, 255, 0.1);
+    border-left: 3px solid #9D00FF;
 }
-.arma-card.dueno .badge { background: #FF4081; }
+.arma-card.dueno .badge { background: #9D00FF; }
+
+/* ========== RECUADRO INTERNO RESUELVE - MISMO TAMAÑO + COLOR PROPIO - LAS 6 CARDS ========== */
+.arma-visual {
+    text-align: center;
+    padding: 20px 12px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    min-height: 165px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid transparent;
+}
+.arma-visual i {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+.arma-visual p {
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: 1px;
+    line-height: 1.3;
+}
+
+/* Rojo - XPRESS */
+.arma-card.express .arma-visual {
+    border-color: #FF1A1A !important;
+    background: rgba(255, 26, 26, 0.08) !important;
+    box-shadow: 0 0 15px rgba(255, 26, 26, 0.15) !important;
+}
+/* Naranja - PRO */
+.arma-card.pro .arma-visual {
+    border-color: #FF6A00 !important;
+    background: rgba(255, 106, 0, 0.08) !important;
+    box-shadow: 0 0 15px rgba(255, 106, 0, 0.15) !important;
+}
+/* Amarillo - CUSTOM */
+.arma-card.custom .arma-visual {
+    border-color: #FFD500 !important;
+    background: rgba(255, 213, 0, 0.08) !important;
+    box-shadow: 0 0 15px rgba(255, 213, 0, 0.15) !important;
+}
+/* Verde - LANDING */
+.arma-card.landing .arma-visual {
+    border-color: #00FF66 !important;
+    background: rgba(0, 255, 102, 0.08) !important;
+    box-shadow: 0 0 15px rgba(0, 255, 102, 0.15) !important;
+}
+/* Azul - AGENDA */
+.arma-card.agenda .arma-visual {
+    border-color: #0096FF !important;
+    background: rgba(0, 150, 255, 0.08) !important;
+    box-shadow: 0 0 15px rgba(0, 150, 255, 0.15) !important;
+}
+/* Violeta - ELITE - FIX DEFINITIVO AMARILLO */
+.arma-card.dueno .arma-visual,
+.arma-card.dueno.custom .arma-visual,
+.arma-card.dueno.destacada .arma-visual {
+    border-color: #9D00FF !important;
+    background: rgba(157, 0, 255, 0.08) !important;
+    box-shadow: 0 0 15px rgba(157, 0, 255, 0.15) !important;
+}
+.arma-card.dueno,
+.arma-card.dueno.custom,
+.arma-card.dueno.destacada,
+.arma-card.dueno.custom.destacada {
+    border-color: #9D00FF !important;
+}
 
 .armas-servicios {
     background: var(--bg-main);
@@ -209,21 +270,6 @@
     margin-bottom: 15px;
     white-space: nowrap;
 }
-.arma-visual {
-    text-align: center;
-    padding: 20px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    margin-bottom: 20px;
-}
-.arma-visual i {
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
-.arma-visual p {
-    font-weight: 800;
-    font-size: 14px;
-    letter-spacing: 1px;
-}
 .arma-desc {
     display: block;
     font-size: 13px;
@@ -255,12 +301,6 @@
     margin: 20px 0;
     font-size: 14px;
 }
-.arma-ideal small {
-    display: block;
-    margin-top: 8px;
-    opacity: 0.8;
-    font-size: 12px;
-}
 .btn-arma {
     display: block;
     width: 100%;
@@ -287,59 +327,81 @@
     font-size: 1.1rem;
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-    .arma-card.pro.destacada,
-    .arma-card.agenda.destacada,
-    .arma-card.dueno.destacada {
-        transform: scale(1);
-    }
-    .arma-card.pro.destacada:hover,
-    .arma-card.agenda.destacada:hover,
-    .arma-card.dueno.destacada:hover {
-        transform: translateY(-8px);
-    }
-    .precio { font-size: 2rem; }
-}
-
-/* ========== FIX HOVER UNIFICADO - VER DEMO + PAGAR ========== */
-
-/* VER DEMO - outline */
+/* BOTONES */
 .arma-card .btn-arma {
     background: transparent !important;
     font-weight: 900 !important;
 }
-.arma-card.express .btn-express { border: 2px solid #25D366 !important; color: #25D366 !important; }
-.arma-card.pro .btn-pro { border: 2px solid #8b5cf6 !important; color: #8b5cf6 !important; }
-.arma-card.custom .btn-custom { border: 2px solid #f59e0b !important; color: #f59e0b !important; }
-.arma-card.landing .btn-landing { border: 2px solid #3B82F6 !important; color: #3B82F6 !important; }
-.arma-card.agenda .btn-agenda { border: 2px solid #10B981 !important; color: #10B981 !important; }
-.arma-card.dueno .btn-dueno { border: 2px solid #FF4081 !important; color: #FF4081 !important; }
+.arma-card.express .btn-express { border: 2px solid #FF1A1A !important; color: #FF1A1A !important; }
+.arma-card.pro .btn-pro { border: 2px solid #FF6A00 !important; color: #FF6A00 !important; }
+.arma-card.custom .btn-custom { border: 2px solid #FFD500 !important; color: #FFD500 !important; }
+.arma-card.landing .btn-landing { border: 2px solid #00FF66 !important; color: #00FF66 !important; }
+.arma-card.agenda .btn-agenda { border: 2px solid #0096FF !important; color: #0096FF !important; }
+.arma-card.dueno .btn-dueno { border: 2px solid #9D00FF !important; color: #9D00FF !important; }
 
-/* VER DEMO HOVER - relleno */
-.arma-card.express .btn-express:hover { background: #25D366 !important; color: #0a0a0a !important; transform: translateY(-2px); box-shadow: 0 5px 20px rgba(37, 211, 102, 0.6) !important; }
-.arma-card.pro .btn-pro:hover { background: #8b5cf6 !important; color: white !important; transform: translateY(-2px); box-shadow: 0 5px 20px rgba(139, 92, 246, 0.6) !important; }
-.arma-card.custom .btn-custom:hover { background: #f59e0b !important; color: #0a0a0a !important; transform: translateY(-2px); box-shadow: 0 5px 20px rgba(245, 158, 11, 0.6) !important; }
-.arma-card.landing .btn-landing:hover { background: #3B82F6 !important; color: #fff !important; transform: translateY(-2px); box-shadow: 0 5px 20px rgba(59, 130, 246, 0.6) !important; }
-.arma-card.agenda .btn-agenda:hover { background: #10B981 !important; color: #000 !important; transform: translateY(-2px); box-shadow: 0 5px 20px rgba(16, 185, 129, 0.6) !important; }
-.arma-card.dueno .btn-dueno:hover { background: #FF4081 !important; color: #fff !important; transform: translateY(-2px); box-shadow: 0 5px 20px rgba(255, 64, 129, 0.6) !important; }
+.arma-card.express .btn-express:hover { background: #FF1A1A !important; color: #fff !important; transform: translateY(-2px); box-shadow: 0 5px 20px rgba(255,26,26,0.6) !important; }
+.arma-card.pro .btn-pro:hover { background: #FF6A00 !important; color: #fff !important; transform: translateY(-2px); box-shadow: 0 5px 20px rgba(255,106,0,0.6) !important; }
+.arma-card.custom .btn-custom:hover { background: #FFD500 !important; color: #000 !important; transform: translateY(-2px); box-shadow: 0 5px 20px rgba(255,213,0,0.6) !important; }
+.arma-card.landing .btn-landing:hover { background: #00FF66 !important; color: #000 !important; transform: translateY(-2px); box-shadow: 0 5px 20px rgba(0,255,102,0.6) !important; }
+.arma-card.agenda .btn-agenda:hover { background: #0096FF !important; color: #fff !important; transform: translateY(-2px); box-shadow: 0 5px 20px rgba(0,150,255,0.6) !important; }
+.arma-card.dueno .btn-dueno:hover { background: #9D00FF !important; color: #fff !important; transform: translateY(-2px); box-shadow: 0 5px 20px rgba(157,0,255,0.6) !important; }
 
-/* PAGAR - sólido + hover brillo */
-.btn-express-pago, .btn-pro-pago, .btn-custom-pago, .btn-landing-pago, .btn-agenda-pago, .btn-dueno-pago {
-    border: 2px solid transparent !important;
-    font-weight: 900 !important;
-    transition: all 0.3s ease !important;
+/* MOBILE COMPACTO */
+@media (max-width: 768px) {
+    .grid-armas{
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+        margin-top: 24px !important;
+    }
+    .armas, .armas-servicios{ padding: 28px 12px !important; }
+    .armas-title{ font-size: 1.25rem !important; }
+    .section-subtitle{ font-size: .9rem !important; margin-bottom: 18px !important; }
+    .arma-card{
+        padding: 14px 12px !important;
+        border-radius: 14px !important;
+    }
+    .arma-header{ margin-bottom: 10px !important; }
+    .arma-header h3{ font-size: 1.05rem !important; margin: 6px 0 2px !important; }
+    .precio { font-size: 1.5rem !important; margin: 2px 0 !important; letter-spacing: -0.5px !important; }
+    .iva{ font-size: 10px !important; margin-bottom: 8px !important; }
+    .arma-visual{
+        padding: 10px 0 !important;
+        margin-bottom: 10px !important;
+        min-height: 110px !important;
+    }
+    .arma-visual i{ font-size: 1.6rem !important; margin-bottom: 4px !important; }
+    .arma-visual p{ font-size: 11px !important; line-height: 1.2 !important; }
+    .arma-desc{ font-size: 11px !important; margin-top: 4px !important; }
+    .arma-features{ margin: 8px 0 !important; }
+    .arma-features li{
+        font-size: 12.5px !important;
+        padding: 6px 0 !important;
+        line-height: 1.3 !important;
+    }
+    .arma-ideal{
+        font-size: 11.5px !important;
+        padding: 8px 10px !important;
+        margin: 10px 0 !important;
+        line-height: 1.35 !important;
+    }
+    .btn-stack{ gap: 8px !important; }
+    .btn-arma{
+        padding: 10px 10px !important;
+        font-size: 11px !important;
+        border-radius: 10px !important;
+        letter-spacing: .5px !important;
+    }
+    .badge{ font-size: 9px !important; padding: 4px 10px !important; top: -8px !important; right: 12px !important; }
 }
-.btn-express-pago { background: #25D366 !important; color: #000 !important; }
-.btn-pro-pago { background: #8b5cf6 !important; color: #fff !important; }
-.btn-custom-pago { background: #f59e0b !important; color: #000 !important; }
-.btn-landing-pago { background: #3B82F6 !important; color: #fff !important; }
-.btn-agenda-pago { background: #10B981 !important; color: #000 !important; }
-.btn-dueno-pago { background: #FF4081 !important; color: #fff !important; }
 
-.btn-express-pago:hover, .btn-pro-pago:hover, .btn-custom-pago:hover, 
-.btn-landing-pago:hover, .btn-agenda-pago:hover, .btn-dueno-pago:hover {
-    filter: brightness(1.2);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+.badge {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
 }

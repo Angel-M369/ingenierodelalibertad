@@ -1,49 +1,129 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800;900&display=swap');
-* { margin:0; padding:0; box-sizing:border-box; }
-body{ background:#020617; font-family:'Inter',sans-serif; color:#fff; padding:14px; }
-.wrap{ max-width:720px; margin:0 auto; }
-.top{ display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; }
-.logo{ font-weight:900; font-size:20px; color:#fff; text-decoration:none; letter-spacing:-1px; }
-.logo span{ color:#0EA5E9; }
-.back{ background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.1); padding:8px 14px; border-radius:99px; color:#94a3b8; text-decoration:none; font-size:13px; font-weight:600; }
-.hero-card{ background:radial-gradient(120% 120% at 0% 0%, #0C4A6E 0%, #020617 55%); border:1px solid #0EA5E9; border-radius:22px; padding:20px; box-shadow:0 0 30px rgba(14,165,233,.25), inset 0 0 20px rgba(14,165,233,.1); }
-.pill{ background:#0EA5E9; color:#fff; padding:6px 14px; border-radius:99px; font-size:11px; font-weight:800; letter-spacing:1px; display:inline-block; margin-bottom:12px; }
-.hero-card h1{ font-size:34px; font-weight:900; line-height:.9; letter-spacing:-1px; margin-bottom:6px; text-align:center; }
-.hero-card h1 span{ color:#0EA5E9; display:block; font-size:48px; text-shadow:0 0 20px rgba(14,165,233,.6); }
-.meta{ color:#38bdf8; font-size:12px; font-weight:700; letter-spacing:1px; margin-bottom:16px; text-align:center; }
-.hero-row{ display:flex; gap:12px; align-items:center; background:rgba(14,165,233,.1); border:1px solid rgba(14,165,233,.2); padding:12px; border-radius:14px; margin-top:10px; }
-.hero-row i{ font-size:28px; color:#0EA5E9; }
-.hero-row b{ font-size:14px; color:#e0f2fe; line-height:1.1; display:block; }
-.hero-row p{ font-size:12px; color:#7dd3fc; margin-top:2px; }
-.divider{ height:1px; background:rgba(14,165,233,.15); margin:16px 0; }
-.list{ list-style:none; display:grid; gap:10px; }
-.list li{ display:flex; gap:10px; align-items:flex-start; font-size:13px; color:#cbd5e1; line-height:1.3; }
-.list li i{ color:#0EA5E9; margin-top:2px; font-size:14px; }
-.list li strong{ color:#fff; }
-.box-green{ background:rgba(14,165,233,.12); border:1px solid rgba(14,165,233,.25); border-radius:14px; padding:12px; margin-top:16px; }
-.box-green b{ font-size:12px; color:#7dd3fc; display:block; margin-bottom:6px; }
-.box-green p{ font-size:11px; color:#94a3b8; line-height:1.4; }
-.demos-title{ text-align:center; margin:24px 0 14px; }
-.demos-title h2{ font-size:20px; font-weight:800; }
-.demos-title p{ font-size:12px; color:#64748b; margin-top:4px; }
+:root{ --main:#00FF66; --bg:#0a0a0f; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:#fff;font-family:'Inter',sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:20px}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}
+.logo{font-weight:900;text-decoration:none;color:#fff;font-size:1.2rem}
+.logo span{color:var(--main)}
+.back{color:#888;text-decoration:none;font-size:14px}
 
-/* GRID Y CARDS - IGUALITO A AGENDA */
-.grid{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-@media(max-width:600px){ .grid{ grid-template-columns:1fr; } }
-.card-demo{ border-radius:18px; text-decoration:none; position:relative; overflow:hidden; display:flex; flex-direction:column; transition:.2s; border:1px solid #2E2E32; background:#232326; }
-.card-demo:hover{ transform:translateY(-3px); }
-.card-demo.preview-card{ padding:0; }
-.preview{ position:relative; height:185px; overflow:hidden; background:#111; }
-.preview img{ width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
-.tag{ display:none; }
-.card-content{ padding:12px 14px 14px; display:flex; flex-direction:column; flex:1; gap:6px; }
-.card-content h3{ font-size:13px; font-weight:800; letter-spacing:.6px; margin:0; line-height:1.1; color:#fff; }
-.card-content p{ font-size:11px; line-height:1.35; flex:1; margin:0; color:#A1A1AA; }
-.btn{ margin-top:6px; padding:9px; border-radius:99px; text-align:center; font-size:11.5px; font-weight:700; display:flex; justify-content:center; gap:6px; align-items:center; }
+/* CARD LANDING VERDE - IGUAL A TU IMAGEN */
+.hero-card.landing{
+  position:relative;
+  background: radial-gradient(ellipse at center, rgba(0,255,102,0.15) 0%, #0f1a12 60%);
+  border:2px solid var(--main);
+  border-radius:16px;
+  padding:35px 28px 25px;
+  box-shadow:0 0 35px rgba(0,255,102,0.45), inset 0 0 30px rgba(0,255,102,0.08);
+  clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% calc(100% - 18px), calc(100% - 18px) 100%, 18px 100%, 0 calc(100% - 18px), 0 18px);
+}
+.hero-card.landing::before{
+  content:"";position:absolute;inset:0;
+  background: linear-gradient(90deg, transparent 98%, rgba(0,255,102,0.1) 100%), linear-gradient(transparent 98%, rgba(0,255,102,0.1) 100%);
+  background-size:30px 30px;opacity:0.3;pointer-events:none;
+}
+.pill-top{text-align:center;margin-bottom:18px}
+.pill-top span{
+  border:1px solid var(--main);background:rgba(0,255,102,0.15);color:#fff;
+  padding:5px 16px;border-radius:20px;font-size:11px;font-weight:800;letter-spacing:1px;
+}
+.hero-card h1{text-align:center;font-size:2.1rem;font-weight:900;color:var(--main);line-height:0.9;letter-spacing:-1px;text-transform:uppercase}
+.hero-card h1 b{display:block;font-size:2.8rem;margin-top:6px}
+.meta{text-align:center;color:#aaa;font-size:14px;margin:8px 0 20px;font-weight:700}
+.resuelve{text-align:center;margin:18px 0;border-top:1px solid rgba(0,255,102,0.25);border-bottom:1px solid rgba(0,255,102,0.25);padding:14px 0}
+.resuelve b{font-size:15px;letter-spacing:0.5px;color:#fff}
+.resuelve b span{color:var(--main)}
+.resuelve p{color:#888;font-size:13px;margin-top:4px}
+.list{list-style:none;margin:20px 0;display:flex;flex-direction:column;gap:11px}
+.list li{display:flex;gap:12px;font-size:13.5px;line-height:1.35}
+.list li i{color:var(--main);margin-top:2px;font-size:14px}
+.list li.alert i{color:#ffae00}
+.list li strong{display:inline;color:#fff;margin-right:4px}
+.list li span{color:#bbb}
+.box-perfect{background:rgba(0,0,0,0.4);border:1px solid rgba(0,255,102,0.25);border-radius:10px;padding:15px;margin-top:20px}
+.box-perfect .flag{color:#6aff9a;font-size:13px;margin-bottom:8px}
+.box-perfect ol{padding-left:20px;color:#aaa;font-size:13px;line-height:1.6}
+.box-perfect ol li{color:#ccc}
+.card-footer{text-align:center;margin-top:22px;border:1px solid rgba(0,255,102,0.35);border-radius:20px;padding:6px;font-size:9px;letter-spacing:1.5px;color:var(--main);font-weight:800;background:rgba(0,255,102,0.08)}
 
-/* COLORES POR GIRO - SOLO CAMBIA EL BOTÓN */
-.card-demo.despacho .btn{ background:#FBBF24; color:#000; }
-.card-demo.dental .btn{ background:#0EA5E9; color:#fff; }
+/* TITULO DEMOS */
+.demos-title{text-align:center;margin:45px 0 25px}
+.demos-title h2{font-size:1.4rem;font-weight:900}
+.demos-title p{color:#777;font-size:13px;margin-top:5px}
 
-.footer{ text-align:center; font-size:10px; color:#475569; margin-top:24px; padding-bottom:20px; }
-.footer a{ color:#0EA5E9; text-decoration:none; font-weight:700; }
+/* GRID RESPONSIVE - IGUAL QUE PRO Y XPRESS */
+.grid{
+  display:grid;
+  gap:20px;
+  justify-content:center;
+  justify-items:center;
+  max-width:1200px;
+  margin:0 auto;
+}
+.card-demo{
+  background:#15151f;
+  border-radius:12px;
+  overflow:hidden;
+  text-decoration:none;
+  color:#fff;
+  border:1px solid rgba(255,255,255,0.08);
+  transition:0.3s;
+  display:flex;
+  flex-direction:column;
+  width:100%;
+}
+.card-demo:hover{transform:translateY(-5px);border-color:var(--main);box-shadow:0 10px 30px rgba(0,255,102,0.25)}
+.preview{position:relative}
+.preview img{width:100%;height:160px;object-fit:cover}
+.card-content{padding:15px;flex-grow:1;display:flex;flex-direction:column}
+.card-content h3{font-size:13px;font-weight:800;text-align:left}
+.card-content p{font-size:12px;color:#888;margin:6px 0 12px;text-align:left;flex-grow:1;line-height:1.4}
+
+@media (max-width: 600px){
+  .grid{grid-template-columns: 1fr;max-width: 380px;}
+}
+@media (min-width: 601px) and (max-width: 1023px){
+  .grid{grid-template-columns: repeat(2, 1fr);max-width: 700px;}
+}
+@media (min-width: 1024px){
+  .grid{grid-template-columns: repeat(2, 1fr);max-width:800px}
+  .wrap{max-width:1200px}
+}
+
+/* BOTONES CENTRADOS POR COLOR DE DEMO */
+.btn{
+  padding:10px 22px;
+  border-radius:25px;
+  font-size:11px;
+  font-weight:900;
+  display:block !important;
+  margin:12px auto 0 auto !important;
+  width:fit-content;
+  letter-spacing:0.5px;
+  text-transform:uppercase;
+  transition:0.3s;
+  text-align:center;
+}
+.card-demo.despacho .btn{
+  background:#1E3A8A !important;
+  box-shadow:0 0 15px rgba(30,58,138,0.5) !important;
+  color:#fff !important;
+}
+.card-demo.despacho .btn:hover{
+  background:#2B4CBF !important;
+  transform:translateY(-2px);
+  box-shadow:0 5px 20px rgba(30,58,138,0.7) !important;
+}
+.card-demo.dental .btn{
+  background:#38BDF8 !important;
+  box-shadow:0 0 15px rgba(56,189,248,0.5) !important;
+  color:#000 !important;
+}
+.card-demo.dental .btn:hover{
+  background:#7DD3FC !important;
+  transform:translateY(-2px);
+  box-shadow:0 5px 20px rgba(56,189,248,0.7) !important;
+}
+
+.footer{text-align:center;color:#555;font-size:12px;margin:40px 0}
+.footer a{color:var(--main);text-decoration:none}

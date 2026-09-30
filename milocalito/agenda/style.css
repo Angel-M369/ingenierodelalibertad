@@ -1,64 +1,145 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800;900&display=swap');
+:root{ --main:#00A6FF; --bg:#0a0a0f; }
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#020617;font-family:'Inter',sans-serif;color:#fff;padding:14px}
-.wrap{max-width:720px;margin:0 auto}
-.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
-.logo{font-weight:900;font-size:20px;color:#fff;text-decoration:none;letter-spacing:-1px}
-.logo span{color:#10B981}
-.back{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);padding:8px 14px;border-radius:99px;color:#94a3b8;text-decoration:none;font-size:13px;font-weight:600}
-.hero-card{background:radial-gradient(120% 120% at 0% 0%, #064E3B 0%, #020617 55%);border:1px solid #10B981;border-radius:22px;padding:20px;box-shadow:0 0 30px rgba(16,185,129,.25), inset 0 0 20px rgba(16,185,129,.1)}
-.pill{background:#10B981;color:#fff;padding:6px 14px;border-radius:99px;font-size:11px;font-weight:800;letter-spacing:1px;display:inline-block;margin-bottom:12px}
-.hero-card h1{font-size:34px;font-weight:900;line-height:.9;letter-spacing:-1px;margin-bottom:6px;text-align:center}
-.hero-card h1 span{color:#10B981;display:block;font-size:48px;text-shadow:0 0 20px rgba(16,185,129,.6)}
-.meta{color:#6ee7b7;font-size:12px;font-weight:700;letter-spacing:1px;margin-bottom:16px;text-align:center}
-.hero-row{display:flex;gap:12px;align-items:center;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2);padding:12px;border-radius:14px;margin-top:10px}
-.hero-row i{font-size:28px;color:#10B981}
-.hero-row b{font-size:14px;color:#d1fae5;line-height:1.1;display:block}
-.hero-row p{font-size:12px;color:#6ee7b7;margin-top:2px}
-.divider{height:1px;background:rgba(16,185,129,.15);margin:16px 0}
-.list{list-style:none;display:grid;gap:10px}
-.list li{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#cbd5e1;line-height:1.3}
-.list li i{color:#10B981;margin-top:2px;font-size:14px}
-.list li strong{color:#fff}
-.box-green{background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.25);border-radius:14px;padding:12px;margin-top:16px}
-.box-green b{font-size:12px;color:#6ee7b7;display:block;margin-bottom:6px}
-.box-green p{font-size:11px;color:#94a3b8;line-height:1.4}
-.demos-title{text-align:center;margin:24px 0 14px}
-.demos-title h2{font-size:20px;font-weight:800}
-.demos-title p{font-size:12px;color:#64748b;margin-top:4px}
+body{background:var(--bg);color:#fff;font-family:'Inter',sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:20px}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}
+.logo{font-weight:900;text-decoration:none;color:#fff;font-size:1.2rem}
+.logo span{color:var(--main)}
+.back{color:#888;text-decoration:none;font-size:14px}
 
-/* GRID Y CARDS - FIX FINAL */
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-@media(max-width:600px){.grid{grid-template-columns:1fr}}
-.card-demo{border-radius:18px;text-decoration:none;position:relative;overflow:hidden;display:flex;flex-direction:column;transition:.2s;border:1px solid}
-.card-demo:hover{transform:translateY(-3px)}
-.card-demo.preview-card{padding:0}
-.preview{position:relative;height:185px;overflow:hidden;background:#111}
-.preview img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
-.tag{display:none} /* ya no usamos tag arriba, el giro va en h3 */
+/* CARD AGENDA AZUL NEON - IGUAL A TU IMAGEN */
+.hero-card.agenda{
+  position:relative;
+  background: radial-gradient(ellipse at center, rgba(0,166,255,0.15) 0%, #0d121f 60%);
+  border:2px solid var(--main);
+  border-radius:16px;
+  padding:35px 28px 25px;
+  box-shadow:0 0 35px rgba(0,166,255,0.45), inset 0 0 30px rgba(0,166,255,0.08);
+  clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% calc(100% - 18px), calc(100% - 18px) 100%, 18px 100%, 0 calc(100% - 18px), 0 18px);
+}
+.hero-card.agenda::before{
+  content:"";position:absolute;inset:0;
+  background: linear-gradient(90deg, transparent 98%, rgba(0,166,255,0.1) 100%), linear-gradient(transparent 98%, rgba(0,166,255,0.1) 100%);
+  background-size:30px 30px;opacity:0.3;pointer-events:none;
+}
+.pill-top{text-align:center;margin-bottom:18px}
+.pill-top span{
+  border:1px solid var(--main);background:rgba(0,166,255,0.15);color:#fff;
+  padding:5px 16px;border-radius:20px;font-size:11px;font-weight:800;letter-spacing:1px;
+}
+.hero-card h1{text-align:center;font-size:2.1rem;font-weight:900;color:#fff;line-height:0.9;letter-spacing:-1px;text-transform:uppercase;text-shadow:0 0 15px rgba(0,166,255,0.8)}
+.hero-card h1 b{display:block;font-size:2.8rem;margin-top:6px;color:var(--main)}
+.meta{text-align:center;color:#aaa;font-size:14px;margin:8px 0 20px;font-weight:700}
+.resuelve{text-align:center;margin:18px 0;border-top:1px solid rgba(0,166,255,0.25);border-bottom:1px solid rgba(0,166,255,0.25);padding:14px 0}
+.resuelve b{font-size:15px;letter-spacing:0.5px;color:#fff}
+.resuelve b span{color:var(--main)}
+.resuelve p{color:#888;font-size:13px;margin-top:4px}
+.list{list-style:none;margin:20px 0;display:flex;flex-direction:column;gap:11px}
+.list li{display:flex;gap:12px;font-size:13.5px;line-height:1.35}
+.list li i{color:var(--main);margin-top:2px;font-size:14px}
+.list li.alert i{color:#ffae00}
+.list li strong{display:inline;color:#fff;margin-right:4px}
+.list li span{color:#bbb}
+.box-perfect{background:rgba(0,0,0,0.4);border:1px solid rgba(0,166,255,0.25);border-radius:10px;padding:15px;margin-top:20px}
+.box-perfect .flag{color:#7ac8ff;font-size:13px;margin-bottom:8px}
+.box-perfect ol{padding-left:20px;color:#aaa;font-size:13px;line-height:1.6}
+.box-perfect ol li{color:#ccc}
+.card-footer{text-align:center;margin-top:22px;border:1px solid rgba(0,166,255,0.35);border-radius:20px;padding:6px;font-size:9px;letter-spacing:1.5px;color:var(--main);font-weight:800;background:rgba(0,166,255,0.12)}
 
-.card-content{padding:12px 14px 14px;display:flex;flex-direction:column;flex:1;gap:6px}
-.card-content h3{font-size:13px;font-weight:800;letter-spacing:.6px;margin:0;line-height:1.1}
-.card-content p{font-size:11px;line-height:1.35;flex:1;margin:0}
-.btn{margin-top:6px;padding:9px;border-radius:99px;text-align:center;font-size:11.5px;font-weight:700;display:flex;justify-content:center;gap:6px;align-items:center}
+/* DEMOS */
+.demos-title{text-align:center;margin:45px 0 25px}
+.demos-title h2{font-size:1.4rem;font-weight:900}
+.demos-title p{color:#777;font-size:13px;margin-top:5px}
 
-/* YARE - FONDO GRIS + ACENTO ROSA */
-.card-demo.yare{background:#232326;border-color:#2E2E32}
-.card-demo.yare .card-content h3{color:#fff}
-.card-demo.yare .card-content p{color:#A1A1AA}
-.card-demo.yare .btn{background:#EC4899;color:#fff}
+/* GRID RESPONSIVE */
+.grid{
+  display:grid;
+  gap:20px;
+  justify-content:center;
+  justify-items:center;
+  max-width:1200px;
+  margin:0 auto;
+}
+.card-demo{
+  background:#15151f;
+  border-radius:12px;
+  overflow:hidden;
+  text-decoration:none;
+  color:#fff;
+  border:1px solid rgba(255,255,255,0.08);
+  transition:0.3s;
+  display:flex;
+  flex-direction:column;
+  width:100%;
+}
+.card-demo:hover{transform:translateY(-5px);border-color:var(--main);box-shadow:0 10px 30px rgba(0,166,255,0.25)}
+.preview{position:relative}
+.preview img{width:100%;height:160px;object-fit:cover}
+.card-content{padding:15px;flex-grow:1;display:flex;flex-direction:column}
+.card-content h3{font-size:13px;font-weight:800;text-align:left}
+.card-content p{font-size:12px;color:#888;margin:6px 0 12px;text-align:left;flex-grow:1;line-height:1.4}
 
-/* BRILLO - FONDO GRIS + ACENTO AZUL */
-.card-demo.brillo{background:#232326;border-color:#2E2E32}
-.card-demo.brillo .card-content h3{color:#fff}
-.card-demo.brillo .card-content p{color:#A1A1AA}
-.card-demo.brillo .btn{background:#0EA5E9;color:#fff}
+@media (max-width: 600px){
+  .grid{grid-template-columns: 1fr;max-width: 380px;}
+}
+@media (min-width: 601px) and (max-width: 1023px){
+  .grid{grid-template-columns: repeat(2, 1fr);max-width: 700px;}
+}
+@media (min-width: 1024px){
+  .grid{grid-template-columns: repeat(3, 1fr);}
+  .wrap{max-width:1200px}
+}
 
-/* CARMEN - FONDO GRIS + ACENTO AZUL */
-.card-demo.holistico{background:#232326;border-color:#2E2E32}
-.card-demo.holistico .card-content h3{color:#fff}
-.card-demo.holistico .card-content p{color:#A1A1AA}
-.card-demo.holistico .btn{background:#5e4905;color:#fff}
+/* BOTONES CENTRADOS - COLORES CORREGIDOS */
+.btn{
+  padding:10px 22px;
+  border-radius:25px;
+  font-size:11px;
+  font-weight:900;
+  display:block !important;
+  margin:12px auto 0 auto !important;
+  width:fit-content;
+  letter-spacing:0.5px;
+  text-transform:uppercase;
+  transition:0.3s;
+  text-align:center;
+}
 
-.footer{text-align:center;font-size:10px;color:#475569;margin-top:24px;padding-bottom:20px}
-.footer a{color:#10B981;text-decoration:none;font-weight:700}
+/* YARE - ROSA */
+.card-demo.yare .btn{
+  background:#FF2E93 !important;
+  box-shadow:0 0 15px rgba(255,46,147,0.5) !important;
+  color:#fff !important;
+}
+.card-demo.yare .btn:hover{
+  background:#FF5CA7 !important;
+  box-shadow:0 5px 25px rgba(255,46,147,0.7) !important;
+  transform:translateY(-2px);
+}
+
+/* BRILLO - CYAN */
+.card-demo.brillo .btn{
+  background:#15F2FA !important;
+  box-shadow:0 0 15px rgba(21,242,250,0.5) !important;
+  color:#000 !important;
+}
+.card-demo.brillo .btn:hover{
+  background:#5DF8FF !important;
+  box-shadow:0 5px 25px rgba(21,242,250,0.7) !important;
+  transform:translateY(-2px);
+}
+
+/* HOLISTICO - CAFE DORADO */
+.card-demo.holistico .btn{
+  background:#684905 !important;
+  box-shadow:0 0 15px rgba(104,73,5,0.5) !important;
+  color:#fff !important;
+}
+.card-demo.holistico .btn:hover{
+  background:#8A6310 !important;
+  box-shadow:0 5px 25px rgba(104,73,5,0.7) !important;
+  transform:translateY(-2px);
+}
+
+.footer{text-align:center;color:#555;font-size:12px;margin:40px 0}
+.footer a{color:var(--main);text-decoration:none}
