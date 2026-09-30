@@ -1,85 +1,117 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Cerrar menú
-  document.querySelectorAll('.yare-nav a').forEach(link => {
-    link.addEventListener('click', () => {
-      const t = document.getElementById('yare-menu-toggle');
-      if(t) t.checked = false;
-    });
+  const ham = document.getElementById('ham');
+  const menu = document.getElementById('menu');
+  const overlay = document.getElementById('overlay');
+
+  const closeMenu = () => {
+    menu.classList.remove('active');
+    overlay.classList.remove('active');
+  };
+  const openMenu = () => {
+    menu.classList.add('active');
+    overlay.classList.add('active');
+  };
+
+  ham.addEventListener('click', (e) => {
+    e.stopPropagation();
+    menu.classList.contains('active')? closeMenu() : openMenu();
   });
+  overlay.addEventListener('click', closeMenu);
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
 
-  // ===== DEMO TlaqueNails - Sistema $6,999 - SOLO SIMULACIÓN =====
-  const DUEÑO_WA = "523331389980";
-  const MAP_LINK = "https://maps.app.goo.gl/pCwTK3WNF9sEe9tX9?g_st=ac";
+  const heroImages = [
+    'https://images.unsplash.com/photo-1632345031435-8727f6897d53?q=80&w=1200',
+    'https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=1200',
+    'https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=1200'
+  ];
+  let heroIndex = 0;
 
-  const servicioSelect = document.getElementById('servicio-select');
-  const fechaInput = document.getElementById('fecha');
-  const horaInput = document.getElementById('hora');
-  const nombreInput = document.getElementById('nombre');
-  const telefonoInput = document.getElementById('telefono');
-  const resumenEl = document.getElementById('coti-resumen');
-  const btnAgendar = document.getElementById('coti-btn');
+  function playHero() {
+    const bg = document.getElementById('heroBg');
+    const img = document.getElementById('heroImg');
+    const t = document.getElementById('hTitle');
+    const s1 = document.getElementById('hSub1');
+    const s2 = document.getElementById('hSub2');
+    const b = document.getElementById('hBtn');
 
-  if(fechaInput){
-    fechaInput.min = new Date().toISOString().split("T")[0];
+    [bg, t, s1, s2, b].forEach(el => el && el.classList.remove('show'));
+    img.src = heroImages[heroIndex];
+
+    setTimeout(() => bg && bg.classList.add('show'), 100);
+    setTimeout(() => t && t.classList.add('show'), 600);
+    setTimeout(() => s1 && s1.classList.add('show'), 1200);
+    setTimeout(() => s2 && s2.classList.add('show'), 1800);
+    setTimeout(() => b && b.classList.add('show'), 2300);
+
+    heroIndex = (heroIndex + 1) % heroImages.length;
   }
 
-  function updateResumen(){
-    if(!resumenEl) return;
-    if(servicioSelect?.value && fechaInput?.value && horaInput?.value){
-      resumenEl.textContent = `${servicioSelect.value.split(" - ")[0]} | ${fechaInput.value} ${horaInput.value}`;
+  playHero();
+  setInterval(playHero, 5000);
+
+  // CARRUSEL INFINITO REAL - duplicar
+  const track = document.getElementById('track');
+  track.innerHTML += track.innerHTML;
+
+  // AGENDA QUE SUMA
+  let cart = [];
+  
+  window.addService = (name, price) => {
+    cart.push({ key: Date.now(), name, price });
+    renderCart();
+    document.getElementById('atiende').scrollIntoView({ behavior: 'smooth' });
+  };
+
+  window.removeService = (key) => {
+    cart = cart.filter(c => c.key !== key);
+    renderCart();
+  };
+
+  window.clearCart = () => {
+    cart = [];
+    renderCart();
+  };
+
+  function renderCart() {
+    const list = document.getElementById('cartList');
+    const totalEl = document.getElementById('total');
+    const countEl = document.getElementById('count');
+    let total = 0;
+
+    list.innerHTML = '';
+    cart.forEach(item => {
+      total += item.price;
+      list.innerHTML += `<li><span>${item.name} - $${item.price}</span><button onclick="removeService(${item.key})" style="background:#000;color:#fff;border:none;width:22px;height:22px;border-radius:50%;cursor:pointer;">×</button></li>`;
+    });
+
+    if (!cart.length) {
+      list.innerHTML = '<li>Elige del carrusel de arriba</li>';
     }
+
+    totalEl.innerText = `Total: $${total}`;
+    countEl.innerText = `${cart.length} servicios`;
   }
-  [servicioSelect, fechaInput, horaInput].forEach(el=> el?.addEventListener('change', updateResumen));
 
-  // Cards llenan select
-  document.querySelectorAll('.yare-card-box').forEach(card=>{
-    card.addEventListener('click', ()=>{
-      const s = card.dataset.servicio;
-      if(servicioSelect){
-        for(let opt of servicioSelect.options){
-          if(opt.value.includes(s)){ servicioSelect.value = opt.value; break; }
-        }
-      }
-      updateResumen();
-      document.getElementById('cotizador')?.scrollIntoView({behavior:"smooth"});
-    });
-  });
+  window.confirmarReserva = () => {
+    if (!cart.length) return alert('Elige al menos un servicio del carrusel');
+    
+    const nombre = document.getElementById('nombre').value || 'Clienta';
+    const fecha = document.getElementById('fecha').value || 'por confirmar';
+    const hora = document.getElementById('hora').value || 'por confirmar';
+    const direccion = document.getElementById('direccion').value || 'En estudio - C. Jalisco 50a';
+    
+    let total = cart.reduce((a,b) => a + b.price, 0);
+    let servicios = cart.map(c => `${c.name} ($${c.price})`).join(', ');
 
-  if(btnAgendar){
-    btnAgendar.addEventListener('click', () => {
-      const servicio = servicioSelect?.value || "";
-      const fecha = fechaInput?.value || "";
-      const hora = horaInput?.value || "";
-      const nombre = nombreInput?.value.trim() || "";
-      const telefono = telefonoInput?.value.trim() || "";
+    // WhatsApp a Dalila
+    const msgDalila = `Hola Dalila! 💖%0A%0ASoy ${nombre}%0AServicios: ${servicios}%0ATotal: $${total}%0AFecha: ${fecha}%0AHora: ${hora}%0ADirección: ${direccion}%0A%0AStudioD - Nude Premium`;
+    window.open(`https://wa.me/523317995988?text=${msgDalila}`, '_blank');
 
-      if(!servicio ||!fecha ||!hora ||!nombre ||!telefono){
-        alert("Completa todo: servicio, fecha, hora, nombre y WhatsApp");
-        return;
-      }
-
-      // SIMULACIÓN ANTI-EMPALME - solo en demo
-      const demoCitas = JSON.parse(localStorage.getItem('tlaque_demo') || '[]');
-      if(demoCitas.find(c=> c.fecha===fecha && c.hora===hora)){
-        alert(`❌ DEMO: Ya hay cita simulada el ${fecha} a las ${hora}. Elige otra. (Sistema anti-empalmes activo)`);
-        return;
-      }
-      demoCitas.push({fecha,hora,servicio,nombre,telefono});
-      localStorage.setItem('tlaque_demo', JSON.stringify(demoCitas));
-
-      // MENSAJE QUE SIMULA ENVÍO AL DUEÑO
-      const msgDueño = `🔔 *NUEVA CITA - TlaqueNails DEMO $6,999*%0A%0A👤 Cliente: ${nombre}%0A📱 Tel cliente: ${telefono}%0A💅 Servicio: ${servicio}%0A📅 Día: ${fecha}%0A⏰ Hora: ${hora}%0A%0A✅ DEMO: Cita simulada agendada sin empalme.%0A⏰ (En versión real se enviarían recordatorios 24h y 3h a ambos)%0A%0A📍 ${MAP_LINK}`;
-
-      window.open(`https://wa.me/${DUEÑO_WA}?text=${msgDueño}`, "_blank");
-
-      // SIMULACIÓN VISUAL DE RECORDATORIOS EN CONSOLA
-      console.log(`%c[DEMO 24h] Dueño: ${nombre} ${telefono} -> ${fecha} ${hora}`, "color:#FF2D78; font-weight:bold");
-      console.log(`%c[DEMO 24h] Cliente ${telefono}: Hola ${nombre} tu cita ${fecha} ${hora} ${servicio}`, "color:#5a5a5a");
-      console.log(`%c[DEMO 3h] Dueño y cliente notificados`, "color:#FF2D78");
-
-      setTimeout(()=>{
-        alert(`✅ DEMO AGENDADA\n\n${fecha} ${hora}\n${servicio}\nCliente: ${nombre} - ${telefono}\n\nEn la versión real ($6,999) se guarda en BD y se programan recordatorios automáticos 24h y 3h antes.\n\nPor ahora solo se simuló y se mandó WhatsApp al dueño.`);
-      }, 600);
-    });
-  }
+    // Mensaje para clienta (segundo WA con timeout)
+    setTimeout(() => {
+      const msgClienta = `Hola ${nombre}! Tu reservación está confirmada para ${fecha} a las ${hora}.%0A%0AServicios: ${servicios}%0ATotal: $${total}%0A%0ANos vemos pronto!!!%0AStudioD - C. Jalisco 50a, Tlaquepaque%0A33 1799 5988`;
+      // Copiamos al portapapeles para que la clienta lo vea
+      alert(`✅ Reserva lista para Dalila\n\nMensaje para la clienta:\n\n${decodeURIComponent(msgClienta).replace(/%0A/g,'\n')}`);
+    }, 800);
+  };
 });

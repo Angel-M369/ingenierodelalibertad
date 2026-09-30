@@ -1,275 +1,169 @@
 <!DOCTYPE html>
 <html lang="es-MX">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tacos El Cotorreo | Tonalá</title>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
-<style>
-:root{--red:#e11d48;--yellow:#facc15;--black:#0a0a0a;--lime:#bef264;--header-h:88px}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-a{text-decoration:none!important}
-body{background:var(--black);color:#fff;font-family:Inter,sans-serif;padding-top:var(--header-h)}
-.page{width:100%;max-width:100%;margin:0 auto;overflow:hidden;background:var(--black)}
-section[id]{scroll-margin-top:115px}
-
-/* MOBILE FIRST */
-.top-slider-fixed{position:fixed;top:0;left:0;width:100%;z-index:10000;background:var(--yellow);color:#000;overflow:hidden;white-space:nowrap;padding:7px 0;font-weight:900;font-size:.8rem;border-bottom:2px solid #000}
-.top-track{display:flex;gap:40px;width:max-content;animation:scroll 18s linear infinite}
-@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
-.nav-fixed{position:fixed;top:34px;left:0;width:100%;z-index:9999;background:#000;display:flex;justify-content:space-between;align-items:center;padding:10px 4%;border-bottom:3px solid var(--yellow)}
-.logo{display:flex;align-items:center;gap:10px;color:#fff}
-.logo img{width:42px;height:42px;border-radius:50%;border:2px solid var(--yellow)}
-.logo-text b{font-family:Anton;font-size:1.2rem;display:block}
-.logo-text b span{color:var(--yellow)}
-.logo-text small{font-size:.6rem;color:var(--lime);letter-spacing:3px;display:block;margin-top:2px}
-.hamburger{width:42px;height:42px;background:#fff;border:none;border-radius:10px;display:grid;place-items:center;cursor:pointer}
-.hamburger span{width:20px;height:3px;background:#000;display:block;margin:3px 0;border-radius:2px}
-.nav-menu{position:fixed;top:var(--header-h);right:0;width:200px;height:50vh;background:#111;border-left:3px solid var(--yellow);border-bottom:3px solid var(--yellow);border-radius:0 0 0 20px;padding:16px;transform:translateX(100%);transition:.35s;z-index:9998;display:flex;flex-direction:column;gap:4px}
-.nav-menu.active{transform:translateX(0)}
-.nav-menu a{padding:12px 10px;color:#fff;font-weight:900;border-radius:8px}
-.nav-menu a:hover{background:#222;color:var(--yellow)}
-.overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:9997;display:none}
-.overlay.active{display:block}
-
-.hero{position:relative;min-height:70vh;display:flex;align-items:center;justify-content:center;padding:15px 5%;background:#000;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.75)), url('../../../images/plancha.jpeg') center/cover;opacity:0;transform:scale(1.08);transition:1s}
-.hero-bg.show{opacity:1;transform:scale(1)}
-.hero-content{position:relative;z-index:2;width:100%;max-width:360px;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
-.hero h1{font-family:Anton;font-size:3rem;line-height:.85;text-align:center;opacity:0;transform:translateY(30px);filter:blur(10px);transition:.7s}
-.hero h1.show{opacity:1;transform:translateY(0);filter:blur(0)}
-.hero h1 em{color:var(--yellow);font-style:normal}
-.sub1,.sub2{padding:8px 14px;font-weight:900;font-size:.85rem;opacity:0;transition:.7s}
-.sub1{background:#fff;color:#000;transform:translateX(-130%) rotate(-1deg)}
-.sub1.show{transform:translateX(0) rotate(-1deg);opacity:1}
-.sub2{background:var(--lime);color:#000;transform:translateX(130%) rotate(1deg)}
-.sub2.show{transform:translateX(0) rotate(1deg);opacity:1}
-.btn-main{background:var(--red);color:#fff;padding:12px 22px;border-radius:999px;font-weight:900;border:2px solid #000;opacity:0;transform:translateY(20px);transition:.7s}
-.btn-main.show{opacity:1;transform:translateY(0)}
-
-/* BOTONES UNIFICADOS */
-.btn-uniform{background:#fff;color:#000;border:2px solid #000;padding:11px 10px;border-radius:12px;font-weight:900;font-size:.78rem;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;transition:.2s}
-.btn-uniform:hover{background:var(--yellow);transform:translateY(-1px)}
-.btn-uniform small{font-size:.7rem;color:var(--red)}
-.btn-uniform.wa{background:#22c55e}.btn-uniform.mp{background:#009ee3;color:#fff}.btn-uniform.trans{background:#000;color:#fff}.btn-uniform.red{background:var(--red);color:#fff}
-
-.catalogo{padding:20px 4%}
-.grid{display:grid;gap:12px;margin-top:12px;grid-template-columns:1fr}
-.item{background:#18181b;border:1px solid #2a2a2e;border-radius:20px;padding:14px}
-.item-head{display:flex;justify-content:space-between;align-items:center}
-.item-head h3{font-family:Anton;font-size:1.6rem}
-.item-head h3 span{color:var(--yellow)}
-.opts{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px}
-.cart{margin-top:20px;background:#fff;color:#000;border-radius:24px;padding:18px}
-.cart h3{font-family:Anton;font-size:1.4rem;display:flex;justify-content:space-between;align-items:center}
-.cart-list{list-style:none;margin:10px 0}
-.cart-list li{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed #ddd}
-.del{background:#000;color:#fff;border:none;width:24px;height:24px;border-radius:50%}
-.tipo-envio{display:flex;gap:8px;margin:12px 0}
-.tipo-envio label{flex:1;background:#f4f4f5;padding:10px;border-radius:12px;text-align:center;font-weight:900;border:2px solid transparent}
-.tipo-envio input{display:none}
-.tipo-envio input:checked + label{border-color:#000;background:var(--yellow)}
-#dirBox{display:none}
-.input{width:100%;padding:12px;border-radius:12px;border:2px solid #000;margin:6px 0;font-weight:700}
-.pay{display:grid;gap:8px;margin-top:10px}
-
-.ubi{padding:35px 5%;text-align:center}
-.ubi h2{font-family:Anton;font-size:2.2rem}
-.ubi h2 span{color:var(--yellow)}
-.ubi-sub{font-weight:900;color:var(--yellow);font-size:.9rem;margin:6px 0}
-.ubi-copy{opacity:.8;font-size:.9rem;max-width:340px;margin:0 auto 12px;line-height:1.4}
-.ubi-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:360px;margin:12px auto 0}
-
-.eventos{background:var(--yellow);color:#000;padding:25px 4%;border-radius:24px 24px 0 0;margin-top:15px}
-.eventos h2{font-family:Anton;font-size:1.7rem;line-height:1;letter-spacing:.5px;text-align:center}
-.eventos h2 span{color:var(--red);display:block}
-.eventos form{display:grid;gap:8px;margin-top:14px}
-.checks{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.check-label{background:#fff;border:2px solid #000;padding:8px 10px;border-radius:10px;font-weight:800;font-size:.8rem;display:flex;gap:6px;align-items:center}
-
-/* FOOTER COMPLETO */
-footer{background:#0f2f44;color:#cbd5e1;padding:30px 5% 15px;text-align:center}
-.footer-main-title{font-family:Anton;font-size:2.2rem;color:#fff;letter-spacing:1px;text-align:center}
-.footer-main-sub{font-size:1rem;opacity:.8;margin:4px 0 20px;text-align:center;color:var(--yellow);font-weight:900;letter-spacing:1px}
-.footer-title{font-family:Anton;font-size:1.6rem;color:#fff;margin-top:20px;letter-spacing:.5px}
-.footer-sub{opacity:.7;font-size:.85rem;margin:6px 0 14px}
-.socials{display:flex;justify-content:center;gap:10px;margin-bottom:18px}
-.socials a{width:42px;height:42px;background:#1a3a52;border-radius:50%;display:grid;place-items:center;color:#fff;border:1px solid rgba(255,255,255,.1);transition:.3s}
-.socials a:hover{transform:translateY(-3px)}
-.socials a.fb:hover{background:#1877f2}.socials a.ig:hover{background:#e4405f}.socials a.tk:hover{background:#000}.socials a.wa:hover{background:#22c55e}
-.footer-contact p{margin:5px 0;display:flex;justify-content:center;align-items:center;gap:6px;font-size:.85rem}
-.footer-line{border-top:1px solid rgba(255,255,255,.1);margin:18px 0 10px;padding-top:12px;font-size:.78rem}
-.copy-link{color:#fff;font-weight:900}.copy-link:hover{color:var(--yellow)}
-
-/* DESKTOP */
-@media(min-width:768px){
-.page{max-width:1400px}
-.hero{min-height:78vh}
-.hero-content{max-width:720px}
-.hero h1{font-size:5.2rem}
-.grid{grid-template-columns:repeat(2,1fr)}
-.catalogo{display:grid;grid-template-columns:2fr 1fr;gap:24px}
-.catalogo>div:first-child h2{text-align:left}
-.ubi-copy{max-width:520px}
-.eventos h2{font-size:2.4rem}
-}
-@media(min-width:1024px){
-.grid{grid-template-columns:repeat(3,1fr)}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tacos El Cotorreo | Tonalá</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="top-slider-fixed"><div class="top-track" id="topTrack"><span>🌮 ARMA TU COMBO</span><span>🔥 PIDE POR ORDEN</span><span>⚖️ PIDE POR KILO</span><span>🏃 VIENES O TE LO LLEVO</span><span>⏰ 8PM A 2AM - TONALÁ</span></div></div>
-
-<div class="nav-fixed">
-  <a href="#" class="logo"><img src="../../../images/plancha.jpeg" alt="logo" onerror="this.src='../../../images/plancha.jpeg'"><span class="logo-text"><b><span>TA</span>COS EL COTORREO</b><small>TONALÁ • KARINA</small></span></a>
-  <button class="hamburger" id="ham"><span></span><span></span><span></span></button>
-</div>
-<div class="overlay" id="overlay"></div>
-<div class="nav-menu" id="menu"><a href="#inicio">Inicio</a><a href="#cotorreo">Arma tu cotorreo</a><a href="#ubi">Dónde estamos</a><a href="#eventos">Para tu evento</a><a href="#contacto">Contacto</a><a href="https://wa.me/523121931212" target="_blank">Hablar con Karina</a></div>
-
-<div class="page">
-<section class="hero" id="inicio">
-  <div class="hero-bg" id="heroBg"></div>
-  <div class="hero-content">
-    <h1 id="hTitle">TACOS QUE <em>NO PERDONAN</em></h1>
-    <div class="sub1" id="hSub1">De puesto en la esquina a fila de 30 minutos</div>
-    <div class="sub2" id="hSub2">Plancha prendida de 8PM a 2AM - Tonalá Jalisco</div>
-    <a href="#cotorreo" class="btn-main" id="hBtn">ARMA TU COTORREO AHORA →</a>
-  </div>
-</section>
-
-<section class="catalogo" id="cotorreo">
-  <div>
-    <h2>ARMA TU COTORREO</h2>
-    <p style="opacity:.7;text-align:center">Por taco, por orden de 5 o por kilo.</p>
-    <div class="grid" id="grid"></div>
-  </div>
-  <div class="cart">
-    <h3><span>TU PEDIDO 🌮</span><button class="btn-uniform" style="padding:5px 10px;border-radius:999px" onclick="clearCart()">BORRAR</button></h3>
-    <ul id="cartList" class="cart-list"><li>Vacío</li></ul>
-    <div style="font-weight:900;border-top:2px dashed #000;padding-top:8px" id="total">Total: $0</div>
-    <div class="tipo-envio"><input type="radio" id="pickup" name="tipo" checked><label for="pickup">🏃 PASO</label><input type="radio" id="envio" name="tipo"><label for="envio">🛵 ENVÍO</label></div>
-    <input id="nombre" class="input" placeholder="Tu nombre">
-    <div id="dirBox"><input id="direccion" class="input" placeholder="Dirección + referencias"></div>
-    <label style="font-weight:900;font-size:.8rem;color:#000">¿A qué hora?</label>
-    <select id="hora" class="input"></select>
-    <div class="pay">
-      <button class="btn-uniform wa" onclick="pagar()">PEDIR WHATSAPP 📲</button>
-      <button class="btn-uniform mp" onclick="pagar()">MERCADO PAGO 💳</button>
-      <button class="btn-uniform trans" onclick="pagar()">TRANSFERENCIA 🏦</button>
+  <div class="top-slider-fixed">
+    <div class="top-track" id="topTrack">
+      <span>🌮 TACOS CON PAPA, FRIJOL Y GUISADO</span>
+      <span>🔥 SUADERO $22 | CHORIZO $22 | BISTEC $22 | ADOBADA $22 | CAMPECHANOS $25 🔥</span>
+      <span>🏃 AV. SAN MIGUEL #911</span>
+      <span>⏰ 7PM A 11PM - TONALÁ</span>
     </div>
   </div>
-</section>
 
-<section class="ubi" id="ubi">
-  <h2>¿DÓNDE NOS <span>UBICAMOS?</span></h2>
-  <div class="ubi-sub">LA PLANCHA MÁS PRENDIDA DE TONALÁ</div>
-  <p class="ubi-copy">Si vienes, el olor te guía. Si pides, llegan humeando, con salsa que pica rico. A 5 min del centro.</p>
-  <iframe src="https://www.google.com/maps?q=Tonalá+Jalisco&z=15&output=embed" width="100%" height="250" style="border:0;border-radius:20px" loading="lazy"></iframe>
-  <div class="ubi-btns"><a class="btn-uniform" href="https://maps.google.com/?q=Tonalá+Jalisco" target="_blank">CÓMO LLEGAR</a><a class="btn-uniform" href="#" onclick="mandarUbi();return false;">TU UBICACIÓN</a></div>
-</section>
-
-<section class="eventos" id="eventos">
-  <h2>EL MEJOR COTORREO PARA TU EVENTO <span>EL COTORREO A DOMICILIO VA A TU FIESTA</span></h2>
-  <p>Llevamos la plancha, no solo los tacos.</p>
-  <form>
-    <select id="evTipo" class="input"><option>Cumpleaños</option><option>Graduación</option><option>Aniversario</option><option>XV años</option><option>Bautizo</option><option>Boda</option><option>Otros</option></select>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px"><input type="number" id="evPersonas" class="input" placeholder="¿Personas?" style="margin:0"><input type="date" id="evFecha" class="input" style="margin:0"></div>
-    <input type="text" id="evNombre" class="input" placeholder="Tu nombre">
-    <div class="checks">
-      <label class="check-label"><input type="checkbox" id="evSillas"> Sillas y mesas</label>
-      <label class="check-label"><input type="checkbox" id="evManteles"> Manteles</label>
-      <label class="check-label"><input type="checkbox" id="evLoza"> Platos de loza</label>
-      <label class="check-label"><input type="checkbox" id="evDesechables"> Desechables</label>
-      <label class="check-label"><input type="checkbox" id="evBarra"> Barra de bebidas</label>
-      <label class="check-label"><input type="checkbox" id="evMeseros"> Meseros</label>
-    </div>
-    <button type="button" class="btn-uniform red" style="width:100%" onclick="agendarEvento()">AGENDAR CITA POR WHATSAPP 📅</button>
-  </form>
-</section>
-
-<footer id="contacto">
-  <div class="footer-main-title">TACOS EL COTORREO</div>
-  <div class="footer-main-sub">la plancha más prendida de Tonalá</div>
-
-  <div class="footer-title">¡SÍGUENOS!</div>
-  <div class="footer-sub">La plancha más sabrosa y prendida de Tonalá.</div>
-  <div class="socials">
-    <a href="#" class="fb"><i class="fab fa-facebook-f"></i></a>
-    <a href="#" class="ig"><i class="fab fa-instagram"></i></a>
-    <a href="#" class="tk"><i class="fab fa-tiktok"></i></a>
-    <a href="https://wa.me/523121931212" class="wa"><i class="fab fa-whatsapp"></i></a>
+  <div class="nav-fixed">
+    <a href="#" class="logo">
+      <img src="../../../images/tacoslogo.jpeg" alt="logo" onerror="this.src='https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?q=80&w=100'">
+      <span class="logo-text">
+        <b>TACOS <span>EL COTORREO</span></b>
+        <small>TONALÁ • KARINA</small>
+      </span>
+    </a>
+    <button class="hamburger" id="ham">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 
-  <div class="footer-title">¡CONTÁCTAME!</div>
-  <div class="footer-contact">
-    <p><i class="fas fa-clock"></i> Lun - Dom 8pm a 2am / Cotorreo 24/7 por WA</p>
-    <p><i class="fas fa-map-marker-alt"></i> Av. Tonalá Centro, Tonalá, Jal.</p>
-    <p><i class="fas fa-mobile-alt"></i> 312 193 1212</p>
+  <div class="overlay" id="overlay"></div>
+  <div class="nav-menu" id="menu">
+    <a href="#inicio">Inicio</a>
+    <a href="#cotorreo">Arma tu cotorreo</a>
+    <a href="#ubi">Dónde estamos</a>
+    <a href="#eventos">Para tu evento</a>
+    <a href="#contacto">Contacto</a>
+    <a href="https://wa.me/523121931212" target="_blank">Hablar con Karina</a>
   </div>
 
-  <div class="footer-line">
-    <p>© 2026 Tacos El Cotorreo® Karina · Tonalá, Jalisco</p>
-    <p style="margin-top:6px">Híbrido que convierte tráfico en pedidos y cobra solo, creado con MI LOCALITO by <a href="https://www.ingenierodelalibertad.com" target="_blank" class="copy-link">www.ingenierodelalibertad.com</a></p>
+  <div class="page">
+
+    <!-- HERO CON IMG TAG -->
+    <section class="hero" id="inicio">
+      <div class="hero-bg" id="heroBg">
+        <img class="hero-img" src="../../../images/plancha.jpeg" alt="Plancha Tacos El Cotorreo" onerror="this.src='https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?q=80&w=1200'">
+      </div>
+      <div class="hero-content">
+        <h1 id="hTitle">TACOS QUE <em>NO PERDONAN</em></h1>
+        <div class="sub1" id="hSub1">Con papa, frijol, cebolla guisada y chile guisado 🌮</div>
+        <div class="sub2" id="hSub2">Av. San Miguel #911 - Afuera de Abarrotes Tolentino - 7PM A 11PM</div>
+        <a href="#cotorreo" class="btn-main" id="hBtn">ARMA TU COTORREO AHORA →</a>
+      </div>
+    </section>
+
+    <!-- CATALOGO -->
+    <section class="catalogo" id="cotorreo">
+      <div class="catalogo-left">
+        <h2>ARMA TU COTORREO</h2>
+        <p class="catalogo-desc">Tacos con papa, frijol, cebolla guisada y chile guisado. Por taco, orden de 5 o por kilo.</p>
+        <div class="grid" id="grid"></div>
+      </div>
+
+      <div class="cart">
+        <h3>
+          <span>TU PEDIDO 🌮</span>
+          <button class="btn-uniform btn-small" onclick="clearCart()">BORRAR</button>
+        </h3>
+        <ul id="cartList" class="cart-list"><li>Vacío</li></ul>
+        <div class="cart-total" id="total">Total: $0</div>
+
+        <div class="tipo-envio">
+          <input type="radio" id="pickup" name="tipo" checked>
+          <label for="pickup">🏃 PASO</label>
+          <input type="radio" id="envio" name="tipo">
+          <label for="envio">🛵 ENVÍO</label>
+        </div>
+
+        <input id="nombre" class="input" placeholder="Tu nombre">
+        <div id="dirBox">
+          <input id="direccion" class="input" placeholder="Dirección + referencias">
+        </div>
+
+        <label class="cart-label">¿A qué hora?</label>
+        <select id="hora" class="input"></select>
+
+        <div class="pay">
+          <button class="btn-uniform wa" onclick="pagar()">PEDIR WHATSAPP 📲</button>
+          <button class="btn-uniform mp" onclick="pagar()">MERCADO PAGO 💳</button>
+          <button class="btn-uniform trans" onclick="pagar()">TRANSFERENCIA 🏦</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- UBI -->
+    <section class="ubi" id="ubi">
+      <h2>¿DÓNDE NOS <span>UBICAMOS?</span></h2>
+      <div class="ubi-sub">LA PLANCHA MÁS SABROSA DE TONALÁ</div>
+      <p class="ubi-copy">Tacos con papa, frijol, cebolla guisada y chile guisado. Si vienes, el olor te guía. Si pides, llegan humeando.</p>
+      <p class="ubi-address">
+        <i class="fas fa-map-marker-alt"></i> Av. San Miguel #911 - Afuera de Abarrotes Tolentino<br>
+        <small>Tonalá, Jal. | 7:00PM - 11:00PM</small>
+      </p>
+      <iframe src="https://www.google.com/maps?q=Av.+San+Miguel+911+Tonalá+Jalisco&z=17&output=embed" width="100%" height="250" style="border:0;border-radius:20px" loading="lazy"></iframe>
+      <div class="ubi-btns">
+        <a class="btn-uniform" href="https://maps.google.com/?q=Av.+San+Miguel+911+Tonalá+Jalisco+Abarrotes+Tolentino" target="_blank">CÓMO LLEGAR POR GOOGLE</a>
+        <a class="btn-uniform" href="#" onclick="mandarUbi();return false;">KARI MANDAME TU UBICACIÓN</a>
+      </div>
+    </section>
+
+    <!-- EVENTOS -->
+    <section class="eventos" id="eventos">
+      <h2>EL MEJOR COTORREO PARA TU EVENTO <span>EL COTORREO VA A TU FIESTA</span></h2>
+      <p>Llevamos la plancha, no solo los tacos, pero tambien puedes acompletar tu evento para que solo disfrutes tu fiesta, tus invitados y por supuesto TUS TACOS.</p>
+      <form>
+        <select id="evTipo" class="input">
+          <option>Cumpleaños</option><option>Graduación</option><option>Aniversario</option>
+          <option>XV años</option><option>Bautizo</option><option>Boda</option><option>Otros</option>
+        </select>
+        <div class="ev-row">
+          <input type="number" id="evPersonas" class="input" placeholder="¿Personas?">
+          <input type="date" id="evFecha" class="input">
+        </div>
+        <input type="text" id="evNombre" class="input" placeholder="Tu nombre">
+        <div class="checks">
+          <label class="check-label"><input type="checkbox"> Sillas y mesas</label>
+          <label class="check-label"><input type="checkbox"> Barra de bebidas</label>
+          <label class="check-label"><input type="checkbox"> Platos de loza</label>
+          <label class="check-label"><input type="checkbox"> Manteles</label>
+          <label class="check-label"><input type="checkbox"> Desechables</label>
+          <label class="check-label"><input type="checkbox"> Meseros</label>
+        </div>
+        <button type="button" class="btn-uniform red btn-full" onclick="agendarEvento()">AGENDAR CITA POR WHATSAPP 📅 3121931212</button>
+      </form>
+    </section>
+
+    <!-- FOOTER COMPLETO -->
+    <footer id="contacto">
+      <div class="footer-main-title">TACOS EL COTORREO</div>
+      <div class="footer-main-sub">la plancha más sabrosa de Tonalá</div>
+      <div class="footer-title">¡SÍGUENOS!</div>
+      <div class="footer-sub">Tacos con papa, frijol, cebolla guisada y chile guisado.</div>
+      <div class="socials">
+        <a href="#" class="fb"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="ig"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="tk"><i class="fab fa-tiktok"></i></a>
+        <a href="https://wa.me/523121931212" class="wa"><i class="fab fa-whatsapp"></i></a>
+      </div>
+      <div class="footer-title">¡CONTÁCTAME!</div>
+      <div class="footer-contact">
+        <p><i class="fas fa-clock"></i> Lun - Dom 7pm a 11pm / Cotorreo 24/7 por WA</p>
+        <p><i class="fas fa-map-marker-alt"></i> Av. San Miguel #911 - Afuera de abarrotes Tolentino, Tonalá, Jal.</p>
+        <p><i class="fas fa-mobile-alt"></i> 31-21-93-12-12 / 312 193 1212</p>
+      </div>
+      <div class="footer-line">
+        <p>© 2026 Tacos El Cotorreo® Karina · Tonalá, Jalisco</p>
+        <p>Híbrido que convierte tráfico en pedidos y cobra solo, creado con MI LOCALITO by <a href="https://www.ingenierodelalibertad.com" target="_blank" class="copy-link">www.ingenierodelalibertad.com</a></p>
+      </div>
+    </footer>
+
   </div>
-</footer>
-</div>
 
-<script>
-document.addEventListener('DOMContentLoaded',()=>{
-  const ham=document.getElementById('ham'), menu=document.getElementById('menu'), overlay=document.getElementById('overlay');
-  const closeMenu=()=>{menu.classList.remove('active');overlay.classList.remove('active')};
-  const openMenu=()=>{menu.classList.add('active');overlay.classList.add('active')};
-  ham.addEventListener('click',(e)=>{e.stopPropagation(); menu.classList.contains('active')?closeMenu():openMenu()});
-  overlay.addEventListener('click',closeMenu);
-  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
-  document.getElementById('topTrack').innerHTML+=document.getElementById('topTrack').innerHTML;
-  function playHero(){
-    const bg=document.getElementById('heroBg'), t=document.getElementById('hTitle'), s1=document.getElementById('hSub1'), s2=document.getElementById('hSub2'), b=document.getElementById('hBtn');
-    [bg,t,s1,s2,b].forEach(el=>el.classList.remove('show'));
-    setTimeout(()=>bg.classList.add('show'),100);
-    setTimeout(()=>t.classList.add('show'),800);
-    setTimeout(()=>s1.classList.add('show'),1600);
-    setTimeout(()=>s2.classList.add('show'),2400);
-    setTimeout(()=>b.classList.add('show'),3100);
-  }
-  const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)playHero()})},{threshold:.3});
-  obs.observe(document.getElementById('inicio')); playHero();
-
-  const precios={pastor:{taco:18,orden:85,kilo:280},chuleta:{taco:20,orden:90,kilo:300},cabeza:{taco:20,orden:90,kilo:300},tripa:{taco:22,orden:100,kilo:320},bistec:{taco:20,orden:90,kilo:300}};
-  let cart=[]; const grid=document.getElementById('grid');
-  Object.keys(precios).forEach(id=>{
-   const p=precios[id];
-   grid.innerHTML+=`<div class="item"><div class="item-head"><h3><span>${id.toUpperCase()}</span></h3><b>$${p.taco}</b></div><div class="opts">
-   <button class="btn-uniform" onclick="add('${id}','taco')">🌮 TACO<small>$${p.taco}</small></button>
-   <button class="btn-uniform" onclick="add('${id}','orden')">🔥 ORDEN<small>$${p.orden}</small></button>
-   <button class="btn-uniform" onclick="add('${id}','kilo')">⚖️ KILO<small>$${p.kilo}</small></button>
-   </div></div>`;
-  });
-  window.add=(id,mode)=>{
-   const p=precios[id]; let price=mode==='taco'?p.taco:mode==='orden'?p.orden:p.kilo;
-   cart.push({key:Date.now(),label:`${id.toUpperCase()} ${mode.toUpperCase()}`,price}); render();
-  };
-  window.removeItem=(k)=>{cart=cart.filter(c=>c.key!==k);render()};
-  window.clearCart=()=>{cart=[];render()};
-  function render(){
-   let list=document.getElementById('cartList'); list.innerHTML=''; let tot=0;
-   cart.forEach(c=>{tot+=c.price; list.innerHTML+=`<li><span>${c.label} - $${c.price}</span><button class="del" onclick="removeItem(${c.key})">×</button></li>`});
-   if(!cart.length) list.innerHTML='<li>Vacío</li>';
-   document.getElementById('total').innerText='Total: $'+tot;
-  }
-  document.getElementById('pickup').addEventListener('change',()=>document.getElementById('dirBox').style.display='none');
-  document.getElementById('envio').addEventListener('change',()=>document.getElementById('dirBox').style.display='block');
-  let hSel=document.getElementById('hora'); for(let h=20;h<=26;h++){let r=h>24?h-24:h; hSel.innerHTML+=`<option>${r>12?r-12:r}:00 ${h>=24||r<8?'AM':'PM'}</option>`}
-  window.pagar=()=>{if(!cart.length)return alert('Agrega tacos'); let n=document.getElementById('nombre').value||'Cliente'; let dir=document.getElementById('envio').checked?document.getElementById('direccion').value:'Paso'; let h=document.getElementById('hora').value; let tot=document.getElementById('total').innerText; let det=cart.map(c=>c.label).join(', '); window.open(`https://wa.me/523121931212?text=${n} ${det} ${tot} ${dir} ${h}`,'_blank')};
-  window.mandarUbi=()=>window.open(`https://wa.me/523121931212?text=Ubicación`,'_blank');
-  window.agendarEvento=()=>{let t=document.getElementById('evTipo').value; let p=document.getElementById('evPersonas').value; let f=document.getElementById('evFecha').value; let n=document.getElementById('evNombre').value; window.open(`https://wa.me/523121931212?text=Evento ${t} ${p} pers ${f} Soy ${n}`,'_blank')};
-});
-</script>
+  <script src="script.js"></script>
 </body>
 </html>
