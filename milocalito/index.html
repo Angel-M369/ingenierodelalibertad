@@ -76,7 +76,7 @@
         <header class="header">
              <input type="checkbox" id="menu-check" class="menu-check">
              <div class="header-container">
-                 <a href="../index.html" class="logo"><span class="verde">MI</span>LOCALITO</a>
+                 <a href="../index.html" class="logo">INGENIERO <br> <span class="verde">DELA</span> <br> LIBERTAD</a>
                  <label for="menu-check" class="menu-toggle"><span></span><span></span><span></span></label>
                  <nav class="nav">
                      <a href="#inicio">Inicio</a>
@@ -91,16 +91,21 @@
              <label for="menu-check" class="overlay"></label>
         </header>
         <section class="hero" id="inicio">
-             <div class="hero-content">
-                 <h1>NO HACEMOS PÁGINAS BONITAS.<br><span class="verde">INSTALAMOS SISTEMAS QUE FACTURAN 24/7.</span></h1>
-                 <p class="sub">Deja de preguntar "¿cómo quiero mi página?".<br>La pregunta real es: ¿qué problema te está costando dinero hoy?</p>
-                 <div class="botones-hero">
-                     <a href="#quiz" class="btn btn-primario">¿CUÁL PROBLEMA TENGO?</a>
-                     <a href="#flip" class="btn btn-secundario">VER LOS 6 SISTEMAS</a>
+             <div class="hero-content" id="hero-anim-box">
+                 <h1 class="hero-titulo">MI LOCALITO</h1>
+                 <h2 class="hero-sub1">NO HACEMOS PÁGINAS BONITAS.</h2>
+                 <h2 class="hero-sub2">INSTALAMOS SISTEMAS QUE FACTURAN 24/7.</h2>
+                 <div class="hero-img-wrap">
+                     <img src="../images/Miloheader.png" alt="Mi Localito Sistema" class="hero-img-central">
                  </div>
-             </div>
-             <div class="hero-img">
-                 <img src="../images/Codeando.jpg" alt="Instalación de sistemas web que venden por WhatsApp - Trabajo remoto todo México" loading="lazy">
+                 <div class="hero-preguntas">
+                     <p>Deja de preguntar: <br> "¿cómo quiero mi página?".</p>
+                     <p>La pregunta real es: <br> <span>¿qué problema te está costando dinero hoy?</span></p>
+                 </div>
+                 <div class="botones-hero">
+                     <a href="#quiz" class="btn btn-primario btn-izq">¿CUÁL PROBLEMA TENGO?</a>
+                     <a href="#flip" class="btn btn-secundario btn-der">VER LOS 6 SISTEMAS</a>
+                 </div>
              </div>
         </section>
         <section class="dolor" id="paraquien">
@@ -114,205 +119,92 @@
             <p class="solucion">No es falta de clientes. Es falta de sistema.<br><strong>Tú tienes un problema que te cuesta dinero. Yo tengo 6 sistemas que lo resuelven.</strong></p>
         </section>
         <section class="flip-section" id="flip">
-            <div class="flip-contenedor">
-                <h2>ELIGE TU PROBLEMA. AHÍ ESTÁ TU SISTEMA.</h2>
-                <p class="section-subtitle">Toca la card que más te identifica hoy.</p>
-                <div class="flip-grid">
-                    <div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>XPRESS</h3><p class="precio">$3,999</p><small>NIVEL 1 - LOCAL</small></div><div class="flip-back"><h4>TE DUELE:</h4><p>Contestas menú 100 veces y no compran.</p><h4>TE INSTALO:</h4><p>Catálogo que manda pedido listo a WA.</p></div></div></div>
-                    <div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>PRO</h3><p class="precio">$6,999</p><small>NIVEL 2 - NACIONAL</small></div><div class="flip-back"><h4>TE DUELE:</h4><p>"Te deposito mañana" y te quedan mal.</p><h4>TE INSTALO:</h4><p>Carrito que cobra con tarjeta/OXXO ANTES de enviar.</p></div></div></div>
-                    <div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>CUSTOM</h3><p class="precio">$9,999</p><small>NIVEL 3 - COTIZADOR</small></div><div class="flip-back"><h4>TE DUELE:</h4><p>+50 productos y pierdes el día cotizando.</p><h4>TE INSTALO:</h4><p>Cotizador automático + stock real + anticipo.</p></div></div></div>
-                    <div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>LANDING</h3><p class="precio">$3,999</p><small>NIVEL 1 - TRÁFICO</small></div><div class="flip-back"><h4>TE DUELE:</h4><p>Metes a anuncios y no te llegan clientes.</p><h4>TE INSTALO:</h4><p>Landing de 1 pantalla que convierte visitas en chats.</p></div></div></div>
-                    <div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>AGENDA</h3><p class="precio">$6,999</p><small>NIVEL 2 - AGENDA</small></div><div class="flip-back"><h4>TE DUELE:</h4><p>Agendas a mano y se te empalman.</p><h4>TE INSTALO:</h4><p>Agenda 24/7 donde el cliente agenda solo.</p></div></div></div>
-                    <div class="flip-card"><div class="flip-inner"><div class="flip-front"><h3>ÉLITE</h3><p class="precio">$9,999</p><small>NIVEL 3 - ANTI-CANCELACIÓN</small></div><div class="flip-back"><h4>TE DUELE:</h4><p>Te cancelan y pierdes día y lana.</p><h4>TE INSTALO:</h4><p>Sistema que cobra anticipo obligatorio.</p></div></div></div>
-                </div>
-            </div>
+             <div class="flip-contenedor">
+                 <h2>ELIGE TU PROBLEMA. AHÍ ESTÁ TU SISTEMA.</h2>
+                 <p class="section-subtitle">Arrastra o toca la que te identifica hoy.</p>
+                 <div class="slider3d-infinito" id="slider3d">
+                     <div class="slider3d-track" id="slider3dTrack">
+                         <img src="../images/C. xpress.png" alt="XPRESS $3,999" data-target="plan-express">
+                         <img src="../images/C. pro.png" alt="PRO $6,999" data-target="plan-pro">
+                         <img src="../images/C. custom.png" alt="CUSTOM $9,999" data-target="plan-custom">
+                         <img src="../images/C. landing.png" alt="LANDING $3,999" data-target="plan-landing">
+                         <img src="../images/C. agenda.png" alt="AGENDA $6,999" data-target="plan-agenda">
+                         <img src="../images/C. elite.png" alt="ÉLITE $9,999" data-target="plan-elite">
+                     </div>
+                 </div>
+             </div>
         </section>
         <section class="armas" id="ecommerce">
-            <h2 class="armas-title">LÍNEA PRODUCTOS FÍSICOS</h2>
-            <p class="section-subtitle">El mismo negocio, 3 niveles de problema.</p>
-            <div class="grid-armas">
-                <div class="arma-card express" id="plan-express">
-                    <div class="arma-header">
-                        <span class="tag-express">NIVEL 1 - VENTA LOCAL</span>
-                        <h3>SISTEMA XPRESS</h3>
-                        <p class="precio">$3,999 MXN</p>
-                        <span class="iva">+ IVA | Pago único | 72 HRS</span>
-                    </div>
-                    <div class="arma-visual express-visual">
-                        <i class="fab fa-whatsapp"></i>
-                        <p>RESUELVE: SER CATÁLOGO HUMANO</p>
-                        <span class="arma-desc">Deja de contestar el menú 100 veces</span>
-                    </div>
-                    <ul class="arma-features">
-                        <li><strong>Problema que mata:</strong> Te piden el menú / precio todo el día y no compran</li>
-                        <li>Catálogo con 5 productos estrella optimizado</li>
-                        <li>Botón que manda pedido listo a tu WA</li>
-                        <li>Dominio.com + Hosting 1 año incluido</li>
-                    </ul>
-                    <div class="arma-ideal">
-                        <strong>Perfecta para:</strong> Negocio que vende local.<br><br>
-                        <strong>Ejemplos de negocios:</strong><br>
-                        <span class="list-green">1. Comida y Snacks <br>2. Florerías y regalos<br>3. Cafeterías y panaderias<br>4. Dulces y botanas<br>5. Neverias y aguas frescas</span>
-                    </div>
-                    <div class="btn-stack">
-                        <a href="./express/" class="btn-arma btn-express">VER DEMO →</a>
-                        <a href="https://mpago.la/12MJpos" target="_blank" class="btn-arma btn-express">PAGAR $3,999 CON MERCADO PAGO →</a>
-                    </div>
-                </div>
-                <div class="arma-card pro destacada" id="plan-pro">
-                    <div class="badge">MÁS VENDIDO PRODUCTOS</div>
-                    <div class="arma-header">
-                        <span class="tag-pro">NIVEL 2 - VENTA NACIONAL</span>
-                        <h3>SISTEMA PRO</h3>
-                        <p class="precio">$6,999 MXN</p>
-                        <span class="iva">+ IVA | Pago único | 6 DÍAS</span>
-                    </div>
-                    <div class="arma-visual pro-visual">
-                        <i class="fas fa-shopping-cart"></i>
-                        <p>RESUELVE: QUE NO TE PAGUEN</p>
-                        <span class="arma-desc">Cobra con tarjeta antes de enviar</span>
-                    </div>
-                    <ul class="arma-features">
-                        <li><strong>Problema que mata:</strong> "Te deposito mañana" y te dejan el paquete listo</li>
-                        <li><strong>Todo lo de XPRESS +</strong></li>
-                        <li>Carrito real + Cobro TARJETA / OXXO</li>
-                        <li>Stock en AGOTADO automático</li>
-                    </ul>
-                    <div class="arma-ideal">
-                        <strong>Perfecta para:</strong> Venta nacional por paquetería.<br><br>
-                        <strong>Ejemplos de negocios:</strong><br>
-                        <span class="list-blue">1. Ropa y calzado<br>2. Cosméticos y perfumes<br>3. Gorras y bolsas<br>4. Suplementos y vitaminas<br>5. Joyeria e importaciones</span>
-                    </div>
-                    <div class="btn-stack">
-                        <a href="./pro/" class="btn-arma btn-pro">VER DEMO →</a>
-                        <a href="https://mpago.la/1je1Jwm" target="_blank" class="btn-arma btn-pro">PAGAR $6,999 CON MERCADO PAGO →</a>
-                    </div>
-                </div>
-                <div class="arma-card custom" id="plan-custom">
-                    <div class="arma-header">
-                        <span class="tag-custom">NIVEL 3 - COTIZA EN AUTOMÁTICO</span>
-                        <h3>SISTEMA CUSTOM</h3>
-                        <p class="precio">$9,999 MXN</p>
-                        <span class="iva">+ IVA | Pago único | 12 DÍAS</span>
-                    </div>
-                    <div class="arma-visual custom-visual">
-                        <i class="fas fa-file-invoice-dollar"></i>
-                        <p>RESUELVE: COTIZACIONES QUE NO CIERRAN</p>
-                        <span class="arma-desc">Tu cliente cotiza solo, tú solo cobras</span>
-                    </div>
-                    <ul class="arma-features">
-                        <li><strong>Problema que mata:</strong> Pierdes horas cotizando y no cierras</li>
-                        <li><strong>Todo lo de XPRESS + PRO +</strong></li>
-                        <li>Cotizador automático + Buscador + Filtros</li>
-                        <li>Cobro de anticipo para apartar</li>
-                    </ul>
-                    <div class="arma-ideal">
-                        <strong>Perfecta para:</strong> Venta por medidas, no precio fijo.<br><br>
-                        <strong>Ejemplos de negocios:</strong><br>
-                        <span class="list-yellow">1. Pastelería y repostería<br>2. Persianas y cancelería<br>3. Cocinas integrales y closets<br>4. Herrería y carpintería<br>5. Vinilos, lonas e imprenta</span>
-                    </div>
-                    <div class="btn-stack">
-                        <a href="./custom/" class="btn-arma btn-custom">VER DEMO →</a>
-                        <a href="https://mpago.la/1SrtN5r" target="_blank" class="btn-arma btn-custom">PAGAR $9,999 CON MERCADO PAGO →</a>
-                    </div>
-                </div>
+             <h2 class="armas-title">LÍNEA DE PRODUCTOS</h2>
+             <p class="section-subtitle">3 Soluciones para tu negocio.</p>
+             <div class="grid-armas">
+                 <div class="arma-card" id="plan-express">
+                     <div class="arma-img-wrap">
+                         <img src="../images/S. xpress.png" alt="Sistema Xpress">
+                     </div>
+                     <div class="btn-stack">
+                         <a href="./express/" class="btn-arma btn-demo">VER DEMO →</a>
+                         <a href="https://mpago.la/12MJpos" target="_blank" class="btn-arma btn-pago">PAGAR $1,999 CON MERCADO PAGO →</a>
+                         <p class="texto-abono">Se abona el 50% para empezar a trabajar en tu proyecto y evitar cancelaciones, el resto se liquida al entregar el proyecto funcionando en línea.</p>
+                     </div>
+                 </div>
+                 <div class="arma-card destacada" id="plan-pro">
+                     <div class="arma-img-wrap">
+                         <img src="../images/S. pro.png" alt="Sistema Pro">
+                     </div>
+                     <div class="btn-stack">
+                         <a href="./pro/" class="btn-arma btn-demo">VER DEMO →</a>
+                         <a href="https://mpago.la/1je1Jwm" target="_blank" class="btn-arma btn-pago">PAGAR $3,499 CON MERCADO PAGO →</a>
+                         <p class="texto-abono">Se abona el 50% para empezar a trabajar en tu proyecto y evitar cancelaciones, el resto se liquida al entregar el proyecto funcionando en línea.</p>
+                     </div>
+                 </div>
+                 <div class="arma-card" id="plan-custom">
+                     <div class="arma-img-wrap">
+                         <img src="../images/S. custom.png" alt="Sistema Custom">
+                     </div>
+                     <div class="btn-stack">
+                         <a href="./custom/index.html" class="btn-arma btn-demo">VER DEMO →</a>
+                         <a href="https://mpago.la/1SrtN5r" target="_blank" class="btn-arma btn-pago">PAGAR $4,999 CON MERCADO PAGO →</a>
+                         <p class="texto-abono">Se abona el 50% para empezar a trabajar en tu proyecto y evitar cancelaciones, el resto se liquida al entregar el proyecto funcionando en línea.</p>
+                     </div>
+                 </div>
             </div>
         </section>
         <section class="armas armas-servicios" id="servicios">
-            <h2 class="armas-title">LÍNEA SERVICIOS</h2>
-            <p class="section-subtitle">El mismo negocio, 3 niveles de problema.</p>
-            <div class="grid-armas">
-                <div class="arma-card landing" id="plan-landing">
-                    <div class="arma-header">
-                        <span class="tag-landing">NIVEL 1 - CONVIERTE TRÁFICO</span>
-                        <h3>SISTEMA LANDING</h3>
-                        <p class="precio">$3,999 MXN</p>
-                        <span class="iva">+ IVA | Pago único | 72 HRS</span>
-                    </div>
-                    <div class="arma-visual landing-visual">
-                        <i class="fas fa-rocket"></i>
-                        <p>RESUELVE: ANUNCIOS QUE NO TRAEN CLIENTES</p>
-                        <span class="arma-desc">Convierte visitas en chats de WhatsApp</span>
-                    </div>
-                    <ul class="arma-features">
-                        <li><strong>Problema que mata:</strong> Le metes a anuncios y nadie te escribe</li>
-                        <li>Landing de 1 pantalla optimizada para vender</li>
-                        <li>Formulario que cae directo a tu WhatsApp</li>
-                    </ul>
-                    <div class="arma-ideal">
-                        <strong>Perfecta para:</strong> Negocio que pauta y no convierte.<br><br>
-                        <strong>Ejemplos de negocios:</strong><br>
-                        <span class="list-green">1. Abogados y despachos<br>2. Doctores y clínicas<br>3. Agencias y freelancers<br>4. Escuelas y cursos<br>5. Inmobiliarias y constructoras</span>
-                    </div>
-                    <div class="btn-stack">
-                        <a href="./landing/index.html" class="btn-arma btn-landing">VER DEMO →</a>
-                        <a href="https://mpago.la/12MJpos" target="_blank" class="btn-arma btn-landing">PAGAR $3,999 CON MERCADO PAGO →</a>
-                    </div>
-                </div>
-                <div class="arma-card agenda" id="plan-agenda">
-                    <div class="arma-header">
-                        <span class="tag-agenda">NIVEL 2 - AGENDA AUTOMÁTICA</span>
-                        <h3>SISTEMA AGENDA</h3>
-                        <p class="precio">$6,999 MXN</p>
-                        <span class="iva">+ IVA | Pago único | 6 DÍAS</span>
-                    </div>
-                    <div class="arma-visual agenda-visual">
-                        <i class="fas fa-calendar-check"></i>
-                        <p>RESUELVE: AGENDA A MANO Y EMPALMES</p>
-                        <span class="arma-desc">Tus clientes agendan solos 24/7</span>
-                    </div>
-                    <ul class="arma-features">
-                        <li><strong>Problema que mata:</strong> Se te empalman citas por contestar tarde</li>
-                        <li><strong>Todo lo de LANDING +</strong></li>
-                        <li>Recordatorio automático 24h antes</li>
-                        <li>Cliente ve tus huecos libres y agenda solo</li>
-                    </ul>
-                    <div class="arma-ideal">
-                        <strong>Perfecta para:</strong> Negocio que vive de citas.<br><br>
-                        <strong>Ejemplos de negocios:</strong><br>
-                        <span class="list-blue">1. Talleres mecánicos, pintura, etc.<br>2. Barberias y estudios de belleza<br>3. Psicólogos y terapeutas<br>4. Estéticas caninas y veterinarias<br>5. Gimnasios y estudios deportivos</span>
-                    </div>
-                    <div class="btn-stack">
-                        <a href="./agenda/index.html" class="btn-arma btn-agenda">VER DEMO →</a>
-                        <a href="https://mpago.la/1je1Jwm" target="_blank" class="btn-arma btn-agenda">PAGAR $6,999 CON MERCADO PAGO →</a>
-                    </div>
-                </div>
-                <div class="arma-card dueno destacada" id="plan-elite">
-                    <div class="badge">MÁS VENDIDO SERVICIOS</div>
-                    <div class="arma-header">
-                        <span class="tag-dueno">NIVEL 3 - ANTI-CANCELACIÓN</span>
-                        <h3>SISTEMA ÉLITE</h3>
-                        <p class="precio">$9,999 MXN</p>
-                        <span class="iva">+ IVA | Pago único | 12 DÍAS</span>
-                    </div>
-                    <div class="arma-visual dueno-visual">
-                        <i class="fas fa-crown"></i>
-                        <p>RESUELVE: CANCELACIONES QUE CUESTAN</p>
-                        <span class="arma-desc">Si te cancelan, tú ya cobraste</span>
-                    </div>
-                    <ul class="arma-features">
-                        <li><strong>Problema que mata:</strong> Te cancelan y pierdes el día y la lana</li>
-                        <li><strong>Todo lo de LANDING + AGENDA +</strong></li>
-                        <li>Cobro de ANTICIPO obligatorio para agendar</li>
-                        <li>Si no llega, tú ya cobraste</li>
-                    </ul>
-                    <div class="arma-ideal">
-                        <strong>Perfecta para:</strong> Servicios de alto ticket.<br><br>
-                        <strong>Ejemplos de negocios:</strong><br>
-                        <span class="list-pink">1. Tatuadores y micropigmentación<br>2. Fotógrafos y renta de salones<br>3. Renta de cabañas y quintas<br>4. Renta de mobiliario y banquetes<br>5. Talleres especializados con cita</span>
-                    </div>
-                    <div class="btn-stack">
-                        <a href="./elite/" class="btn-arma btn-dueno">VER DEMO →</a>
-                        <a href="https://mpago.la/1SrtN5r" target="_blank" class="btn-arma btn-dueno">PAGAR $9,999 CON MERCADO PAGO →</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="seo-local">
-            <div class="seo-inner">
-                <h2 class="seo-title">TRABAJO 100% REMOTO PARA TODO MÉXICO</h2>
-                <p class="seo-text">Sin oficina física, sin reuniones eternas. Trabajo desde donde haya WiFi: casa, hotel, parque o playa. Ya instalamos sistemas en <strong>CDMX, Guadalajara, Monterrey, Puebla, Cancún, Querétaro y todo México.</strong> Todo por WhatsApp. Tú mandas fotos y precios, yo instalo tu sistema que factura 24/7.</p>
-            </div>
+             <h2 class="armas-title">LÍNEA DE SERVICIOS</h2>
+             <p class="section-subtitle">3 Soluciones para tu negocio.</p>
+             <div class="grid-armas">
+                 <div class="arma-card" id="plan-landing">
+                     <div class="arma-img-wrap">
+                         <img src="../images/S. landing.png" alt="Sistema Landing">
+                     </div>
+                     <div class="btn-stack">
+                         <a href="./landing/index.html" class="btn-arma btn-demo">VER DEMO →</a>
+                         <a href="https://mpago.la/12MJpos" target="_blank" class="btn-arma btn-pago">PAGAR $1,999 CON MERCADO PAGO →</a>
+                         <p class="texto-abono">Se abona el 50% para empezar a trabajar en tu proyecto y evitar cancelaciones, el resto se liquida al entregar el proyecto funcionando en línea.</p>
+                     </div>
+                 </div>
+                 <div class="arma-card" id="plan-agenda">
+                     <div class="arma-img-wrap">
+                         <img src="../images/S. agenda.png" alt="Sistema Agenda">
+                     </div>
+                     <div class="btn-stack">
+                         <a href="./agenda/index.html" class="btn-arma btn-demo">VER DEMO →</a>
+                         <a href="https://mpago.la/1je1Jwm" target="_blank" class="btn-arma btn-pago">PAGAR $3,499 CON MERCADO PAGO →</a>
+                         <p class="texto-abono">Se abona el 50% para empezar a trabajar en tu proyecto y evitar cancelaciones, el resto se liquida al entregar el proyecto funcionando en línea.</p>
+                     </div>
+                 </div>
+                 <div class="arma-card destacada" id="plan-elite">
+                     <div class="arma-img-wrap">
+                         <img src="../images/S. elite.png" alt="Sistema Élite">
+                     </div>
+                     <div class="btn-stack">
+                         <a href="./elite/" class="btn-arma btn-demo">VER DEMO →</a>
+                         <a href="https://mpago.la/1SrtN5r" target="_blank" class="btn-arma btn-pago">PAGAR $4,999 CON MERCADO PAGO →</a>
+                         <p class="texto-abono">Se abona el 50% para empezar a trabajar en tu proyecto y evitar cancelaciones, el resto se liquida al entregar el proyecto funcionando en línea.</p>
+                     </div>
+                 </div>
+             </div>
         </section>
         <section class="quiz" id="quiz">
             <div class="quiz-contenedor">
@@ -410,15 +302,6 @@
                             <a href="https://www.tiktok.com/@milocalito24.7?_r=1&_t=ZS-98t8kk76ior" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
                         </div>
                         <p class="footer-small">Trabajo remoto - Todo México</p>
-                    </div>
-                    <div class="footer-col">
-                        <h4>ELIGE TU SISTEMA</h4>
-                        <a href="./landing/"><i class="fa-solid fa-bullseye"></i> Landing $3,999</a>
-                        <a href="./express/"><i class="fa-solid fa-bolt"></i> Xpress $3,999</a>
-                        <a href="./agenda/"><i class="fa-solid fa-calendar-check"></i> Agenda $6,999</a>
-                        <a href="./pro/"><i class="fa-solid fa-rocket"></i> Pro $6,999</a>
-                        <a href="./custom/"><i class="fa-solid fa-plug"></i> Custom $9,999</a>
-                        <a href="./elite/"><i class="fa-solid fa-crown"></i> Élite $9,999</a>
                     </div>
                     <div class="footer-col">
                         <h4>¡HABLEMOS!</h4>

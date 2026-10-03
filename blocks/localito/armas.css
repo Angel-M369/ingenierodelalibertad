@@ -1,431 +1,120 @@
-/* ========== GRID Y CARDS BASE ========== */
+/* ========== GRID Y CARDS BASE - NUEVA VERSIÓN SOLO IMAGEN ========== */
 .grid-armas {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin-top: 50px;
-    align-items: stretch;
+    align-items: start;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
-
 @media (min-width: 1200px) {
-    .grid-armas {
-        grid-template-columns: repeat(3, 1fr);
-    }
+    .grid-armas { grid-template-columns: repeat(3, 1fr); }
 }
+.armas, .armas-servicios { padding: 80px 20px; background: var(--bg-main, #070D1F); }
+.armas-title { text-align: center; font-size: 2rem; font-weight: 900; margin-bottom: 10px; color:#fff; }
+.section-subtitle { text-align: center; color: var(--text-sec, #A0B4D0); margin-bottom: 40px; font-size: 1.1rem; }
 
+/* CARD BASE */
 .arma-card {
-    background: var(--bg-card);
-    border-radius: 16px;
-    padding: 24px;
+    background: #0B132E;
+    border-radius: 20px;
+    padding: 16px;
     position: relative;
     transition: all 0.3s ease;
-    border: 2px solid transparent;
+    border: 2px solid rgba(255,255,255,.08);
     display: flex;
     flex-direction: column;
     height: 100%;
 }
+.arma-card:hover { transform: translateY(-8px); }
+.arma-card.destacada { transform: scale(1) !important; }
+.arma-card.destacada:hover { transform: translateY(-8px) !important; }
 
-.arma-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+/* IMAGEN CON BORDE */
+.arma-img-wrap {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 2px solid rgba(255,255,255,.15);
+    margin-bottom: 18px;
+    background: #070D1F;
+    box-shadow: inset 0 0 20px rgba(0,0,0,.5);
 }
+.arma-img-wrap img { width: 100%; height: auto; display: block; }
 
-.armas-title {
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 900;
-    margin-bottom: 10px;
-}
-
-/* TODAS MISMO TAMAÑO - QUITAMOS EL SCALE DE DESTACADAS */
-.arma-card.destacada,
-.arma-card.pro.destacada,
-.arma-card.agenda.destacada,
-.arma-card.dueno.destacada {
-    transform: scale(1) !important;
-}
-.arma-card.destacada:hover,
-.arma-card.pro.destacada:hover,
-.arma-card.agenda.destacada:hover,
-.arma-card.dueno.destacada:hover {
-    transform: translateY(-8px) !important;
-}
-
-/* ========== COLORES FINALES - PALETA DE TUS 6 IMAGENES ========== */
-
-/* NIVEL 1 VENTA LOCAL - ROJO NEON #FF1A1A - XPRESS */
-.arma-card.express { border-color: #FF1A1A; }
-.arma-card.express:hover { box-shadow: 0 15px 40px rgba(255, 26, 26, 0.4); }
-.arma-card.express .precio,
-.arma-card.express .arma-visual i,
-.arma-card.express .tag-express { color: #FF1A1A; }
-.arma-card.express .tag-express {
-    background: rgba(255, 26, 26, 0.15);
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-.arma-card.express .arma-ideal {
-    background: rgba(255, 26, 26, 0.1);
-    border-left: 3px solid #FF1A1A;
-}
-
-/* NIVEL 2 VENTA NACIONAL - NARANJA NEON #FF6A00 - PRO */
-.arma-card.pro { border-color: #FF6A00; }
-.arma-card.pro:hover { box-shadow: 0 15px 40px rgba(255, 106, 0, 0.4); }
-.arma-card.pro .precio,
-.arma-card.pro .arma-visual i,
-.arma-card.pro .tag-pro { color: #FF6A00; }
-.arma-card.pro .tag-pro {
-    background: rgba(255, 106, 0, 0.15);
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-.arma-card.pro .arma-ideal {
-    background: rgba(255, 106, 0, 0.1);
-    border-left: 3px solid #FF6A00;
-}
-.arma-card.pro .badge { background: #FF6A00; }
-
-/* NIVEL 3 VENTA TOTAL - AMARILLO NEON #FFD500 - CUSTOM */
-.arma-card.custom { border-color: #FFD500; }
-.arma-card.custom:hover { box-shadow: 0 15px 40px rgba(255, 213, 0, 0.4); }
-.arma-card.custom .precio,
-.arma-card.custom .arma-visual i,
-.arma-card.custom .tag-custom { color: #FFD500; }
-.arma-card.custom .tag-custom {
-    background: rgba(255, 213, 0, 0.15);
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-.arma-card.custom .arma-ideal {
-    background: rgba(255, 213, 0, 0.1);
-    border-left: 3px solid #FFD500;
-}
-
-/* SERVICIOS - LANDING VERDE NEON #00FF66 */
-.arma-card.landing { border-color: #00FF66; }
-.arma-card.landing:hover { box-shadow: 0 15px 40px rgba(0, 255, 102, 0.4); }
-.arma-card.landing .precio,
-.arma-card.landing .arma-visual i,
-.arma-card.landing .tag-landing { color: #00FF66; }
-.arma-card.landing .tag-landing {
-    background: rgba(0, 255, 102, 0.15);
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-.arma-card.landing .arma-ideal {
-    background: rgba(0, 255, 102, 0.1);
-    border-left: 3px solid #00FF66;
-}
-
-/* SERVICIOS - AGENDA AZUL NEON #0096FF */
-.arma-card.agenda { border-color: #0096FF; }
-.arma-card.agenda:hover { box-shadow: 0 15px 40px rgba(0, 150, 255, 0.4); }
-.arma-card.agenda .precio,
-.arma-card.agenda .arma-visual i,
-.arma-card.agenda .tag-agenda { color: #0096FF; }
-.arma-card.agenda .tag-agenda {
-    background: rgba(0, 150, 255, 0.15);
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-.arma-card.agenda .arma-ideal {
-    background: rgba(0, 150, 255, 0.1);
-    border-left: 3px solid #0096FF;
-}
-.arma-card.agenda .badge { background: #0096FF; }
-
-/* SERVICIOS - ELITE VIOLETA NEON #9D00FF */
-.arma-card.dueno { border-color: #9D00FF; }
-.arma-card.dueno:hover { box-shadow: 0 15px 40px rgba(157, 0, 255, 0.4); }
-.arma-card.dueno .precio,
-.arma-card.dueno .arma-visual i,
-.arma-card.dueno .tag-dueno { color: #9D00FF; }
-.arma-card.dueno .tag-dueno {
-    background: rgba(157, 0, 255, 0.15);
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-.arma-card.dueno .arma-ideal {
-    background: rgba(157, 0, 255, 0.1);
-    border-left: 3px solid #9D00FF;
-}
-.arma-card.dueno .badge { background: #9D00FF; }
-
-/* ========== RECUADRO INTERNO RESUELVE - MISMO TAMAÑO + COLOR PROPIO - LAS 6 CARDS ========== */
-.arma-visual {
-    text-align: center;
-    padding: 20px 12px;
-    margin-bottom: 20px;
-    border-radius: 12px;
-    min-height: 165px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid transparent;
-}
-.arma-visual i {
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
-.arma-visual p {
-    font-weight: 800;
-    font-size: 14px;
-    letter-spacing: 1px;
-    line-height: 1.3;
-}
-
-/* Rojo - XPRESS */
-.arma-card.express .arma-visual {
-    border-color: #FF1A1A !important;
-    background: rgba(255, 26, 26, 0.08) !important;
-    box-shadow: 0 0 15px rgba(255, 26, 26, 0.15) !important;
-}
-/* Naranja - PRO */
-.arma-card.pro .arma-visual {
-    border-color: #FF6A00 !important;
-    background: rgba(255, 106, 0, 0.08) !important;
-    box-shadow: 0 0 15px rgba(255, 106, 0, 0.15) !important;
-}
-/* Amarillo - CUSTOM */
-.arma-card.custom .arma-visual {
-    border-color: #FFD500 !important;
-    background: rgba(255, 213, 0, 0.08) !important;
-    box-shadow: 0 0 15px rgba(255, 213, 0, 0.15) !important;
-}
-/* Verde - LANDING */
-.arma-card.landing .arma-visual {
-    border-color: #00FF66 !important;
-    background: rgba(0, 255, 102, 0.08) !important;
-    box-shadow: 0 0 15px rgba(0, 255, 102, 0.15) !important;
-}
-/* Azul - AGENDA */
-.arma-card.agenda .arma-visual {
-    border-color: #0096FF !important;
-    background: rgba(0, 150, 255, 0.08) !important;
-    box-shadow: 0 0 15px rgba(0, 150, 255, 0.15) !important;
-}
-/* Violeta - ELITE - FIX DEFINITIVO AMARILLO */
-.arma-card.dueno .arma-visual,
-.arma-card.dueno.custom .arma-visual,
-.arma-card.dueno.destacada .arma-visual {
-    border-color: #9D00FF !important;
-    background: rgba(157, 0, 255, 0.08) !important;
-    box-shadow: 0 0 15px rgba(157, 0, 255, 0.15) !important;
-}
-.arma-card.dueno,
-.arma-card.dueno.custom,
-.arma-card.dueno.destacada,
-.arma-card.dueno.custom.destacada {
-    border-color: #9D00FF !important;
-}
-
-.armas-servicios {
-    background: var(--bg-main);
-    padding: 80px 20px;
-}
-.armas-servicios .armas-title { color: var(--accent); }
-
-.arma-header {
-    text-align: center;
-    margin-bottom: 20px;
-}
-.arma-header h3 {
-    font-size: 1.3rem;
-    font-weight: 900;
-    margin: 10px 0;
-}
-.precio {
-    font-size: 2.2rem;
-    font-weight: 900;
-    margin: 5px 0;
-    white-space: nowrap;
-    line-height: 1.1;
-    letter-spacing: -1px;
-}
-.iva { 
-    display: block; 
-    font-size: 12px; 
-    opacity: 0.7; 
-    margin-top: 5px;
-    margin-bottom: 15px;
-    white-space: nowrap;
-}
-.arma-desc {
-    display: block;
-    font-size: 13px;
-    opacity: 0.9;
-    margin-top: 8px;
-    font-weight: 400;
-    color: var(--text-sec);
-}
-.arma-features {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
-    flex-grow: 1;
-}
-.arma-features li {
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    font-size: 15px;
-}
-.arma-features li:before {
-    content: "✓ ";
-    color: var(--accent);
-    font-weight: 900;
-    margin-right: 8px;
-}
-.arma-ideal {
-    padding: 12px;
-    border-radius: 8px;
-    margin: 20px 0;
-    font-size: 14px;
-}
+/* BOTONES ESTÉTICOS */
+.btn-stack { display: flex; flex-direction: column; gap: 12px; margin-top: auto; }
 .btn-arma {
-    display: block;
-    width: 100%;
-    padding: 15px;
-    text-align: center;
-    border-radius: 8px;
-    font-weight: 800;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    margin-top: auto;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    display: block; width: 100%; padding: 14px 18px; text-align: center;
+    border-radius: 50px; font-weight: 800; text-decoration: none;
+    transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; font-size: .95rem;
 }
-.btn-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: auto;
-}
-.section-subtitle {
-    text-align: center;
-    color: var(--text-sec);
-    margin-bottom: 40px;
-    font-size: 1.1rem;
+.texto-abono {
+    font-family: 'Montserrat', sans-serif; font-size: .8rem; color: #8A9BB8;
+    line-height: 1.45; text-align: center; margin-top: 8px; padding: 0 6px;
 }
 
-/* BOTONES */
-.arma-card .btn-arma {
-    background: transparent !important;
-    font-weight: 900 !important;
-}
-.arma-card.express .btn-express { border: 2px solid #FF1A1A !important; color: #FF1A1A !important; }
-.arma-card.pro .btn-pro { border: 2px solid #FF6A00 !important; color: #FF6A00 !important; }
-.arma-card.custom .btn-custom { border: 2px solid #FFD500 !important; color: #FFD500 !important; }
-.arma-card.landing .btn-landing { border: 2px solid #00FF66 !important; color: #00FF66 !important; }
-.arma-card.agenda .btn-agenda { border: 2px solid #0096FF !important; color: #0096FF !important; }
-.arma-card.dueno .btn-dueno { border: 2px solid #9D00FF !important; color: #9D00FF !important; }
+/* ========== COLORES NEÓN POR SISTEMA - BORDE IMAGEN + BOTONES ========== */
 
-.arma-card.express .btn-express:hover { background: #FF1A1A !important; color: #fff !important; transform: translateY(-2px); box-shadow: 0 5px 20px rgba(255,26,26,0.6) !important; }
-.arma-card.pro .btn-pro:hover { background: #FF6A00 !important; color: #fff !important; transform: translateY(-2px); box-shadow: 0 5px 20px rgba(255,106,0,0.6) !important; }
-.arma-card.custom .btn-custom:hover { background: #FFD500 !important; color: #000 !important; transform: translateY(-2px); box-shadow: 0 5px 20px rgba(255,213,0,0.6) !important; }
-.arma-card.landing .btn-landing:hover { background: #00FF66 !important; color: #000 !important; transform: translateY(-2px); box-shadow: 0 5px 20px rgba(0,255,102,0.6) !important; }
-.arma-card.agenda .btn-agenda:hover { background: #0096FF !important; color: #fff !important; transform: translateY(-2px); box-shadow: 0 5px 20px rgba(0,150,255,0.6) !important; }
-.arma-card.dueno .btn-dueno:hover { background: #9D00FF !important; color: #fff !important; transform: translateY(-2px); box-shadow: 0 5px 20px rgba(157,0,255,0.6) !important; }
+/* XPRESS - ROJO #FF1A1A - $1,999 */
+.arma-card#plan-express { border-color: #FF1A1A; }
+.arma-card#plan-express:hover { box-shadow: 0 15px 40px rgba(255, 26, 26, 0.4); }
+.arma-card#plan-express .arma-img-wrap { border-color: #FF1A1A; box-shadow: 0 0 18px rgba(255,26,26,.25) inset; }
+.arma-card#plan-express .btn-demo { border: 2px solid #FF1A1A !important; color: #FF1A1A !important; background: transparent; }
+.arma-card#plan-express .btn-demo:hover { background: #FF1A1A !important; color: #fff !important; box-shadow: 0 5px 20px rgba(255,26,26,.6); }
+.arma-card#plan-express .btn-pago { background: #FF1A1A !important; color: #fff !important; border: 2px solid #FF1A1A !important; box-shadow: 0 8px 20px rgba(255,26,26,.4); }
 
-/* MOBILE COMPACTO */
+/* PRO - NARANJA #FF6A00 - $3,499 */
+.arma-card#plan-pro { border-color: #FF6A00; }
+.arma-card#plan-pro:hover { box-shadow: 0 15px 40px rgba(255, 106, 0, 0.4); }
+.arma-card#plan-pro .arma-img-wrap { border-color: #FF6A00; box-shadow: 0 0 18px rgba(255,106,0,.25) inset; }
+.arma-card#plan-pro .btn-demo { border: 2px solid #FF6A00 !important; color: #FF6A00 !important; background: transparent; }
+.arma-card#plan-pro .btn-demo:hover { background: #FF6A00 !important; color: #fff !important; }
+.arma-card#plan-pro .btn-pago { background: #FF6A00 !important; color: #fff !important; border: 2px solid #FF6A00 !important; }
+
+/* CUSTOM - AMARILLO #FFD500 - $4,999 */
+.arma-card#plan-custom { border-color: #FFD500; }
+.arma-card#plan-custom:hover { box-shadow: 0 15px 40px rgba(255, 213, 0, 0.4); }
+.arma-card#plan-custom .arma-img-wrap { border-color: #FFD500; }
+.arma-card#plan-custom .btn-demo { border: 2px solid #FFD500 !important; color: #FFD500 !important; background: transparent; }
+.arma-card#plan-custom .btn-demo:hover { background: #FFD500 !important; color: #000 !important; }
+.arma-card#plan-custom .btn-pago { background: #FFD500 !important; color: #000 !important; border: 2px solid #FFD500 !important; }
+
+/* LANDING - VERDE #00FF66 - $1,999 */
+.arma-card#plan-landing { border-color: #00FF66; }
+.arma-card#plan-landing .arma-img-wrap { border-color: #00FF66; }
+.arma-card#plan-landing .btn-demo { border: 2px solid #00FF66 !important; color: #00FF66 !important; }
+.arma-card#plan-landing .btn-demo:hover { background: #00FF66 !important; color: #000 !important; }
+.arma-card#plan-landing .btn-pago { background: #00FF66 !important; color: #000 !important; border: 2px solid #00FF66 !important; }
+
+/* AGENDA - AZUL #0096FF - $3,499 */
+.arma-card#plan-agenda { border-color: #0096FF; }
+.arma-card#plan-agenda .arma-img-wrap { border-color: #0096FF; }
+.arma-card#plan-agenda .btn-demo { border: 2px solid #0096FF !important; color: #0096FF !important; }
+.arma-card#plan-agenda .btn-demo:hover { background: #0096FF !important; color: #fff !important; }
+.arma-card#plan-agenda .btn-pago { background: #0096FF !important; color: #fff !important; border: 2px solid #0096FF !important; }
+
+/* ELITE - VIOLETA #9D00FF - $4,999 */
+.arma-card#plan-elite { border-color: #9D00FF; }
+.arma-card#plan-elite .arma-img-wrap { border-color: #9D00FF; }
+.arma-card#plan-elite .btn-demo { border: 2px solid #9D00FF !important; color: #9D00FF !important; }
+.arma-card#plan-elite .btn-demo:hover { background: #9D00FF !important; color: #fff !important; }
+.arma-card#plan-elite .btn-pago { background: #9D00FF !important; color: #fff !important; border: 2px solid #9D00FF !important; }
+
+/* BADGE OCULTO EN ESTA VERSIÓN - YA ESTÁ EN LA IMAGEN */
+.badge { display: none; }
+
+/* LIMPIEZA - YA NO USAMOS ESTOS */
+.arma-header, .arma-visual, .arma-features, .arma-ideal, .precio, .iva, .tag-express, .tag-pro, .tag-custom, .tag-landing, .tag-agenda, .tag-dueno { display: none !important; }
+
+/* MOBILE */
 @media (max-width: 768px) {
-    .grid-armas{
-        grid-template-columns: 1fr !important;
-        gap: 16px !important;
-        margin-top: 24px !important;
-    }
+    .grid-armas{ grid-template-columns: 1fr !important; gap: 16px !important; margin-top: 24px !important; }
     .armas, .armas-servicios{ padding: 28px 12px !important; }
     .armas-title{ font-size: 1.25rem !important; }
     .section-subtitle{ font-size: .9rem !important; margin-bottom: 18px !important; }
-    .arma-card{
-        padding: 14px 12px !important;
-        border-radius: 14px !important;
-    }
-    .arma-header{ margin-bottom: 10px !important; }
-    .arma-header h3{ font-size: 1.05rem !important; margin: 6px 0 2px !important; }
-    .precio { font-size: 1.5rem !important; margin: 2px 0 !important; letter-spacing: -0.5px !important; }
-    .iva{ font-size: 10px !important; margin-bottom: 8px !important; }
-    .arma-visual{
-        padding: 10px 0 !important;
-        margin-bottom: 10px !important;
-        min-height: 110px !important;
-    }
-    .arma-visual i{ font-size: 1.6rem !important; margin-bottom: 4px !important; }
-    .arma-visual p{ font-size: 11px !important; line-height: 1.2 !important; }
-    .arma-desc{ font-size: 11px !important; margin-top: 4px !important; }
-    .arma-features{ margin: 8px 0 !important; }
-    .arma-features li{
-        font-size: 12.5px !important;
-        padding: 6px 0 !important;
-        line-height: 1.3 !important;
-    }
-    .arma-ideal{
-        font-size: 11.5px !important;
-        padding: 8px 10px !important;
-        margin: 10px 0 !important;
-        line-height: 1.35 !important;
-    }
-    .btn-stack{ gap: 8px !important; }
-    .btn-arma{
-        padding: 10px 10px !important;
-        font-size: 11px !important;
-        border-radius: 10px !important;
-        letter-spacing: .5px !important;
-    }
-    .badge{ font-size: 9px !important; padding: 4px 10px !important; top: -8px !important; right: 12px !important; }
-}
-
-.badge {
-    position: absolute;
-    top: -12px;
-    right: 20px;
-    color: white;
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-
-/* ========== FIX COLORES REALES - SOBRESCRIBE LIST-GREEN/BLUE/PINK ========== */
-
-/* XPRESS - $3,999 - ROJO - lo verde debe ser rojo */
-.arma-card.express .list-green {
-  color: #FF1A1A !important;
-}
-
-/* PRO - $6,999 - NARANJA - lo azul debe ser naranja */
-.arma-card.pro .list-blue {
-  color: #FF6A00 !important;
-}
-
-/* ELITE - $9,999 - VIOLETA - lo rosa debe ser violeta */
-.arma-card.dueno .list-pink {
-  color: #9D00FF !important;
-}
-
-/* Por si tienen <br> adentro, forzamos todo lo de adentro también */
-.arma-card.express .list-green *,
-.arma-card.pro .list-blue *,
-.arma-card.dueno .list-pink * {
-  color: inherit !important;
+    .arma-card{ padding: 14px 12px !important; border-radius: 14px !important; }
+    .btn-arma{ padding: 12px 14px !important; font-size: 12px !important; }
+    .texto-abono{ font-size: .75rem !important; }
 }

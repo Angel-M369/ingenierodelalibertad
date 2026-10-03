@@ -1,60 +1,95 @@
 /* ===== HISTORIA - MOBILE FIRST ===== */
 .historia {
-    border-top: 1px solid #262626; /* ANTES: #222 */
+    border-top: 1px solid #262626;
     text-align: center;
-    padding: 50px 0; /* Agregué padding pa que respire */
+    padding: 15px 0 40px 0;
+    background: #0a0a0a;
+    overflow: hidden;
+    margin-top: 0;
 }
 
 .historia h2 {
-    font-size: 1.4rem;
-    margin-bottom: 25px;
-    color: var(--text); /* ANTES: heredaba */
+    font-size: 1.35rem;
+    margin-bottom: 8px;
+    color: #fff;
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
+    line-height: 1.15;
+    text-transform: uppercase;
+}
+
+.historia h2 span{
+    color: #048a25;
+}
+
+/* SUBTÍTULO TIPO COPY - letra diferente */
+.sub-copy{
+    font-family: 'Caveat', cursive;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    font-style: italic;
+    margin-bottom: 18px;
+    letter-spacing: 0.5px;
+    transform: rotate(-1.5deg);
+    opacity: 0.95;
+    line-height: 1.3;
 }
 
 .historia p {
-    font-size: 0.95rem;
-    margin-bottom: 18px;
-    color: var(--text-sec); /* ANTES: #CCCCCC */
-    line-height: 1.7; /* ANTES: heredaba - Mejor lectura */
+    font-size: 0.9rem;
+    margin-bottom: 14px;
+    color: var(--text-sec);
+    line-height: 1.6;
+    padding: 0 16px;
 }
 
-.historia .btn {
-    margin: 25px auto 0 auto;
+/* BOTÓN - VERDE #048a25 + ENTRA POR ABAJO REBOTANDO */
+.historia .btn-conocelas {
+    margin: 18px auto 0 auto;
+    display: inline-block;
+    padding: 15px 32px;
+    background: #048a25 !important;
+    border: 2px solid #048a25 !important;
+    color: #000 !important;
+    font-weight: 900;
+    font-size: 0.9rem;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 0 25px rgba(4,138,37,0.5);
+    opacity: 0;
+    transform: translateY(100px);
+    animation: reboteAbajoBtn 0.8s 0.5s forwards, reboteInfinitoBtn 1.6s 1.3s infinite;
+}
+
+.historia .btn-conocelas:hover{
+    background: #000 !important;
+    border-color: #fff !important;
+    color: #fff !important;
+}
+
+@keyframes reboteAbajoBtn{
+    0%{transform:translateY(100px);opacity:0}
+    60%{transform:translateY(-12px);opacity:1}
+    100%{transform:translateY(0);opacity:1}
+}
+@keyframes reboteInfinitoBtn{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-8px)}
 }
 
 /* TABLET */
 @media (min-width: 768px) {
-    .historia {
-        padding: 70px 0;
-    }
-    
-    .historia h2 {
-        font-size: 2rem;
-        margin-bottom: 30px;
-    }
-    
-    .historia p {
-        font-size: 1rem;
-        max-width: 700px;
-        margin: 0 auto 20px auto;
-    }
+    .historia { padding: 25px 0 60px 0; }
+    .historia h2 { font-size: 1.9rem; margin-bottom: 10px; }
+    .sub-copy{ font-size: 1.5rem; margin-bottom: 22px; }
+    .historia p { font-size: 0.95rem; max-width: 680px; margin: 0 auto 16px auto; padding: 0; }
 }
 
 /* DESKTOP */
 @media (min-width: 1024px) {
-    .historia {
-        padding: 90px 0;
-    }
-    
-    .historia h2 {
-        font-size: 2.5rem;
-        margin-bottom: 35px;
-    }
-    
-    .historia p {
-        font-size: 1.1rem;
-        max-width: 800px;
-    }
+    .historia { padding: 30px 0 80px 0; min-height: 50vh; }
+    .historia h2 { font-size: 2.4rem; }
+    .sub-copy{ font-size: 1.7rem; }
+    .historia p { font-size: 1.05rem; max-width: 760px; }
 }

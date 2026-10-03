@@ -1,8 +1,75 @@
-@import url("../../blocks/localito/stores/custom-reset.css");
-@import url("../../blocks/localito/stores/custom-ticker.css");
-@import url("../../blocks/localito/stores/custom-header.css");
-@import url("../../blocks/localito/stores/custom-hero.css");
-@import url("../../blocks/localito/stores/custom-calcu.css");
-@import url("../../blocks/localito/stores/custom-testi.css");
-@import url("../../blocks/localito/stores/custom-filtros.css");
-@import url("../../blocks/localito/stores/custom-footer.css");
+:root{ --main:#FFD500; --bg:#0a0a0f; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:#fff;font-family:'Inter',sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:20px}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.logo{font-weight:900;text-decoration:none;color:#fff;font-size:1.1rem}
+.logo span{color:var(--main)}
+.back{color:#888;text-decoration:none;font-size:13px}
+
+/* CARD CUSTOM AMARILLO NEON - COMPACTA */
+.hero-card.custom{
+  position:relative;
+  background: radial-gradient(ellipse at center, rgba(255,213,0,0.16) 0%, #17160f 60%);
+  border:2px solid var(--main);
+  border-radius:14px;
+  padding:18px 16px 14px;
+  box-shadow:0 0 25px rgba(255,213,0,0.4), inset 0 0 20px rgba(255,213,0,0.08);
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% calc(100% - 14px), calc(100% - 14px) 100%, 14px 100%, 0 calc(100% - 14px), 0 14px);
+  max-width: 420px;
+  margin: 0 auto;
+}
+.hero-card.custom::before{
+  content:"";position:absolute;inset:0;
+  background: linear-gradient(90deg, transparent 98%, rgba(255,213,0,0.1) 100%), linear-gradient(transparent 98%, rgba(255,213,0,0.1) 100%);
+  background-size:24px 24px;opacity:0.3;pointer-events:none;
+}
+.pill-top{text-align:center;margin-bottom:10px}
+.pill-top span{
+  border:1px solid var(--main);background:rgba(255,213,0,0.18);color:#000;
+  padding:3px 12px;border-radius:20px;font-size:9px;font-weight:900;letter-spacing:1px;
+}
+.hero-card h1{text-align:center;font-size:1.25rem;font-weight:900;color:#fff;line-height:0.9;letter-spacing:-0.5px;text-transform:uppercase}
+.hero-card h1 b{display:block;font-size:1.8rem;margin-top:3px;color:var(--main);text-shadow:0 0 12px rgba(255,213,0,0.7)}
+.meta{text-align:center;color:#aaa;font-size:11px;margin:5px 0 10px;font-weight:800;letter-spacing:0.3px}
+.resuelve{text-align:center;margin:8px 0;border-top:1px solid rgba(255,213,0,0.25);border-bottom:1px solid rgba(255,213,0,0.25);padding:8px 0}
+.resuelve b{font-size:11px;letter-spacing:0.5px;color:#fff}
+.resuelve b span{color:var(--main)}
+.resuelve p{color:#888;font-size:10px;margin-top:2px}
+.list{list-style:none;margin:10px 0;display:flex;flex-direction:column;gap:6px}
+.list li{display:flex;gap:8px;font-size:11px;line-height:1.3}
+.list li i{color:var(--main);margin-top:1px;font-size:11px;min-width:14px}
+.list li.alert i{color:#ffae00}
+.list li strong{display:inline;color:#fff;margin-right:3px}
+.list li span{color:#bbb}
+.box-perfect{background:rgba(0,0,0,0.4);border:1px solid rgba(255,213,0,0.25);border-radius:8px;padding:8px 10px;margin-top:10px}
+.box-perfect .flag{color:var(--main);font-size:10px;margin-bottom:6px;font-weight:800}
+.perfect-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.perfect-grid div{font-size:9px;color:#ccc;display:flex;align-items:center;gap:5px;line-height:1.2}
+.perfect-grid div span{background:var(--main);color:#000;width:16px;height:16px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:900;font-size:9px;flex-shrink:0}
+.card-footer{text-align:center;margin-top:10px;border:1px solid rgba(255,213,0,0.35);border-radius:20px;padding:4px 6px;font-size:6.5px;letter-spacing:0.8px;color:var(--main);font-weight:800;background:rgba(255,213,0,0.1)}
+
+.demos-title{text-align:center;margin:30px 0 18px}
+.demos-title h2{font-size:1.1rem;font-weight:900}
+.demos-title p{color:#777;font-size:11px;margin-top:4px}
+
+.grid{display:grid;gap:14px;justify-content:center;justify-items:center;max-width:1200px;margin:0 auto}
+.card-demo{background:#15151f;border-radius:10px;overflow:hidden;text-decoration:none;color:#fff;border:1px solid rgba(255,255,255,0.08);transition:0.3s;display:flex;flex-direction:column;width:100%}
+.card-demo:hover{transform:translateY(-3px);border-color:var(--main);box-shadow:0 8px 20px rgba(255,213,0,0.25)}
+.preview img{width:100%;height:130px;object-fit:cover}
+.card-content{padding:10px 12px;flex-grow:1;display:flex;flex-direction:column}
+.card-content h3{font-size:11px;font-weight:800;text-align:left}
+.card-content p{font-size:10px;color:#888;margin:4px 0 8px;text-align:left;flex-grow:1;line-height:1.3}
+
+@media (max-width: 600px){ .grid{grid-template-columns: 1fr;max-width: 320px;} }
+@media (min-width: 601px) and (max-width: 1023px){ .grid{grid-template-columns: repeat(2, 1fr);max-width: 620px;} }
+@media (min-width: 1024px){ .grid{grid-template-columns: repeat(3, 1fr);} .wrap{max-width:1200px} }
+
+.btn{
+  padding:7px 16px;border-radius:20px;font-size:9px;font-weight:900;display:block !important;margin:8px auto 0 auto !important;width:fit-content;letter-spacing:0.5px;text-transform:uppercase;transition:0.3s;text-align:center;
+  background:#ff33ee !important;color:#000 !important;box-shadow:0 0 10px rgba(226, 20, 209, 0.4) !important;
+}
+.btn:hover{background:#d130c4 !important;transform:translateY(-1px);box-shadow:0 4px 15px rgba(226, 33, 200, 0.6) !important;}
+
+.footer{text-align:center;color:#555;font-size:10px;margin:30px 0}
+.footer a{color:var(--main);text-decoration:none}

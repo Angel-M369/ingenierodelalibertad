@@ -1,131 +1,128 @@
-/* ===== ARMAS - MOBILE FIRST ===== */
-.armas {
-    border-top: 1px solid #262626;
-    padding: 50px 0;
-}
-
-.armas h2 {
-    font-size: 1.4rem;
+/* ===== ARMAS - FONDO GRIS, CARDS VERDES - COMPACTO Y SUBIDO ===== */
+#armas.armas{
+    background: #121212 !important;
+    padding: 5px 0 30px 0 !important;
+    margin-top: -15px !important;
     text-align: center;
-    margin-bottom: 30px;
-    color: var(--text);
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
-}
-
-.grid-armas {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-}
-
-.arma-card {
-    background: var(--bg-card);
-    padding: 25px 18px;
-    border: 1px solid #262626;
-    border-radius: 10px;
-    text-align: center;
-    transition: all 0.3s ease;
-}
-
-.arma-card.destacada {
-    border: 2px solid #ff2e63;
+    overflow: hidden;
+    border-top: none !important;
     position: relative;
-    background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
 }
 
-.arma-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.1);
+#armas h2{
+    font-size: 1.15rem !important;
+    color: #fff !important;
+    font-weight: 900 !important;
+    margin-bottom: 50px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    line-height: 1.1 !important;
+    text-transform: uppercase;
 }
 
-.arma-card .icono {
-    font-size: 2.2rem;
-    margin-bottom: 12px;
-    color: var(--accent);
+#armas .grid-armas{
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+    align-items: center !important;
+    margin-top: 0 !important;
 }
 
-.arma-card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 12px;
-    color: var(--accent);
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
+#armas .arma-card{
+    width: 86% !important;
+    max-width: 310px !important;
+    background: #048a25 !important;
+    background: radial-gradient(circle at top, #06b131 0%, #048a25 70%) !important;
+    border: 2px solid #000 !important;
+    border-radius: 18px !important;
+    padding: 8px 8px 14px 8px !important;
+    box-shadow: 0 6px 0 #000, 0 12px 20px rgba(0,0,0,0.4) !important;
+    opacity: 0;
+    transform: translateY(80px);
+    animation: reboteAbajoCard 0.8s forwards;
 }
 
-.chip-vendida {
-    display: inline-block;
-    font-size: 0.65rem;
-    background: #25D366;
-    color: #000;
-    padding: 4px 10px;
-    border-radius: 20px;
-    margin-top: 10px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
+#armas .arma-card:nth-child(1){ animation-delay: 0.2s; }
+#armas .arma-card:nth-child(2){ animation-delay: 0.5s; }
+#armas .arma-card:nth-child(3){ animation-delay: 0.8s; }
+
+#armas .arma-card img{
+    width: 100% !important;
+    border-radius: 12px !important;
+    margin-bottom: 8px !important;
+    border: 2px solid #000 !important;
+    background: #000 !important;
+    display: block;
+}
+
+/* BOTONES NEÓN - AZUL / VIOLETA / AMARILLO - REBOTE INFINITO */
+#armas .arma-card .btn{
+    display: block !important;
+    width: 94% !important;
+    margin: 0 auto !important;
+    padding: 12px 8px !important;
+    font-weight: 900 !important;
+    font-size: 0.78rem !important;
+    border-radius: 50px !important;
+    text-decoration: none !important;
+    border: 2px solid #000 !important;
+    color: #000 !important;
+    opacity: 0;
+    transform: translateY(60px);
+    animation: reboteAbajoBtn 0.7s forwards, reboteInfinitoBtn 1.6s infinite;
+    transition: 0.3s;
     line-height: 1.2;
-    letter-spacing: 0.5px;
 }
 
-.arma-card p {
-    color: var(--text-sec);
-    margin-bottom: 20px;
-    font-size: 0.9rem;
-    line-height: 1.6;
+#armas .arma-card:nth-child(1) .btn{ animation-delay: 0.6s, 1.4s; }
+#armas .arma-card:nth-child(2) .btn{ animation-delay: 0.9s, 1.7s; }
+#armas .arma-card:nth-child(3) .btn{ animation-delay: 1.2s, 2s; }
+
+#armas .btn-milo{
+    background: #00e5ff !important;
+    box-shadow: 0 0 12px #00e5ff, 0 0 28px rgba(0,229,255,0.6) !important;
+}
+#armas .btn-plata{
+    background: #d87cff !important;
+    box-shadow: 0 0 12px #d87cff, 0 0 28px rgba(216,124,255,0.6) !important;
+}
+#armas .btn-power{
+    background: #ffeb3b !important;
+    box-shadow: 0 0 12px #ffeb3b, 0 0 28px rgba(255,235,59,0.7) !important;
+}
+
+#armas .arma-card .btn:hover{
+    background: #000 !important;
+    color: #fff !important;
+    transform: scale(1.05);
+}
+#armas .btn-milo:hover{ color: #00e5ff !important; }
+#armas .btn-plata:hover{ color: #d87cff !important; }
+#armas .btn-power:hover{ color: #ffeb3b !important; }
+
+@keyframes reboteAbajoCard{
+    0%{transform:translateY(80px);opacity:0}
+    60%{transform:translateY(-10px);opacity:1}
+    100%{transform:translateY(0);opacity:1}
+}
+@keyframes reboteAbajoBtn{
+    0%{transform:translateY(60px);opacity:0}
+    60%{transform:translateY(-8px);opacity:1}
+    100%{transform:translateY(0);opacity:1}
+}
+@keyframes reboteInfinitoBtn{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-6px)}
 }
 
 /* TABLET */
-@media (min-width: 768px) {
-    .armas {
-        padding: 70px 0;
-    }
-    
-    .armas h2 {
-        font-size: 2rem;
-        margin-bottom: 40px;
-    }
-    
-    .grid-armas {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-    }
-    
-    .arma-card {
-        padding: 30px 25px;
-    }
-
-    .chip-vendida {
-        font-size: 0.7rem;
-        padding: 5px 12px;
-    }
+@media(min-width:768px){
+    #armas.armas{ padding: 15px 0 50px 0 !important; margin-top: 0 !important; }
+    #armas .grid-armas{ flex-direction: row !important; flex-wrap: wrap !important; justify-content: center !important; gap: 18px !important; }
+    #armas .arma-card{ max-width: 300px !important; }
+    #armas h2{ font-size: 1.8rem !important; }
 }
 
 /* DESKTOP */
-@media (min-width: 1024px) {
-    .armas {
-        padding: 90px 0;
-    }
-    
-    .armas h2 {
-        font-size: 2.5rem;
-        margin-bottom: 50px;
-    }
-    
-    .grid-armas {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
-    }
-    
-    .arma-card {
-        padding: 40px 30px;
-    }
-    
-    .arma-card h3 {
-        font-size: 1.3rem;
-    }
-    
-    .arma-card p {
-        font-size: 1rem;
-    }
+@media(min-width:1024px){
+    #armas h2{ font-size: 2.2rem !important; margin-bottom: 20px !important; }
 }

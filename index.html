@@ -30,6 +30,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     
     <!-- Favicon -->
@@ -69,84 +70,90 @@
         <header class="header">
             <div class="container">
                 <div class="logo">INGENIERO<span>DELA</span>LIBERTAD</div>
-                <a href="https://wa.me/529191467339?text=INGE,%20ya%20me%20harté.%20Agendemos%20llamada." class="btn-header">WHATSAPP</a>
+                <div class="header-right">
+                    <button class="hamburger" id="hamburger" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
             </div>
+            <!-- MENU DESPLEGABLE -->
+            <nav class="nav-menu" id="navMenu">
+                <a href="#inicio" class="nav-link">Inicio</a>
+                <a href="#historia" class="nav-link">Historia</a>
+                <a href="#armas" class="nav-link">La fuente</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+                <div class="nav-footer">
+                    <a href="https://wa.me/529191467339" class="btn-nav-wa">
+                        <i class="fab fa-whatsapp"></i> Hablar ahora
+                    </a>
+                </div>
+            </nav>
+            <div class="nav-overlay" id="navOverlay"></div>
         </header>
-
         <main>
-            <section class="hero">
+            <section class="hero" id="hero">
+                <div class="hero-bg"></div>
+                <div class="hero-overlay"></div>
                 <div class="container">
-                    <div class="badge-sistema">⚡ SISTEMA V2.0 | 27 TIENDAS INSTALADAS | ENTREGA 72HRS</div>
-                    <h1>EL SISTEMA TE QUIERE EMPLEADO.<br>YO TE ENSEÑO A FACTURAR TU LIBERTAD.</h1>
-                    <p class="subtitulo">Armo tiendas online para personas que ya se hartaron de regalar su tiempo. Sin jefes. Sin pedir permiso.</p>
-                    <p class="subtitulo">Desde donde caiga el wifi, porque la libertad no conoce código postal</p>
+                    <h1 class="titulo-principal">
+                        <span class="titulo-blanco">EL SISTEMA TE QUIERE EMPLEADO.</span><br>
+                        <span class="titulo-verde">YO TE ENSEÑO A FACTURAR TU LIBERTAD.</span>
+                    </h1>
+                    <div class="subtitulos-laterales">
+                        <p class="subtitulo sub-izq">
+                            Tu tiempo no se negocia, se factura. Deja de buscar empleo y empieza a construir tu legado.
+                        </p>
+                        <p class="subtitulo sub-der">
+                            Desde donde caiga el wifi, porque la libertad no conoce límites
+                        </p>
+                    </div>
                     <div class="botones-hero">
-                        <a href="/milocalito/" class="btn btn-primario">VER LOS 6 SISTEMAS→</a>
-                        <a href="./milocalito/socios/plataforma.html" class="btn btn-primario">VER LA PLATAFORMA DE AFILIADOS →</a>
-                        <a href="#historia" class="btn btn-secundario">VER CÓMO SALÍ DEL HOYO ↓</a>
+                        <a href="/milocalito/" class="btn btn-primario">IR A MI LOCALITO →</a>
+                        <a href="./milocalito/socios/plataforma.html" class="btn btn-afiliados">VER LA PLATAFORMA DE AFILIADOS →</a>
+                        <a href="#historia" class="btn btn-secundario">¿QUIEN SOY? ↓</a>
                     </div>
                 </div>
             </section>
-
-            <section id="historia" class="historia">
+            <section class="historia" id="historia">
                 <div class="container">
-                    <h2>DE EMPLEADO A DUEÑO: ASÍ NOS EXPRIME EL SISTEMA</h2>
-                    <p>Yo sigo mesereando. 12 horas parado, propinas miserables y mi jefe diciendo <strong>"hay 20 atrás de ti"</strong>.</p>
-                    <p>Cada día entiendo más claro: el sistema está diseñado para que NUNCA seamos libres.<br>Nos quita tiempo, energía y dinero como si ellos se lo hubieran ganado trabajando.</p>
-                    <p><strong>Estar jodidos no es nuestra culpa. Quedarnos ahí, sí. Por eso estoy armando la salida y te enseño cómo. Necesitamos 3 cosas:</strong></p>
-                    <a href="#armas" class="btn btn-primario">DIME LAS 3 ARMAS ↓</a>
+                    <h2><span>DE MESERO A DUEÑO</span></h2>
+                    <h3 class="sub-copy">Un ganador no abandona y si abandona NO ES UN GANADOR</h3>
+                    <p>Yo era mesero, más de 12 horas parado, propinas injustas, jefes prepotentes, desvelos, peligros constantes y escuchando: "hay 20 atrás de ti queriendo tu puesto".</p>
+                    <p>Entendí que nunca iba a ser libre trabajando para el sueño de otro. Así que dejé la charola y me puse a construir lo mío.</p>
+                    <p>Hoy soy dueño de mi propia compañía. Ya no sirvo mesas, ahora ayudo a otros emprendedores a vender más, a dueños de negocios a conectar con más clientes a través de los sistemas de mi portafolio digital y con mi plataforma de afiliados ayudo a otros a recordar la grandeza que llevan por dentro, mientras generamos abundancia ayudando a otros a crecer.</p>
+                    <p>Yo utilicé estas herramientas para tener abundancia económica y tranquilidad mental.</p>
+                    <a href="#armas" class="btn btn-conocelas">Te invito a conocerlas →</a>
                 </div>
             </section>
-
             <section id="armas" class="armas">
                 <div class="container">
-                    <h2>LAS 3 ARMAS PARA SALIR DEL SISTEMA</h2>
+                    <h2>MI FUENTE DE ABUNDANCIA</h2>
                     <div class="grid-armas">
-                        <div class="arma-card destacada">
-                            <div class="icono">⚙️</div>
-                            <h3>ARMA 1: TU NEGOCIO PROPIO<br><span class="chip-vendida">MÁS VENDIDA • $6,999 MXN</span></h3>
-                            <p>Deja de vender tu tiempo por horas. Te instalo tu <strong>SISTEMA que factura 24/7</strong>, no una página bonita. Tienda lista para cobrar con tarjeta, transferencia y MSI en 72hrs. Desde $3,999 MXN.</p>
-                            <a href="/milocalito/" class="btn btn-primario">VER LOS 6 SISTEMAS →</a>
+                        <div class="arma-card card-milo">
+                            <img src="./images/C. milo.png" alt="6 Sistemas">
+                            <a href="/milocalito/" class="btn btn-milo">IR A MI LOCALITO →</a>
                         </div>
-                        <div class="arma-card">
-                            <div class="icono">🤝</div>
-                            <h3>ARMA 2: PLATAFORMA DE SOCIOS Y ALIADOS<br><span class="chip-vendida">DIRECTO 10%/20%/30% + EQUIPO 5%/10%/15%</span></h3>
-                            <p>No solo tengas tu sistema, vende sistemas. Mira cómo Claudia y Tadeo ya lo hacen con su propio link. <strong>Tu vendes, yo cierro e instalo, tú cobras. Ayudando a ayudar.</strong></p>
-                            <a href="/milocalito/socios/index.html" class="btn btn-secundario">VER PLATAFORMA DE SOCIOS →</a>
+                        <div class="arma-card card-plata">
+                            <img src="./images/C. plata.png" alt="Plataforma de Socios">
+                            <a href="/milocalito/socios/index.html" class="btn btn-plata">IR A LA PLATAFORMA DE AFILIADOS →</a>
                         </div>
-                        <div class="arma-card">
-                            <div class="icono">💊</div>
-                            <h3>ARMA 3: FLUJO MIENTRAS DESPEGAS<br><span class="chip-vendida">PRODUCTO QUE SE VENDE SOLO</span></h3>
-                            <p>Mientras tu negocio despega necesitas flujo. Mi tienda PowerGolden de salud y energía. Sistema probado.</p>
-                            <a href="https://powergolden.club/link/page/53371" class="btn btn-secundario" target="_blank">VER MI TIENDA POWERGOLDEN</a>
+                        <div class="arma-card card-power">
+                            <img src="./images/C. power.png" alt="Tienda PowerGolden">
+                            <a href="https://powergolden.club/link/page/53371" class="btn btn-power" target="_blank">VER MI TIENDA POWERGOLDEN</a>
                         </div>
                     </div>
-                </div>
-            </section>
-            
-            <section class="cta-agenda">
-                <div class="container">
-                    <h2>¿AGENDAMOS 15 MIN? TE DIGO CUÁL TE CONVIENE</h2>
-                    <p>Regálame una breve llamada o videollamada y te digo en 15 min cuál de los 6 sistemas es para tu negocio.</p>
-                    <div class="botones-agenda">
-                        <a href="https://calendly.com/ingenierodelalibertad/30min" target="_blank" class="btn-agenda-primario">📅 AGENDAR LLAMADA GRATIS →</a>
-                        <a href="https://wa.me/529191467339?text=INGE,%20quiero%20agendar%20mi%20llamada%20de%2015%20min" target="_blank" class="btn-agenda-secundario">HABLAR POR WHATSAPP</a>
-                    </div>
-                    <p class="garantia-agenda">✓ 15 min ✓ Sin compromiso ✓ Te digo el precio exacto de tu sistema</p>
                 </div>
             </section>
         </main>
-
         <footer class="footer-ingeniero" id="contacto">
             <div class="footer-branding">
-                <div class="contenedor">
-                    <h2 class="marca-titulo">INGENIERO DE LA LIBERTAD</h2>
-                    <p class="marca-subtitulo">factura tu libertad o muere empleado</p>
-                </div>
+                <img src="./images/ingefooter.png" alt="Ingeniero de la Libertad">
             </div>
             <div class="contenedor">
-                <div class="footer-grid">          
-                    <div class="footer-col">
+                <div class="footer-grid">
+                    <div class="footer-col col-sigueme">
                         <h4>SÍGUEME</h4>
                         <div class="redes-ingeniero">
                             <a href="https://facebook.com/ingenierodelalibertad" target="_blank"><i class="fab fa-facebook"></i></a>
@@ -162,7 +169,7 @@
                             <a href="https://www.ingenierodelalibertad.com" target="_blank"><i class="fas fa-globe"></i> IngenieroDeLaLibertad.com</a>
                         </div>
                     </div>
-                    <div class="footer-col">
+                    <div class="footer-col col-hablamos">
                         <h4>¿HABLAMOS?</h4>
                         <a href="mailto:ingenierodelalibertad@gmail.com" class="footer-link"><i class="fas fa-envelope"></i> ingenierodelalibertad@gmail.com</a>
                         <a href="https://wa.me/529191467339?text=Ingeniero%20quiero%20mi%20página%20web" target="_blank" class="btn-footer-wa"><i class="fab fa-whatsapp"></i> Contactar por WhatsApp</a>
@@ -172,13 +179,16 @@
                 <div class="footer-bottom">
                     <p>© 2026 Ingeniero de LA Libertad. Todos los derechos reservados.</p>
                     <p class="footer-legal">
-                        <a href="/privacidad.html">Aviso de privacidad</a> | 
-                        <a href="/terminos.html">Términos y condiciones</a> | 
+                        <a href="/privacidad.html">Aviso de privacidad</a>
+                        <span>|</span>
+                        <a href="/terminos.html">Términos</a>
+                        <span>|</span>
                         <a href="/soporte.html">Soporte</a>
                     </p>
                 </div>
             </div>
         </footer>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

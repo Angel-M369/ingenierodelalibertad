@@ -1,92 +1,110 @@
-/* ===== HERO - MOBILE FIRST ===== */
+/* ===== HERO - FONDO + BUCLE SCROLL ===== */
 .hero {
-    background: var(--bg-main);
+    position:relative;
+    min-height: 100vh;
     text-align: center;
-    padding: 40px 0 30px 0;
+    padding: 80px 0 20px 0;
+    display:flex;align-items:center;justify-content:center;
+    overflow:hidden;
 }
+.hero-bg{
+    position:absolute;inset:0;
+    background: url('../images/Ingeader.png') center/cover no-repeat;
+    z-index:0;
+    transform:scale(1.05);
+    animation: kenBurns 20s infinite alternate;
+}
+.hero-overlay{
+    position:absolute;inset:0;
+    background: rgba(0,0,0,0.75);
+    z-index:1;
+}
+.hero .container{position:relative;z-index:2;}
 
 .badge-sistema {
     display: inline-block;
     background: #111;
-    border: 1px solid #25D366;
+    border: 1px solid #048a25;
     border-radius: 20px;
     padding: 6px 14px;
     margin-bottom: 18px;
-    color: #25D366;
+    color: #048a25;
     font-size: 0.75rem;
     font-weight: 700;
-    line-height: 1.4;
 }
 
-.hero h1 {
-    font-size: 1.35rem;
-    margin-bottom: 15px;
-    padding: 0 10px;
-    color: var(--text);
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
-    line-height: 1.2;
+.hero .titulo-principal{
+    font-size: 1.35rem; margin-bottom: 15px; padding: 0 10px;
+    color: var(--text); font-family: 'Montserrat', sans-serif;
+    font-weight: 900; line-height: 1.2;
 }
 
-.hero .subtitulo {
-    font-size: 0.9rem;
-    color: var(--text-sec);
-    margin-bottom: 25px;
-    padding: 0 15px;
-    line-height: 1.5;
+.hero .titulo-blanco{
+    display:block;
+    color:#fff;
+    opacity:0;
 }
+.hero.animate .titulo-blanco{
+    animation: entraArriba 0.8s 1s forwards;
+}
+
+.hero .titulo-verde{
+    display:block;
+    color: #048a25 !important;
+    opacity:0;
+    text-shadow: 0 0 15px rgba(4,138,37,0.5);
+}
+.hero.animate .titulo-verde{
+    animation: reboteAbajo 0.8s 2s forwards, reboteInfinito 1.5s 2.8s infinite;
+}
+
+.hero .sub-principal{
+    font-size: 0.9rem; color: var(--text-sec);
+    margin-bottom: 15px; padding: 0 15px; line-height: 1.5;
+    opacity:0;
+}
+.sub-izq{transform:translateX(-120%);}
+.sub-der{transform:translateX(120%);}
+.hero.animate .sub-izq{animation: entraIzq 0.8s 3s forwards;}
+.hero.animate .sub-der{animation: entraDer 0.8s 3s forwards;}
 
 .botones-hero {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    padding: 0 15px;
+    display: flex; flex-direction: column; gap: 12px;
+    padding: 0 15px; margin-top:20px; align-items:center;
+}
+.botones-hero .btn{
+    opacity:0; transform:translateY(100px);
+    background: #169736 !important;
+    border: 2px solid #048a25 !important;
+    color: #000 !important;
+    font-weight:900;
+    box-shadow: 0 0 20px rgba(4,138,37,0.4);
+}
+/* FIX - QUITADO EL NEGRO BRUSCO */
+.botones-hero .btn:hover{
+    background: #335840 !important;
+    border-color: #61e291 !important;
+    color: #3e8b5d !important;
+    box-shadow: 0 6px 20px rgba(29, 230, 103, 0.5);
+}
+.hero.animate .botones-hero .btn:nth-child(1){animation: zigzagAbajo 0.7s 4s forwards, zigzagInfinito 1.2s 4.7s infinite;}
+.hero.animate .botones-hero .btn:nth-child(2){animation: zigzagAbajo 0.7s 4.3s forwards, zigzagInfinito 1.2s 5s infinite reverse;}
+.hero.animate .botones-hero .btn:nth-child(3){animation: zigzagAbajo 0.7s 4.6s forwards, zigzagInfinito 1.2s 5.3s infinite;}
+
+.logo span{
+    color: #048a25 !important;
 }
 
-/* TABLET */
+@keyframes kenBurns{from{transform:scale(1.05)}to{transform:scale(1.15)}}
+@keyframes entraArriba{from{transform:translateY(-100px);opacity:0}to{transform:translateY(0);opacity:1}}
+@keyframes reboteAbajo{0%{transform:translateY(100px);opacity:0}60%{transform:translateY(-15px);opacity:1}100%{transform:translateY(0);opacity:1}}
+@keyframes reboteInfinito{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes entraIzq{to{transform:translateX(0);opacity:1}}
+@keyframes entraDer{to{transform:translateX(0);opacity:1}}
+@keyframes zigzagAbajo{0%{transform:translateY(100px) translateX(-30px);opacity:0}100%{transform:translateY(0) translateX(0);opacity:1}}
+@keyframes zigzagInfinito{0%,100%{transform:translateX(0) translateY(0)}25%{transform:translateX(-8px) translateY(-4px)}75%{transform:translateX(8px) translateY(-4px)}}
+
 @media (min-width: 768px) {
-    .hero {
-        padding: 60px 0;
-    }
-
-    .badge-sistema {
-        font-size: 0.85rem;
-        padding: 6px 16px;
-        margin-bottom: 20px;
-    }
-    
-    .hero h1 {
-        font-size: 2.3rem;
-        padding: 0;
-    }
-    
-    .hero .subtitulo {
-        font-size: 1.1rem;
-        max-width: 600px;
-        margin: 0 auto 35px auto;
-        padding: 0;
-    }
-    
-    .botones-hero {
-        flex-direction: row;
-        justify-content: center;
-        padding: 0;
-        gap: 16px;
-    }
-}
-
-/* DESKTOP */
-@media (min-width: 1024px) {
-    .hero {
-        padding: 80px 0;
-    }
-    
-    .hero h1 {
-        font-size: 3rem;
-    }
-    
-    .hero .subtitulo {
-        font-size: 1.2rem;
-        max-width: 700px;
-    }
+    .hero h1{font-size:2.8rem} .botones-hero{flex-direction:row;justify-content:center}
+    .botones-hero .btn{width:auto}
 }

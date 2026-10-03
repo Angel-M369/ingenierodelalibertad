@@ -1,4 +1,4 @@
-/* ===== FOOTER MI LOCALITO - VERDE LIBERTAD ===== */
+/* ===== FOOTER MI LOCALITO - AZUL SÍGUENOS ===== */
 .footer-localito {
     background: var(--bg-main);
     color: var(--text);
@@ -7,12 +7,12 @@
 }
 
 .footer-branding {
-    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+    background: var(--accent);
     padding: 30px 20px;
     text-align: center;
     border-radius: 12px;
     margin: 40px 20px 0;
-    box-shadow: 0 8px 30px rgba(16, 185, 129, 0.3);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
 }
 
 .marca-titulo {
@@ -28,10 +28,11 @@
 
 .marca-subtitulo {
     font-size: 14px;
-    color: #D1FAE5;
+    color: #fff;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 2px;
+    opacity: .9;
 }
 
 .footer-localito .contenedor {
@@ -151,7 +152,7 @@
 .btn-footer-wa {
     display: inline-flex !important;
     align-items: center;
-    background: var(--wa);
+    background: var(--accent) !important;
     color: #fff !important;
     padding: 14px 28px;
     border-radius: 8px;
@@ -162,7 +163,7 @@
 }
 
 .btn-footer-wa:hover {
-    background: var(--wa-hover);
+    filter: brightness(1.15);
     transform: scale(1.05);
 }
 
@@ -318,11 +319,11 @@
 }
 
 .legal-link:hover {
-    color: #00E676;
+    color: var(--accent);
 }
 
 .legal-highlight {
-    color: #00E676 !important;
+    color: var(--accent) !important;
 }
 
 @media (min-width: 768px) {

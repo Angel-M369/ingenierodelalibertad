@@ -1,38 +1,125 @@
-/* ===== HEADER - MOBILE FIRST ===== */
+/* ===== HEADER - MOBILE FIRST + FIXED + HAMBURGUESA ===== */
 .header {
-    background: var(--bg-main); 
-    padding: 12px 0;
-    border-bottom: 1px solid #262626;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    background: rgba(10,10,15,0.92);
+    background: var(--bg-main);
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    z-index: 999;
+    backdrop-filter: blur(12px);
 }
 
 .header .container {
-    padding: 0;
+    padding: 0 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .logo {
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
     font-size: 0.9rem;
-    color: var(--text); 
+    color: var(--text);
+    letter-spacing: -0.5px;
 }
 
 .logo span {
-    color: var(--logo-accent); 
+    color: var(--logo-accent);
+    color: #048a25;
 }
 
-/* TABLET */
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.hamburger{
+    width:26px;height:18px;
+    background:none;border:none;
+    display:flex;flex-direction:column;
+    justify-content:space-between;
+    cursor:pointer;z-index:1001;
+    padding:0;
+}
+.hamburger span{
+    display:block;height:2px;width:100%;
+    background:#fff;border-radius:2px;
+    transition:0.3s;
+}
+.hamburger.active span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+
+.nav-menu{
+    position:fixed;top:0;right:-100%;
+    width:200px;height:40vh;
+    background:#12121a;
+    border-left:2px solid #048a25;
+    padding:70px 18px 20px;
+    display:flex;flex-direction:column;gap:6px;
+    transition:0.35s cubic-bezier(.4,0,.2,1);
+    z-index:1000;
+    box-shadow:-10px 0 30px rgba(0,0,0,0.6);
+}
+.nav-menu.active{right:0}
+
+.nav-link{
+    color:#fff;
+    text-decoration:none;
+    font-family:'Montserrat',sans-serif;
+    font-size:12px;font-weight:800;
+    padding:11px 12px;border-radius:8px;
+    transition:0.25s ease;
+    border:1px solid transparent;
+    letter-spacing:0.5px;
+}
+/* HOVER VERDE SUAVE CLARO - YA SE NOTA */
+.nav-link:hover{
+    background: #335840 !important;
+    color: #052e16 !important;
+    border-color: #86efac !important;
+    transform: translateX(3px);
+}
+
+.nav-overlay{
+    position:fixed;inset:0;
+    background:rgba(0,0,0,0.6);
+    opacity:0;pointer-events:none;
+    transition:0.3s;z-index:998;
+}
+.nav-overlay.active{opacity:1;pointer-events:all}
+
+.nav-footer{
+    margin-top:auto;
+    border-top:1px solid rgba(255,255,255,0.08);
+    padding-top:14px;
+}
+.btn-nav-wa{
+    display:block;text-align:center;
+    background:#00FF66;
+    color:#000;
+    padding:10px;border-radius:20px;
+    font-size:11px;font-weight:900;
+    text-decoration:none;
+    font-family:'Montserrat',sans-serif;
+    transition:0.25s ease;
+    border:1px solid #00FF66;
+}
+.btn-nav-wa:hover{
+    background: #335840 !important;
+    color: #052e16 !important;
+    border-color: #86efac !important;
+}
+
+body{padding-top:50px}
+
 @media (min-width: 768px) {
-    .logo {
-        font-size: 1.2rem;
-    }
-    
-    .header {
-        padding: 16px 0; /* Un poquito más de aire en desktop */
-    }
+    .logo { font-size: 1.15rem; }
+    .header { padding: 14px 0; }
+    .nav-menu{width:300px}
 }
