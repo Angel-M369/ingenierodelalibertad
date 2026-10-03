@@ -1,20 +1,142 @@
-/* BLOQUE: QUIZ - CUAL ARMA NECESITO */
-.quiz { background: #0a0a0a; padding: 80px 0; border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; }
-.quiz-contenedor { max-width: 800px; margin: 0 auto; padding: 0 20px; text-align: center; }
-.quiz h2 { font-family: 'Montserrat'; font-weight: 900; font-size: 2.5rem; color: #fff; margin-bottom: 10px; }
-.quiz-sub { color: #888; font-family: 'Poppins'; margin-bottom: 40px; font-size: 1.1rem; }
-.quiz-card { background: #161616; border: 1px solid #222; border-radius: 20px; padding: 40px 30px; min-height: 350px; }
-.quiz-step { display: none; animation: fadeIn.3s; }
+/* BLOQUE: QUIZ - CUAL SISTEMA NECESITO - FINAL 2026 */
+
+.quiz { 
+  background: #0a0a0a; 
+  padding: 60px 0; 
+  border-top: 1px solid #1a1a1a; 
+  border-bottom: 1px solid #1a1a1a; 
+}
+.quiz-contenedor { 
+  max-width: 800px; 
+  margin: 0 auto; 
+  padding: 0 16px; 
+  text-align: center; 
+}
+.quiz h2 { 
+  font-family: 'Montserrat', sans-serif; 
+  font-weight: 900; 
+  font-size: 1.8rem; 
+  color: #fff; 
+  margin-bottom: 8px;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+.quiz-sub { 
+  color: #888; 
+  font-family: 'Poppins', sans-serif; 
+  margin-bottom: 30px; 
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+.quiz-card { 
+  background: #161616; 
+  border: 1px solid #222; 
+  border-radius: 20px; 
+  padding: 24px 16px; 
+  min-height: auto;
+}
+
+.quiz-step { 
+  display: none; 
+  animation: fadeIn .35s ease forwards; 
+}
 .quiz-step.active { display: block; }
-.quiz-step h3 { font-family: 'Montserrat'; color: #fff; margin-bottom: 30px; font-size: 1.3rem; }
-.quiz-opciones { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-@media(max-width:700px){.quiz-opciones { grid-template-columns: 1fr; } }
-.quiz-btn { background: #1e1e1e; border: 1px solid #333; border-radius: 12px; padding: 20px; cursor: pointer; text-align: left; transition:.2s; color: #fff; }
-.quiz-btn:hover { border-color: #25D366; transform: translateY(-3px); background: #222; }
-.quiz-btn i { font-size: 1.5rem; color: #25D366; margin-bottom: 10px; display: block; }
-.quiz-btn strong { display: block; font-family: 'Montserrat'; font-size:.95rem; margin-bottom: 5px; }
-.quiz-btn span { font-size:.85rem; color: #888; line-height: 1.3; display: block; }
-#resultado-titulo { color: #25D366; font-size: 2rem; }
-#resultado-texto { color: #bbb; margin: 20px 0 30px; font-size: 1.1rem; }
-.quiz-reiniciar { background: none; border: none; color: #666; margin-top: 20px; cursor: pointer; font-family: 'Montserrat'; font-size:.8rem; text-decoration: underline; }
-@keyframes fadeIn { from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:translateY(0)} }
+.quiz-step h3 { 
+  font-family: 'Montserrat', sans-serif; 
+  color: #fff; 
+  margin-bottom: 24px; 
+  font-size: 1.1rem;
+  line-height: 1.3;
+}
+
+.quiz-opciones { 
+  display: grid; 
+  grid-template-columns: 1fr; 
+  gap: 12px; 
+}
+
+.quiz-btn { 
+  background: #1e1e1e; 
+  border: 1px solid #333; 
+  border-radius: 14px; 
+  padding: 18px; 
+  cursor: pointer; 
+  text-align: left; 
+  transition: all .2s ease; 
+  color: #fff; 
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.quiz-btn:hover { 
+  border-color: #00E676; 
+  transform: translateY(-2px); 
+  background: #222; 
+}
+.quiz-btn:active{ transform: scale(.98); }
+.quiz-btn i { 
+  font-size: 1.4rem; 
+  color: #00E676; 
+  margin-bottom: 8px; 
+  display: block; 
+}
+.quiz-btn strong { 
+  display: block; 
+  font-family: 'Montserrat', sans-serif; 
+  font-size: .9rem; 
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+.quiz-btn span { 
+  font-size: .8rem; 
+  color: #888; 
+  line-height: 1.3; 
+  display: block; 
+}
+
+#resultado-titulo { 
+  color: #00E676; 
+  font-size: 1.6rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  line-height: 1.1;
+}
+#resultado-texto { 
+  color: #bbb; 
+  margin: 16px 0 24px; 
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.quiz-reiniciar { 
+  background: none; 
+  border: none; 
+  color: #666; 
+  margin-top: 18px; 
+  cursor: pointer; 
+  font-family: 'Montserrat', sans-serif; 
+  font-size: .8rem; 
+  text-decoration: underline;
+  padding: 10px;
+}
+
+#resultado-btn{
+  display: inline-block;
+  width: 100%;
+  max-width: 320px;
+}
+
+@keyframes fadeIn { 
+  from{opacity:0; transform:translateY(10px)} 
+  to{opacity:1; transform:translateY(0)} 
+}
+
+/* DESKTOP */
+@media(min-width:700px){
+  .quiz{ padding: 80px 0; }
+  .quiz h2{ font-size: 2.4rem; }
+  .quiz-contenedor{ padding: 0 20px; }
+  .quiz-card{ padding: 40px 30px; min-height: 350px; }
+  .quiz-opciones{ grid-template-columns: 1fr 1fr; gap: 15px; }
+  .quiz-step h3{ font-size: 1.3rem; }
+  #resultado-titulo{ font-size: 2rem; }
+}

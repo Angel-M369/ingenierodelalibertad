@@ -57,10 +57,10 @@
 
 .nav-menu{
     position:fixed;top:0;right:-100%;
-    width:200px;height:40vh;
+    width:200px;height:50vh;
     background:#12121a;
     border-left:2px solid #048a25;
-    padding:70px 18px 20px;
+    padding:30px 18px 10px;
     display:flex;flex-direction:column;gap:6px;
     transition:0.35s cubic-bezier(.4,0,.2,1);
     z-index:1000;

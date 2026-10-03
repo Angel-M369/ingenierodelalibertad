@@ -1,4 +1,4 @@
-/* PLATAFORMA DE AFILIADOS - MI LOCALITO - FINAL COMPLETO 2026 */
+/* PLATAFORMA DE AFILIADOS - MI LOCALITO - FINAL COMPLETO 2026 - FIXED */
 
 :root {
   --green: #00FF88;
@@ -7,7 +7,7 @@
   --card: #121212;
   --line: #1e1e1e;
   --gray: #9ca3af;
-  --nav-h: 68px; /* AQUI BAJAS TODA LA PAGINA - SUBELO A 80px SI LA QUIERES MAS ABAJO */
+  --nav-h: 68px; /* SUBELO A 72px SI QUIERES MAS AIRE ABAJO DEL MENU */
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -21,7 +21,7 @@ img { max-width: 100%; display: block; }
 .c-white { color: #fff; }
 .badge-green { background: rgba(0,255,136,.15); border: 1px solid var(--green); color: var(--green); padding: 2px 6px; border-radius: 6px; font-size: 9px; font-weight: 900; }
 
-/* NAV */
+/* NAV - FIXED */
 .nav{
   position: fixed; top:0; left:0; right:0;
   width: 100%; height: var(--nav-h);
@@ -39,7 +39,7 @@ img { max-width: 100%; display: block; }
   top: var(--nav-h); 
   right: -100%; 
   width: 300px; max-width: 85vw; 
-  height: 40vh; /* ALTURA MENU */
+  height: auto;
   background: #0f0f0f; 
   border-left: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
@@ -59,18 +59,21 @@ img { max-width: 100%; display: block; }
 .btn-nav{ background:var(--green); color:#000 !important; padding:10px 16px; border-radius:100px; font-weight:900; font-size:11px; text-align:center; display:inline-block; transition:.2s; }
 .btn-nav:hover{ background: var(--lime) !important; color:#000 !important; }
 
-/* HERO */
-.hero{ width: 100%; display: block; background: var(--bg); padding-top: 10px; /* EXTRA PARA BAJAR MAS */ }
+/* HERO - FIRST MOVIL FIX */
+.hero{ width: 100%; display: block; background: var(--bg); padding-top: 10px; }
 .hero-left{ width:100%; padding: 14px 12px 10px 12px; }
 .hero-img-wrap{
-  width: 100%; background: #000;
-  border: 1px solid var(--line); border-radius: 12px;
+  width: 100%; 
+  background: #000;
+  border: 1px solid var(--line); 
+  border-radius: 12px;
   overflow: hidden;
-  margin-top: 8px;
+  margin-top: 12px;
   margin-bottom: 20px;
   line-height: 0;
+  aspect-ratio: 16/9;
 }
-.hero-img{ width: 100%; height: auto; object-fit: contain; }
+.hero-img{ width: 100%; height: 100%; object-fit: cover; object-position: top; }
 .hero h2{ font-family:'Montserrat'; font-size:13px; color:var(--lime); margin:12px 0 8px; letter-spacing:1px; }
 .hero-desc{ color:var(--gray); font-size:13px; line-height:1.6; }
 .btn-hero{ display:block; width:100%; background:var(--green); color:#000; text-align:center; padding:14px; border-radius:12px; font-weight:900; font-size:12px; margin-top:16px; transition:.2s; }
@@ -93,7 +96,7 @@ img { max-width: 100%; display: block; }
 .hero-card .bar i{ display:block; width:78%; height:100%; background:linear-gradient(90deg,var(--green),var(--lime)); }
 .card-note{ background:#000; padding:10px; border-radius:8px; font-size:8.5px; color:#777; line-height:1.5; margin-top:12px; }
 
-/* SECCIONES - YA SIN ESPACIO FANTASMA */
+/* SECCIONES */
 .sec{ width:100%; padding:32px 12px; margin:0; height:auto; }
 .sec-head{ text-align:center; margin-bottom:22px; }
 .sec-head h2{ font-family:'Montserrat'; font-size:22px; text-transform:uppercase; line-height:.95; }
@@ -170,6 +173,8 @@ img { max-width: 100%; display: block; }
   .hamb{ display:none; }
   .hero{ display:grid; grid-template-columns:1.2fr .8fr; gap:32px; padding:24px 22px 30px; max-width:1100px; margin:0 auto; }
   .hero-left{ padding:0; }
+  .hero-img-wrap{ aspect-ratio: auto; height: auto; }
+  .hero-img{ height: auto; }
   .hero-card{ width:100%; margin:0; max-width:360px; position:sticky; top:90px; height:fit-content; }
   .sec{ max-width:1100px; margin:0 auto; padding:50px 22px; }
   .sec-head h2{ font-size:34px; }
