@@ -1,9 +1,11 @@
-@import url("./blocks/reset.css");
 @import url("./blocks/variables.css");
-@import url("./blocks/container.css");
 @import url("./blocks/header.css");
 @import url("./blocks/hero.css");
-@import url("./blocks/buttons.css");
 @import url("./blocks/historia.css");
-@import url("./blocks/armas.css");
+@import url("./blocks/filosofia.css");
+@import url("./blocks/camino.css");
+@import url("./blocks/pilares.css");
+@import url("./blocks/comienzo.css");
+@import url("./blocks/final.css");
 @import url("./blocks/footer.css");
+@import url("./blocks/animaciones.css");

@@ -1,0 +1,133 @@
+/* ===== BLOQUE: BEGINNING ===== */
+.beginning{background:#050605}.manifesto{font:900 clamp(2.4rem,12vw,8.2rem)/0.88 "Montserrat",sans-serif;letter-spacing:-0.05em;text-transform:uppercase;word-break:break-word}
+.manifesto span{color:var(--green-bright);display:block}.beginning-copy{max-width:760px;margin-top:36px;color:#c0c7c1}.beginning-question{margin-top:32px;font:900 clamp(1.2rem,6vw,2.4rem)/1.08 "Montserrat",sans-serif;text-transform:uppercase}
+/* TABLET 768px a 980px - ID comienzo - 1200px ALTO */
+@media (min-width: 768px) and (max-width: 980px) {
+
+  /* 1. TODA LA SECCIÓN - ALTO Y PADDING */
+  #comienzo.beginning {
+    min-height: 1200px; /* HACE QUE CUBRA LOS 1200PX */
+    padding: 60px 24px; /* PADDING ARRIBA/ABAJO DE TODO */
+    display: flex;
+    align-items: center; /* centra el contenido en los 1200px */
+  }
+  #comienzo .container {
+    width: 100%;
+  }
+  #comienzo .beginning-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* REPARTE TODO EN LOS 1200PX */
+    min-height: 1050px; /* altura interna, si lo quieres más apretado bájalo a 900px */
+  }
+
+  /* 2. EYEBROW */
+  #comienzo .eyebrow {
+    margin-bottom: 24px; /* ESPACIO entre eyebrow y el manifesto grande */
+    font-size: 13px; /* TAMAÑO eyebrow */
+  }
+
+  /* 3. MANIFESTO GRANDE - "No te estoy mostrando..." */
+  #comienzo .manifesto {
+    font-size: 50px; /* TAMAÑO de letra principal */
+    line-height: 0.95;
+    margin-bottom: 32px; /* ESPACIO entre manifesto y el texto de abajo */
+  }
+  #comienzo .manifesto span {
+    font-size: 42px; /* TAMAÑO de la segunda línea verde/blanca */
+  }
+
+  /* 4. PARRAFOS */
+  #comienzo .beginning-copy {
+    margin-bottom: 24px; /* ESPACIO entre cada bloque de parrafos */
+  }
+  #comienzo .beginning-copy p {
+    font-size: 20px; /* TAMAÑO de todos los parrafos */
+    line-height: 1.6;
+    margin-bottom: 16px; /* ESPACIO entre parrafos */
+  }
+
+  /* 5. PREGUNTA VERDE DEL MEDIO */
+  #comienzo .beginning-question {
+    font-size: 25px; /* TAMAÑO pregunta */
+    line-height: 1.3;
+    margin: 24px 0; /* ESPACIO arriba y abajo de la pregunta */
+    padding: 20px 0; /* PADDING interno si quieres más aire */
+  }
+  #comienzo .beginning-question .green {
+    font-size: 25px; /* TAMAÑO texto verde */
+  }
+}
+@media (min-width: 1200px) {
+  .beginning {
+    width: 1200px;
+    height: auto;
+    min-height: auto;
+    max-height: none;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    overflow: visible;
+    box-sizing: border-box;
+  }
+
+  .beginning .container {
+    width: 90%;
+    max-width: 1100px;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 20px;
+  }
+
+  .beginning-content {
+    width: 100%;
+    max-width: 750px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .beginning .eyebrow {
+    font-size: 0.7rem;
+    margin: 0;
+    letter-spacing: 2px;
+  }
+
+  .beginning .manifesto {
+    font-size: 2.2rem;
+    line-height: 0.95;
+    margin: 0;
+  }
+  .beginning .manifesto span {
+    display: block;
+    font-size: 2.2rem;
+  }
+
+  .beginning-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .beginning-copy p {
+    font-size: 0.82rem;
+    line-height: 1.35;
+    margin: 0;
+  }
+
+  .beginning-question {
+    font-size: 1.1rem;
+    line-height: 1.2;
+    margin: 8px 0;
+    padding: 5px 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .beginning-question .green {
+    font-size: 1.1rem;
+  }
+}

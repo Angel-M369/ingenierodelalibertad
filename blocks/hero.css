@@ -1,110 +1,110 @@
-/* ===== HERO - FONDO + BUCLE SCROLL ===== */
-.hero {
-    position:relative;
-    min-height: 100vh;
+/* ===== BLOQUE: HERO ===== */
+.hero{height:100svh;min-height:100svh;position:relative;display:flex;align-items:flex-start;overflow:hidden;background:radial-gradient(circle at 74% 45%,rgba(4,138,37,0.18),transparent 28%),linear-gradient(115deg,#050605 0%,#070907 45%,#0a0e0b 100%);isolation:isolate}
+.hero-grid{position:absolute;inset:0;opacity:0.28;background-image:linear-gradient(rgba(4,138,37,0.12) 1px,transparent 1px),linear-gradient(90deg,rgba(4,138,37,0.12) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.hero-inner{position:relative;z-index:5;display:flex;flex-direction:column;justify-content:flex-start;height:100svh;min-height:100svh;padding-top:var(--nav-h);width:100%}
+.hero-copy{position:relative;z-index:6;padding:10px 0 0;width:100%;flex-shrink:0}
+.hero-kicker{display:inline-flex;gap:9px;align-items:center;margin-bottom:10px;font:800 0.62rem/1 "Montserrat",sans-serif;letter-spacing:0.12em;text-transform:uppercase;color:#c8cec9}
+.hero-kicker i{width:7px;height:7px;border-radius:50%;background:var(--green-bright);display:block;box-shadow:0 0 18px var(--green)}
+.hero-copy h1{margin:0 auto;text-align:center;font-size:clamp(2rem,8.5vw,3.1rem);line-height:0.88;letter-spacing:-0.05em;text-transform:uppercase;animation:heroTitleLoop 8s ease-in-out infinite}
+.hero-copy h1 strong{color:var(--green-bright);display:block}
+.hero-description{margin:350px auto 0!important;text-align:center;font-size:0.82rem;max-width:300px;color:#f1f5f1;position:relative;z-index:7;text-shadow:0 2px 20px rgba(0,0,0,0.9);animation:heroTextLeftLoop 8s ease-in-out infinite}
+.hero-brand{margin:10px 0 0;text-align:center;font:900 0.8rem/1 "Montserrat",sans-serif;animation:heroTextRightLoop 8s ease-in-out infinite;text-shadow:0 2px 12px rgba(0,0,0,0.9)}
+.buttons{display:flex;flex-direction:column;gap:10px;margin-top:10px;animation:heroButtonLoop 8s ease-in-out infinite}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 18px;border:1px solid rgba(255,255,255,0.14);border-radius:999px;font-weight:800;font-size:0.68rem;letter-spacing:0.07em;text-transform:uppercase}
+.btn-primary{background:var(--green);border-color:var(--green);color:white;margin-top:10px}
+.hero-person{position:absolute;left:0;right:0;bottom:0;top:155px;width:100%;height:auto;z-index:2;display:flex;align-items:flex-end;justify-content:center;pointer-events:none;overflow:hidden}
+.hero-person img{height:100%;width:100%;object-fit:cover;object-position:center top;filter:contrast(1.05) brightness(0.92)}
+.hero-sidewords,.scroll-cue{display:none}
+/* ===== BLOQUE: HERO - TABLET ===== */
+@media(min-width:768px) and (max-width:980px){
+
+  /* 1. TITULO EN UNA SOLA LINEA - FIX DEFINITIVO */
+  .hero-copy h1{
+    white-space: nowrap !important;
+    font-size: 1.55rem !important; /* <-- ESTE es el tamaño que SI entra en 947px. Si quieres más grande, máx 1.75rem */
     text-align: center;
-    padding: 80px 0 20px 0;
-    display:flex;align-items:center;justify-content:center;
-    overflow:hidden;
-}
-.hero-bg{
-    position:absolute;inset:0;
-    background: url('../images/Ingeader.png') center/cover no-repeat;
-    z-index:0;
-    transform:scale(1.05);
-    animation: kenBurns 20s infinite alternate;
-}
-.hero-overlay{
-    position:absolute;inset:0;
-    background: rgba(0,0,0,0.75);
-    z-index:1;
-}
-.hero .container{position:relative;z-index:2;}
+    letter-spacing: -0.03em;
+    width: max-content !important;
+    max-width: none !important;
+    margin: 15px auto !important;
+  }
+  .hero-copy h1 strong{
+    display: inline !important;
+  }
+  .hero-copy h1 br{
+    display: none !important; /* por si tu HTML tiene <br> */
+  }
 
-.badge-sistema {
-    display: inline-block;
-    background: #111;
-    border: 1px solid #048a25;
-    border-radius: 20px;
-    padding: 6px 14px;
-    margin-bottom: 18px;
-    color: #048a25;
-    font-size: 0.75rem;
-    font-weight: 700;
-}
+  /* 2. TEXTO "Estoy construyendo..." MAS GRANDE */
+  .hero-description{
+    margin: 520px auto 0 !important;
+    max-width: 360px;
+    font-size: 1.25rem !important;
+    line-height: 1.5;
+  }
+  .hero-brand{
+    font-size: 0.9rem;
+  }
 
-.hero .titulo-principal{
-    font-size: 1.35rem; margin-bottom: 15px; padding: 0 10px;
-    color: var(--text); font-family: 'Montserrat', sans-serif;
-    font-weight: 900; line-height: 1.2;
+  /* 3. BOTONES MAS PEQUEÑOS Y MAS ABAJO */
+  .buttons{
+    margin-top: 220px;
+    gap: 8px;
+    align-items: center;
+  }
+  .btn{
+    min-height: 36px !important;
+    padding: 0 14px !important;
+    font-size: 0.62rem;
+  }
+  .btn-primary{
+    margin-top: 0;
+  }
+  .hero-person{
+    top: 180px;
+  }
 }
+/* DESKTOP - 2 LINEAS CENTRADO CON % */
+@media (min-width: 981px) {
+  #inicio.hero {
+    position: relative !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
 
-.hero .titulo-blanco{
-    display:block;
-    color:#fff;
-    opacity:0;
-}
-.hero.animate .titulo-blanco{
-    animation: entraArriba 0.8s 1s forwards;
-}
+  #inicio .hero-copy {
+    /* AQUI LO CENTRAS - MUEVE ESTOS 2 NUMEROS */
+    width: 58% !important; /* ANCHO DEL BLOQUE: si lo bajas a 50% se hace mas angosto */
+    max-width: none !important;
+    margin-left: 10% !important; /* CENTRO HORIZONTAL: 0% = centrado. Si lo pones -5% se va a izq, +5% a der */
+    margin-right: auto !important;
+    transform: translateX(0%) !important; /* AJUSTE FINO: -10% lo mueve a izq, 10% a der */
 
-.hero .titulo-verde{
-    display:block;
-    color: #048a25 !important;
-    opacity:0;
-    text-shadow: 0 0 15px rgba(4,138,37,0.5);
-}
-.hero.animate .titulo-verde{
-    animation: reboteAbajo 0.8s 2s forwards, reboteInfinito 1.5s 2.8s infinite;
-}
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
 
-.hero .sub-principal{
-    font-size: 0.9rem; color: var(--text-sec);
-    margin-bottom: 15px; padding: 0 15px; line-height: 1.5;
-    opacity:0;
-}
-.sub-izq{transform:translateX(-120%);}
-.sub-der{transform:translateX(120%);}
-.hero.animate .sub-izq{animation: entraIzq 0.8s 3s forwards;}
-.hero.animate .sub-der{animation: entraDer 0.8s 3s forwards;}
+  #inicio .hero-copy h1 {
+    font-size: 50px !important;
+    line-height: 0.9 !important;
+    text-align: center !important;
+  }
 
-.botones-hero {
-    display: flex; flex-direction: column; gap: 12px;
-    padding: 0 15px; margin-top:20px; align-items:center;
-}
-.botones-hero .btn{
-    opacity:0; transform:translateY(100px);
-    background: #169736 !important;
-    border: 2px solid #048a25 !important;
-    color: #000 !important;
-    font-weight:900;
-    box-shadow: 0 0 20px rgba(4,138,37,0.4);
-}
-/* FIX - QUITADO EL NEGRO BRUSCO */
-.botones-hero .btn:hover{
-    background: #335840 !important;
-    border-color: #61e291 !important;
-    color: #3e8b5d !important;
-    box-shadow: 0 6px 20px rgba(29, 230, 103, 0.5);
-}
-.hero.animate .botones-hero .btn:nth-child(1){animation: zigzagAbajo 0.7s 4s forwards, zigzagInfinito 1.2s 4.7s infinite;}
-.hero.animate .botones-hero .btn:nth-child(2){animation: zigzagAbajo 0.7s 4.3s forwards, zigzagInfinito 1.2s 5s infinite reverse;}
-.hero.animate .botones-hero .btn:nth-child(3){animation: zigzagAbajo 0.7s 4.6s forwards, zigzagInfinito 1.2s 5.3s infinite;}
+  #inicio .hero-copy h1 .green {
+    font-size: 50px !important;
+    display: block !important; /* 2da linea */
+  }
 
-.logo span{
-    color: #048a25 !important;
-}
-
-@keyframes kenBurns{from{transform:scale(1.05)}to{transform:scale(1.15)}}
-@keyframes entraArriba{from{transform:translateY(-100px);opacity:0}to{transform:translateY(0);opacity:1}}
-@keyframes reboteAbajo{0%{transform:translateY(100px);opacity:0}60%{transform:translateY(-15px);opacity:1}100%{transform:translateY(0);opacity:1}}
-@keyframes reboteInfinito{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-@keyframes entraIzq{to{transform:translateX(0);opacity:1}}
-@keyframes entraDer{to{transform:translateX(0);opacity:1}}
-@keyframes zigzagAbajo{0%{transform:translateY(100px) translateX(-30px);opacity:0}100%{transform:translateY(0) translateX(0);opacity:1}}
-@keyframes zigzagInfinito{0%,100%{transform:translateX(0) translateY(0)}25%{transform:translateX(-8px) translateY(-4px)}75%{transform:translateX(8px) translateY(-4px)}}
-
-@media (min-width: 768px) {
-    .hero h1{font-size:2.8rem} .botones-hero{flex-direction:row;justify-content:center}
-    .botones-hero .btn{width:auto}
+  /* PARRAFO QUE NO TOCA LA FOTO */
+  #inicio .hero-copy .hero-desc,
+  #inicio .hero-copy p {
+    width: 85% !important; /* PARA QUE NO LLEGUE A LA FOTO - si lo bajas a 75% se aleja mas */
+    max-width: 520px !important; /* TOPE PARA QUE NO SE ESTIRE */
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
 }

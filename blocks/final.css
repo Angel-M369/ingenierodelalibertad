@@ -1,0 +1,58 @@
+/* ===== BLOQUE: FINAL ===== */
+.final{min-height:auto;padding:5px 0;display:grid;place-items:center;text-align:center;background:radial-gradient(circle at 50% 45%,rgba(4,138,37,0.18),transparent 33%),#080a09;border-top:1px solid var(--line)}
+.final h2{font-size:clamp(2.6rem,12vw,8rem);line-height:0.9}
+.final h2 span{color:var(--green-bright);display:block}
+.final-question{margin:16px 0 8px;font:900 clamp(1.4rem,7vw,3.8rem)/1 "Montserrat",sans-serif;text-transform:uppercase}
+.final p{margin-top:8px!important}
+/* ===== FIX BLOQUE FINAL 947x910 - A LA MITAD ===== */
+@media(min-width:768px) and (max-width:980px){
+  .final h2{
+    padding: 80px;
+    font-size: 6rem !important; /* << AQUÍ AJUSTAS - ESTO ES "LA LIBERTAD NO SE ESPERA. SE CONSTRUYE." A LA MITAD */
+    line-height: 0.95 !important;
+  }
+  .final h2 span{
+    padding-bottom: 50px;
+    font-size: inherit !important; /* << ESTE ES EL VERDE "SE CONSTRUYE." */
+    line-height: inherit !important;
+  }
+  .final .final-question{
+    font-size: 1.3rem !important; /* << ESTE ES "¿QUÉ VAS A CONSTRUIR TÚ?" */
+    line-height: 1.1 !important;
+  }
+  .final .eyebrow{
+    font-size: 0.75rem !important;
+  }
+}
+@media (min-width: 1200px) {
+  .final.section-pad {
+    padding: 40px 0 !important; /* antes tenías como 80px-120px */
+    min-height: auto !important;
+    height: auto !important;
+  }
+
+  .final .final-inner {
+    padding: 0 !important;
+  }
+
+  .final .eyebrow {
+    font-size: 0.6rem !important;
+    margin-bottom: 6px !important;
+  }
+
+  .final h2 {
+    font-size: 3.3rem !important; /* la mitad del original */
+    line-height: 1.1 !important;
+    margin: 0 0 8px !important;
+  }
+
+  .final h2 span {
+    font-size: inherit !important;
+  }
+
+  .final .final-question {
+    font-size: 0.85rem !important;
+    margin-top: 6px !important;
+    line-height: 1.2 !important;
+  }
+}

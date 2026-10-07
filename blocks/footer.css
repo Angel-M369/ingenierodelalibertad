@@ -1,145 +1,89 @@
-/* ===== FOOTER INGENIERO - ACTUALIZADO ===== */
-.footer-ingeniero{
-    background: #0a0a0a !important;
-    border-top: 3px solid #048a25 !important;
-    padding: 0 0 25px 0 !important;
-    text-align: center;
-}
-.footer-branding{
-    width: 100%;
-    background: #000;
-    padding: 12px 0;
-    margin-bottom: 22px;
-    border-bottom: 1px solid #1a1a1a;
-}
-.footer-branding img{
-    width: 90% !important;
-    max-width: 380px !important;
-    height: auto !important;
-    display: block;
-    margin: 0 auto;
-}
+/* ===== BLOQUE: FOOTER ===== */
+#footer{background:#050605;padding:16px 0 16px;border-top:1px solid var(--line);text-align:center}
+.footer-new{display:flex;flex-direction:column;gap:40px;align-items:center;padding:0}
+.footer-block{display:flex;flex-direction:column;align-items:center;gap:8px;padding-bottom:0}
+.footer-title-green{color:var(--green-bright);font:900 1.1rem/1 "Montserrat",sans-serif;letter-spacing:0.06em;text-transform:uppercase}
+.footer-socials-new{display:flex;gap:14px}
+.footer-socials-new a{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:#1a1a1a;border:1px solid rgba(255,255,255,0.08);font-size:22px;transition:0.25s}
+.footer-links{display:flex;flex-direction:column;gap:8px;align-items:center}
+.footer-links a{color:#c8cec9;font-size:0.95rem;display:flex;gap:8px;align-items:center;transition:0.2s}
+.footer-links a i{color:var(--green-bright)}
+.social-fb:hover{background:#1877F2;border-color:#1877F2;color:white;transform:translateY(-3px)}
+.social-ig:hover{background:radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);border-color:#d6249f;color:white;transform:translateY(-3px)}
+.social-tk:hover{background:#000;border-color:#fff;color:#fff;box-shadow:0 0 12px rgba(0,242,234,0.6);transform:translateY(-3px)}
+.hover-green:hover{color:var(--green-bright)!important}
+.hover-green:hover i{color:var(--green-bright)!important}
+.email-link i{color:#fff!important}
+.btn-whatsapp{margin-top:6px;display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#000;font:800 0.95rem/1 "Montserrat",sans-serif;padding:14px 26px;border-radius:999px;transition:0.25s;box-shadow:0 0 20px rgba(37,211,102,0.3)}
+.btn-whatsapp:hover{background:var(--green-bright);transform:translateY(-2px);box-shadow:0 0 30px rgba(25,185,67,0.5)}
+.footer-cta{margin-top:8px;color:var(--green-bright);font:700 0.78rem/1.3 "Montserrat",sans-serif;opacity:0.9}
+.footer-bottom-new{margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.08);display:flex;flex-direction:column;gap:8px;color:#6b6b6b;font-size:0.82rem}
+.legal-new{display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap}
+.legal-new span{opacity:0.3}.legal-new a{color:#6b6b6b;transition:0.2s}
+.legal-new a:hover{color:var(--green-bright)!important}
 
-.footer-ingeniero .contenedor{
-    width: 92%;
-    max-width: 1200px;
-    margin: 0 auto;
+@media(min-width:981px){
+  #footer{padding:24px 0 20px}
+  .footer-new{flex-direction:row;justify-content:space-around;align-items:flex-start;gap:32px}
+  .footer-bottom-new{margin-top:16px}
 }
+/* ===== FIX TABLET 768-980 - ACTUALIZADO ===== */
+@media(min-width:768px) and (max-width:980px){
+  #footer{
+    padding:40px 16px 24px !important;
+  }
+  
+  /* ESTE ES EL TÍTULO GRANDE - LO BAJAMOS 15px */
+  .final h2{
+    padding: 50px;
+    font-size: 3rem !important;
+    line-height: 0.95 !important;
+    text-align: center !important;
+    transform: translateY(15px) !important; /* << BAJA 15px LA INVITACIÓN FINAL */
+  }
+  .final h2 span{
+    font-size: inherit !important;
+    line-height: inherit !important;
+  }
 
-.footer-grid{
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 22px !important;
-}
-
-.footer-col h4{
-    color: #048a25 !important;
-    font-size: 0.95rem !important;
-    font-weight: 900 !important;
-    letter-spacing: 1px !important;
-    margin-bottom: 10px !important;
-    font-family: 'Montserrat', sans-serif;
-}
-
-/* REDES */
-.redes-ingeniero{
-    display: flex !important;
-    justify-content: center !important;
-    gap: 12px !important;
-}
-.redes-ingeniero a{
-    width: 44px !important;
-    height: 44px !important;
-    background: #181818 !important;
-    border: 1px solid #262626 !important;
-    border-radius: 50% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    color: #fff !important;
+  /* ¿QUÉ VAS A CONSTRUIR TÚ? - LO SUBIMOS 25px */
+  .final .final-question{
     font-size: 1.2rem !important;
-    text-decoration: none !important;
-    transition: 0.3s !important;
-}
-.redes-ingeniero a:hover{
-    background: #048a25 !important;
-    color: #000 !important;
-    transform: translateY(-3px);
-    box-shadow: 0 0 15px rgba(4,138,37,0.5);
-}
+    transform: translateY(-25px) !important; /* << SUBE 25px */
+  }
 
-/* MIS TRABAJOS */
-.redes-profesionales{
+  /* SÍGUEME | MIS TRABAJOS | ¿HABLAMOS? EN 3 COLUMNAS */
+  #footer .footer-new{
+    padding: 5px;
     display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 6px !important;
-}
-.redes-profesionales a{
-    color: #aaa !important;
-    text-decoration: none !important;
-    font-size: 0.85rem !important;
-    transition: 0.3s;
-}
-.redes-profesionales a:hover{ color: #fff !important; }
-.redes-profesionales i{ color: #048a25; margin-right: 4px; }
+    flex-direction: row !important;
+    justify-content: space-around !important;
+    align-items: flex-start !important;
+    gap: 24px !important;
+    flex-wrap: wrap !important; /* << PARA PODER CENTRAR EL CTA ABAJO */
+    position: relative !important;
+    padding-bottom: 45px !important; /* << HUECO PARA EL CTA ENMEDIO */
+  }
+  #footer .footer-block{
+    flex: 1 1 33% !important;
+  }
 
-/* HABLAMOS */
-.footer-link{
-    display: block !important;
-    color: #ccc !important;
-    font-size: 0.8rem !important;
-    text-decoration: none !important;
-    margin-bottom: 10px !important;
-    word-break: break-all;
-}
-.btn-footer-wa{
-    display: inline-block !important;
-    background: #25D366 !important;
-    color: #000 !important;
-    font-weight: 900 !important;
-    padding: 12px 22px !important;
-    border-radius: 50px !important;
-    text-decoration: none !important;
-    font-size: 0.85rem !important;
-    margin: 6px 0 10px 0 !important;
-    box-shadow: 0 0 15px rgba(37,211,102,0.4);
-    animation: reboteInfinitoBtn 1.8s infinite;
-    transition: 0.3s;
-}
-.btn-footer-wa:hover{ transform: scale(1.05); background: #000 !important; color: #25D366 !important; border: 1px solid #25D366; }
+  /* EMPIEZA A TRANSFORMAR TU VIDA HOY MISMO - CENTRADO EN 1 LÍNEA ENMEDIO DEL COPY Y BOTONES */
+  #footer .footer-cta{
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    white-space: nowrap !important; /* << EN 1 LÍNEA */
+    text-align: center !important;
+    width: max-content !important;
+    margin: 0 !important;
+  }
 
-.footer-garantia{
-    color: #048a25 !important;
-    font-weight: 700 !important;
-    font-size: 0.8rem !important;
-    margin-top: 4px !important;
-}
-
-/* BOTTOM */
-.footer-bottom{
-    margin-top: 22px !important;
-    padding-top: 14px !important;
-    border-top: 1px solid #1f1f1f !important;
-}
-.footer-bottom p{
-    color: #666 !important;
-    font-size: 0.7rem !important;
-    margin: 4px 0 !important;
-}
-.footer-legal a{
-    color: #777 !important;
-    text-decoration: none !important;
-    margin: 0 4px;
-}
-.footer-legal a:hover{ color: #048a25 !important; }
-.footer-legal span{ color: #333; }
-
-@media(min-width:768px){
-    .footer-grid{ flex-direction: row !important; justify-content: space-between !important; text-align: left !important; }
-    .redes-ingeniero{ justify-content: flex-start !important; }
-    .redes-profesionales{ align-items: flex-start !important; }
-    .footer-col{ flex: 1; }
-    .col-hablamos{ text-align: right; }
-    .col-hablamos .footer-link{ text-align: right; }
+  /* COPY Y RAYITAS - BAJAR LA MITAD DE DONDE ESTÁ */
+  #footer .footer-bottom-new{
+    margin-top: 40px !important;
+    padding-bottom: 20px;
+    transform: translateY(50%) !important;
+  }
 }
