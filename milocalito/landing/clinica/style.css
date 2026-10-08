@@ -80,7 +80,6 @@ a {
   border-bottom: 1px solid var(--blue-200);
 }
 
-/* FIX REAL - CON ESPACIO */
 .imp-header .imp-container {
   display: flex !important;
   flex-direction: row !important;
@@ -105,7 +104,6 @@ a {
   display: none;
 }
 
-/* BURGER A LA DERECHA A HUEVO */
 .imp-burger {
   display: flex !important;
   flex-direction: column;
@@ -584,7 +582,6 @@ a {
   margin-top: 6px;
 }
 
-/* SIN RAYITA */
 .imp-footer-link {
   color: var(--blue-300);
   font-weight: 800;
@@ -641,6 +638,16 @@ a {
   border-radius: 50%;
   margin-right: 5px;
 }
+
+/* MODAL DEMO - NUEVO */
+.modal-demo{position:fixed;inset:0;z-index:99999;background:rgba(8,47,73,.88);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:18px}
+.modal-demo.active{display:flex}
+.modal-demo-box{background:#fff;max-width:520px;width:100%;border-radius:20px;border:3px solid var(--blue-300);padding:28px 22px 22px;position:relative;animation:pop .3s ease;color:var(--blue-dark)}
+@keyframes pop{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+.modal-demo-close{position:absolute;right:14px;top:8px;background:none;border:none;font-size:30px;cursor:pointer;color:var(--blue-dark)}
+.modal-demo-texto{background:var(--blue-100);border:2px dashed var(--blue-500);padding:12px;border-radius:12px;font-size:.9rem;margin:14px 0;white-space:pre-line}
+.btn-demo{cursor:pointer!important}
+#demoEntendido{width:100%;padding:12px;border-radius:100px;background:var(--blue-600);color:#fff;font-weight:900;border:none;cursor:pointer;margin-top:12px}
 
 @media(min-width: 900px) {
   .imp-burger {

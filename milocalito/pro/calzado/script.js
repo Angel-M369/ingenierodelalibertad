@@ -1,4 +1,4 @@
-const WA_DUENO = "5214771234567";
+// MODO DEMO - NO WA REAL
 let cart = JSON.parse(localStorage.getItem("leonCart")||"[]");
 
 const menu = document.getElementById("leonMenu");
@@ -58,23 +58,41 @@ document.addEventListener("click",(e)=>{
 });
 
 document.getElementById("btnClear").onclick=()=>{ cart=[]; save(); render(); };
+
+// --- MODAL DEMO ---
+const modal=document.getElementById("demoModal");
+const modalTxt=document.getElementById("demoTexto");
+function openDemo(html){ if(!modal) return; if(modalTxt) modalTxt.innerHTML=html; modal.classList.add("active"); }
+function closeDemo(){ modal?.classList.remove("active"); }
+document.getElementById("demoClose")?.addEventListener("click",closeDemo);
+document.getElementById("demoEntendido")?.addEventListener("click",closeDemo);
+modal?.addEventListener("click",e=>{ if(e.target===modal) closeDemo(); });
+
 document.getElementById("btnPagar").onclick=()=>{
-  if(!cart.length) return alert("Vacío");
-  const nombre=document.getElementById("leonName").value||"Cliente";
-  const pay=document.querySelector('input[name="pay"]:checked').value;
-  let total=0; let detalle="";
-  cart.forEach(it=>{ total+=it.p*it.q; detalle+=`• ${it.n} x${it.q} - $${it.p*it.q}%0A`; });
-  const msgDueno = `NUEVA VENTA ZAPATERÍAS LEÓN%0A%0ACliente: ${nombre}%0APago: ${pay}%0A${detalle}Total: $${total}`;
-  const msgCliente = `Gracias por tu compra ${nombre}!%0A%0ATu calzado va en camino 👞%0A${detalle}Total: $${total} con ${pay}%0A%0AZapaterías León - Pasos firmes con calzado elegante`;
-  window.open(`https://wa.me/${WA_DUENO}?text=${msgDueno}`,"_blank");
-  setTimeout(()=> window.open(`https://wa.me/${WA_DUENO}?text=${encodeURIComponent(msgCliente)}`,"_blank"), 900);
-  cart=[]; save(); render(); drawer.classList.remove("open");
+  if(!cart.length){ openDemo("Tu carrito está vacío.<br><br>Agrega un par de Zapaterías León primero 👞"); return; }
+  const nombre=document.getElementById("leonName").value||"Cliente Demo";
+  const pay=document.querySelector('input[name="pay"]:checked')?.value||"Transferencia";
+  let total=0; let detalleHTML=""; let detalleTxt="";
+  cart.forEach(it=>{ total+=it.p*it.q; detalleHTML+=`• ${it.n} x${it.q} - $${it.p*it.q}<br>`; detalleTxt+=`• ${it.n} x${it.q}\n`; });
+  openDemo(
+    `🔒 MODO DEMO - ZAPATERÍAS LEÓN<br><br>`+
+    `<b>Cliente:</b> ${nombre}<br>`+
+    `<b>Pago:</b> ${pay} ${pay==='Transferencia'?'-5%':''}<br><br>`+
+    detalleHTML+
+    `<br><b>Total: $${total.toLocaleString("es-MX")}</b><br><br>`+
+    `En la tienda real aquí se cobraría con Mercado Pago / te mandaría a WhatsApp con:<br>`+
+    `<i>"${detalleTxt}Total $${total} - ${pay}"</i><br><br>`+
+    `No se cobró nada real.`
+  );
+  // NO vaciamos para que vean demo
 };
 
-document.getElementById("btnUbiWa").onclick=(e)=>{
-  e.preventDefault();
-  window.open(`https://wa.me/${WA_DUENO}?text=${encodeURIComponent("Hola Zapaterías León! Mándame tu ubicación de Zona Piel porfa")}`,"_blank");
-};
+document.querySelectorAll(".btn-demo, #btnUbiWa, .soc-wa").forEach(b=>{
+  b.addEventListener("click",e=>{
+    e.preventDefault();
+    openDemo("En la tienda real aquí se abriría WhatsApp de Zapaterías León.<br><br>En esta <b>DEMO</b> está desactivado para no spamear.<br><br>📍 Zona Piel, León GTO - Blvd. Hilario Medina 123<br>🚚 Envío nacional 24-48h");
+  });
+});
 
 if(track && slider){
   slider.addEventListener("mouseenter", ()=> track.classList.add("paused"));

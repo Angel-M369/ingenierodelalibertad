@@ -135,7 +135,7 @@ img{max-width:100%;display:block}
 .chino-ubi-btn.wa:hover { background: #fff; }
 .chino-ubi-note { text-align: center; color: #94a3b8; font-size: 0.75rem; }
 
-/* FOOTER IGUAL A YSI */
+/* FOOTER */
 .chino-footer{background:#0F0F0F;color:#fff;padding:40px 20px 20px;text-align:center;border-top:3px solid #A3E635}
 .chino-footer-top h2{font-family:Syne;font-weight:800;font-size:clamp(2rem,6vw,2.8rem);letter-spacing:1px;line-height:1}
 .chino-footer-top p{color:#BEF264;font-size:.95rem;margin-top:6px;letter-spacing:.5px}
@@ -156,6 +156,16 @@ img{max-width:100%;display:block}
 .chino-footer-eng{color:#94A3B8;font-size:.85rem;font-weight:600;text-decoration:none!important;transition:.2s}
 .chino-footer-eng:hover{color:#A3E635;text-decoration:none!important}
 
+/* MODAL DEMO - NUEVO */
+.modal-demo{position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.85);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:18px}
+.modal-demo.active{display:flex}
+.modal-demo-box{background:#0F172A;max-width:520px;width:100%;border-radius:20px;border:3px solid #A3E635;padding:28px 22px 22px;position:relative;animation:pop .3s ease;font-family:Inter,sans-serif;color:#fff}
+@keyframes pop{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+.modal-demo-close{position:absolute;right:14px;top:8px;background:none;border:none;font-size:30px;cursor:pointer;color:#A3E635}
+.modal-demo-texto{background:#1E293B;border:2px dashed #A3E635;padding:12px;border-radius:12px;font-size:.9rem;margin:14px 0;white-space:pre-line;color:#E2E8F0}
+#demoEntendido{width:100%;padding:12px;border-radius:100px;background:#A3E635;color:#0F172A;font-weight:900;border:none;cursor:pointer;margin-top:12px}
+.btn-demo{cursor:pointer!important}
+
 /* RESPONSIVE TABLET */
 @media(min-width:600px){
   .chino-grid{grid-template-columns:repeat(2,1fr)}
@@ -168,36 +178,17 @@ img{max-width:100%;display:block}
   .chino-footer-col{flex:1}
   .chino-drawer-panel{width:360px}
 }
-
-/* RESPONSIVE DESKTOP */
 @media(min-width:1024px){
   .chino-grid{grid-template-columns:repeat(4,1fr)}
   .chino-catalog{padding:28px}
   .chino-ubi{padding:60px 24px 40px}
 }
-
-/* RESPONSIVE MÓVIL - MAPA FULL SCREEN */
 @media(max-width:900px){
   .chino-ubi{padding:0 0 24px 0}
   .chino-ubi-header{padding:24px 20px 12px}
   .chino-ubi-grid{grid-template-columns:1fr;gap:0}
-  .chino-ubi-map{
-    width:100vw;
-    margin-left:calc(-50vw + 50%);
-    height:68vh;
-    min-height:480px;
-    border-radius:0;
-    border-left:0;
-    border-right:0;
-    border-top:2px solid #0F172A;
-    border-bottom:2px solid #0F172A;
-  }
-  .chino-ubi-info{
-    padding:14px 16px;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
-  }
+  .chino-ubi-map{width:100vw;margin-left:calc(-50vw + 50%);height:68vh;min-height:480px;border-radius:0;border-left:0;border-right:0;border-top:2px solid #0F172A;border-bottom:2px solid #0F172A}
+  .chino-ubi-info{padding:14px 16px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
   .chino-ubi-card{padding:12px}
   .chino-ubi-card b{font-size:.85rem}
   .chino-ubi-card span{font-size:.78rem}
@@ -205,7 +196,6 @@ img{max-width:100%;display:block}
   .chino-ubi-note{grid-column:1 / -1}
   .chino-estilos-badges{grid-template-columns:1fr 1fr 1fr}
 }
-
 @media(max-width:480px){
   .chino-ubi-info{grid-template-columns:1fr}
   .chino-head{padding:10px 12px}

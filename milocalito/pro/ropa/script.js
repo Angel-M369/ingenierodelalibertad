@@ -1,4 +1,4 @@
-const WA = "5213312345678";
+// MODO DEMO - SIN WA REAL
 let cart = JSON.parse(localStorage.getItem("chinoCart") || "[]");
 let angle = 0;
 let autoRotate = true;
@@ -36,7 +36,7 @@ if (wrap) {
   wrap.addEventListener("touchend", () => setTimeout(() => (autoRotate = true), 1500));
 }
 
-// MENU Y CARRITO - YA CIERRA AL CLICK DENTRO Y FUERA
+// MENU Y CARRITO
 document.getElementById("openMenu").onclick = (e) => {
   e.stopPropagation();
   menu.classList.toggle("open");
@@ -53,12 +53,10 @@ document.getElementById("openCart").onclick = (e) => {
 document.getElementById("closeCart")?.addEventListener("click", () => drawer.classList.remove("open"));
 document.getElementById("drawerBg")?.addEventListener("click", () => drawer.classList.remove("open"));
 
-// Cierra menú al dar click en cualquier link del menú
 document.querySelectorAll('.chino-menu a').forEach(a => {
   a.addEventListener('click', () => menu.classList.remove('open'));
 });
 
-// Cierra al click fuera
 document.addEventListener("click", (e) => {
   if (menu &&!menu.contains(e.target) &&!e.target.closest("#openMenu")) {
     menu.classList.remove("open");
@@ -126,21 +124,41 @@ document.getElementById("btnClear")?.addEventListener("click", () => {
   save(); render();
 });
 
+// MODAL DEMO
+const modal = document.getElementById("demoModal");
+const modalTxt = document.getElementById("demoTexto");
+function openDemo(html){
+  if(modalTxt) modalTxt.innerHTML = html;
+  modal?.classList.add("active");
+}
+function closeDemo(){ modal?.classList.remove("active"); }
+document.getElementById("demoClose")?.addEventListener("click", closeDemo);
+document.getElementById("demoEntendido")?.addEventListener("click", closeDemo);
+modal?.addEventListener("click", e=>{ if(e.target===modal) closeDemo(); });
+
 document.getElementById("btnPagar")?.addEventListener("click", () => {
-  if (!cart.length) return alert("Vacío");
-  const nombre = document.getElementById("chinoName").value || "Cliente";
+  if (!cart.length){
+    openDemo("Carrito vacío<br><br>Agrega una paca primero.");
+    return;
+  }
+  const nombre = document.getElementById("chinoName").value || "Cliente Demo";
   const payInput = document.querySelector('input[name="pay"]:checked');
   const pay = payInput? payInput.value : "Transferencia";
-  let msg = `VENTA PACAS CHINO%0A${nombre}%0A`;
   let total = 0;
+  let lista = "";
   cart.forEach((it) => {
     total += it.p * it.q;
-    msg += `• ${it.n} x${it.q}%0A`;
+    lista += `• ${it.n} x${it.q} - $${(it.p*it.q).toLocaleString("es-MX")}<br>`;
   });
-  msg += `Total $${total} con ${pay}`;
-  window.open(`https://wa.me/${WA}?text=${msg}`, "_blank");
-  cart = []; save(); render();
-  drawer.classList.remove("open");
+
+  openDemo(
+    `🔒 MODO DEMO - PACAS DEL CHINO<br><br>`+
+    `<b>Cliente:</b> ${nombre}<br>`+
+    `<b>Pago:</b> ${pay}<br><br>`+
+    lista+`<br>`+
+    `<b>Total: $${total.toLocaleString("es-MX")}</b><br><br>`+
+    `En la tienda real aquí se cobraría con Mercado Pago / Transferencia y se mandaría WhatsApp al Chino.<br>`
+  );
 });
 
 render();
@@ -177,12 +195,20 @@ if (hero) {
   });
 }
 
-// BOTONES UBICACIÓN
+// BOTONES UBICACIÓN - DEMO
 const btnUbiWa = document.getElementById("btnUbiWa");
 if (btnUbiWa) {
   btnUbiWa.onclick = (e) => {
     e.preventDefault();
-    const msg = `Hola Chino! Mándame tu ubicación de la Bodega Oblatos porfa - Av. Belisario Dominguez 2640 GDL`;
-    window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`, "_blank");
+    openDemo(`📍 <b>Bodega Oblatos</b><br><br>Av. Belisario Domínguez 2640<br>Oblatos, Guadalajara, Jal.<br><br>En la tienda real aquí se abriría WhatsApp del Chino.<br><br>En esta DEMO está bloqueado para no spamear.`);
   };
 }
+
+// Socials WA demo
+document.querySelectorAll(".soc-wa,.chino-socials a:last-child,.chino-ubi-btn.wa").forEach(el=>{
+  if(el.id==="btnUbiWa") return;
+  el.addEventListener("click", e=>{
+    e.preventDefault();
+    openDemo(`En la tienda real aquí se abriría WhatsApp del Chino.<br><br>En DEMO bloqueado.<br><br>Pacas 50KG originales - Oblatos GDL`);
+  });
+});

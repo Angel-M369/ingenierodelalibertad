@@ -685,6 +685,75 @@ a:active{
   margin-top:8px;
 }
 
+/* MODAL DEMO - NUEVO */
+.modal-demo{
+  position:fixed;
+  inset:0;
+  z-index:99999;
+  background:rgba(0,0,0,.85);
+  backdrop-filter:blur(6px);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+}
+.modal-demo.active{display:flex}
+.modal-demo-box{
+  background:#fff;
+  max-width:520px;
+  width:100%;
+  border-radius:20px;
+  border:3px solid #111;
+  padding:28px 22px 22px;
+  position:relative;
+  animation:pop .3s ease;
+  font-family:Poppins, sans-serif;
+  color:#111;
+}
+@keyframes pop{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+.modal-demo-close{
+  position:absolute;
+  right:14px;
+  top:8px;
+  background:none;
+  border:none;
+  font-size:30px;
+  cursor:pointer;
+  color:#111;
+}
+.modal-demo-texto{
+  background:#FFF0F5;
+  border:2px dashed #E11D48;
+  padding:12px;
+  border-radius:12px;
+  font-size:.9rem;
+  margin:14px 0;
+  color:#111;
+  white-space:pre-line;
+}
+.btn-demo{cursor:pointer!important}
+#clientName{
+  width:100%;
+  padding:10px;
+  border-radius:10px;
+  border:1px solid #ddd;
+  margin:8px 0;
+  font-size:.8rem;
+}
+#demoEntendido{
+  width:100%;
+  padding:12px;
+  border-radius:100px;
+  background:#111;
+  color:#fff;
+  font-weight:900;
+  border:none;
+  cursor:pointer;
+  margin-top:12px;
+  transition:.2s;
+}
+#demoEntendido:hover{filter:brightness(1.15)}
+
 /* DESKTOP */
 @media(min-width:768px){
   .hero-ysi{grid-template-columns:1.2fr .8fr}

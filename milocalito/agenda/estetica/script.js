@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const b = document.getElementById('hBtn');
 
     [bg, t, s1, s2, b].forEach(el => el && el.classList.remove('show'));
-    img.src = heroImages[heroIndex];
+    if(img) img.src = heroImages[heroIndex];
 
     setTimeout(() => bg && bg.classList.add('show'), 100);
     setTimeout(() => t && t.classList.add('show'), 600);
@@ -51,11 +51,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // CARRUSEL INFINITO REAL - duplicar
   const track = document.getElementById('track');
-  track.innerHTML += track.innerHTML;
+  if(track) track.innerHTML += track.innerHTML;
 
   // AGENDA QUE SUMA
   let cart = [];
-  
+
   window.addService = (name, price) => {
     cart.push({ key: Date.now(), name, price });
     renderCart();
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   window.removeService = (key) => {
-    cart = cart.filter(c => c.key !== key);
+    cart = cart.filter(c => c.key!== key);
     renderCart();
   };
 
@@ -88,30 +88,71 @@ document.addEventListener('DOMContentLoaded', () => {
       list.innerHTML = '<li>Elige del carrusel de arriba</li>';
     }
 
-    totalEl.innerText = `Total: $${total}`;
-    countEl.innerText = `${cart.length} servicios`;
+    if(totalEl) totalEl.innerText = `Total: $${total}`;
+    if(countEl) countEl.innerText = `${cart.length} servicios`;
   }
 
+  // ===== MODO DEMO - NO MANDA WHATSAPP =====
+  const modal = document.getElementById('demoModal');
+  const demoTexto = document.getElementById('demoTexto');
+  const btnClose = document.getElementById('demoClose');
+  const btnEntendido = document.getElementById('demoEntendido');
+  const btnConfirmar = document.getElementById('btnConfirmar');
+
+  function abrirDemo(html){
+    demoTexto.innerHTML = html;
+    modal.classList.add('active');
+  }
+  function cerrarDemo(){
+    modal.classList.remove('active');
+  }
+
+  window.cerrarDemo = cerrarDemo;
+
+  if(btnClose) btnClose.addEventListener('click', cerrarDemo);
+  if(btnEntendido) btnEntendido.addEventListener('click', cerrarDemo);
+  if(modal) modal.addEventListener('click', (e)=>{
+    if(e.target === modal) cerrarDemo();
+  });
+
+  // Esta es la función que ahora usa tu botón CONFIRMAR
   window.confirmarReserva = () => {
     if (!cart.length) return alert('Elige al menos un servicio del carrusel');
-    
-    const nombre = document.getElementById('nombre').value || 'Clienta';
-    const fecha = document.getElementById('fecha').value || 'por confirmar';
-    const hora = document.getElementById('hora').value || 'por confirmar';
-    const direccion = document.getElementById('direccion').value || 'En estudio - C. Jalisco 50a';
-    
+
+    const nombre = document.getElementById('nombre').value.trim();
+    const fecha = document.getElementById('fecha').value;
+    const hora = document.getElementById('hora').value;
+    const direccion = document.getElementById('direccion').value.trim();
+
+    if(!nombre ||!fecha ||!hora){
+      return alert('Por favor llena nombre, fecha y hora');
+    }
+
     let total = cart.reduce((a,b) => a + b.price, 0);
-    let servicios = cart.map(c => `${c.name} ($${c.price})`).join(', ');
+    let serviciosHtml = cart.map(c => `• ${c.name} ($${c.price})`).join('<br>');
 
-    // WhatsApp a Dalila
-    const msgDalila = `Hola Dalila! 💖%0A%0ASoy ${nombre}%0AServicios: ${servicios}%0ATotal: $${total}%0AFecha: ${fecha}%0AHora: ${hora}%0ADirección: ${direccion}%0A%0AStudioD - Nude Premium`;
-    window.open(`https://wa.me/523317995988?text=${msgDalila}`, '_blank');
+    const html = `
+      <b>Cliente:</b> ${nombre}<br>
+      <b>Fecha:</b> ${fecha}<br>
+      <b>Hora:</b> ${hora}<br>
+      ${direccion? `<b>Dirección:</b> ${direccion}<br>` : `<b>Modalidad:</b> En estudio - C. Jalisco 50a<br>`}
+      <br>
+      <b>Servicios:</b><br>${serviciosHtml}<br><br>
+      <b>Total: $${total}</b>
+    `;
 
-    // Mensaje para clienta (segundo WA con timeout)
-    setTimeout(() => {
-      const msgClienta = `Hola ${nombre}! Tu reservación está confirmada para ${fecha} a las ${hora}.%0A%0AServicios: ${servicios}%0ATotal: $${total}%0A%0ANos vemos pronto!!!%0AStudioD - C. Jalisco 50a, Tlaquepaque%0A33 1799 5988`;
-      // Copiamos al portapapeles para que la clienta lo vea
-      alert(`✅ Reserva lista para Dalila\n\nMensaje para la clienta:\n\n${decodeURIComponent(msgClienta).replace(/%0A/g,'\n')}`);
-    }, 800);
+    abrirDemo(html);
   };
+
+  if(btnConfirmar){
+    btnConfirmar.addEventListener('click', window.confirmarReserva);
+  }
+
+  // Intercepta todos los botones de WhatsApp de la demo
+  document.querySelectorAll('.btn-demo').forEach(a=>{
+    a.addEventListener('click', (e)=>{
+      e.preventDefault();
+      abrirDemo(`En la versión real, este botón abriría WhatsApp.`);
+    });
+  });
 });

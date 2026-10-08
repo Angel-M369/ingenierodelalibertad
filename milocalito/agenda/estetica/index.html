@@ -4,12 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>StudioD | Nude Premium</title>
+  <meta name="description" content="StudioD Nude Premium. Agenda 24/7, paga tu anticipo y asegura tu lugar. 0 empalmes.">
+  <link rel="canonical" href="https://www.ingenierodelalibertad.com/milocalito/agenda/studiod/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#d8c3a5">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="StudioD | Nude Premium">
+  <meta property="og:description" content="Demo AGENDA: Agenda 24/7, anticipo y asegura tu lugar. 0 lugares empalmados.">
+  <meta property="og:image" content="https://www.ingenierodelalibertad.com/milocalito/agenda/studiod/images/studio-og.jpeg">
+  <meta property="og:image:secure_url" content="https://www.ingenierodelalibertad.com/milocalito/agenda/studiod/images/studio-og.jpeg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="StudioD Nude Premium">
+  <meta property="og:url" content="https://www.ingenierodelalibertad.com/milocalito/agenda/studiod/">
+  <meta property="og:site_name" content="Mi Localito">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="StudioD | Nude Premium">
+  <meta name="twitter:description" content="Demo AGENDA: Agenda 24/7, anticipo y asegura tu lugar.">
+  <meta name="twitter:image" content="https://www.ingenierodelalibertad.com/milocalito/agenda/studiod/images/studio-og.jpeg">
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <header class="nav-fixed">
     <a href="#inicio" class="logo">
       <img src="../../../images/Studiologo.jpeg" alt="StudioD">
@@ -26,7 +44,6 @@
     <a href="#contacto">Contacto</a>
   </nav>
 
-  <!-- HERO CON IMG TAG Y BUCLE -->
   <section class="hero" id="inicio">
     <div class="hero-bg" id="heroBg">
       <img class="hero-img" id="heroImg" src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?q=80&w=1200" alt="StudioD">
@@ -39,11 +56,9 @@
     </div>
   </section>
 
-  <!-- CARRUSEL INFINITO REAL -->
   <section class="servicios" id="servicios">
     <h2>ELIGE TU SERVICIO</h2>
     <p class="serv-sub">¿Como te vas a dejar consetir hoy?</p>
-    
     <div class="carousel">
       <div class="carousel-track" id="track">
         <div class="card">
@@ -75,7 +90,6 @@
     </div>
   </section>
 
-  <!-- DALILA TE ATIENDE - AGENDA -->
   <section class="atiende" id="atiende">
     <h2>Dalila te atiende 😉</h2>
     <p class="atiende-sub">Elige tus servicios, ve el total y agenda sin pagar ahora</p>
@@ -93,27 +107,25 @@
           <input type="time" id="hora" class="input">
         </div>
         <input id="direccion" class="input" placeholder="Tu dirección (para domicilio)">
-        <button class="btn-uniform black btn-full" onclick="confirmarReserva()">CONFIRMAR POR WHATSAPP →</button>
-        <p class="form-note">Te llegará: Tu reservación está confirmada para tal fecha y hora. ¡Nos vemos pronto!!!</p>
+        <button class="btn-uniform black btn-full" id="btnConfirmar">CONFIRMAR POR WHATSAPP →</button>
+        <p class="form-note">DEMO: No se enviará WhatsApp real a Dalila.</p>
       </div>
     </div>
   </section>
 
-  <!-- VIP SECCION -->
   <section class="vip" id="vip">
     <div class="vip-content">
       <h2>SERVICIO VIP</h2>
       <h3>la belleza en su máximo esplendor</h3>
       <p>Disfruta de un delicioso masaje, mientras escuchas música relajante y comes unos aperitivos. Déjate consentir por una experiencia que no solo transforma tu rostro y uñas si no que renueva tu espíritu.</p>
       <div class="vip-price">Vive la experiencia, $2000</div>
-      <a href="https://wa.me/523317995988?text=Dalila%20quiero%20un%20servicio%20VIP%20%F0%9F%92%85%20StudioD%20C.%20Jalisco%2050a" target="_blank" class="btn-uniform pink btn-full">Dalila quiero un servicio VIP →</a>
+      <a href="#" class="btn-uniform pink btn-full btn-demo">Dalila quiero un servicio VIP →</a>
     </div>
     <div class="vip-img">
       <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800" alt="VIP">
     </div>
   </section>
 
-  <!-- FOOTER 2 SECCIONES -->
   <footer id="contacto">
     <div class="footer-grid">
       <div>
@@ -124,7 +136,7 @@
           <a href="#" class="fb"><i class="fab fa-facebook-f"></i></a>
           <a href="#" class="ig"><i class="fab fa-instagram"></i></a>
           <a href="#" class="tk"><i class="fab fa-tiktok"></i></a>
-          <a href="https://wa.me/523317995988" class="wa"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" class="wa btn-demo"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
       <div>
@@ -134,7 +146,7 @@
           <p><i class="fas fa-clock"></i> Lun - Dom con cita</p>
           <p><i class="fas fa-mobile-alt"></i> 33 1799 5988</p>
         </div>
-        <a href="https://wa.me/523317995988?text=Hola%20Dalila%20quiero%20agendar%20cita%20en%20StudioD" class="btn-uniform black btn-full">AGENDA POR WHATSAPP →</a>
+        <a href="#" class="btn-uniform black btn-full btn-demo">AGENDA POR WHATSAPP →</a>
       </div>
     </div>
     <div class="footer-line">
@@ -143,6 +155,22 @@
     </div>
   </footer>
 
+  <!-- MODAL DEMO -->
+  <div id="demoModal" class="modal-demo">
+    <div class="modal-demo-box">
+      <button id="demoClose" class="modal-demo-close">×</button>
+      <h2>¡Reserva simulada!</h2>
+      <div id="demoTexto" class="modal-demo-texto"></div>
+      <div class="modal-demo-info">
+        <b>En tu página real así funciona:</b><br>
+        1. Al cliente le llega WhatsApp: "Tu reservación está confirmada para [fecha] a las [hora]. ¡Nos vemos pronto!!!"<br>
+        2. A ti (dueña) te llega WhatsApp con: nombre, servicios, total, fecha, hora y dirección.<br>
+        3. Se agenda el servicio y se bloquea el horario. 0 empalmes. 100% automatizado.
+      </div>
+      <p class="modal-demo-note">Esto es una DEMO de Mi Localito | Sistema Agenda.</p>
+      <button id="demoEntendido" class="btn-uniform">ENTENDIDO</button>
+    </div>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>

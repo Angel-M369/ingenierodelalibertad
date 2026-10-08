@@ -641,6 +641,85 @@ footer {
   color: var(--rosa);
 }
 
+/* ========= MODAL DEMO - MI LOCALITO ========= */
+.modal-demo{
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  background: rgba(43,43,43,.85);
+  backdrop-filter: blur(6px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+}
+
+.modal-demo.active{
+  display: flex;
+}
+
+.modal-demo-box{
+  background: var(--blanco);
+  max-width: 520px;
+  width: 100%;
+  border-radius: 22px;
+  border: 3px solid var(--negro);
+  padding: 28px 22px 22px;
+  position: relative;
+  animation: pop .3s ease;
+}
+
+@keyframes pop{
+  from{transform:scale(.9); opacity:0}
+  to{transform:scale(1); opacity:1}
+}
+
+.modal-demo-close{
+  position: absolute;
+  right: 14px;
+  top: 8px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  line-height: 1;
+  color: var(--negro);
+}
+
+.modal-demo-box h2{
+  font-family: Anton;
+  font-size: 2.2rem;
+  line-height: .9;
+  color: var(--negro);
+}
+
+.modal-demo-texto{
+  background: #fff;
+  border: 2px dashed var(--beige);
+  padding: 12px;
+  border-radius: 12px;
+  font-size: .9rem;
+  line-height: 1.6;
+  margin: 14px 0;
+}
+
+.modal-demo-info{
+  background: var(--negro);
+  color: var(--blanco);
+  padding: 14px;
+  border-radius: 12px;
+  font-size: .82rem;
+  line-height: 1.6;
+  border-left: 4px solid var(--rosa);
+}
+
+.modal-demo-note{
+  margin-top: 14px;
+  font-size: .7rem;
+  opacity: .6;
+  text-align: center;
+}
+
 @media (min-width: 768px) {
  .hero-content { max-width: 700px; gap: 45px; }
  .hero h1 { font-size: 5rem; }

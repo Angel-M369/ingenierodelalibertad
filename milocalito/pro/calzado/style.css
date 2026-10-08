@@ -17,7 +17,7 @@ img{display:block;max-width:100%}
 .leon-menu a{color:#fff;padding:12px;border-radius:10px;font-weight:600;transition:.2s;display:flex;gap:10px;align-items:center}
 .leon-menu a:hover{background:#D97706;color:#fff;transform:translateX(-4px)}
 
-/* CARRITO - CORREGIDO FINAL */
+/* CARRITO */
 .leon-drawer{position:fixed;inset:0;z-index:80;pointer-events:none}
 .leon-drawer.open{pointer-events:auto}
 .leon-drawer-panel{position:absolute;right:0;top:0;width:360px;max-width:92%;height:100dvh;background:#111;z-index:2;transform:translateX(110%);transition:.4s cubic-bezier(.2,.8,.2,1);padding:18px;display:flex;flex-direction:column;border-left:3px solid #D97706}
@@ -138,6 +138,15 @@ img{display:block;max-width:100%}
 .leon-footer-copy span{font-size:.8rem;color:#6B7280}
 .leon-footer-eng{color:#9CA3AF;font-size:.85rem;font-weight:600;transition:.2s}
 .leon-footer-eng:hover{color:#D97706}
+
+/* DEMO MODAL - NUEVO */
+.modal-demo{position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.8);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:18px}
+.modal-demo.active{display:flex}
+.modal-demo-box{background:#FFFBEB;max-width:520px;width:100%;border-radius:20px;border:3px solid #111;padding:28px 22px 22px;position:relative;animation:pop .3s ease;color:#111}
+@keyframes pop{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+.modal-demo-close{position:absolute;right:14px;top:8px;background:none;border:none;font-size:30px;cursor:pointer}
+.modal-demo-texto{background:#fff;border:2px dashed #D97706;padding:12px;border-radius:12px;font-size:.9rem;margin:14px 0}
+.btn-demo{cursor:pointer!important}
 
 @media(min-width:600px){.leon-grid{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:768px){

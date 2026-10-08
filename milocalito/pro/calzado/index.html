@@ -4,12 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zapaterías León | Pasos firmes con calzado elegante</title>
+  <meta name="description" content="Zapaterías León desde 1987. Piel 100% original, Zona Piel León Gto. Tallas 22-30, envío nacional 24-48h. -5% por transferencia.">
+  <link rel="canonical" href="https://www.ingenierodelalibertad.com/milocalito/custom/zapaterias-leon/">
+
+  <!-- OG PARA WHATSAPP -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Zapaterías León | Pasos firmes elegantes - Desde 1987">
+  <meta property="og:description" content="Piel 100% original. Zona Piel León Gto. Caballero y Dama tallas 22-30. Envío nacional. -5% transferencia.">
+  <meta property="og:image" content="https://www.ingenierodelalibertad.com/images/leon-og.jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:url" content="https://www.ingenierodelalibertad.com/milocalito/custom/zapaterias-leon/">
+  <meta property="og:site_name" content="Zapaterías León">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://www.ingenierodelalibertad.com/images/leon-og.jpeg">
+
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .modal-demo{position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.8);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:18px}
+    .modal-demo.active{display:flex}
+    .modal-demo-box{background:#fff;max-width:520px;width:100%;border-radius:20px;border:3px solid #111;padding:28px 22px 22px;position:relative;animation:pop .3s ease;font-family:Inter,sans-serif;color:#111}
+    @keyframes pop{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+    .modal-demo-close{position:absolute;right:14px;top:8px;background:none;border:none;font-size:30px;cursor:pointer}
+    .modal-demo-texto{background:#FFF8F0;border:2px dashed #111;padding:12px;border-radius:12px;font-size:.9rem;margin:14px 0}
+  </style>
 </head>
 <body id="top">
-
   <header class="leon-head">
     <a class="leon-brand" href="#top">ZAPATERÍAS <span>LEÓN</span></a>
     <div class="leon-actions">
@@ -41,7 +64,7 @@
       </div>
       <div class="leon-total-box"><span>TOTAL</span><b>$<i id="leonTotal">0</i></b></div>
       <input id="leonName" placeholder="Tu nombre">
-      <button class="leon-btn-pay" id="btnPagar"><i class="fa-brands fa-whatsapp"></i> PAGAR AHORA</button>
+      <button class="leon-btn-pay" id="btnPagar"><i class="fa-brands fa-whatsapp"></i> PAGAR AHORA (DEMO)</button>
       <button class="leon-btn-clear" id="btnClear">Vaciar carrito</button>
     </div>
     <div class="leon-drawer-bg" id="drawerBg"></div>
@@ -51,7 +74,7 @@
     <img src="../../../images/calzado.jpeg" class="leon-hero-bg" alt="">
     <div class="leon-hero-overlay"></div>
     <div class="leon-hero-content">
-      <span class="leon-hero-side top">ZONA PIEL • LEÓN GTO • DESDE 1987</span>
+      <span class="leon-hero-side top">ZONA PIEL • LEÓN GTO • DESDE 1987 - DEMO</span>
       <div class="leon-hero-center">
         <h1 class="leon-hero-title">PASOS <br>FIRMES <span>ELEGANTES</span></h1>
         <p class="leon-hero-subs">Zapaterías León - Piel 100% original</p>
@@ -87,7 +110,6 @@
   <section class="leon-catalog" id="catalogo">
     <div class="leon-cat-head"><h2>CATÁLOGO <em>LEÓN</em></h2><p>Caballero y Dama • Piel 100% leonesa • Tallas 22-30</p></div>
     <div class="leon-grid">
-      <!-- CABALLERO -->
       <div class="leon-card"><img src="../../../images/ZapNeg.jpg"><div class="leon-card-info"><h4>Zapato Formal Negro</h4><span>Tallas 25-29 • Piel negra • Suela cuero</span><b>$1,350</b></div><button data-add="Zapato Formal Negro" data-price="1350">Agregar</button></div>
       <div class="leon-card"><img src="../../../images/ZapCaf.jpg"><div class="leon-card-info"><h4>Zapato Formal Café</h4><span>Tallas 25-30 • Café miel • Cosido a mano</span><b>$1,350</b></div><button data-add="Zapato Formal Café" data-price="1350">Agregar</button></div>
       <div class="leon-card"><img src="../../../images/BotaH1.jpg"><div class="leon-card-info"><h4>Bota Vaquera Hombre 1</h4><span>Tallas 26-30 • Piel café • Punta cuadrada</span><b>$1,890</b></div><button data-add="Bota Vaquera H1" data-price="1890">Agregar</button></div>
@@ -98,7 +120,6 @@
       <div class="leon-card"><img src="../../../images/GuaraH2.jpg"><div class="leon-card-info"><h4>Huarache Piel Hombre 2</h4><span>Tallas 25-30 • Negro • Suela antiderrapante</span><b>$890</b></div><button data-add="Huarache H2" data-price="890">Agregar</button></div>
       <div class="leon-card"><img src="../../../images/SandaH1.jpg"><div class="leon-card-info"><h4>Sandalia Caballero 1</h4><span>Tallas 26-30 • Café • Piel suave</span><b>$750</b></div><button data-add="Sandalia H1" data-price="750">Agregar</button></div>
       <div class="leon-card"><img src="../../../images/SandaH2.jpg"><div class="leon-card-info"><h4>Sandalia Caballero 2</h4><span>Tallas 25-29 • Negro • Doble tira</span><b>$750</b></div><button data-add="Sandalia H2" data-price="750">Agregar</button></div>
-      <!-- DAMA -->
       <div class="leon-card"><img src="../../../images/ZapaNeg.jpg"><div class="leon-card-info"><h4>Zapatilla Dama Negra</h4><span>Tallas 22-26 • Negro charol • Tacón medio</span><b>$1,250</b></div><button data-add="Zapatilla Negra" data-price="1250">Agregar</button></div>
       <div class="leon-card"><img src="../../../images/Zapacaf.jpg"><div class="leon-card-info"><h4>Zapatilla Dama Café</h4><span>Tallas 22-26 • Café miel • Elegante</span><b>$1,250</b></div><button data-add="Zapatilla Café" data-price="1250">Agregar</button></div>
       <div class="leon-card"><img src="../../../images/BotaM1.jpg"><div class="leon-card-info"><h4>Bota Dama 1</h4><span>Tallas 22-26 • Negro • Corta casual</span><b>$1,590</b></div><button data-add="Bota Mujer 1" data-price="1590">Agregar</button></div>
@@ -120,7 +141,7 @@
         <div class="leon-ubi-card"><b><i class="fa-solid fa-clock"></i> Horario</b><span>Lun - Sáb 10am - 8pm, Dom 11am - 6pm</span></div>
         <div class="leon-ubi-card"><b><i class="fa-solid fa-truck"></i> Envío nacional</b><span>24-48h a todo México</span></div>
         <a class="leon-ubi-btn maps" href="https://maps.google.com/?q=Zona+Piel+Leon+GTO" target="_blank"><i class="fa-solid fa-diamond-turn-right"></i> Cómo llegar por Google Maps</a>
-        <a class="leon-ubi-btn wa" id="btnUbiWa" href="#"><i class="fa-brands fa-whatsapp"></i> Mándame la ubicación</a>
+        <a class="leon-ubi-btn wa btn-demo" id="btnUbiWa" href="#"><i class="fa-brands fa-whatsapp"></i> Mándame la ubicación</a>
         <span class="leon-ubi-note">Piel 100% leonesa • Facturamos • Cambios 15 días</span>
       </div>
     </div>
@@ -133,7 +154,7 @@
         <a class="soc-fb" href="#"><i class="fa-brands fa-facebook-f"></i></a>
         <a class="soc-ig" href="#"><i class="fa-brands fa-instagram"></i></a>
         <a class="soc-tt" href="#"><i class="fa-brands fa-tiktok"></i></a>
-        <a class="soc-wa" href="#"><i class="fa-brands fa-whatsapp"></i></a>
+        <a class="soc-wa btn-demo" href="#"><i class="fa-brands fa-whatsapp"></i></a>
       </div></div>
       <div class="leon-footer-col"><h4>Hablemos!</h4><span>Lun - Sáb 10am - 8pm</span><span>Zona Piel, León GTO</span><span>Blvd. Hilario Medina 123</span></div>
     </div>
@@ -143,6 +164,16 @@
       <a class="leon-footer-eng" href="https://www.ingenierodelalibertad.com" target="_blank">Ingeniero de la libertad</a>
     </div>
   </footer>
+
+  <div id="demoModal" class="modal-demo">
+    <div class="modal-demo-box">
+      <button id="demoClose" class="modal-demo-close">×</button>
+      <h2>¡Pedido simulado!</h2>
+      <div id="demoTexto" class="modal-demo-texto"></div>
+      <p style="margin-top:10px;font-size:11px;opacity:.6">DEMO Mi Localito - En la tienda real se cobraría con Mercado Pago y te llegaría WhatsApp con el pedido y método de pago.</p>
+      <button id="demoEntendido" style="margin-top:12px;width:100%;padding:12px;border-radius:100px;background:#111;color:#fff;font-weight:900;border:none;cursor:pointer">ENTENDIDO</button>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
