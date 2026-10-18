@@ -1,0 +1,17 @@
+/* =========================================
+   5. CARDS / SISTEMAS - BLOQUE 4
+   ========================================= */
+#b4{padding-top:10px}
+.systems-grid{display:grid;grid-template-columns:1fr;gap:16px;max-width:1000px;margin:30px auto 0;text-align:left}
+.sys{display:flex;flex-direction:column;overflow:hidden;padding:0;border:1px solid var(--border);border-radius:16px;background:var(--bg-card)}
+.sys img{width:100%;height:380px;object-fit:cover;object-position:top center}
+.sys .sys-actions{display:flex;gap:12px;padding:16px;margin-top:auto}
+.sys a.btn-demo{flex:1;padding:13px 10px;background:#38bdf8;color:#071126;border-radius:10px;font-size:14px;font-weight:700;text-align:center;text-decoration:none}
+.sys a.btn-demo:hover{background:var(--accent-hover);color:#fff}
+
+@media (min-width:700px){
+  .systems-grid{grid-template-columns:1fr 1fr;gap:20px}
+}
+@media (min-width:1000px){
+  .systems-grid{grid-template-columns:1fr 1fr 1fr}
+}

@@ -1,0 +1,17 @@
+/* =========================================
+   6. ATENCIÓN / CONTACTO - BLOQUE 5
+   ========================================= */
+#b5{padding:48px 20px 80px;display:flex;flex-direction:column;gap:32px}
+#b5 .contacto-joss{display:flex;flex-direction:column;align-items:center;gap:18px;margin:10px auto 0;width:100%}
+#b5 .foto-joss{width:92px;height:92px;border-radius:50%;border:3px solid var(--accent);object-fit:cover}
+#b5 .contacto-joss .btn-wa{width:100%;max-width:280px;padding:14px 22px;background:var(--accent);color:#071126;border-radius:12px;font-weight:700;text-align:center;text-decoration:none}
+#b5 .checks{list-style:none;padding:0;margin:0 auto;max-width:360px;width:100%;display:flex;flex-direction:column;gap:14px;text-align:left}
+#b5 .visual-phone{width:100%;max-width:360px;margin:12px auto 0}
+#b5 .phone{padding:32px 18px;border:1px solid var(--border);border-radius:20px;background:var(--bg-card)}
+
+@media (min-width:700px){
+  #b5{padding:70px 28px 100px;gap:40px}
+  #b5 .contacto-joss{flex-direction:row;gap:24px}
+  #b5 .foto-joss{width:110px;height:110px}
+  #b5 .contacto-joss .btn-wa{width:auto}
+}

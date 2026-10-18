@@ -1,10 +1,67 @@
-/* reset.css */
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--border:#222;--bg:#050505;--green:#84cc16;--green2:#a3e635;--blue:#0ea5e9;--blue2:#38bdf8;--purple:#a855f7;--purple2:#c084fc}
+/* =========================================
+   0. RESET + VARIABLES - PLANTILLA MAESTRA
+   Lo único que cambias por socio es --accent
+   ========================================= */
+:root{
+  --accent: #24d7ff;
+  --accent-hover: #2563eb;
+  --mi-green: #00e676;
+  --bg: #071126;
+  --bg-dark: #050b17;
+  --bg-card: #101d35;
+  --border: #34445f;
+  --text: #fff;
+  --text-dim: #c5cede;
+}
+*{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--bg);font-family:Inter,sans-serif;color:#fff;overflow-x:hidden;line-height:1.5}
-img{max-width:100%;display:block}
-.page{overflow:hidden}
-.page-jorge{--primary:#0ea5e9;--primary2:#38bdf8;--glow:rgba(14,165,233,.35)}
-.page-tadeo{--primary:#84cc16;--primary2:#a3e635;--glow:rgba(132,204,22,.35)}
-.page-joss{--primary:#a855f7;--primary2:#c084fc;--glow:rgba(168,85,247,.4)}
+body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:var(--text)}
+img{display:block;max-width:100%}
+a{color:inherit}
+.page{width:100%;overflow:hidden;padding-top:72px}
+
+/* =========================================
+   BLOQUES BASE - GENERAL
+   ========================================= */
+.block{
+  padding:10px 18px 58px 18px; /* 10px de padding-top general para todos */
+  text-align:center;
+  scroll-margin-top:80px;
+  border-bottom:1px solid #0f1d33
+}
+.dark{background:var(--bg-dark)}
+
+/* =========================================
+   LABELS TIPO BOTON - GENERAL PARA TODOS
+   ========================================= */
+.label{
+  display:block;
+  width:fit-content; /* para que no se estire */
+  margin:0 0 24px 0; /* 0 a la izquierda = sale de lado izquierdo */
+  padding:8px 18px;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:var(--accent); /* azul cielo */
+  background:rgba(36,215,255,0.06);
+  border:1.5px solid var(--accent);
+  border-radius:25px; /* border radius 25px */
+  text-align:left;
+  line-height:1;
+}
+.label:hover{
+  background:var(--accent);
+  color:#04120a;
+  box-shadow:0 0 18px rgba(36,215,255,.4);
+}
+
+@media (min-width:700px){
+  .block{padding:10px 28px 70px 28px} /* también 10px en desktop */
+}
+
+/* Todos los span dentro de un h2 en azul */
+h2 span{
+  color: #00d9e8;
+  color: var(--accent, #00d9e8);
+}

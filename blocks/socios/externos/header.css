@@ -1,25 +1,77 @@
-/* b1-header - GENERAL PARA LOS 100 SOCIOS - FIXED + HAMBURGUESA */
-.b1-header{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:rgba(8,3,15,.92);border:1px solid var(--border);position:fixed;top:0;left:0;width:100%;z-index:1000;backdrop-filter:blur(12px);gap:10px;flex-wrap:nowrap;box-sizing:border-box}
-.page{padding-top:62px} /* empuja todo para que el fixed no tape */
-.b1-header .logo{display:flex;align-items:center;gap:6px;text-decoration:none}
-.b1-header .logo b{font-family:Montserrat,sans-serif;font-weight:900;font-size:.9rem;color:#fff}
-.b1-header .logo span{color:var(--primary);font-weight:800;font-size:.7rem;margin-left:6px}
-.b1-header .logo .mi-green{color:#22c55e} /* 💚 MI siempre verde */
-.yerberitos-header-btn{background:var(--primary);color:#fff;padding:10px 14px;border-radius:999px;font-weight:900;font-size:.7rem;box-shadow:0 0 18px var(--glow);text-decoration:none;white-space:nowrap;transition:.2s}
-.yerberitos-header-btn:hover{transform:translateY(-2px);box-shadow:0 0 28px var(--glow)}
-.header-right{display:flex;align-items:center;gap:12px}
-.nav-menu{display:flex;align-items:center;gap:18px}
-.nav-menu a{color:#fff;text-decoration:none;font-weight:700;font-size:.75rem;opacity:.9;transition:.2s}
-.nav-menu a:hover{color:var(--primary);opacity:1}
-.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
-.hamburger span{width:24px;height:3px;background:#fff;border-radius:3px;display:block;transition:.3s}
+/* =========================================
+   1. HEADER - TODO EN UN SOLO BLOQUE
+   ========================================= */
+.site-header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:16px;background:rgba(5,11,23,0.92);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--border)
+}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;max-width:1100px;margin:auto
+}
+.brand{
+  display:flex;align-items:center;gap:10px;
+  text-decoration:none;line-height:1
+}
+.brand-text{
+  display:flex;
+  flex-direction:column; /* SOCIA AUTORIZADA va abajo */
+  gap:3px;
+  text-align:left;
+}
+.brand-text strong{
+  font-size:15px;letter-spacing:1px;
+  color:#fff;font-weight:800;
+  line-height:1
+}
+.brand-text strong .mi{
+  color:var(--mi-green); /* MI en verde */
+}
+.brand-text small{
+  font-size:10px;letter-spacing:1px;
+  color:var(--text-dim);opacity:.9;
+  text-transform:uppercase;
+  line-height:1
+}
+/* HAMBURGUESA BLANCA Y VISIBLE */
+.burger{
+  width:42px;height:42px;
+  display:inline-flex;align-items:center;justify-content:center;
+  color:#fff; /* rayitas blancas */
+  background:transparent;
+  border:1px solid #ffffff30;
+  border-radius:8px;
+  font-size:24px;
+  cursor:pointer;
+  transition:.2s
+}
+.burger:hover{
+  color:var(--accent);
+  border-color:var(--accent);
+  background:rgba(36,215,255,.08)
+}
+.mobile-menu{
+  display:none;position:absolute;top:100%;right:12px;
+  width:200px;padding:16px;background:var(--bg-dark);
+  border:1px solid var(--border);border-radius:12px
+}
+.mobile-menu.open{display:grid;gap:14px}
+.mobile-menu a{
+  text-decoration:none;padding:8px 0;
+  transition:.2s;border-radius:6px;
+  color:#fff
+}
+.mobile-menu a:hover{color:var(--accent);background:rgba(36,215,255,.10)}
+.menu-overlay{display:none}
 
-@media(min-width:860px){.b1-header{padding:18px 28px}.b1-header .logo b{font-size:1rem}.b1-header .logo span{font-size:.8rem}.yerberitos-header-btn{font-size:.75rem;padding:11px 18px}.nav-menu a{font-size:.8rem}}
-@media(max-width:860px){
-  .hamburger{display:flex}
-  .nav-menu{position:fixed;top:62px;right:-100%;width:200px;height:calc(60vh - 62px);background:rgba(8,3,15,.98);flex-direction:column;align-items:flex-start;padding:24px;gap:18px;transition:.3s;box-shadow:-10px 0 30px rgba(0,0,0,.5);border-left:1px solid var(--border)}
-  .nav-menu.active{right:0}
-  .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,6px)}
-  .hamburger.active span:nth-child(2){opacity:0}
-  .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-6px)}
+@media (min-width:700px){
+  .site-header{padding:18px 28px}
+  .burger{display:none}
+  .mobile-menu{
+    display:flex;position:static;
+    padding:0;gap:22px;
+    background:transparent;border:0;width:auto
+  }
+  .mobile-menu a{font-size:13px;color:var(--text-dim)}
 }

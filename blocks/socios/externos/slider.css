@@ -1,0 +1,133 @@
+/* =========================================
+   4. BLOQUE 3 — SOLUCIONES - MOBILE FIRST
+   TODO CONSERVADO + FIX PIE VISIBLE
+========================================= */
+
+#b3 {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+/* ETIQUETA Y TÍTULO */
+#b3 h2 {
+  margin: 0 auto 24px;
+  line-height: 1.15;
+  text-align: center;
+}
+
+/* PÁRRAFOS */
+#b3 .desc {
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  text-align: center;
+}
+#b3 .desc p {
+  margin: 0 0 22px;
+  line-height: 1.65;
+}
+#b3 .desc p:last-child {
+  margin-bottom: 0;
+}
+
+/* CINTA INFINITA - CONSERVADO */
+#b3 .infinite-wrap {
+  overflow: hidden;
+  width: 100%;
+  margin: 28px auto 0;
+  padding: 20px 0;
+}
+#b3 .infinite-track {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: max-content;
+  padding: 10px;
+  animation: cinta 24s linear infinite;
+}
+#b3 .infinite-wrap:hover .infinite-track {
+  animation-play-state: paused;
+}
+#b3 .infinite-track > a {
+  display: block;
+  flex: 0 0 300px;
+  width: 300px;
+  margin: 25PX;
+  text-decoration: none;
+}
+#b3 .infinite-track > a img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#b3 .infinite-track img.foco-activo {
+  outline: 3px solid var(--accent, #00d9e8);
+  box-shadow: 0 0 24px var(--accent, #00d9e8);
+  transform: scale(1.08);
+}
+@keyframes cinta {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+#b3 .dots {
+  margin: 12px auto 0;
+}
+
+/* PIE DE PÁGINA DEL BLOQUE - FIX DEFINITIVO PARA QUE SE VEA */
+#b3 .b3-cierre {
+  display: block;
+  width: 100%;
+  max-width: 340px;
+  margin: 34px auto 0 auto;
+  padding: 24px 0 0;
+  border-top: 1px solid #00d9e8;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+  opacity: 1;
+  visibility: visible;
+}
+#b3 .b3-cierre p {
+  display: block;
+  margin: 0;
+  line-height: 1.7;
+  color: #fff;
+  font-size: 15px;
+}
+#b3 .b3-cierre p span {
+  color: #00d9e8;
+  font-weight: 700;
+}
+
+/* CTA DEL BLOQUE - CONSERVADO */
+#b3 .b3-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: 38px auto 0;
+  padding-bottom: 10px;
+  color: #00d9e8;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-align: center;
+  text-decoration: none;
+}
+#b3 .b3-cta span {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+/* ESCRITORIO */
+@media (min-width: 768px) {
+  #b3 { padding-top: 20px; padding-bottom: 30px; }
+  #b3 .desc { max-width: 560px; }
+  #b3 .infinite-wrap { margin-top: 30px; padding: 25px 0; }
+  #b3 .infinite-track { gap: 32px; }
+  #b3 .infinite-track > a { flex-basis: 260px; width: 260px; }
+  #b3 .infinite-track img.foco-activo { transform: scale(1.15); }
+  #b3 .b3-cierre { max-width: 520px; }
+}
