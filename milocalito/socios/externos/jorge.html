@@ -1,87 +1,317 @@
 <!DOCTYPE html>
-<html lang="es-MX">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jorge Fuentes Manzanillo | Socio Oficial Mi Localito</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Montserrat:wght@800;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css" />
-    <link rel="stylesheet" href="socios.css" />
-  </head>
-  <body class="page-jorge" style="--primary:#0ea5e9; --primary2:#38bdf8; --glow:rgba(14,165,233,.4)">
-    <div class="page">
-      <header class="b1-header">
-        <a href="https://www.milocalito.com" target="_blank" class="logo"><b><span class="mi-green">MI</span>LOCALITO</b><span>🌿 Jorge - Manzanillo</span></a>
-        <div class="header-right">
-          <nav class="nav-menu" id="navMenu">
-            <a href="#inicio">Inicio</a>
-            <a href="#mision">Misión</a>
-            <a href="#sistemas">Sistemas</a>
-            <a href="#afiliados">Ingrésame</a>
-            <a href="#contacto">Contacto</a>
-            <a href="https://wa.me/523142262901?text=Hola%20Jorge%20quiero%20ser%20socio%20como%20tu" target="_blank" class="yerberitos-header-btn inside-menu">Quiero ser Afiliado</a>
-          </nav>
-          <button class="hamburger" id="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- SEO principal -->
+  <title>Mi Localito Socios | Vende Soluciones y Construye tu Camino</title>
+  <meta name="description" content="Conviértete en socio de Mi Localito. Aprende a detectar problemas, presentar soluciones y vender sistemas web para negocios. Desarrolla tus habilidades de ventas, marketing y liderazgo.">
+  <meta name="author" content="Ingeniero de la Libertad">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#048A25">
+  <link rel="canonical" href="https://www.ingenierodelalibertad.com/milocalito/socios/index.html">
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <!-- Open Graph: WhatsApp, Facebook y otras plataformas -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:site_name" content="Mi Localito | Socios">
+  <meta property="og:title" content="Mi Localito Socios | Sé parte de la oportunidad">
+  <meta property="og:description" content="Mi Localito crea sistemas que resuelven problemas. Aprende a presentar soluciones, desarrollar tus habilidades de venta y crecer como socio.">
+  <meta property="og:url" content="https://www.ingenierodelalibertad.com/milocalito/socios/index.html">
+  <meta property="og:image" content="https://www.ingenierodelalibertad.com/milocalito/socios/images/og-socios.jpeg">
+  <meta property="og:image:secure_url" content="https://www.ingenierodelalibertad.com/milocalito/socios/images/og-socios.jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:alt" content="Mi Localito Socios: aprende, desarrolla tus habilidades y conviértete en socio">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mi Localito Socios | Sé parte de la oportunidad">
+  <meta name="twitter:description" content="Aprende a vender soluciones, desarrolla tus habilidades y construye tu camino como socio de Mi Localito.">
+  <meta name="twitter:image" content="https://www.ingenierodelalibertad.com/milocalito/socios/images/og-socios.jpeg">
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <!-- CSS general de socios -->
+  <link rel="stylesheet" href="../../socios/externos/socios.css">
+  <style>
+  :root {
+    --turquesa: #1bdde4;
+    --turquesa-oscuro: #0087a9;
+    --turquesa-claro: #4DF4E8;
+    --turquesa-bg: #021412;
+  }
+
+  /* Cambia el verde viejo por turquesa en toda la web */
+  .label, h2 span, .hero-title span, .b2-cierre span, .b3-cierre span,
+  .footer-marca span, .checks li {
+    color: var(--turquesa) !important;
+  }
+
+  /* Fondo negro a negro turquesa + botones */
+  body {
+    background: var(--turquesa-bg) !important;
+  }
+
+  .btn-wa.wa, .b2-cta, .b3-cta, .footer-boton-unete, .btn-demo {
+    background: #000 !important;
+    border: 1px solid var(--turquesa) !important;
+    color: #fff !important;
+    box-shadow: 0 0 18px rgba(0, 209, 193, 0.25) !important;
+  }
+
+  .btn-wa.wa:hover, .b2-cta:hover, .b3-cta:hover, .footer-boton-unete:hover, .btn-demo:hover {
+    background: var(--turquesa) !important;
+    color: #000 !important;
+    box-shadow: 0 0 28px rgba(0, 209, 193, 0.5) !important;
+  }
+
+  /* Cambia el color del navegador en móvil */
+  meta[name="theme-color"] {
+    content: var(--turquesa);
+  }
+  </style>
+  <!-- Datos estructurados -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.ingenierodelalibertad.com/milocalito/socios/index.html#webpage",
+    "name": "Mi Localito Socios",
+    "description": "Plataforma de socios para desarrollar habilidades de ventas, presentar soluciones web y construir equipos autorizados.",
+    "url": "https://www.ingenierodelalibertad.com/milocalito/socios/index.html",
+    "inLanguage": "es-MX",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Ingeniero de la Libertad",
+      "url": "https://www.ingenierodelalibertad.com/"
+    },
+    "about": {
+      "@type": "Organization",
+      "name": "Mi Localito",
+      "url": "https://www.ingenierodelalibertad.com/milocalito/"
+    },
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://www.ingenierodelalibertad.com/milocalito/socios/images/og-socios.jpeg",
+      "width": 1200,
+      "height": 630
+    }
+  }
+  </script>
+  <!-- Google Analytics: propiedad existente -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0S14JTTS9D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0S14JTTS9D');
+  </script>
+</head>
+<body>
+<div class="page">
+  <header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="../../index.html" class="brand"><span class="brand-text"><strong><span class="mi">MI</span> LOCALITO</strong><small>SOCIO AUTORIZADO · MANZANILLO</small></span></a>
+    <button class="burger" id="burgerBtn" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <a href="#b1" class="menu-link">Inicio</a>
+      <a href="#b2" class="menu-link">Tu realidad</a>
+      <a href="#b3" class="menu-link">Cómo funciona</a>
+      <a href="#b4" class="menu-link">Sistemas</a>
+      <a href="#b5" class="menu-link">Atención</a>
+      <a href="#b6" class="menu-link">Contacto</a>
+    </nav>
+  </div>
+  </header>
+  <div class="menu-overlay" id="menuOverlay"></div>
+  <main class="main-content">
+    <!-- BLOQUE 1 - PRESENTA EL PROBLEMA -->
+    <section class="block hero-block" id="b1">
+      <div class="hero-content">
+        <span class="label">TECNOLOGÍA QUE VENDE</span>
+        <h1 class="hero-title">Tu negocio necesita <span>algo más</span> que estar en internet.</h1>
+        <p class="desc hero-desc">Instalamos sistemas que ayudan a tu negocio a vender, recibir pedidos, cobrar o agendar sin que tengas que hacerlo todo manualmente.</p>
+        <!-- CAMBIO 1: IMAGEN DEL SOCIO - ESTA ES LA UNICA QUE SE CAMBIA -->
+        <!-- Reemplaza socio-joss.jpg por la foto del socio: socio-nombre.jpg -->
+        <img class="hero-socio-img" id="heroSocioImg" src="../../../images/jorge.jpeg" alt="Foto del socio autorizado" loading="lazy">
+        <a href="https://wa.me/523142262901?text=Hola%20Jorge%2C%20me%20puedes%20dar%20mas%20informaci%C3%B3n%20sobre%20los%20sistemas%20de%20Mi%20Localito." class="btn-wa wa" id="btnWa" target="_blank" rel="noopener noreferrer"><span class="icono-whatsapp" aria-hidden="true">📱</span>Hablar con Jorge</a>
+        <div class="trust">
+          <div class="trust-item"><span class="trust-icon">⚡</span><p>Atención remota<br><small>en México</small></p></div>
+          <div class="trust-item"><span class="trust-icon">🛡️</span><p>Pago único<br><small>sin comisiones</small></p></div>
+          <div class="trust-item"><span class="trust-icon">⏱️</span><p>Implementación<br><small>según el sistema</small></p></div>
         </div>
-      </header>
+      </div>
+    </section>
 
-      <section class="b2-hero" id="inicio">
-        <div class="left">
-          <div class="badge">SOCIO OFICIAL VERIFICADO | MANZANILLO #001</div>
-          <h1>Si sabes vender,<br /><em>nunca te falta dinero.</em></h1>
-          <p class="main-p">Soy <b>Jorge Fuentes</b> de <b>Manzanillo</b>. Parte de la tribu <b>Yerberitos con Consciencia</b>. Entendí que no sirve de nada ser muy espiritual si vives preocupado por dinero. De todas las habilidades, hay una que paga todo lo demás: <span class="tag-lime">aprender a vender y hacer marketing.</span> Por eso soy socio oficial de <b>Mi Localito</b>. Conecto negocios con el Ingeniero y él les instala un sistema que factura 24/7. Yo cobro por cada cierre.</p>
-          <div class="temas-label">📌 ESTO ES LO QUE ESTUDIO Y APLICO A DIARIO:</div>
-            <div class="pills"><span>💰 Ventas</span><span>🧠 Desarrollo Personal</span><span>✨ Crecimiento Espiritual</span><span>📈 Marketing</span><span>🤝 Redes de Mercadeo</span><span>❤️ Gestión Emocional</span><span>🧘 Meditación</span><span>🌿 Salud</span><span>🏋️ Ejercicio</span><span>🕉️ Yoga</span><span>🎯 Disciplina</span><span>💬 Persuasión</span><span>📚 Finanzas</span><span>🚀 Abundancia</span></div>
+    <!-- BLOQUE 2 - MUESTRA 6 PROBLEMAS (CARRUSEL 3D) -> RESPONDE AL BLOQUE 1 -->
+    <section class="block dark" id="b2" style="padding-bottom: 10px;">
+        <span class="label">TU REALIDAD</span>
+        <h2>CADA NEGOCIO ES DIFERENTE<br><span>HAY UNA SOLUCIÓN PARA TI.</span></h2>
+        <div class="desc">
+           <p>A veces necesitas organizar citas, mostrar tus productos o recibir pedidos de una forma más sencilla.</p>
+           <p>Cada negocio tiene necesidades diferentes en Mi Localito creamos sistemas digitales para ayudarte a resolver esos retos y simplificar tu trabajo.</p>
         </div>
-        <div class="right"><img src="../../../images/jorge.jpeg" alt="Jorge Fuentes Manzanillo" /></div>
-      </section>
-
-      <section class="b-abundancia" id="mision">
-        <div class="container">
-          <h2>En la escuela te enseñan a buscar empleo.<br /><span class="hl-green">Yo aprendí a crear sistemas que generan abundancia.</span></h2>
-          <div class="sep"></div>
-          <p>Nos hicieron creer que primero es el título, luego el trabajo, luego la libertad. Es al revés.</p>
-          <p>Di un salto de <b>consciencia</b> cuando entendí que <span class="tag-lime">vender y hacer marketing</span> son habilidades que te dan libertad real. Si sabes vender, nunca te falta dinero.</p>
-          <p>Por eso soy <b>Socio Directo</b>. Conecto negocios de Manzanillo y todo México con el Ingeniero, él les instala un sistema que factura solo por WhatsApp y yo cobro comisión. Es abundancia mientras ayudo a otros.</p>
+        <div class="carousel-3d-wrap"aria-label="Carrusel automático de seis problemas">
+           <div class="carousel-3d-stage" id="carouselProblemas">
+             <a href="#S-ex" class="card3d" data-system="xpress"><img src="../../../images/dolorxpress.jpeg" alt="Problema XPRESS"></a>
+             <a href="#S-p" class="card3d" data-system="pro"><img src="../../../images/dolorpro.jpeg" alt="Problema PRO"></a>
+             <a href="#S-c" class="card3d" data-system="custom"><img src="../../../images/dolorcustom.jpeg" alt="Problema CUSTOM"></a>
+             <a href="#S-l" class="card3d" data-system="landing"><img src="../../../images/dolorlanding.jpeg" alt="Problema LANDING"></a>
+             <a href="#S-a" class="card3d" data-system="agenda"><img src="../../../images/doloragenda.jpeg" alt="Problema AGENDA"></a>
+             <a href="#S-e" class="card3d" data-system="elite"><img src="../../../images/dolorelite.jpeg" alt="Problema ÉLITE"></a>
+           </div>
         </div>
-      </section>
-
-      <section class="b3-puente" id="sistemas">
-        <h2>SI HABLAMOS DE <span class="green">ABUNDANCIA REAL</span><br />TE PRESENTO MI LOCALITO</h2>
-        <p>Todo se resume en 3: aprender a <span class="hl-green">vender</span> con consciencia, hacer <span class="hl-green">marketing</span> que no ruega y montar <span class="hl-green">sistemas</span> que facturan 24/7 por WhatsApp.<br /><br />No son páginas bonitas, son máquinas de prosperidad para dejar de intercambiar tiempo por dinero.</p>
-      </section>
-
-      <section class="b4-planes">
-        <div class="titulo"><h2>ELIGE TU PROBLEMA.<br />AHÍ ESTÁ TU SISTEMA.</h2><p>6 sistemas probados. 3 niveles de inversión.</p></div>
-        <div class="grid">
-          <div class="card card-basico"><div class="tag">NIVEL 1 - BÁSICO $3,999 MXN</div><div class="precio">$3,999 MXN</div><div class="iva">+ IVA | Pago único | 72 HRS</div><div class="sistemas"><a href="../../express/index.html" class="sist"><h4><i class="fab fa-whatsapp"></i> SISTEMA XPRESS</h4><p><b>TE DUELE:</b> Contestas menú 100 veces.<br /><b>TE INSTALO:</b> Catálogo que manda pedido listo a WA.</p><span class="ver-demo">VER DEMO XPRESS →</span></a><a href="../../landing/index.html" class="sist"><h4><i class="fas fa-rocket"></i> SISTEMA LANDING</h4><p><b>TE DUELE:</b> Anuncias y no te escriben.<br /><b>TE INSTALO:</b> Landing que convierte visitas en chats.</p><span class="ver-demo">VER DEMO LANDING →</span></a></div><a class="btn" href="/milocalito/pagar.html?plan=basico&ref=jorge-fuentes" target="_blank">ACTIVAR BÁSICO CON JORGE →</a></div>
-          <div class="card card-pro"><div class="tag">🔥 MÁS VENDIDO - PROFESIONAL $6,999</div><div class="precio">$6,999 MXN</div><div class="iva">+ IVA | Pago único | 6 DÍAS</div><div class="sistemas"><a href="../../pro/index.html" class="sist"><h4><i class="fas fa-shopping-cart"></i> SISTEMA PRO</h4><p><b>TE DUELE:</b> “Te deposito mañana”.<br /><b>TE INSTALO:</b> Carrito que cobra antes de enviar.</p><span class="ver-demo">VER DEMO PRO →</span></a><a href="../../agenda/index.html" class="sist"><h4><i class="fas fa-calendar-check"></i> SISTEMA AGENDA</h4><p><b>TE DUELE:</b> Agenda a mano y empalmes.<br /><b>TE INSTALO:</b> Agenda 24/7 con recordatorio auto.</p><span class="ver-demo">VER DEMO AGENDA →</span></a></div><a class="btn" href="/milocalito/pagar.html?plan=pro&ref=jorge-fuentes" target="_blank">ACTIVAR PRO CON JORGE →</a></div>
-          <div class="card card-total"><div class="tag">👑 LEGADO - NEGOCIO TOTAL $9,999</div><div class="precio">$9,999 MXN</div><div class="iva">+ IVA | Pago único | 12 DÍAS</div><div class="sistemas"><a href="../../custom/index.html" class="sist"><h4><i class="fas fa-file-invoice-dollar"></i> SISTEMA CUSTOM</h4><p><b>TE DUELE:</b> +50 productos y cotizas lento.<br /><b>TE INSTALO:</b> Cotizador automático.</p><span class="ver-demo">VER DEMO CUSTOM →</span></a><a href="../../elite/index.html" class="sist"><h4><i class="fas fa-crown"></i> SISTEMA ÉLITE</h4><p><b>TE DUELE:</b> Te cancelan y pierdes día.<br /><b>TE INSTALO:</b> Cobra anticipo obligatorio.</p><span class="ver-demo">VER DEMO ÉLITE →</span></a></div><a class="btn" href="/milocalito/pagar.html?plan=total&ref=jorge-fuentes" target="_blank">ACTIVAR TOTAL CON JORGE →</a></div>
+        <div class="dots" id="dots2"></div>
+        <div class="b2-cierre">
+           <p>Tu negocio no necesita más complicaciones. Necesita herramientas<span> que trabajen contigo.</span></p>
         </div>
-      </section>
+        <a href="#carouselProblemas" class="b2-cta">DESCUBRE TU SISTEMA</a>
+    </section>
 
-      <section class="b-afiliados" id="afiliados">
-        <div class="box">
-          <h2>De Manzanillo para el mundo.<br /><span class="green">Enseño a vender con consciencia.</span></h2>
-          <p class="frase">El verdadero despertar es cuando tu alma está en paz y tu negocio factura 24/7 sin tenerte de esclavo.</p>
-          <div class="caminos"><p><b>Como socio oficial:</b> Aprendes espiritualidad aplicada a ventas y generas hasta <span class="hl-green">30% por cada cierre</span>. Tú conectas, nosotros cerramos.</p></div>
-          <form class="b-form" id="afiliadoForm">
-            <div class="doble"><input type="text" id="nombre" placeholder="Tu Nombre" required /><input type="tel" id="wa" placeholder="Tu WhatsApp" required /></div>
-            <select id="tipo"><option value="Quiero ser socio como Jorge" selected>Quiero ser socio como Jorge</option><option value="Quiero ser socio y tener mi sistema">Quiero ser socio y tener mi sistema</option></select>
-            <div class="btns"><button type="submit" class="btn-afiliado">💰 QUIERO SER SOCIO COMO JORGE</button></div>
-          </form>
-        </div>
-      </section>
+    <!-- BLOQUE 3 - SOLUCIONES -->
+    <section class="block" id="b3">
+       <span class="label">VAMOS A ENCONTRAR UNA SOLUCIÓN</span>
+       <h2>HAY UNA FORMA MÁS <span>SENCILLA DE HACERLO</span></h2>
+       <div class="desc">
+         <p>Cada negocio tiene retos distintos: atraer clientes, organizar tareas o facilitar las ventas.</p>
+         <p>Por eso reunimos seis sistemas digitales que te ayudan a simplificar procesos y atender mejor a tus clientes.</p>
+       </div>
+       <div class="infinite-wrap">
+         <div class="infinite-track" id="infiniteTrack" aria-label="Carrusel infinito de soluciones">
+           <!-- Imágenes originales -->
+           <a href="#card-elite" aria-label="Ver sistema Élite"><img src="../../../images/Slider-e.jpg" alt="ÉLITE" data-system="elite" id="S-e"></a>
+           <a href="#card-agenda" aria-label="Ver sistema Agenda"><img src="../../../images/Slider-a.jpg" alt="AGENDA" data-system="agenda" id="S-a"></a>
+           <a href="#card-landing" aria-label="Ver sistema Landing"><img src="../../../images/Slider-l.jpg" alt="LANDING" data-system="landing" id="S-l"></a>
+           <a href="#card-custom" aria-label="Ver sistema Custom"><img src="../../../images/Slider-c.png" alt="CUSTOM" data-system="custom" id="S-c"></a>
+           <a href="#card-pro" aria-label="Ver sistema Pro"><img src="../../../images/Slider-p.png" alt="PRO" data-system="pro" id="S-p"></a>
+           <a href="#card-xpress" aria-label="Ver sistema Xpress"><img src="../../../images/Slider-ex.png" alt="XPRESS" data-system="xpress" id="S-ex"></a>
+           <!-- Duplicados para el movimiento infinito -->
+           <a href="#card-elite" aria-label="Ver sistema Élite"><img src="../../../images/Slider-e.jpg" alt="ÉLITE" data-system="elite" id="S-e-dup"></a>
+           <a href="#card-agenda" aria-label="Ver sistema Agenda"><img src="../../../images/Slider-a.jpg" alt="AGENDA" data-system="agenda" id="S-a-dup"></a>
+           <a href="#card-landing" aria-label="Ver sistema Landing"><img src="../../../images/Slider-l.jpg" alt="LANDING" data-system="landing" id="S-l-dup"></a>
+           <a href="#card-custom" aria-label="Ver sistema Custom"><img src="../../../images/Slider-c.png" alt="CUSTOM" data-system="custom" id="S-c-dup"></a>
+           <a href="#card-pro" aria-label="Ver sistema Pro"><img src="../../../images/Slider-p.png" alt="PRO" data-system="pro" id="S-p-dup"></a>
+           <a href="#card-xpress" aria-label="Ver sistema Xpress"><img src="../../../images/Slider-ex.png" alt="XPRESS" data-system="xpress" id="S-ex-dup"></a>
+         </div>
+       </div>
+       <div class="dots" id="dots3"></div>
+       <div class="b3-cierre">
+         <p>La herramienta adecuada puede convertir tareas complicadas en <span>procesos más simples.</span></p>
+       </div>
+         <a href="#b4" class="b3-cta">CONOCE LOS SEIS SISTEMAS<span aria-hidden="true">↓</span></a>
+    </section>
 
-      <footer class="b5-footer" id="contacto">
-        <div class="frase">“No sirve de nada ser muy espiritual si vives preocupado por dinero. El verdadero despertar es cuando facturas 24/7.” 🌿 - Jorge Fuentes</div>
-        <div class="footer-socials"><a href="https://wa.me/523142262901" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a><a href="#" class="instagram"><i class="fab fa-instagram"></i></a><a href="#" class="tiktok"><i class="fab fa-tiktok"></i></a><a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a><a href="#" class="youtube"><i class="fab fa-youtube"></i></a></div>
-        <p class="footer-cta">¿Dudas? Habla directo con <b>Jorge</b> en WhatsApp</p>
-        <div class="copy">Jorge Fuentes © 2026<br />Mi Localito - Sistemas que facturan 24/7<br />Programa de Socios Afiliados<br /><a href="https://www.ingenierodelalibertad.com" target="_blank">www.ingenierodelalibertad.com</a></div>
-        <div class="footer-disclaimer">Las comisiones se generan por referir sistemas. No somos asesores financieros.</div>
-        <div class="footer-legal"><a href="../../../privacidad.html">Aviso de Privacidad</a><a href="../../../terminos.html">Términos y condiciones</a><a href="../../../soporte.html">Soporte</a></div>
-      </footer>
-    </div>
-    <script src="socios.js"></script>
-  </body>
+    <!-- BLOQUE 4 - MUESTRA LOS 6 SISTEMAS -> RESPONDE AL BLOQUE 3 -->
+    <section class="block dark" id="b4">
+       <span class="label">LOS SEIS SISTEMAS</span>
+       <h2>AQUÍ ESTÁ LA SOLUCIÓN A<br><span>TU NEGOCIO</span> </h2>
+       <div class="systems-grid">
+         <!-- SISTEMA XPRESS -->
+         <article class="sys">
+           <img id="card-xpress" src="../../../images/S. xpress.png" alt="Sistema Xpress" loading="lazy"/>
+           <div class="sys-actions">
+             <a class="btn-demo" href="../../express/index.html" rel="noopener noreferrer">Ver demo</a>
+             <a class="btn-demo" href="../../comprar.php?sistema=XPRESS&amp;socio_id=6">Abonar sistema</a>
+           </div>
+         </article>
+         <!-- SISTEMA PRO -->
+         <article class="sys">
+           <img id="card-pro" src="../../../images/S. pro.png" alt="Sistema Pro" loading="lazy"/>
+           <div class="sys-actions">
+           <a class="btn-demo" href="../../pro/index.html" rel="noopener noreferrer">Ver demo</a>
+           <a class="btn-demo" href="../../comprar.php?sistema=PRO&amp;socio_id=6">Abonar sistema</a>
+           </div>
+         </article>
+         <!-- SISTEMA CUSTOM -->
+         <article class="sys">
+           <img id="card-custom" src="../../../images/S. custom.png" alt="Sistema Custom" loading="lazy"/>
+           <div class="sys-actions">
+           <a class="btn-demo" href="../../custom/index.html" rel="noopener noreferrer">Ver demo</a>
+           <a class="btn-demo" href="../../comprar.php?sistema=CUSTOM&amp;socio_id=6">Abonar sistema</a>
+           </div>
+         </article>
+         <!-- SISTEMA LANDING -->
+         <article class="sys">
+           <img id="card-landing" src="../../../images/S. landing.png" alt="Sistema Landing" loading="lazy"/>
+           <div class="sys-actions">
+             <a class="btn-demo" href="../../landing/index.html" rel="noopener noreferrer">Ver demo</a>
+             <a class="btn-demo" href="../../comprar.php?sistema=LANDING&amp;socio_id=6">Abonar sistema</a>
+           </div>
+         </article>
+         <!-- SISTEMA AGENDA -->
+         <article class="sys">
+           <img id="card-agenda" src="../../../images/S. agenda.png" alt="Sistema Agenda" loading="lazy"/>
+           <div class="sys-actions">
+             <a class="btn-demo" href="../../agenda/index.html" rel="noopener noreferrer">Ver demo</a>
+             <a class="btn-demo" href="../../comprar.php?sistema=AGENDA&amp;socio_id=6">Abonar sistema</a>
+           </div>
+         </article>
+         <!-- SISTEMA ÉLITE -->
+         <article class="sys">
+           <img id="card-elite" src="../../../images/S. elite.png" alt="Sistema Élite" loading="lazy"/>
+           <div class="sys-actions">
+             <a class="btn-demo" href="../../elite/index.html" rel="noopener noreferrer">Ver demo</a>
+             <a class="btn-demo" href="../../comprar.php?sistema=ELITE&amp;socio_id=6">Abonar sistema</a>
+           </div>
+         </article>
+       </div>
+    </section>
+
+    <!-- BLOQUE 5 - CTA WHATSAPP -> RESPONDE AL BLOQUE 4 -->
+    <section class="block" id="b5">
+       <span class="label">ATENCIÓN PERSONALIZADA</span>
+       <h2>¿LISTA O LISTO PARA DAR EL <span>SIGUIENTE PASO</span>?</h2>
+       <p class="desc">Cuéntame qué necesita tu negocio y con mucho gusto te ayudo a elegir el sistema adecuado.</p>
+       <div class="contacto-joss">
+           <img class="foto-joss" src="../../../images/jorge.jpeg" alt="Foto de contacto de Jorge" loading="lazy">
+           <a href="https://wa.me/523142262901?text=Jorge%20no%20me%20quedo%20clara%20la%20informaci%C3%B3n%2C%20me%20puedes%20apoyar%20a%20tomar%20una%20mejor%20decisi%C3%B3n." class="btn-wa wa" id="btnWa" target="_blank" rel="noopener noreferrer"><span class="icono-whatsapp" aria-hidden="true">📱</span>Hablar con Jorge</a>
+       </div>
+       <ul class="checks">
+         <li>✓ Atención por WhatsApp</li>
+         <li>✓ Sistemas adaptados al objetivo del negocio</li>
+         <li>✓ Alcance y tiempos definidos antes de iniciar</li>
+       </ul>
+       <div class="visual-phone"><div class="phone">Tu negocio puede trabajar de una manera más sencilla.</div></div>
+    </section>
+
+    <!-- BLOQUE 6 - FOOTER -> CIERRE -->
+    <footer class="footer-socios" id="b6">
+       <div class="footer-marca">
+         <span>MI</span> LOCALITO
+         <p class="footer-slogan">NO HACEMOS PÁGINAS BONITAS.<br>INSTALAMOS SISTEMAS QUE FACTURAN 24/7.</p>
+       </div>
+       <div class="footer-seccion">
+         <p class="footer-titulo">¡SÍGUEME!</p>
+         <div class="footer-redes">
+           <a class="red-social" href="#"><i class="fa-brands fa-facebook"></i></a>
+           <a class="red-social" href="#"><i class="fa-brands fa-tiktok"></i></a>
+           <a class="red-social" href="#"><i class="fa-brands fa-instagram"></i></a>
+         </div>
+       </div>
+       <div class="footer-seccion footer-unete">
+         <p class="footer-titulo">¿TE UNES A LA PLATAFORMA?</p>
+         <p class="footer-copy">¿Quieres conocer cómo convertirte en socio de Mi Localito?</p>
+         <a class="footer-boton-unete" href="https://api.whatsapp.com/send?phone=523142262901&text=Jorge%20me%20interesa%20unirme%20a%20la%20plataforma%2C%20%C2%BFC%C3%B3mo%20puedo%20hacerlo%3F" target="_blank"><i class="fa-brands fa-whatsapp"></i> Cuentame más</a>
+       </div>
+       <div class="footer-final">
+         <p>© 2026 Mi Localito® - Plataforma de Socios · Todos los derechos reservados</p>
+         <p>Plataforma con panel real y comisiones, creada by<br><a href="https://www.ingenierodelalibertad.com/"><span>Ingeniero de la Libertad</span></a></p>
+         <nav class="footer-legales">
+           <a href="../../../privacidad.html">Aviso de privacidad</a>
+           <a href="../../../terminos.html">Términos y condiciones</a>
+           <a href="../../../soporte.html">Soporte</a>
+         </nav>
+       </div>
+    </footer>
+  </main>
+</div>
+<script src="../../socios/externos/socios.js"></script>
+</body>
 </html>
